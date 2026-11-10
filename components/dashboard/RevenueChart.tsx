@@ -30,7 +30,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     : (((payload[0].value - data[0].revenue) / data[0].revenue) * 100).toFixed(1);
   return (
     <div className="bg-slate-900 text-white px-4 py-2.5 rounded-2xl text-xs shadow-2xl border border-white/10">
-      <p className="text-slate-400 mb-1 text-[12px]">{label}</p>
+      <p className="text-slate-500 mb-1 text-[12px]">{label}</p>
       <p className="font-extrabold text-[17px] tracking-tight">{fmt(payload[0].value)}</p>
       {Number(pct) !== 0 && (
         <p className="text-emerald-400 text-[12px] mt-0.5">+{pct}% vs Dec</p>
@@ -54,7 +54,7 @@ export default function RevenueChart({ isDark = false }: { isDark?: boolean }) {
       <div className="flex items-start justify-between mb-6">
         <div>
           <h3 className={`m-0 text-[14px] font-bold ${isDark ? "text-white" : "text-[#0C2472]"}`}>Revenue Trend</h3>
-          <p className="text-[12px] text-slate-400 mt-0.5">Booked revenue · last 6 months</p>
+          <p className="text-[12px] text-slate-500 mt-0.5">Booked revenue · last 6 months</p>
         </div>
         <span className={`inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded-full ${isDark ? "bg-emerald-900/40 text-emerald-400" : "bg-emerald-50 text-emerald-600"}`}>
           ↑ 30.4% growth

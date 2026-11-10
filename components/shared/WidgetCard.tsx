@@ -42,7 +42,7 @@ export default function WidgetCard({
           style={noPadding ? { borderColor: isDark ? "#27272A" : "#E3ECFC" } : undefined}>
           <div>
             {title && <h3 className={`m-0 text-[14px] font-bold ${isDark ? "text-white" : "text-[#0C2472]"}`}>{title}</h3>}
-            {subtitle && <p className="text-[12px] text-slate-400 mt-0.5">{subtitle}</p>}
+            {subtitle && <p className="text-[12px] text-slate-500 mt-0.5">{subtitle}</p>}
           </div>
           {badge}
           {headerRight}

@@ -13,7 +13,7 @@ export default function CustomerCommsPage() {
           <ChatTeardropText size={26} weight="duotone" color={isDark ? "#60A5FA" : "#1D4ED8"} />
         </div>
         <h1 className={`m-0 text-[17px] font-bold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Customer Comms</h1>
-        <p className={`text-[13px] max-w-[280px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>This section is coming soon.</p>
+        <p className={`text-[13px] max-w-[280px] ${isDark ? "text-[#9CA3AF]" : "text-slate-600"}`}>This section is coming soon.</p>
       </div>
     </div>
   );

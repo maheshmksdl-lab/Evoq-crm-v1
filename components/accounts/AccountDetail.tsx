@@ -16,6 +16,7 @@ import {
   Handshake, UserCircle, Phone, EnvelopeSimple,
 } from "@phosphor-icons/react";
 import { useTheme } from "@/components/ThemeContext";
+import { DETAIL_GRID, KV_GRID } from "@/lib/ui";
 
 // ─────────────────────────────────────────────
 //  Types
@@ -98,7 +99,7 @@ function SectionCard({ icon: Icon, title, children, action, id }: {
         <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-brand-700"}`}>{title}</p>
         {action}
       </div>
-      <div className="px-5 py-4">{children}</div>
+      <div className="@container px-5 py-4">{children}</div>
     </div>
   );
 }
@@ -109,8 +110,8 @@ function KV({ label, value, fullWidth, blue }: { label: string; value?: string; 
   const display = value !== undefined && value !== "" ? value : undefined;
   return (
     <div className={`py-2 border-b border-[#EFF6FF] last:border-0 ${fullWidth ? "col-span-2" : ""}`}>
-      <p className={`font-heading text-[11.5px] font-semibold uppercase tracking-wider mb-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{label}</p>
-      <p className={`text-[14px] font-medium ${!display ? (isDark ? "text-[#3F3F46] italic" : "text-slate-300 italic") : blue ? "text-inherit" : (isDark ? "text-[#D4D4D8]" : "text-slate-800")}`}>
+      <p className={`font-heading text-[11.5px] font-semibold uppercase tracking-wider mb-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{label}</p>
+      <p className={`text-[14px] font-medium [overflow-wrap:anywhere] ${!display ? (isDark ? "text-[#A1A1AA] italic" : "text-slate-500 italic") : blue ? "text-inherit" : (isDark ? "text-[#D4D4D8]" : "text-slate-800")}`}>
         {display || "—"}
       </p>
     </div>
@@ -188,7 +189,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
               {count > 0 && (
                 <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>
               )}
-              <CaretRight size={14} color="#E2E8F0" weight="duotone" />
+              <CaretRight size={14} color="#94A3B8" weight="duotone" />
             </button>
           ))}
         </div>
@@ -198,15 +199,15 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
       <div className={`rounded-2xl border shadow-xs p-4 space-y-3 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Ownership</p>
         <div className="flex justify-between text-[12px]">
-          <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>Created</span>
+          <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Created</span>
           <span className={`font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{account.createdAt}</span>
         </div>
         <div className="flex justify-between text-[12px]">
-          <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>Modified</span>
+          <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Modified</span>
           <span className={`font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{account.modifiedAt}</span>
         </div>
         <div className="flex justify-between text-[12px]">
-          <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>Owner</span>
+          <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Owner</span>
           <span className={`font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{account.accountOwner}</span>
         </div>
       </div>
@@ -223,7 +224,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
         <main className="flex-1 px-4 sm:px-6 py-4 sm:py-5 space-y-4 animate-fade-in">
 
           {/* ── Breadcrumb ── */}
-          <div className={`flex items-center gap-1.5 text-[13.5px] ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>
+          <div className={`flex items-center gap-1.5 text-[13.5px] ${isDark ? "text-[#ABABAD]" : "text-slate-600"}`}>
             <House size={16} weight="duotone" />
             <CaretRight size={12} weight="duotone" />
             <Link href="/accounts" className="hover:text-brand-700 transition-colors font-medium">Accounts</Link>
@@ -243,7 +244,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
               {/* Name + meta */}
               <div className="flex-1 min-w-0">
                 <h1 className={`text-[20px] font-extrabold tracking-tight m-0 ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>{account.name}</h1>
-                <p className={`text-[12px] mt-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>
+                <p className={`text-[12px] mt-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>
                   ID #{account.id} · {account.accountOwnerEmail}
                 </p>
                 <div className="flex items-center gap-3 mt-2 flex-wrap">
@@ -262,17 +263,17 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
               </div>
 
               {/* Action buttons */}
-              <div className="flex items-center gap-2 flex-wrap shrink-0">
+              <div className="flex items-center gap-2 flex-wrap">
                 <Button variant="outlined" size="small"
                   sx={{ borderColor: isDark ? "#27272A" : "#E3ECFC", color: isDark ? "#B4B5B6" : "#1D4ED8", borderRadius: "9px", textTransform: "none", fontWeight: 600, fontSize: "0.84rem", bgcolor: isDark ? "#0F0F0F" : "transparent", "&:hover": { borderColor: "#1D4ED8", color: "#1D4ED8", bgcolor: isDark ? "#0A0A0A" : "#EFF6FF" } }}>
                   Send Email
                 </Button>
                 <Button variant="contained" size="small"
                   startIcon={<PencilSimple size={14} weight="bold" />}
-                  sx={{ bgcolor: "#1D4ED8", borderRadius: "9px", textTransform: "none", fontWeight: 700, fontSize: "0.84rem", boxShadow: "0 1px 8px 0 #1D4ED833", "&:hover": { bgcolor: "#60A5FA", boxShadow: "0 2px 14px 0 #60A5FA55" }, "&:active": { bgcolor: "#0C2472" } }}>
+                  sx={{ bgcolor: "#1D4ED8", borderRadius: "9px", textTransform: "none", fontWeight: 700, fontSize: "0.84rem", boxShadow: "0 1px 8px 0 #1D4ED833", "&:hover": { bgcolor: "#2563EB", boxShadow: "0 2px 14px 0 #60A5FA55" }, "&:active": { bgcolor: "#0C2472" } }}>
                   Edit
                 </Button>
-                <IconButton size="small"
+                <IconButton size="small" aria-label="More actions"
                   onClick={() => setMoreAnchor(v => !v)}
                   sx={{ borderRadius: "8px", border: isDark ? "1.5px solid #27272A" : "1.5px solid #E3ECFC", bgcolor: moreAnchor ? (isDark ? "#27272A" : "#EFF6FF") : (isDark ? "#0A0A0A" : "transparent"), "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
                   <DotsThreeVertical size={16} color={isDark ? "#A1A1AA" : "#475569"} weight="bold" />
@@ -284,7 +285,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
           {/* ── Tab bar ── */}
           <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
             {(["overview", "timeline"] as const).map(tab => (
-              <button key={tab} onClick={() => setActiveTab(tab)}
+              <button key={tab} onClick={() => setActiveTab(tab)} aria-pressed={activeTab === tab}
                 className={`px-4 py-1.5 rounded-lg text-[14px] font-semibold capitalize transition-all ${
                   activeTab === tab
                     ? "bg-brand-700 text-white shadow-xs"
@@ -298,18 +299,18 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
 
           {/* ══════════════ OVERVIEW TAB ══════════════ */}
           {activeTab === "overview" && (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-              <div className="lg:col-span-2 space-y-5 min-w-0">
+            <div className={DETAIL_GRID}>
+              <div className="min-w-0 space-y-5 min-w-0">
 
                 {/* ── Account Information ── */}
                 <SectionCard icon={Buildings} title="Account Information"
                   action={
-                    <IconButton size="small"
-                      sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&:hover": { color: "#1D4ED8", bgcolor: isDark ? "#27272A" : "#EFF6FF" }, borderRadius: "6px" }}>
+                    <IconButton size="small" aria-label="More actions"
+                      sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&:hover": { color: "#1D4ED8", bgcolor: isDark ? "#27272A" : "#EFF6FF" }, borderRadius: "6px" }}>
                       <DotsThreeVertical size={16} weight="bold" />
                     </IconButton>
                   }>
-                  <div className="grid grid-cols-2 gap-x-10 gap-y-0">
+                  <div className={KV_GRID}>
                     <KV label="Account Name"   value={account.name} />
                     <KV label="Account Owner"  value={account.accountOwner} />
                     <KV label="Rating"         value={account.rating} />
@@ -331,7 +332,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
 
                 {/* ── Address Information ── */}
                 <SectionCard icon={MapPin} title="Address Information">
-                  <div className="grid grid-cols-2 gap-x-10 gap-y-0">
+                  <div className={KV_GRID}>
                     <KV label="Billing Address"  value={account.billingAddress} />
                     <KV label="Shipping Address" value={account.shippingAddress} />
                   </div>
@@ -343,7 +344,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                 </SectionCard>
 
                 {/* ── Tasks ── */}
-                <div id="section-tasks">
+                <div id="section-tasks" className="scroll-mt-20">
                   <SectionCard icon={ClipboardText} title="Tasks"
                     action={
                       <div className="flex items-center gap-2">
@@ -352,8 +353,8 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                           sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius: "8px", textTransform: "none", fontWeight: 700, fontSize: "0.73rem", boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover": { bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
                           New Task
                         </Button>
-                        <IconButton size="small"
-                          sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&:hover": { color: "#1D4ED8" }, borderRadius: "6px" }}>
+                        <IconButton size="small" aria-label="More actions"
+                          sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&:hover": { color: "#1D4ED8" }, borderRadius: "6px" }}>
                           <DotsThreeVertical size={16} weight="bold" />
                         </IconButton>
                       </div>
@@ -362,13 +363,13 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                       <table className="w-full text-[14px]">
                         <thead>
                           <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
-                            <th className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#71717A]" : "text-[#0C2472]"}`}>Subject</th>
-                            <th className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#71717A]" : "text-[#0C2472]"}`}>Status</th>
+                            <th className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#A1A1AA]" : "text-[#0C2472]"}`}>Subject</th>
+                            <th className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#A1A1AA]" : "text-[#0C2472]"}`}>Status</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td colSpan={2} className={`py-8 text-center text-[14px] ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}>No rows</td>
+                            <td colSpan={2} className={`py-8 text-center text-[14px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No rows</td>
                           </tr>
                         </tbody>
                       </table>
@@ -377,7 +378,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                 </div>
 
                 {/* ── Notes ── */}
-                <div id="section-notes">
+                <div id="section-notes" className="scroll-mt-20">
                   <SectionCard icon={Note} title="Notes">
                     <div className="space-y-3">
                       <div className={`border rounded-xl overflow-hidden transition-all ${isDark ? "border-[#3F3F46] focus-within:border-[#9CA3AF]" : "border-border-light focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
@@ -400,7 +401,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                       {notes.map((n, i) => (
                         <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                           <p className={`text-[14px] ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{n.text}</p>
-                          <p className={`text-[12px] mt-1 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{n.at}</p>
+                          <p className={`text-[12px] mt-1 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{n.at}</p>
                         </div>
                       ))}
                     </div>
@@ -408,14 +409,14 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                 </div>
 
                 {/* ── Attachments ── */}
-                <div id="section-attachments">
+                <div id="section-attachments" className="scroll-mt-20">
                   <SectionCard icon={Paperclip} title="Attachments"
                     action={
                       <div className="flex items-center gap-2">
                         <div className={`flex items-center rounded-lg p-0.5 gap-0.5 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                           {[{ k: "grid", Icon: GridFour }, { k: "list", Icon: List }].map(({ k, Icon }) => (
-                            <button key={k} onClick={() => setAttachView(k as "grid" | "list")}
-                              className={`p-1 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-400")}`}>
+                            <button key={k} onClick={() => setAttachView(k as "grid" | "list")} aria-label={`${k === "grid" ? "Grid" : "List"} view`} aria-pressed={attachView === k}
+                              className={`p-1 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>
                               <Icon size={13} weight="duotone" />
                             </button>
                           ))}
@@ -426,14 +427,14 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                         </Button>
                       </div>
                     }>
-                    <div className={`flex items-center justify-center py-6 text-[14px] ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}>
+                    <div className={`flex items-center justify-center py-6 text-[14px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                       No attachments yet
                     </div>
                   </SectionCard>
                 </div>
 
                 {/* ── Deals ── */}
-                <div id="section-deals">
+                <div id="section-deals" className="scroll-mt-20">
                   <SectionCard icon={Handshake} title="Deals"
                     action={
                       <div className="flex items-center gap-2">
@@ -442,8 +443,8 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                           sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius: "8px", textTransform: "none", fontWeight: 700, fontSize: "0.73rem", boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover": { bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
                           New Deal
                         </Button>
-                        <IconButton size="small"
-                          sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&:hover": { color: "#1D4ED8" }, borderRadius: "6px" }}>
+                        <IconButton size="small" aria-label="More actions"
+                          sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&:hover": { color: "#1D4ED8" }, borderRadius: "6px" }}>
                           <DotsThreeVertical size={16} weight="bold" />
                         </IconButton>
                       </div>
@@ -453,13 +454,13 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                         <thead>
                           <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                             {["Deal Name", "Amount", "Stage", "Probability (%)", "Closing Date", "Type", "Deal Owner"].map(h => (
-                              <th key={h} className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider whitespace-nowrap ${isDark ? "text-[#71717A]" : "text-[#0C2472]"}`}>{h}</th>
+                              <th key={h} className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider whitespace-nowrap ${isDark ? "text-[#A1A1AA]" : "text-[#0C2472]"}`}>{h}</th>
                             ))}
                           </tr>
                         </thead>
                         <tbody>
                           {account.relatedDeals.length === 0 ? (
-                            <tr><td colSpan={7} className={`py-8 text-center text-[14px] ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}>No rows</td></tr>
+                            <tr><td colSpan={7} className={`py-8 text-center text-[14px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No rows</td></tr>
                           ) : account.relatedDeals.map((d, i) => (
                             <tr key={i} className={`border-b transition-colors ${isDark ? "border-[#27272A] hover:bg-[#27272A]" : "border-[#EFF6FF] hover:bg-[rgba(29,78,216,0.03)]"}`}>
                               <td className={`py-3 pr-4 font-medium cursor-pointer hover:underline ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>{d.name}</td>
@@ -478,7 +479,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                 </div>
 
                 {/* ── Contacts ── */}
-                <div id="section-contacts">
+                <div id="section-contacts" className="scroll-mt-20">
                   <SectionCard icon={UserCircle} title="Contacts"
                     action={
                       <div className="flex items-center gap-2">
@@ -487,8 +488,8 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                           sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius: "8px", textTransform: "none", fontWeight: 700, fontSize: "0.73rem", boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover": { bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
                           New Contact
                         </Button>
-                        <IconButton size="small"
-                          sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&:hover": { color: "#1D4ED8" }, borderRadius: "6px" }}>
+                        <IconButton size="small" aria-label="More actions"
+                          sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&:hover": { color: "#1D4ED8" }, borderRadius: "6px" }}>
                           <DotsThreeVertical size={16} weight="bold" />
                         </IconButton>
                       </div>
@@ -498,13 +499,13 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                         <thead>
                           <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                             {["First Name", "Last Name", "Email", "Mobile", "Phone", "Fax", "Contact Owner"].map(h => (
-                              <th key={h} className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider whitespace-nowrap ${isDark ? "text-[#71717A]" : "text-[#0C2472]"}`}>{h}</th>
+                              <th key={h} className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider whitespace-nowrap ${isDark ? "text-[#A1A1AA]" : "text-[#0C2472]"}`}>{h}</th>
                             ))}
                           </tr>
                         </thead>
                         <tbody>
                           {account.relatedContacts.length === 0 ? (
-                            <tr><td colSpan={7} className={`py-8 text-center text-[14px] ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}>No rows</td></tr>
+                            <tr><td colSpan={7} className={`py-8 text-center text-[14px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No rows</td></tr>
                           ) : account.relatedContacts.map((c, i) => (
                             <tr key={i} className={`border-b transition-colors ${isDark ? "border-[#27272A] hover:bg-[#27272A]" : "border-[#EFF6FF] hover:bg-[rgba(29,78,216,0.03)]"}`}>
                               <td className={`py-3 pr-4 font-medium cursor-pointer hover:underline ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>{c.firstName}</td>
@@ -523,7 +524,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                 </div>
 
                 {/* ── Member Accounts ── */}
-                <div id="section-member-accounts">
+                <div id="section-member-accounts" className="scroll-mt-20">
                   <SectionCard icon={Buildings} title="Member Accounts"
                     action={
                       <div className="flex items-center gap-2">
@@ -532,8 +533,8 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                           sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius: "8px", textTransform: "none", fontWeight: 700, fontSize: "0.73rem", boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover": { bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
                           New Account
                         </Button>
-                        <IconButton size="small"
-                          sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&:hover": { color: "#1D4ED8" }, borderRadius: "6px" }}>
+                        <IconButton size="small" aria-label="More actions"
+                          sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&:hover": { color: "#1D4ED8" }, borderRadius: "6px" }}>
                           <DotsThreeVertical size={16} weight="bold" />
                         </IconButton>
                       </div>
@@ -543,13 +544,13 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                         <thead>
                           <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                             {["Account Name", "Phone", "Website", "Account Type", "Industry", "Account Owner"].map(h => (
-                              <th key={h} className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider whitespace-nowrap ${isDark ? "text-[#71717A]" : "text-[#0C2472]"}`}>{h}</th>
+                              <th key={h} className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider whitespace-nowrap ${isDark ? "text-[#A1A1AA]" : "text-[#0C2472]"}`}>{h}</th>
                             ))}
                           </tr>
                         </thead>
                         <tbody>
                           {account.memberAccounts.length === 0 ? (
-                            <tr><td colSpan={6} className={`py-8 text-center text-[14px] ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}>No rows</td></tr>
+                            <tr><td colSpan={6} className={`py-8 text-center text-[14px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No rows</td></tr>
                           ) : account.memberAccounts.map((m, i) => (
                             <tr key={i} className={`border-b transition-colors ${isDark ? "border-[#27272A] hover:bg-[#27272A]" : "border-[#EFF6FF] hover:bg-[rgba(29,78,216,0.03)]"}`}>
                               <td className={`py-3 pr-4 font-medium cursor-pointer hover:underline ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>{m.name}</td>
@@ -568,7 +569,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
 
               </div>{/* end col-span-2 */}
 
-              <div className="lg:sticky lg:top-4 lg:self-start">
+              <div className="min-w-0 md:sticky md:top-[100px] md:self-start">
                 <RelatedListPanel onClickItem={label =>
                   document.getElementById(`section-${label.toLowerCase().replace(/\s+/g, "-")}`)?.scrollIntoView({ behavior: "smooth", block: "start" })
                 } />
@@ -578,8 +579,8 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
 
           {/* ══════════════ TIMELINE TAB ══════════════ */}
           {activeTab === "timeline" && (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-              <div className="lg:col-span-2">
+            <div className={DETAIL_GRID}>
+              <div className="min-w-0">
                 <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
                   <div className={`flex items-center gap-2.5 px-5 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
                     <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
@@ -590,8 +591,8 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
 
                   {account.timeline.length === 0 ? (
                     <div className="py-12 flex flex-col items-center justify-center gap-2">
-                      <ClockCounterClockwise size={28} color={isDark ? "#27272A" : "#E2E8F0"} weight="duotone" />
-                      <p className={`text-[14px] ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>No history yet</p>
+                      <ClockCounterClockwise size={28} color={isDark ? "#52525B" : "#CBD5E1"} weight="duotone" />
+                      <p className={`text-[14px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>No history yet</p>
                     </div>
                   ) : (() => {
                     const grouped: Record<string, TimelineEntry[]> = {};
@@ -606,7 +607,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                         {sortedDates.map(date => (
                           <div key={date}>
                             <div className="flex items-center gap-3 mb-4">
-                              <span className={`text-[12px] font-semibold whitespace-nowrap ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>
+                              <span className={`text-[12px] font-semibold whitespace-nowrap ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>
                                 {new Date(date).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}
                               </span>
                               <div className={`flex-1 h-px ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
@@ -617,7 +618,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                                 return (
                                   <div key={i} className="flex gap-4">
                                     <div className="w-16 shrink-0 text-right">
-                                      <span className={`text-[12px] font-medium ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>{entry.time}</span>
+                                      <span className={`text-[12px] font-medium ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{entry.time}</span>
                                     </div>
                                     <div className="flex flex-col items-center shrink-0">
                                       <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center z-10 shrink-0 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
@@ -630,12 +631,12 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                                         <p className={`text-[14px] leading-relaxed wrap-break-word ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
                                           <span className="font-bold">{entry.field}:</span>{" "}
                                           {entry.from
-                                            ? <span className={isDark ? "text-[#71717A]" : "text-slate-500"}>{entry.from} → {entry.to}</span>
-                                            : <span className={isDark ? "text-[#71717A]" : "text-slate-500"}>{entry.to}</span>
+                                            ? <span className={isDark ? "text-[#A1A1AA]" : "text-slate-500"}>{entry.from} → {entry.to}</span>
+                                            : <span className={isDark ? "text-[#A1A1AA]" : "text-slate-500"}>{entry.to}</span>
                                           }
                                         </p>
                                       )}
-                                      <p className={`text-[12px] mt-0.5 break-all ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>by {entry.by}</p>
+                                      <p className={`text-[12px] mt-0.5 break-all ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>by {entry.by}</p>
                                     </div>
                                   </div>
                                 );
@@ -649,7 +650,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                 </div>
               </div>{/* end col-span-2 */}
 
-              <div className="lg:sticky lg:top-4 lg:self-start">
+              <div className="min-w-0 md:sticky md:top-[100px] md:self-start">
                 <RelatedListPanel onClickItem={() => setActiveTab("overview")} />
               </div>
             </div>

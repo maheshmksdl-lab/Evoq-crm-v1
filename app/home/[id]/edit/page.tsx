@@ -166,7 +166,7 @@ const ChartTooltip = ({ active, payload, label }: any) => {
   if (!active || !payload?.length) return null;
   return (
     <div className="bg-slate-900 text-white px-3 py-2 rounded-xl text-xs shadow-xl border border-white/10">
-      {label && <p className="text-slate-400 text-[11px] mb-1">{label}</p>}
+      {label && <p className="text-slate-500 text-[11px] mb-1">{label}</p>}
       {payload.map((p: any, i: number) => (
         <p key={i} className="font-bold text-[12px]" style={{ color: p.color || p.fill }}>{p.value.toLocaleString('en-US')}</p>
       ))}
@@ -203,7 +203,7 @@ function KPICardPreview({ componentId, isDark }: { componentId: string; isDark: 
       <div className="flex items-end justify-between">
         <div>
           <div className={`text-[26px] font-extrabold tracking-tight leading-none ${isDark ? "text-white" : "text-[#0C2472]"}`}>{data.count}</div>
-          <span className={`inline-flex items-center gap-1 text-[11px] font-bold mt-2 px-2 py-0.5 rounded-full ${isDark ? "bg-black/40" : "bg-white/70"} ${isPositive ? "text-emerald-500" : "text-red-500"}`}>
+          <span className={`inline-flex items-center gap-1 text-[11px] font-bold mt-2 px-2 py-0.5 rounded-full ${isDark ? "bg-black/40" : "bg-white/70"} ${isPositive ? (isDark ? "text-emerald-400" : "text-emerald-700") : (isDark ? "text-red-400" : "text-red-700")}`}>
             {isPositive ? <ArrowUp size={10} weight="bold" /> : <ArrowDown size={10} weight="bold" />} {data.change}%
           </span>
         </div>
@@ -324,9 +324,9 @@ function TasksTable({ isDark }: { isDark: boolean }) {
           <div className="flex-1 min-w-0">
             <p className={`text-[13px] font-medium leading-snug ${isDark ? "text-[#E2E8F0]" : "text-slate-700"}`}>{task.title}</p>
             <div className="flex items-center gap-1.5 mt-0.5">
-              <span className="text-[11px] text-slate-400 font-medium">{task.dueDate}</span>
-              <span className={`text-[11px] ${isDark ? "text-slate-600" : "text-slate-300"}`}>·</span>
-              <span className="text-[11px] text-slate-400">{task.owner}</span>
+              <span className="text-[11px] text-slate-500 font-medium">{task.dueDate}</span>
+              <span className={`text-[11px] ${isDark ? "text-slate-600" : "text-slate-400"}`}>·</span>
+              <span className="text-[11px] text-slate-500">{task.owner}</span>
             </div>
           </div>
         </div>
@@ -340,7 +340,7 @@ function ReportMetricPreview({ item, isDark }: { item: CanvasItem; isDark: boole
   return (
     <div className="px-5 py-4">
       <div className={`text-[26px] font-extrabold tracking-tight leading-none ${isDark ? "text-white" : "text-[#0C2472]"}`}>{count}</div>
-      <p className={`text-[11px] font-semibold mt-1.5 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Total Records</p>
+      <p className={`text-[11px] font-semibold mt-1.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Total Records</p>
     </div>
   );
 }
@@ -353,7 +353,7 @@ function CustomChartPreview({ chartType, isDark }: { chartType: string; isDark: 
     return (
       <div className="px-5 py-4">
         <div className={`text-[26px] font-extrabold tracking-tight leading-none ${isDark ? "text-white" : "text-[#0C2472]"}`}>9</div>
-        <span className="inline-flex items-center gap-1 text-[11px] font-bold mt-2 px-2.5 py-1 rounded-full text-emerald-500" style={{ backgroundColor: isDark ? "rgba(16,185,129,0.15)" : "#D1FAE5" }}>
+        <span className={`inline-flex items-center gap-1 text-[11px] font-bold mt-2 px-2.5 py-1 rounded-full ${isDark ? "text-emerald-400" : "text-emerald-700"}`} style={{ backgroundColor: isDark ? "rgba(16,185,129,0.15)" : "#D1FAE5" }}>
           <ArrowUp size={10} weight="bold" /> 12%
         </span>
       </div>
@@ -672,7 +672,7 @@ export default function HomePageEditorPage() {
                   Reset to Default
                 </Button>
               </Tooltip>
-              <Button variant="text" onClick={handleCancel} sx={{ color: isDark ? "#A1A1AA" : "#64748B", textTransform: "none", fontWeight: 700, fontSize: "13px", borderRadius: "9px", px: 2.5, "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
+              <Button variant="text" onClick={handleCancel} sx={{ color: isDark ? "#A1A1AA" : "#475569", textTransform: "none", fontWeight: 700, fontSize: "13px", borderRadius: "9px", px: 2.5, "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
                 Cancel
               </Button>
               <Button variant="contained" onClick={handleSave} sx={{ bgcolor: "#1D4ED8", color: "white", textTransform: "none", fontWeight: 700, fontSize: "13px", borderRadius: "9px", px: 3, boxShadow: "0 1px 8px #1D4ED833", "&:hover": { bgcolor: "#2563EB" } }}>
@@ -703,7 +703,7 @@ export default function HomePageEditorPage() {
             <div className="flex-1 overflow-y-auto px-2 py-4 space-y-4">
               <div>
                 <div className="flex items-center justify-between px-2 mb-2">
-                  <div className={`text-[11px] font-bold uppercase tracking-widest ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>Dashboard Components</div>
+                  <div className={`text-[11px] font-bold uppercase tracking-widest ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Dashboard Components</div>
                   <Tooltip title="Add custom component">
                     <IconButton size="small" onClick={() => setAddComponentOpen(true)}
                       sx={{ p: 0.3, borderRadius: "999px", bgcolor: "#1D4ED8", color: "white", "&:hover": { bgcolor: "#2563EB" } }}>
@@ -721,7 +721,7 @@ export default function HomePageEditorPage() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className={`text-[13px] font-semibold truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{comp.title}</div>
-                          <div className={`text-[11px] truncate ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>{comp.description}</div>
+                          <div className={`text-[11px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{comp.description}</div>
                         </div>
                       </div>
                     ))}
@@ -731,7 +731,7 @@ export default function HomePageEditorPage() {
 
               {filteredReports.length > 0 && (
                 <div>
-                  <div className={`text-[11px] font-bold uppercase tracking-widest px-2 mb-2 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>Report Components</div>
+                  <div className={`text-[11px] font-bold uppercase tracking-widest px-2 mb-2 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Report Components</div>
                   <div className="space-y-1">
                     {filteredReports.map(comp => (
                       <div key={comp.id} draggable onDragStart={() => handleDragStart(comp)} onClick={() => addComponent(comp)}
@@ -741,7 +741,7 @@ export default function HomePageEditorPage() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className={`text-[13px] font-semibold truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{comp.title}</div>
-                          <div className={`text-[11px] truncate ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>{comp.description}</div>
+                          <div className={`text-[11px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{comp.description}</div>
                         </div>
                       </div>
                     ))}
@@ -839,7 +839,7 @@ export default function HomePageEditorPage() {
                       if (!reportId || !reportName) return null;
                       return (
                         <button onClick={() => router.push(`/reports/${reportId}`)}
-                          className={`w-full flex items-center justify-center gap-1.5 px-5 py-2 border-t text-[11px] font-semibold transition-colors ${isDark ? "border-[#27272A] text-[#71717A] hover:text-[#93C5FD] hover:bg-[#111113]" : "border-border-light text-[#4A5675] hover:text-brand-700 hover:bg-surface"}`}>
+                          className={`w-full flex items-center justify-center gap-1.5 px-5 py-2 border-t text-[11px] font-semibold transition-colors ${isDark ? "border-[#27272A] text-[#A1A1AA] hover:text-[#93C5FD] hover:bg-[#111113]" : "border-border-light text-[#4A5675] hover:text-brand-700 hover:bg-surface"}`}>
                           <FileText size={12} weight="duotone" />
                           <span>Source Report: {reportName}</span>
                           <ArrowSquareOut size={11} weight="bold" />
@@ -875,7 +875,7 @@ export default function HomePageEditorPage() {
           <div className="space-y-4">
             <div>
               <div className="flex items-center justify-between px-1 mb-2">
-                <div className={`text-[11px] font-bold uppercase tracking-widest ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>Dashboard Components</div>
+                <div className={`text-[11px] font-bold uppercase tracking-widest ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Dashboard Components</div>
                 <Tooltip title="Add custom component">
                   <IconButton size="small" onClick={() => { setMobilePickerOpen(false); setAddComponentOpen(true); }}
                     sx={{ p: 0.3, borderRadius: "999px", bgcolor: "#1D4ED8", color: "white", "&:hover": { bgcolor: "#2563EB" } }}>
@@ -893,7 +893,7 @@ export default function HomePageEditorPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className={`text-[13px] font-semibold truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{comp.title}</div>
-                        <div className={`text-[11px] truncate ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>{comp.description}</div>
+                        <div className={`text-[11px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{comp.description}</div>
                       </div>
                     </div>
                   ))}
@@ -903,7 +903,7 @@ export default function HomePageEditorPage() {
 
             {filteredReports.length > 0 && (
               <div>
-                <div className={`text-[11px] font-bold uppercase tracking-widest px-1 mb-2 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>Report Components</div>
+                <div className={`text-[11px] font-bold uppercase tracking-widest px-1 mb-2 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Report Components</div>
                 <div className="space-y-1">
                   {filteredReports.map(comp => (
                     <div key={comp.id} onClick={() => addComponent(comp)}
@@ -913,7 +913,7 @@ export default function HomePageEditorPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className={`text-[13px] font-semibold truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{comp.title}</div>
-                        <div className={`text-[11px] truncate ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>{comp.description}</div>
+                        <div className={`text-[11px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{comp.description}</div>
                       </div>
                     </div>
                   ))}
@@ -999,7 +999,7 @@ export default function HomePageEditorPage() {
             ))}
           </div>
 
-          <div className={`text-[11px] font-bold uppercase tracking-widest mt-4 mb-2 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>Select Type</div>
+          <div className={`text-[11px] font-bold uppercase tracking-widest mt-4 mb-2 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Select Type</div>
           <div className="flex gap-2.5 overflow-x-auto pb-4">
             {CHART_TYPES.map(ct => (
               <button key={ct.key} onClick={() => setAcType(ct.key)}
@@ -1039,7 +1039,7 @@ export default function HomePageEditorPage() {
                   <div className="grid grid-cols-[140px_1fr] items-center gap-3">
                     <div />
                     <select value={acRelatedModule} onChange={e => setAcRelatedModule(e.target.value)}
-                      className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#71717A]" : "bg-white border-border-light text-slate-400"}`}>
+                      className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#A1A1AA]" : "bg-white border-border-light text-slate-500"}`}>
                       <option value="">Select Related Module</option>
                       {MODULE_OPTIONS.filter(m => m !== acModule).map(m => <option key={m} value={m}>{m}</option>)}
                     </select>
@@ -1063,7 +1063,7 @@ export default function HomePageEditorPage() {
                     <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Grouping</label>
                     <div className="flex items-center gap-2">
                       <select value={acGrouping} onChange={e => setAcGrouping(e.target.value)}
-                        className={`flex-1 px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#71717A]" : "bg-white border-border-light text-slate-400"}`}>
+                        className={`flex-1 px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#A1A1AA]" : "bg-white border-border-light text-slate-500"}`}>
                         <option value="">Select grouping</option>
                         {MODULE_OPTIONS.map(m => <option key={m} value={m}>{m}</option>)}
                       </select>
@@ -1086,7 +1086,7 @@ export default function HomePageEditorPage() {
                   <div className="grid grid-cols-[140px_1fr] items-center gap-3">
                     <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Report</label>
                     <select value={acReportId} onChange={e => { setAcReportId(e.target.value); setAcMeasureField(""); setAcGroupingField(""); }}
-                      className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"} ${!acReportId ? (isDark ? "text-[#71717A]" : "text-slate-400") : ""}`}>
+                      className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"} ${!acReportId ? (isDark ? "text-[#A1A1AA]" : "text-slate-500") : ""}`}>
                       <option value="">Select a report</option>
                       {reportsInCollection.map(r => <option key={r.sourceReportId} value={r.sourceReportId}>{r.sourceReportName}</option>)}
                     </select>
@@ -1094,7 +1094,7 @@ export default function HomePageEditorPage() {
                   <div className="grid grid-cols-[140px_1fr] items-center gap-3">
                     <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Measure (Y-Axis)</label>
                     <select value={acMeasureField} onChange={e => setAcMeasureField(e.target.value)} disabled={!acReportId}
-                      className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden ${acReportId ? "cursor-pointer" : "cursor-not-allowed"} ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"} ${!acReportId ? (isDark ? "text-[#71717A]" : "text-slate-400") : ""}`}>
+                      className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden ${acReportId ? "cursor-pointer" : "cursor-not-allowed"} ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"} ${!acReportId ? (isDark ? "text-[#A1A1AA]" : "text-slate-500") : ""}`}>
                       <option value="">{acReportId ? "Select a measure" : "Select a report first"}</option>
                       {reportFields.map(f => <option key={f} value={f}>{formatFieldLabel(f)}</option>)}
                     </select>
@@ -1102,7 +1102,7 @@ export default function HomePageEditorPage() {
                   <div className="grid grid-cols-[140px_1fr] items-center gap-3">
                     <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Grouping</label>
                     <select value={acGroupingField} onChange={e => setAcGroupingField(e.target.value)} disabled={!acReportId}
-                      className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden ${acReportId ? "cursor-pointer" : "cursor-not-allowed"} ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"} ${!acReportId ? (isDark ? "text-[#71717A]" : "text-slate-400") : ""}`}>
+                      className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden ${acReportId ? "cursor-pointer" : "cursor-not-allowed"} ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"} ${!acReportId ? (isDark ? "text-[#A1A1AA]" : "text-slate-500") : ""}`}>
                       <option value="">{acReportId ? "Select a grouping" : "Select a report first"}</option>
                       {reportFields.map(f => <option key={f} value={f}>{formatFieldLabel(f)}</option>)}
                     </select>
@@ -1123,7 +1123,7 @@ export default function HomePageEditorPage() {
                   </div>
 
                   <div className={`pt-3 mt-1 border-t ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
-                    <div className={`text-[11px] font-bold uppercase tracking-widest mb-2.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>Display Options</div>
+                    <div className={`text-[11px] font-bold uppercase tracking-widest mb-2.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Display Options</div>
                     <div className="space-y-2.5">
                       <label className="flex items-center gap-2 cursor-pointer">
                         <input type="checkbox" checked={acBenchmark} onChange={e => setAcBenchmark(e.target.checked)} className="w-4 h-4 accent-brand-700" />

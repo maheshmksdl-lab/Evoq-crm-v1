@@ -11,7 +11,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
-import { getDataGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
+import { listGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
 import { useRouter } from "next/navigation";
 import {
   House, CaretRight, Plus, MagnifyingGlass, FunnelSimple,
@@ -71,9 +71,9 @@ const STATUS_CFG_DARK: Record<string, { bg: string; text: string; dot: string }>
 };
 
 const PRIORITY_CFG: Record<string, { bg: string; text: string }> = {
-  "High":   { bg: "#FEF2F2", text: "#DC2626" },
-  "Medium": { bg: "#FEF3C7", text: "#D97706" },
-  "Low":    { bg: "#F0FDF4", text: "#16A34A" },
+  "High":   { bg: "#FEF2F2", text: "#B91C1C" },
+  "Medium": { bg: "#FEF3C7", text: "#B45309" },
+  "Low":    { bg: "#F0FDF4", text: "#15803D" },
 };
 
 // ---------------------------------------------
@@ -198,7 +198,7 @@ export default function TasksPage() {
       renderHeader: () => <ColHeader label="Type" icon={Tag} />,
       renderCell: (params) => (
         <p className={`text-[15px]/[20px] truncate mb-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
-          {params.row.type || <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+          {params.row.type || <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </p>
       ),
     },
@@ -217,8 +217,8 @@ export default function TasksPage() {
       field: "dueDate", headerName: "Due Date", flex: 1, minWidth: 100, sortable: false,
       renderHeader: () => <ColHeader label="Due Date" icon={CalendarBlank} />,
       renderCell: (params) => (
-        <p className={`text-[13px]/[16px] truncate mb-0 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
-          {params.row.dueDate || <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+        <p className={`text-[13px]/[16px] truncate mb-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
+          {params.row.dueDate || <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </p>
       ),
     },
@@ -234,7 +234,7 @@ export default function TasksPage() {
             <span className="w-[5px] h-[5px] rounded-full shrink-0" style={{ backgroundColor: statusCfg.dot }} />
             {params.row.status}
           </span>
-        ) : <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>;
+        ) : <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>;
       },
     },
     {
@@ -247,7 +247,7 @@ export default function TasksPage() {
             style={{ backgroundColor: priCfg.bg, color: priCfg.text }}>
             {params.row.priority}
           </span>
-        ) : <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>;
+        ) : <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>;
       },
     },
     {
@@ -255,7 +255,7 @@ export default function TasksPage() {
       renderHeader: () => <ColHeader label="Contact" icon={User} />,
       renderCell: (params) => (
         <p className={`text-[15px]/[20px] truncate mb-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
-          {params.row.contact || <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+          {params.row.contact || <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </p>
       ),
     },
@@ -264,7 +264,7 @@ export default function TasksPage() {
       renderHeader: () => <ColHeader label="Related To" icon={LinkSimple} />,
       renderCell: (params) => (
         <p className={`text-[15px]/[20px] truncate mb-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
-          {params.row.relatedTo || <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+          {params.row.relatedTo || <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </p>
       ),
     },
@@ -272,19 +272,19 @@ export default function TasksPage() {
       field: "taskOwner", headerName: "Task Owner", flex: 2, minWidth: 200, sortable: false,
       renderHeader: () => <ColHeader label="Task Owner" icon={UserCircle} />,
       renderCell: (params) => (
-        <p className={`text-[13px]/[16px] truncate mb-0 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
-          {params.row.taskOwner || <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+        <p className={`text-[13px]/[16px] truncate mb-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
+          {params.row.taskOwner || <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </p>
       ),
     },
     {
       field: "actions", headerName: "", width: 50, sortable: false, disableColumnMenu: true,
-      renderCell: () => (
-        <div className="flex justify-end w-full opacity-0 group-hover:opacity-100 transition-opacity">
+      renderCell: (params) => (
+        <div className="row-actions flex justify-end w-full">
           <Tooltip title="Actions">
-            <IconButton size="small" onClick={e => e.stopPropagation()}
+            <IconButton size="small" aria-label={`Actions for ${params.row.subject || "task"}`} onClick={e => e.stopPropagation()}
               sx={{ borderRadius: "6px", p: 0.5, "&:hover": { bgcolor: isDark ? "#27272A" : "#E3ECFC" } }}>
-              <DotsThreeVertical size={15} color="#94A3B8" weight="duotone" />
+              <DotsThreeVertical size={16} color={isDark ? "#A1A1AA" : "#64748B"} weight="bold" />
             </IconButton>
           </Tooltip>
         </div>
@@ -300,14 +300,14 @@ export default function TasksPage() {
           {/* -- Breadcrumb + Header -- */}
           <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
             <div>
-              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
+              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                 <House size={16} weight="duotone" />
                 <CaretRight size={12} weight="duotone" />
                 <Link href="/tasks" className={`transition-colors font-medium ${isDark ? "hover:text-[#D4D4D8]" : "hover:text-brand-700"}`}>Tasks</Link>
               </div>
               <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
                 <h1 className="font-heading text-lg sm:text-[22px]/[28px] font-semibold text-slate-900 tracking-tight m-0">Tasks</h1>
-                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-xs flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#E4E4E7]" : "bg-surface border-border-light text-slate-400"}`}>
+                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-xs flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#A1A1AA]" : "bg-surface border-border-light text-slate-500"}`}>
                   {ALL_TASKS.length} total
                 </span>
               </div>
@@ -315,13 +315,13 @@ export default function TasksPage() {
 
             <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
               {/* View toggle */}
-              <div className={`flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-white border-slate-100"}`}>
+              <div className={`flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
                 {([{ k: "list", Icon: List, label: "List" }, { k: "grid", Icon: GridFour, label: "Grid" }] as { k: string; Icon: ElementType; label: string }[]).map(({ k, Icon, label }) => (
-                  <button key={k} onClick={() => setView(k as "list" | "grid")}
+                  <button key={k} onClick={() => setView(k as "list" | "grid")} aria-pressed={view === k}
                     className={`flex items-center gap-1 px-2 sm:px-2.5 py-[6px] sm:py-[7px] rounded-lg text-[13px] sm:text-[14px]/[18px] font-medium transition-all ${
                       view === k
-                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-surface text-brand-700"
-                        : isDark ? "text-[#E4E4E7] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-surface text-slate-400 hover:bg-border-light"
+                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-white text-brand-700 shadow-xs"
+                        : isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "text-slate-600 hover:bg-white/70 hover:text-brand-700"
                     }`}>
                     <Icon size={14} weight="duotone" />
                     <span className="hidden sm:inline">{label}</span>
@@ -340,7 +340,7 @@ export default function TasksPage() {
               <Tooltip title="More options">
                 <IconButton size="small" onClick={e => setMoreAnchor(e.currentTarget)}
                   sx={{ borderRadius: "8px", p: 0.8, bgcolor: isDark ? "#0A0A0A" : "#f9fbff", border: isDark ? "1px solid #27272A" : "1px solid #E3ECFC", "&:hover": { bgcolor: isDark ? "#27272A" : "#E3ECFC" } }}>
-                  <DotsThreeVertical size={16} color={isDark ? "#5A7089" : "#334155"} weight="bold" />
+                  <DotsThreeVertical size={16} color={isDark ? "#D4D4D8" : "#334155"} weight="bold" />
                 </IconButton>
               </Tooltip>
             </div>
@@ -353,7 +353,7 @@ export default function TasksPage() {
               const active = activeFilter === tab;
               if (tab !== "All" && cnt === 0) return null;
               return (
-                <button key={tab} onClick={() => setActiveFilter(tab)}
+                <button key={tab} onClick={() => setActiveFilter(tab)} aria-pressed={active}
                   className={`flex items-center gap-1.5 px-3 py-[7px] rounded-xl text-[14px]/[18px] font-medium whitespace-nowrap transition-all shrink-0 border ${
                     active
                       ? isDark ? "bg-[#18181B] text-white shadow-xs shadow-[#27272A]/10 border-[#27272A]" : "bg-brand-700 text-white shadow-xs shadow-[#1D4ED8]/25 border-brand-700"
@@ -374,13 +374,13 @@ export default function TasksPage() {
 
           {/* -- Toolbar -- */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
-            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 sm:w-72 focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#60A5FA] transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
+            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 basis-full sm:basis-auto sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
-              <InputBase placeholder="Search tasks…" value={search}
+              <InputBase placeholder="Search tasks…" value={search} inputProps={{ "aria-label": "Search tasks" }}
                 onChange={e => setSearch(e.target.value)}
                 sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#94A3B8", opacity: 1 } }}
               />
-              {search && <button onClick={() => setSearch("")} className="text-slate-300 hover:text-slate-500 text-sm">✕</button>}
+              {search && <button onClick={() => setSearch("")} aria-label="Clear search" className={`rounded-md px-1 text-[15px]/[20px] transition-colors ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}`}>✕</button>}
             </div>
 
             <div className="flex items-center gap-2.5 flex-wrap">
@@ -431,7 +431,7 @@ export default function TasksPage() {
             </Button>
             </div>
 
-            <span className={`sm:ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#E4E4E7] bg-[#0A0A0A]" : "text-slate-400 bg-surface"}`}>
+            <span aria-live="polite" className={`text-right sm:ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#A1A1AA] bg-[#0A0A0A]" : "text-slate-500 bg-surface"}`}>
               {sorted.length} of {ALL_TASKS.length} records
             </span>
           </div>
@@ -442,7 +442,7 @@ export default function TasksPage() {
               <MenuItem key={col.key} onClick={() => toggleColumn(col.key as string)}
                 sx={{ mx: 0.5, borderRadius: "8px", py: 0.5, "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
                 <Checkbox size="small" checked={visibleColumns.has(col.key as string)}
-                  sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#CBD5E1", "&.Mui-checked": { color: "#1D4ED8" } }} />
+                  sx={{ p: 0.5, color: isDark ? "#71717A" : "#94A3B8", "&.Mui-checked": { color: "#1D4ED8" } }} />
                 <ListItemText primary={col.label} primaryTypographyProps={{ fontSize: "13.5px", color: isDark ? "#D4D4D8" : "#334155" }} />
               </MenuItem>
             ))}
@@ -456,7 +456,7 @@ export default function TasksPage() {
 
           {/* -- Bulk action bar -- */}
           {selected.length > 0 && (
-            <div className={`flex items-center gap-3 px-4 py-2.5 rounded-xl border shadow-xs flex-wrap ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
+            <div role="toolbar" aria-label="Bulk actions" className={`flex items-center gap-x-3 gap-y-2 px-4 py-2.5 rounded-xl border shadow-xs flex-wrap ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
               <div className="flex items-center gap-2">
                 <span className="w-5 h-5 rounded-md bg-brand-700 text-white flex items-center justify-center text-[12px]">{selected.length}</span>
                 <span className={`text-[14px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-[#0C2472]"}`}>selected</span>
@@ -464,7 +464,7 @@ export default function TasksPage() {
               <div className={`w-px h-4 hidden sm:block ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
               <button className={`text-[14px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>Update Status</button>
               <button className={`text-[14px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>Assign Owner</button>
-              <button onClick={() => setSelected([])} className={`sm:ml-auto text-[14px] font-medium transition-colors ${isDark ? "text-[#9CA3AF] hover:text-[#A1A1AA]" : "text-slate-400 hover:text-slate-600"}`}>Clear</button>
+              <button onClick={() => setSelected([])} className={`sm:ml-auto text-[14px] font-medium transition-colors ${isDark ? "text-[#9CA3AF] hover:text-[#A1A1AA]" : "text-slate-500 hover:text-slate-600"}`}>Clear</button>
               <button className={`flex items-center gap-1.5 text-[14px] font-medium transition-colors ${isDark ? "text-red-400 hover:text-red-300" : "text-red-600 hover:text-red-700"}`}>
                 <Trash size={14} weight="duotone" /> Delete
               </button>
@@ -493,16 +493,16 @@ export default function TasksPage() {
               pageSizeOptions={ROWS_PER_PAGE_OPTIONS}
               slots={{
                 noRowsOverlay: () => (
-                  <div className="py-16 text-center">
+                  <div className="py-16 px-4 text-center break-words" role="status">
                     <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${isDark ? "bg-[#27272A]" : "bg-surface"}`}>
                       <CheckCircle size={22} color={isDark ? "#3F3F46" : "#94A3B8"} weight="duotone" />
                     </div>
                     <p className={`font-heading text-sm font-semibold ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>No tasks found</p>
-                    <p className={`text-xs mt-1 ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}>Try adjusting your search or filter</p>
+                    <p className={`text-xs mt-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Try adjusting your search or filter</p>
                   </div>
                 ),
               }}
-              sx={getDataGridSx(isDark)}
+              sx={listGridSx(isDark)}
             />
           </div>
           )}

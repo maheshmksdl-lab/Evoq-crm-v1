@@ -14,7 +14,7 @@ import Avatar from "@mui/material/Avatar";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
-import { getDataGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
+import { listGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
 import {
   Plus, MagnifyingGlass, SlidersHorizontal, SortAscending, Columns,
   ArrowsDownUp, List, GridFour, House, CaretRight, Trash,
@@ -160,7 +160,7 @@ export default function AccountsPage() {
         <div className={`text-[15px]/[20px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
           {params.row.phone
             ? <span className="flex items-center gap-1"><Phone size={11} color="#94A3B8" weight="duotone" />{params.row.phone}</span>
-            : <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+            : <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </div>
       ),
     },
@@ -169,7 +169,7 @@ export default function AccountsPage() {
       renderHeader: () => <ColHeader label="Account Type" icon={Briefcase} />,
       renderCell: (params) => {
         const typCfg = TYPE_CFG[params.row.accountType];
-        if (!typCfg) return <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>;
+        if (!typCfg) return <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>;
         return (
           <span className="self-center inline-flex items-center gap-1.5 text-[13px] px-2 py-[3px] rounded-full leading-none"
             style={{
@@ -200,12 +200,12 @@ export default function AccountsPage() {
     creation: {
       field: "creation", headerName: "Creation", flex: 1.4, minWidth: 140, sortable: false,
       renderHeader: () => <ColHeader label="Creation" icon={CalendarBlank} />,
-      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{params.row.creation}</p>,
+      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{params.row.creation}</p>,
     },
     modified: {
       field: "modified", headerName: "Modified", flex: 1.4, minWidth: 140, sortable: false,
       renderHeader: () => <ColHeader label="Modified" icon={CalendarBlank} />,
-      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{params.row.modified}</p>,
+      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{params.row.modified}</p>,
     },
   };
 
@@ -213,11 +213,11 @@ export default function AccountsPage() {
     ...COL_DEFS.filter(c => visibleCols.has(c.key)).map(c => COLUMN_BUILDERS[c.key]),
     {
       field: "actions", headerName: "", width: 50, sortable: false, disableColumnMenu: true,
-      renderCell: () => (
-        <div className="flex justify-end w-full opacity-0 group-hover:opacity-100 transition-opacity">
+      renderCell: (params) => (
+        <div className="row-actions flex justify-end w-full">
           <Tooltip title="Actions">
-            <IconButton size="small" onClick={e => e.stopPropagation()} sx={{ borderRadius: "6px", p: 0.5, "&:hover": { bgcolor: isDark ? "#27272A" : "#E3ECFC" } }}>
-              <DotsThreeVertical size={15} color="#94A3B8" weight="duotone" />
+            <IconButton size="small" aria-label={`Actions for ${params.row.name}`} onClick={e => e.stopPropagation()} sx={{ borderRadius: "6px", p: 0.5, "&:hover": { bgcolor: isDark ? "#27272A" : "#E3ECFC" } }}>
+              <DotsThreeVertical size={16} color={isDark ? "#A1A1AA" : "#64748B"} weight="bold" />
             </IconButton>
           </Tooltip>
         </div>
@@ -228,36 +228,36 @@ export default function AccountsPage() {
   return (
     <div className="sidebar-content app-canvas flex-1 flex flex-col min-h-screen overflow-auto">
 
-      <main className="flex-1 px-8 py-6 space-y-5 animate-fade-in">
+      <main className="flex-1 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-3 sm:space-y-5 animate-fade-in">
 
           {/* -- Breadcrumb + Header -- */}
-          <div className="flex items-start justify-between">
+          <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
             <div>
-              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
+              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                 <House size={16} weight="duotone" />
                 <CaretRight size={12} weight="duotone" />
                 <Link href="/accounts" className={`transition-colors font-medium ${isDark ? "hover:text-[#D4D4D8]" : "hover:text-brand-700"}`}>Accounts</Link>
               </div>
-              <div className="flex items-center gap-2.5">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
                 <h1 className="font-heading text-[22px]/[28px] font-semibold text-slate-900 tracking-tight m-0">Accounts</h1>
-                <span className={`text-[13px]/[16px] font-medium border px-2.5 py-1 rounded-full shadow-xs flex items-center ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#E4E4E7]" : "bg-surface border-border-light text-slate-400"}`}>
+                <span className={`text-[13px]/[16px] font-medium border px-2.5 py-1 rounded-full shadow-xs flex items-center ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#A1A1AA]" : "bg-surface border-border-light text-slate-500"}`}>
                   {ALL_ACCOUNTS.length} total
                 </span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2 mt-1">
+            <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
               {/* View toggle */}
-              <div className={`flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-white border-slate-100"}`}>
+              <div className={`flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
                 {[
                   { k: "list", Icon: List,     label: "List" },
                   { k: "grid", Icon: GridFour, label: "Grid" },
                 ].map(({ k, Icon, label }) => (
-                  <button key={k} onClick={() => setView(k as typeof view)}
+                  <button key={k} onClick={() => setView(k as typeof view)} aria-pressed={view === k}
                     className={`flex items-center gap-1.5 px-2.5 py-[7px] rounded-lg text-[14px]/[18px] font-medium transition-all ${
                       view === k
-                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-surface text-brand-700"
-                        : isDark ? "text-[#E4E4E7] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-surface text-slate-400 hover:bg-border-light"
+                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-white text-brand-700 shadow-xs"
+                        : isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "text-slate-600 hover:bg-white/70 hover:text-brand-700"
                     }`}>
                     <Icon size={14} weight="duotone" />{label}
                   </button>
@@ -274,16 +274,17 @@ export default function AccountsPage() {
           </div>
 
           {/* -- Toolbar -- */}
-          <div className="flex items-center gap-2.5">
-            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 w-72 focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#60A5FA] transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
+          <div className="flex flex-wrap items-center gap-2.5">
+            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 basis-full sm:basis-auto sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
-              <InputBase placeholder="Search accounts…" value={search}
+              <InputBase placeholder="Search accounts…" value={search} inputProps={{ "aria-label": "Search accounts" }}
                 onChange={e => setSearch(e.target.value)}
                 sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#94A3B8", opacity: 1 } }}
               />
-              {search && <button onClick={() => setSearch("")} className={`text-sm transition-colors ${isDark ? "text-[#52525B] hover:text-[#A1A1AA]" : "text-slate-300 hover:text-slate-500"}`}>✕</button>}
+              {search && <button onClick={() => setSearch("")} aria-label="Clear search" className={`rounded-md px-1 text-[15px]/[20px] transition-colors ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}`}>✕</button>}
             </div>
 
+            <div className="grid grid-cols-3 gap-2 w-full sm:w-auto sm:flex sm:items-center sm:gap-2.5">
             <Button variant="outlined" size="small"
               startIcon={activeFilters.length > 0
                 ? <Badge badgeContent={activeFilters.length} color="primary" sx={{ "& .MuiBadge-badge": { fontSize: "0.55rem", height: 14, minWidth: 14 } }}>
@@ -296,7 +297,7 @@ export default function AccountsPage() {
                 borderColor: activeFilters.length > 0 ? "#1D4ED8" : isDark ? "#27272A" : "#E3ECFC",
                 color: activeFilters.length > 0 ? "#fff" : isDark ? "#E4E4E7" : "#0C2472",
                 bgcolor: activeFilters.length > 0 ? "#1D4ED8" : isDark ? "#0F0F0F" : "#E3ECFC",
-                borderRadius: "9px", textTransform: "none", fontWeight: 500, fontSize: "14px",
+                borderRadius: "9px", textTransform: "none", fontWeight: 500, fontSize: "14px", minWidth: 0,
                 "&:hover": {
                   borderColor: activeFilters.length > 0 ? "#1640B8" : "#1D4ED8",
                   color: activeFilters.length > 0 ? "#fff" : "#0C2472",
@@ -313,7 +314,7 @@ export default function AccountsPage() {
                 borderColor: isDark ? "#27272A" : "#E3ECFC",
                 color: isDark ? "#E4E4E7" : "#0C2472",
                 bgcolor: isDark ? "#0F0F0F" : "#E3ECFC",
-                borderRadius: "9px", textTransform: "none", fontWeight: 500, fontSize: "14px",
+                borderRadius: "9px", textTransform: "none", fontWeight: 500, fontSize: "14px", minWidth: 0,
                 "&:hover": { borderColor: "#1D4ED8", color: "#0C2472", bgcolor: isDark ? "#0A0A0A" : "#DCE6FB" },
               }}>
               Columns
@@ -327,20 +328,21 @@ export default function AccountsPage() {
                 borderColor: isDark ? "#27272A" : "#E3ECFC",
                 color: isDark ? "#E4E4E7" : "#0C2472",
                 bgcolor: isDark ? "#0F0F0F" : "#E3ECFC",
-                borderRadius: "9px", textTransform: "none", fontWeight: 500, fontSize: "14px",
+                borderRadius: "9px", textTransform: "none", fontWeight: 500, fontSize: "14px", minWidth: 0,
                 "&:hover": { borderColor: "#1D4ED8", color: "#0C2472", bgcolor: isDark ? "#0A0A0A" : "#DCE6FB" },
               }}>
               Sort{activeSorts.length > 0 ? ` (${activeSorts.length})` : ""}
             </Button>
+            </div>
 
-            <span className={`ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#E4E4E7] bg-[#0A0A0A]" : "text-slate-400 bg-surface"}`}>
+            <span aria-live="polite" className={`w-full sm:w-auto text-right sm:ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#A1A1AA] bg-[#0A0A0A]" : "text-slate-500 bg-surface"}`}>
               {sorted.length} of {ALL_ACCOUNTS.length} records
             </span>
           </div>
 
           {/* -- Bulk action bar -- */}
           {selected.length > 0 && (
-            <div className={`flex items-center gap-3 px-4 py-2.5 rounded-xl border animate-slide-up shadow-xs ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
+            <div role="toolbar" aria-label="Bulk actions" className={`flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-2.5 rounded-xl border animate-slide-up shadow-xs ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
               <div className="flex items-center gap-2">
                 <span className="w-5 h-5 rounded-md bg-brand-700 text-white flex items-center justify-center text-[12px]">{selected.length}</span>
                 <span className={`text-[14px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-[#0C2472]"}`}>selected</span>
@@ -348,7 +350,7 @@ export default function AccountsPage() {
               <div className={`w-px h-4 ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
               <button className={`text-[14px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>Assign Owner</button>
               <button className={`text-[14px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>Update Type</button>
-              <button onClick={() => setSelected([])} className={`ml-auto text-[14px] font-medium transition-colors ${isDark ? "text-[#9CA3AF] hover:text-[#A1A1AA]" : "text-slate-400 hover:text-slate-600"}`}>Clear</button>
+              <button onClick={() => setSelected([])} className={`ml-auto text-[14px] font-medium transition-colors ${isDark ? "text-[#9CA3AF] hover:text-[#A1A1AA]" : "text-slate-500 hover:text-slate-600"}`}>Clear</button>
               <button className={`flex items-center gap-1.5 text-[14px] font-medium transition-colors ${isDark ? "text-red-400 hover:text-red-300" : "text-red-600 hover:text-red-700"}`}>
                 <Trash size={14} weight="duotone" /> Delete
               </button>
@@ -382,16 +384,16 @@ export default function AccountsPage() {
                 pageSizeOptions={ROWS_PER_PAGE_OPTIONS}
                 slots={{
                   noRowsOverlay: () => (
-                    <div className="py-16 text-center">
+                    <div className="py-16 px-4 text-center break-words" role="status">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${isDark ? "bg-[#0A0A0A]" : "bg-surface"}`}>
                         <Buildings size={22} color="#94A3B8" weight="duotone" />
                       </div>
                       <p className={`font-heading text-sm font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No accounts found</p>
-                      <p className={`text-xs mt-1 ${isDark ? "text-[#52525B]" : "text-slate-300"}`}>Try adjusting your search or filters</p>
+                      <p className={`text-xs mt-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Try adjusting your search or filters</p>
                     </div>
                   ),
                 }}
-                sx={getDataGridSx(isDark)}
+                sx={listGridSx(isDark)}
               />
             </div>
           )}

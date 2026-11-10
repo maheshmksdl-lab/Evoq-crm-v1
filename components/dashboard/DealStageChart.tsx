@@ -37,9 +37,9 @@ const CustomTooltip = ({ active, payload, label }: any) => {
   const pct = ((payload[0].value / TOTAL) * 100).toFixed(1);
   return (
     <div className="bg-slate-900 text-white px-3 py-2 rounded-xl text-xs shadow-xl border border-white/10">
-      <p className="text-slate-400 text-[12px] mb-1">{label}</p>
+      <p className="text-slate-500 text-[12px] mb-1">{label}</p>
       <p className="font-bold text-[15px]">{payload[0].value} deals</p>
-      <p className="text-slate-400 text-[12px] mt-0.5">{pct}% of pipeline</p>
+      <p className="text-slate-500 text-[12px] mt-0.5">{pct}% of pipeline</p>
     </div>
   );
 };
@@ -55,7 +55,7 @@ export default function DealStageChart({ isDark = false }: { isDark?: boolean })
       }}>
       <div className="mb-5">
         <h3 className={`m-0 text-[14px] font-bold ${isDark ? "text-white" : "text-[#0C2472]"}`}>Pipeline by Stage</h3>
-        <p className="text-[12px] text-slate-400 mt-0.5">Active deals distribution</p>
+        <p className="text-[12px] text-slate-500 mt-0.5">Active deals distribution</p>
       </div>
 
       <ResponsiveContainer width="100%" height={210}>

@@ -213,6 +213,21 @@ function buildTheme(isDark: boolean) {
         },
       },
 
+      // ── Keyboard focus (Step 7) ─────────────────────────
+      // MUI removes the outline on ButtonBase; restore the same 2px ring the Leads
+      // pages use, for every MUI button / icon button / menu item / checkbox / switch.
+      MuiButtonBase: {
+        styleOverrides: {
+          root: { "&.Mui-focusVisible": { outline: "2px solid #3B82F6", outlineOffset: "2px" } },
+        },
+      },
+      MuiListItemButton: {
+        styleOverrides: { root: { "&.Mui-focusVisible": { outlineOffset: "-2px" } } },
+      },
+      MuiTab: {
+        styleOverrides: { root: { "&.Mui-focusVisible": { outlineOffset: "-2px" } } },
+      },
+
       // ── Menu / MenuItem ────────────────────────────────
       MuiMenu: {
         styleOverrides: {
@@ -231,6 +246,7 @@ function buildTheme(isDark: boolean) {
             fontSize: "0.82rem",
             color: textBod,
             "&:hover": { backgroundColor: isDark ? "#27272A" : "#EFF6FF" },
+            "&.Mui-focusVisible": { outlineOffset: "-2px" },
             "&.Mui-selected": {
               backgroundColor: isDark ? `${C.primary}20` : `${C.primary}12`,
               color: C.primary,
@@ -248,10 +264,11 @@ function buildTheme(isDark: boolean) {
       MuiCheckbox: {
         styleOverrides: {
           root: {
-            color: isDark ? "#52525B" : "#E2E8F0",
+            color: isDark ? "#71717A" : "#94A3B8",   // was #52525B / #E2E8F0 (≈1.2 : 1) — unchecked boxes were barely visible
             "&.Mui-checked":               { color: C.primary },
             "&.MuiCheckbox-indeterminate": { color: C.primary },
             "&:hover": { backgroundColor: `${C.soft}20` },
+            "&.Mui-focusVisible": { outlineOffset: "-3px" },
           },
         },
       },
@@ -318,6 +335,7 @@ function buildTheme(isDark: boolean) {
       MuiSwitch: {
         styleOverrides: {
           track: { backgroundColor: isDark ? "#52525B" : "#E2E8F0" },
+          switchBase: { "&.Mui-focusVisible": { outlineOffset: "-4px" } },
         },
       },
     },

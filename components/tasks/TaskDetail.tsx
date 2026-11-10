@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Sidebar from "@/components/layout/Sidebar";
 import { useTheme } from "@/components/ThemeContext";
+import { DETAIL_GRID, KV_GRID } from "@/lib/ui";
 import TopBar from "@/components/layout/TopBar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
@@ -159,7 +160,7 @@ function SectionCard({ icon: Icon, title, children, action }: {
         <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-brand-700"}`}>{title}</p>
         {action}
       </div>
-      <div className="px-5 py-4">{children}</div>
+      <div className="@container px-5 py-4">{children}</div>
     </div>
   );
 }
@@ -171,12 +172,12 @@ function KV({ label, value, editable }: { label: string; value?: string | number
   return (
     <div className={`py-2 border-b last:border-0 flex items-start justify-between group ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
       <div className="flex-1">
-        <p className={`font-heading text-[11.5px] font-semibold uppercase tracking-wider mb-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{label}</p>
-        <p className={`text-[14px] font-medium whitespace-pre-line ${display === "—" ? (isDark ? "text-[#3F3F46] italic" : "text-slate-300 italic") : (isDark ? "text-[#D4D4D8]" : "text-slate-800")}`}>{display}</p>
+        <p className={`font-heading text-[11.5px] font-semibold uppercase tracking-wider mb-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{label}</p>
+        <p className={`text-[14px] font-medium whitespace-pre-line [overflow-wrap:anywhere] ${display === "—" ? (isDark ? "text-[#71717A] italic" : "text-slate-400 italic") : (isDark ? "text-[#D4D4D8]" : "text-slate-800")}`}>{display}</p>
       </div>
       {editable && (
-        <IconButton size="small"
-          sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", opacity: 0, transition: "opacity 0.15s", ".group:hover &": { opacity: 1 }, "&:hover": { color: "#1D4ED8", bgcolor: isDark ? "#27272A" : "#EFF6FF" }, borderRadius: "6px" }}>
+        <IconButton size="small" aria-label={`Edit ${label}`}
+          sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", opacity: 0, transition: "opacity 0.15s", ".group:hover &": { opacity: 1 }, "&.Mui-focusVisible": { opacity: 1 }, "@media (hover: none)": { opacity: 1 }, "&:hover": { color: "#1D4ED8", bgcolor: isDark ? "#27272A" : "#EFF6FF" }, borderRadius: "6px" }}>
           <PencilSimple size={13} weight="duotone" />
         </IconButton>
       )}
@@ -185,7 +186,7 @@ function KV({ label, value, editable }: { label: string; value?: string | number
 }
 
 function InfoGrid({ children }: { children: React.ReactNode }) {
-  return <div className="grid grid-cols-2 gap-x-10 gap-y-0">{children}</div>;
+  return <div className={KV_GRID}>{children}</div>;
 }
 
 // ─────────────────────────────────────────────
@@ -251,7 +252,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
               {count > 0 && (
                 <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>
               )}
-              <CaretRight size={14} color="#E2E8F0" weight="duotone" />
+              <CaretRight size={14} color="#94A3B8" weight="duotone" />
             </button>
           ))}
         </div>
@@ -266,7 +267,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
           { label: "Created By",  value: task.createdBy || "—" },
         ].map(({ label, value }) => (
           <div key={label} className="flex justify-between text-[12px]">
-            <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{label}</span>
+            <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{label}</span>
             <span className={`font-semibold text-right max-w-[140px] truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{value}</span>
           </div>
         ))}
@@ -284,7 +285,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
         <main className="flex-1 px-4 sm:px-6 py-4 sm:py-5 space-y-4 animate-fade-in">
 
           {/* ── Breadcrumb ── */}
-          <div className={`flex items-center gap-1.5 text-[13.5px] ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>
+          <div className={`flex items-center gap-1.5 text-[13.5px] ${isDark ? "text-[#ABABAD]" : "text-slate-600"}`}>
             <House size={16} weight="duotone" />
             <CaretRight size={12} weight="duotone" />
             <Link href="/tasks" className="hover:text-brand-700 transition-colors font-medium">Tasks</Link>
@@ -301,7 +302,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                 </div>
                 <div>
                   <h1 className={`text-[20px] font-extrabold tracking-tight leading-tight mb-0 ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>{task.subject}</h1>
-                  <p className={`text-[12px] mt-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{task.type} · #{task.refId}</p>
+                  <p className={`text-[12px] mt-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{task.type} · #{task.refId}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 flex-wrap">
@@ -323,7 +324,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                   Edit
                 </Button>
                 <Tooltip title="More actions">
-                  <IconButton size="small" onClick={e => setMoreAnchor(e.currentTarget)}
+                  <IconButton size="small" aria-label="More actions" onClick={e => setMoreAnchor(e.currentTarget)}
                     sx={{ border: `1.5px solid ${isDark ? "#27272A" : "#E3ECFC"}`, borderRadius: "9px", bgcolor: isDark ? "#0F0F0F" : "transparent", p: 0.8, "&:hover": { borderColor: "#1D4ED8", bgcolor: isDark ? "#0A0A0A" : "#EFF6FF" } }}>
                     <DotsThreeVertical size={16} weight="bold" color={isDark ? "#B4B5B6" : "#64748B"} />
                   </IconButton>
@@ -335,7 +336,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
           {/* ── Tab bar ── */}
           <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
             {(["overview", "timeline"] as const).map(tab => (
-              <button key={tab} onClick={() => setActiveTab(tab)}
+              <button key={tab} onClick={() => setActiveTab(tab)} aria-pressed={activeTab === tab}
                 className={`px-4 py-1.5 rounded-lg text-[14px] font-semibold capitalize transition-all ${
                   activeTab === tab
                     ? "bg-brand-700 text-white shadow-xs"
@@ -348,8 +349,8 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
           </div>
 
           {activeTab === "overview" && (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-              <div className="lg:col-span-2 space-y-5 min-w-0">
+            <div className={DETAIL_GRID}>
+              <div className="min-w-0 space-y-5 min-w-0">
 
                 {/* ── Quick Info card ── */}
                 <div className={`rounded-2xl border shadow-xs divide-y ${isDark ? "bg-[#1C1C1E] border-[#27272A] divide-[#27272A]" : "bg-surface border-border-light divide-[#EFF6FF]"}`}>
@@ -361,8 +362,8 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                     { label: "Status",   value: task.status },
                   ].map(({ label, value }) => (
                     <div key={label} className="flex items-center justify-between px-5 py-3">
-                      <span className={`text-[12px] font-medium w-32 shrink-0 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>{label}:</span>
-                      <span className={`flex-1 text-[14px] font-semibold ${value ? (isDark ? "text-[#D4D4D8]" : "text-slate-700") : (isDark ? "text-[#3F3F46]" : "text-slate-300")}`}>
+                      <span className={`text-[12px] font-medium w-28 sm:w-32 shrink-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{label}:</span>
+                      <span className={`flex-1 min-w-0 [overflow-wrap:anywhere] text-[14px] font-semibold ${value ? (isDark ? "text-[#D4D4D8]" : "text-slate-700") : (isDark ? "text-[#A1A1AA]" : "text-slate-500")}`}>
                         {label === "Status" && value && statusCfg ? (
                           <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold"
                             style={{ backgroundColor: statusCfg.bg, color: statusCfg.text }}>
@@ -375,7 +376,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                             {value}
                           </span>
                         ) : (
-                          value || <span className={isDark ? "text-[#3F3F46]" : "text-slate-300"}>—</span>
+                          value || <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>
                         )}
                       </span>
                     </div>
@@ -385,8 +386,8 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                 {/* ── Task Information ── */}
                 <SectionCard icon={ClipboardText} title="Task Information"
                   action={
-                    <IconButton size="small" onClick={e => setMoreAnchor(e.currentTarget)}
-                      sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&:hover": { color: "#1D4ED8", bgcolor: isDark ? "#27272A" : "#EFF6FF" }, borderRadius: "6px" }}>
+                    <IconButton size="small" aria-label="More actions" onClick={e => setMoreAnchor(e.currentTarget)}
+                      sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&:hover": { color: "#1D4ED8", bgcolor: isDark ? "#27272A" : "#EFF6FF" }, borderRadius: "6px" }}>
                       <DotsThreeVertical size={16} weight="bold" />
                     </IconButton>
                   }>
@@ -411,7 +412,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                 </SectionCard>
 
                 {/* ── Notes ── */}
-                <div id="section-notes">
+                <div id="section-notes" className="scroll-mt-20">
                   <SectionCard icon={Note} title="Notes">
                     <div className="space-y-3">
                       <div className={`border rounded-xl overflow-hidden transition-all ${isDark ? "border-[#3F3F46] focus-within:border-[#9CA3AF]" : "border-border-light focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
@@ -420,7 +421,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                           placeholder="Add a note…"
                           value={note}
                           onChange={e => setNote(e.target.value)}
-                          sx={{ px: 2, py: 1.5, fontSize: "0.8rem", color: isDark ? "#D4D4D8" : "#334155", "& textarea::placeholder": { color: isDark ? "#3F3F46" : "#E2E8F0", opacity: 1 } }}
+                          sx={{ px: 2, py: 1.5, fontSize: "0.8rem", color: isDark ? "#D4D4D8" : "#334155", "& textarea::placeholder": { color: isDark ? "#A1A1AA" : "#64748B", opacity: 1 } }}
                         />
                         {note.trim() && (
                           <div className="flex justify-end px-3 pb-2">
@@ -434,7 +435,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                       {notes.map((n, i) => (
                         <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                           <p className={`text-[14px] ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{n.text}</p>
-                          <p className={`text-[12px] mt-1 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{n.at}</p>
+                          <p className={`text-[12px] mt-1 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{n.at}</p>
                         </div>
                       ))}
                     </div>
@@ -442,14 +443,14 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                 </div>
 
                 {/* ── Attachments ── */}
-                <div id="section-attachments">
+                <div id="section-attachments" className="scroll-mt-20">
                   <SectionCard icon={Paperclip} title="Attachments"
                     action={
                       <div className="flex items-center gap-2">
                         <div className={`flex items-center rounded-lg p-0.5 gap-0.5 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                           {[{ k: "grid", Icon: GridFour }, { k: "list", Icon: List }].map(({ k, Icon }) => (
-                            <button key={k} onClick={() => setAttachView(k as "grid" | "list")}
-                              className={`p-1 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-400")}`}>
+                            <button key={k} onClick={() => setAttachView(k as "grid" | "list")} aria-label={`${k === "grid" ? "Grid" : "List"} view`} aria-pressed={attachView === k}
+                              className={`p-1 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>
                               <Icon size={13} weight="duotone" />
                             </button>
                           ))}
@@ -460,7 +461,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                         </Button>
                       </div>
                     }>
-                    <div className={`flex items-center justify-center py-6 text-[14px] ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}>
+                    <div className={`flex items-center justify-center py-6 text-[14px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                       No attachments yet
                     </div>
                   </SectionCard>
@@ -468,7 +469,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
 
               </div>{/* end col-span-2 */}
 
-              <div className="lg:sticky lg:top-4 lg:self-start">
+              <div className="min-w-0 md:sticky md:top-[100px] md:self-start">
                 <RelatedListPanel
                   onItemClick={label =>
                     document.getElementById(`section-${label.toLowerCase()}`)?.scrollIntoView({ behavior: "smooth", block: "start" })
@@ -480,11 +481,11 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
           )}
 
           {activeTab === "timeline" && (
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
-              <div className="lg:col-span-2">
+            <div className={DETAIL_GRID}>
+              <div className="min-w-0">
                 <SectionCard icon={ClipboardText} title="Activity Timeline">
                   {task.timeline.length === 0 ? (
-                    <div className={`text-[14px] text-center py-6 ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}>No activity yet</div>
+                    <div className={`text-[14px] text-center py-6 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No activity yet</div>
                   ) : (
                     <div className="relative">
                       <div className={`absolute left-[11px] top-2 bottom-2 w-px ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
@@ -496,13 +497,13 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                             </div>
                             <div className="flex-1">
                               <div className={`text-[14px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{entry.event}</div>
-                              <div className={`text-[12px] mt-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{entry.by}</div>
+                              <div className={`text-[12px] mt-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{entry.by}</div>
                             </div>
                             <div className="text-right shrink-0">
-                              <div className={`text-[12px] font-medium ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>
+                              <div className={`text-[12px] font-medium ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                                 {new Date(entry.date).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" }).toUpperCase()}
                               </div>
-                              <div className={`text-[12px] ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{entry.time}</div>
+                              <div className={`text-[12px] ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{entry.time}</div>
                             </div>
                           </div>
                         ))}
@@ -512,7 +513,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                 </SectionCard>
               </div>
 
-              <div className="lg:sticky lg:top-4 lg:self-start">
+              <div className="min-w-0 md:sticky md:top-[100px] md:self-start">
                 <RelatedListPanel onItemClick={() => setActiveTab("overview")} />
               </div>
 

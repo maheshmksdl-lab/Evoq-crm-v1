@@ -31,7 +31,7 @@ function SectionHeader({
       <div className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
         <Icon size={13} color={isDark ? "#71717A" : "#1D4ED8"} weight="duotone" />
       </div>
-      <p className={`font-heading text-[10.5px] font-bold uppercase tracking-[0.13em] whitespace-nowrap ${isDark ? "text-[#71717A]" : "text-brand-700"}`}>
+      <p className={`font-heading text-[10.5px] font-bold uppercase tracking-[0.13em] whitespace-nowrap ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>
         {title}
       </p>
       <div className={`flex-1 h-px ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
@@ -153,7 +153,7 @@ export default function NewLeadDrawer({
             <h2 className={`m-0 text-[15px] font-extrabold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
               {isEdit ? "Edit Lead" : "New Lead"}
             </h2>
-            <p className={`text-[11px] font-medium ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>
+            <p className={`text-[11px] font-medium ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
               Fields marked <span className="text-red-400 font-bold">*</span> are required
             </p>
           </div>
@@ -298,7 +298,7 @@ export default function NewLeadDrawer({
                 onChange={(e) => set("emailOptOut", e.target.checked)}
                 size="small"
                 sx={{
-                  color: isDark ? "#3F3F46" : "#E2E8F0",
+                  color: isDark ? "#A1A1AA" : "#64748B",
                   "&.Mui-checked": { color: "inherit" },
                   p: 0.75,
                 }}
@@ -307,7 +307,7 @@ export default function NewLeadDrawer({
             label={
               <div className="ml-1">
                 <p className={`text-[12.5px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>Email Opt Out</p>
-                <p className={`text-[11px] mt-0.5 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>
+                <p className={`text-[11px] mt-0.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                   Do not send marketing emails to this lead
                 </p>
               </div>

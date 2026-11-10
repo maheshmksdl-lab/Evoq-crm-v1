@@ -76,7 +76,7 @@ export default function RegisterPage() {
     top: active(f) ? 6 : "50%",
     transform: active(f) ? "translateY(0) scale(0.78)" : "translateY(-50%)",
     transformOrigin: "left",
-    color: f.focus ? color : "#94A3B8",
+    color: f.focus ? color : "#64748B",
     fontSize: active(f) ? "10px" : "13.5px",
     transition: "all 0.18s ease",
     zIndex: 10,
@@ -91,7 +91,7 @@ export default function RegisterPage() {
   });
   const selectStyle = (val: string): React.CSSProperties => ({
     width: "100%", padding: "10px 14px", borderRadius: 12,
-    fontSize: 13.5, fontWeight: 500, color: val ? "#1E293B" : "#94A3B8",
+    fontSize: 13.5, fontWeight: 500, color: val ? "#1E293B" : "#64748B",
     background: "#F8FAFC",
     border: "1.5px solid #E2E8F0",
     outline: "none", appearance: "none", cursor: "pointer",
@@ -104,7 +104,7 @@ export default function RegisterPage() {
       <div className="flex flex-col items-center gap-3 bg-white rounded-3xl px-10 py-8 shadow-xl border border-border-light">
         <CheckCircle size={48} color="#10B981" weight="fill" />
         <p className="text-[17px] font-bold text-slate-800">Account created!</p>
-        <p className="text-[13px] text-slate-400 font-medium">Redirecting to sign in…</p>
+        <p className="text-[13px] text-slate-500 font-medium">Redirecting to sign in…</p>
       </div>
     </div>
   );
@@ -139,7 +139,7 @@ export default function RegisterPage() {
           {/* Heading */}
           <div className="mb-4">
             <h1 className="m-0 text-[20px] font-extrabold text-slate-900 tracking-tight">Get started your journey</h1>
-            <p className="text-slate-400 text-[12px] mt-0.5 font-medium">Create your EVOQ CRM account</p>
+            <p className="text-slate-500 text-[12px] mt-0.5 font-medium">Create your EVOQ CRM account</p>
           </div>
 
           {/* Error */}
@@ -186,7 +186,7 @@ export default function RegisterPage() {
                   <option value="" disabled>User Type</option>
                   {USER_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
                 </select>
-                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
               </div>
@@ -216,7 +216,7 @@ export default function RegisterPage() {
                   onFocus={() => setPassword(p => ({ ...p, focus: true }))}
                   onBlur={() => setPassword(p => ({ ...p, focus: false }))} />
                 <button type="button" onClick={() => setShowPass(p => !p)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors">
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-600 transition-colors">
                   {showPass ? <EyeSlash size={15} weight="duotone" /> : <Eye size={15} weight="duotone" />}
                 </button>
               </div>
@@ -228,7 +228,7 @@ export default function RegisterPage() {
                   onFocus={() => setConfirm(p => ({ ...p, focus: true }))}
                   onBlur={() => setConfirm(p => ({ ...p, focus: false }))} />
                 <button type="button" onClick={() => setShowConfirm(p => !p)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors">
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-600 transition-colors">
                   {showConfirm ? <EyeSlash size={15} weight="duotone" /> : <Eye size={15} weight="duotone" />}
                 </button>
               </div>
@@ -244,7 +244,7 @@ export default function RegisterPage() {
                   <option value="" disabled>State</option>
                   {STATES.map(s => <option key={s} value={s}>{s}</option>)}
                 </select>
-                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
               </div>
@@ -257,7 +257,7 @@ export default function RegisterPage() {
                   <option value="" disabled>District</option>
                   {districts.map(d => <option key={d} value={d}>{d}</option>)}
                 </select>
-                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
               </div>
@@ -272,7 +272,7 @@ export default function RegisterPage() {
                     ? zips.map(z => <option key={z} value={z}>{z}</option>)
                     : <option value="Other">Other</option>}
                 </select>
-                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
                 </div>
               </div>
@@ -314,7 +314,7 @@ export default function RegisterPage() {
         </div>
 
         <div className="px-8 py-3 border-t text-center" style={{ borderColor: "#E3ECFC", background: "#F8FBFF" }}>
-          <p className="text-[11px] text-slate-400 font-medium">
+          <p className="text-[11px] text-slate-500 font-medium">
             © 2026 Social DNA Labs ·{" "}
             <span className="text-brand-700 cursor-pointer hover:underline">Privacy</span> ·{" "}
             <span className="text-brand-700 cursor-pointer hover:underline">Terms</span>

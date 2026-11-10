@@ -61,10 +61,10 @@ export default function TopBar({ title }: { title?: string }) {
         {title ? (
           <div className="flex items-baseline gap-2 whitespace-nowrap">
             <h1 className={`text-base sm:text-h1 tracking-tight m-0 ${isDark ? "text-white" : "text-[#0C2472]"}`}>{title}</h1>
-            <span className="hidden sm:inline text-[10px] sm:text-caption text-slate-400">&middot; {today}</span>
+            <span className="hidden sm:inline text-[10px] sm:text-caption text-slate-500">&middot; {today}</span>
           </div>
         ) : (
-          <p className="m-0 hidden sm:block text-caption text-slate-400 whitespace-nowrap">{today}</p>
+          <p className="m-0 hidden sm:block text-caption text-slate-500 whitespace-nowrap">{today}</p>
         )}
       </div>
 
@@ -148,7 +148,7 @@ export default function TopBar({ title }: { title?: string }) {
             {/* Profile info */}
             <div className={`px-4 py-3 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
               <p className={`m-0 text-label ${isDark ? "text-[#F4F4F5]" : "text-slate-800"}`}>PM SDL</p>
-              <p className={`m-0 text-caption mt-0.5 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Super Admin</p>
+              <p className={`m-0 text-caption mt-0.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Super Admin</p>
             </div>
 
             {/* My Account */}
@@ -158,7 +158,7 @@ export default function TopBar({ title }: { title?: string }) {
                 isDark ? "text-[#D4D4D8] hover:bg-[#27272A]" : "text-slate-700 hover:bg-[#EFF6FF]"
               }`}
             >
-              <User size={15} weight="duotone" className={isDark ? "text-[#71717A]" : "text-slate-400"} />
+              <User size={15} weight="duotone" className={isDark ? "text-[#A1A1AA]" : "text-slate-500"} />
               My Account
             </button>
 

@@ -154,6 +154,13 @@
   * {
     @apply border-border outline-ring/50;
   }
+  /* Step 7 — one visible keyboard-focus ring for native interactive elements app-wide
+     (same 2px ring the Leads pages use). :where() keeps specificity at 0 so any
+     component-level focus style still wins; keyboard-only via :focus-visible. */
+  :where(a[href], button, summary, [role="button"], [role="tab"], [role="menuitem"], [role="option"], [role="switch"], [role="checkbox"], [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 2px solid #3B82F6;
+    outline-offset: 2px;
+  }
   body {
     @apply bg-background text-foreground;
   }

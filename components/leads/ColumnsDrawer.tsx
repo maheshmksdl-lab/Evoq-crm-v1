@@ -140,7 +140,7 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
           </div>
           <div>
             <h2 className={`m-0 font-heading text-h2 tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Configure Columns</h2>
-            <p className={`m-0 text-caption ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{local.size} of {TOTAL} columns selected</p>
+            <p className={`m-0 text-caption ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{local.size} of {TOTAL} columns selected</p>
           </div>
         </div>
         <Tooltip title="Close">
@@ -162,7 +162,7 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
             sx={{ flex: 1, fontSize: "0.77rem", "& input::placeholder": { color: isDark ? "#52525B" : "#94A3B8", opacity: 1 } }}
           />
           {search && (
-            <button onClick={() => setSearch("")} className={`text-sm ${isDark ? "text-[#E4E4E7] hover:text-[#A1A1AA]" : "text-slate-300 hover:text-slate-500"}`}>✕</button>
+            <button onClick={() => setSearch("")} className={`text-sm ${isDark ? "text-[#A1A1AA] hover:text-[#A1A1AA]" : "text-slate-500 hover:text-slate-500"}`}>✕</button>
           )}
         </div>
 
@@ -171,14 +171,14 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
             className={`text-button-sm px-2.5 py-1 rounded-lg transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#F4F4F5] hover:bg-[#27272A]" : "text-brand-700 hover:text-[#0C2472] hover:bg-[#EFF6FF]"}`}>
             Select All
           </button>
-          <span className={isDark ? "text-[#3F3F46]" : "text-slate-200"}>·</span>
+          <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>·</span>
           <button onClick={clearAll}
-            className={`text-button-sm px-2.5 py-1 rounded-lg transition-colors ${isDark ? "text-[#71717A] hover:text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-400 hover:text-slate-600 hover:bg-slate-50"}`}>
+            className={`text-button-sm px-2.5 py-1 rounded-lg transition-colors ${isDark ? "text-[#71717A] hover:text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-500 hover:text-slate-600 hover:bg-slate-50"}`}>
             Clear
           </button>
-          <span className={isDark ? "text-[#3F3F46]" : "text-slate-200"}>·</span>
+          <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>·</span>
           <button onClick={resetDefault}
-            className={`text-button-sm px-2.5 py-1 rounded-lg transition-colors ${isDark ? "text-[#71717A] hover:text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-400 hover:bg-[#EFF6FF]"}`}>
+            className={`text-button-sm px-2.5 py-1 rounded-lg transition-colors ${isDark ? "text-[#71717A] hover:text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-500 hover:bg-[#EFF6FF]"}`}>
             Reset Default
           </button>
         </div>
@@ -203,10 +203,10 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
                   indeterminate={!allOn && someOn}
                   size="small"
                   onClick={e => { e.stopPropagation(); toggleGroup(keys); }}
-                  sx={{ p: 0.25, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked, &.MuiCheckbox-indeterminate": { color: "inherit" } }}
+                  sx={{ p: 0.25, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked, &.MuiCheckbox-indeterminate": { color: "inherit" } }}
                 />
-                <span className={`font-heading text-nav-group-label uppercase ${isDark ? "text-[#71717A]" : "text-brand-700"}`}>{group}</span>
-                <span className={`ml-auto text-caption ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
+                <span className={`font-heading text-nav-group-label uppercase ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>{group}</span>
+                <span className={`ml-auto text-caption ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                   {unlocked.filter(k => local.has(k)).length} / {unlocked.length}
                 </span>
               </button>
@@ -227,13 +227,13 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
                         disabled={locked}
                         size="small"
                         onChange={() => toggle(col.key as string, locked)}
-                        sx={{ p: 0.25, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "inherit" }, "&.Mui-disabled": { color: isDark ? "#27272A" : "#E2E8F0" } }}
+                        sx={{ p: 0.25, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "inherit" }, "&.Mui-disabled": { color: isDark ? "#27272A" : "#E2E8F0" } }}
                       />
-                      <span className={`text-body flex-1 truncate ${locked ? (isDark ? "text-[#52525B]" : "text-slate-400") : (isDark ? "text-[#D4D4D8]" : "text-slate-700")}`}>
+                      <span className={`text-body flex-1 truncate ${locked ? (isDark ? "text-[#A1A1AA]" : "text-slate-500") : (isDark ? "text-[#D4D4D8]" : "text-slate-700")}`}>
                         {col.label}
                       </span>
                       {locked && (
-                        <span className={`text-caption font-medium uppercase tracking-wide ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}>Locked</span>
+                        <span className={`text-caption font-medium uppercase tracking-wide ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Locked</span>
                       )}
                     </label>
                   );
@@ -244,14 +244,14 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
         })}
 
         {filtered.length === 0 && (
-          <div className={`text-center py-10 text-sm ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>No columns match "{search}"</div>
+          <div className={`text-center py-10 text-sm ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No columns match "{search}"</div>
         )}
       </div>
 
       {/* Footer */}
       <div className={`flex items-center justify-between px-6 py-4 border-t shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <button onClick={onClose}
-          className={`text-button-sm px-3 py-2 rounded-xl transition-colors ${isDark ? "text-[#71717A] hover:text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-400 hover:text-slate-600 hover:bg-[#EFF6FF]"}`}>
+          className={`text-button-sm px-3 py-2 rounded-xl transition-colors ${isDark ? "text-[#71717A] hover:text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-500 hover:text-slate-600 hover:bg-[#EFF6FF]"}`}>
           Cancel
         </button>
         <Button variant="contained" size="small" startIcon={<Columns size={14} weight="duotone" />}

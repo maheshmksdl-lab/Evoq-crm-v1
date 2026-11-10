@@ -148,7 +148,7 @@ const ReportPreviewModal = memo(
                         >
                           {col.label}
                           <br />
-                          <span className={`text-[10px] font-normal ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>
+                          <span className={`text-[10px] font-normal ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                             [{col.type}]
                           </span>
                         </th>

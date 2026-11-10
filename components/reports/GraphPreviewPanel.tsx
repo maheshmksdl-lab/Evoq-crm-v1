@@ -20,7 +20,7 @@ const GraphPreviewPanel = memo(
       return (
         <div
           className={`w-80 border-l flex flex-col items-center justify-center px-6 text-center overflow-hidden ${
-            isDark ? "border-[#27272A] bg-[#0A0A0A] text-[#71717A]" : "border-border-light bg-white text-slate-400"
+            isDark ? "border-[#27272A] bg-[#0A0A0A] text-[#A1A1AA]" : "border-border-light bg-white text-slate-500"
           }`}
         >
           <p className="text-[12px]">Add modules to see the report structure</p>
@@ -128,7 +128,7 @@ const GraphPreviewPanel = memo(
                         return (
                           <li key={fieldName} className={isDark ? "text-[#A1A1AA]" : "text-slate-600"}>
                             {field?.label ?? fieldName}{" "}
-                            <span className={`text-[10px] uppercase font-semibold ${isDark ? "text-[#52525B]" : "text-slate-300"}`}>
+                            <span className={`text-[10px] uppercase font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                               [{field?.type ?? "unknown"}]
                             </span>
                           </li>

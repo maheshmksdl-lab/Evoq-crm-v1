@@ -66,7 +66,7 @@ export default function LeadKanbanView({ leads }: Props) {
             <div className="flex-1 space-y-2.5 overflow-y-auto" style={{ maxHeight: "calc(100vh - 340px)" }}>
               {colLeads.length === 0 ? (
                 <div
-                  className={`flex flex-col items-center justify-center py-8 rounded-xl border-2 border-dashed text-[12px] text-center ${isDark ? "text-[#3F3F46]" : "text-slate-300"}`}
+                  className={`flex flex-col items-center justify-center py-8 rounded-xl border-2 border-dashed text-[12px] text-center ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}
                   style={{ borderColor: col.dot + "60" }}
                 >
                   <Plus size={20} color={col.dot} weight="bold" className="mb-1 opacity-40" />
@@ -100,8 +100,8 @@ export default function LeadKanbanView({ leads }: Props) {
                           {lead.name}
                         </p>
                         {lead.company && (
-                          <p className={`text-[12px] truncate flex items-center gap-0.5 mt-0.5 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
-                            <Buildings size={10} color={isDark ? "#3F3F46" : "#E2E8F0"} weight="duotone" />
+                          <p className={`text-[12px] truncate flex items-center gap-0.5 mt-0.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
+                            <Buildings size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="duotone" />
                             {lead.company}
                           </p>
                         )}
@@ -137,7 +137,7 @@ export default function LeadKanbanView({ leads }: Props) {
                           {lead.ownerInitials}
                         </Avatar>
                       </Tooltip>
-                      <span className={`text-[12px] truncate ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{lead.owner}</span>
+                      <span className={`text-[12px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{lead.owner}</span>
                     </div>
                   </div>
                 );
@@ -148,9 +148,9 @@ export default function LeadKanbanView({ leads }: Props) {
             <button
               onClick={e => e.stopPropagation()}
               className={`flex items-center gap-1.5 mt-3 px-2 py-2 rounded-xl border border-dashed text-[14px] font-medium w-full transition-all ${
-                isDark ? "text-[#E4E4E7] hover:bg-[#1C1C1E] hover:text-[#A1A1AA]" : ""
+                isDark ? "text-[#A1A1AA] hover:bg-[#1C1C1E] hover:text-[#FAFAFA]" : ""
               }`}
-              style={{ borderColor: col.dot + "60", color: isDark ? undefined : col.color + "99" }}
+              style={{ borderColor: col.dot + "60", color: isDark ? undefined : col.color }}
               onMouseEnter={e => { if (!isDark) (e.currentTarget as HTMLButtonElement).style.backgroundColor = col.bg; }}
               onMouseLeave={e => { if (!isDark) (e.currentTarget as HTMLButtonElement).style.backgroundColor = "transparent"; }}
             >

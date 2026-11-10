@@ -17,7 +17,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
-import { getDataGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
+import { listGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
 import {
   House, CaretRight, MagnifyingGlass, Plus, DotsThreeVertical, Star,
   ChartBar, Rows, X,
@@ -206,7 +206,7 @@ export default function ReportsPage() {
       field: "description", headerName: "Description", flex: 1.6, minWidth: 160, sortable: false,
       renderHeader: () => <ColHeader label="Description" />,
       renderCell: (params) => (
-        <div className={`text-[15px]/[20px] truncate ${params.row.description ? (isDark ? "text-[#A1A1AA]" : "text-slate-500") : (isDark ? "text-[#52525B]" : "text-slate-200")}`}>
+        <div className={`text-[15px]/[20px] truncate ${params.row.description ? (isDark ? "text-[#A1A1AA]" : "text-slate-500") : (isDark ? "text-[#A1A1AA]" : "text-slate-400")}`}>
           {params.row.description || "—"}
         </div>
       ),
@@ -217,7 +217,7 @@ export default function ReportsPage() {
       renderCell: (params) => (
         <div className="flex items-center gap-1.5 flex-nowrap overflow-hidden w-full leading-none">
           {params.row.tags.slice(0, 2).map((tag: string) => (
-            <span key={tag} className={`inline-flex shrink-0 items-center whitespace-nowrap leading-none px-2 py-1 rounded-full text-[11px] font-semibold ${isDark ? "bg-[#18181B] text-[#71717A]" : "bg-border-light text-[#4A5675]"}`}>{tag}</span>
+            <span key={tag} className={`inline-flex shrink-0 items-center whitespace-nowrap leading-none px-2 py-1 rounded-full text-[11px] font-semibold ${isDark ? "bg-[#18181B] text-[#A1A1AA]" : "bg-border-light text-[#4A5675]"}`}>{tag}</span>
           ))}
           {params.row.tags.length > 2 && <span className={`shrink-0 whitespace-nowrap leading-none text-[11px] font-semibold ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>+{params.row.tags.length - 2}</span>}
         </div>
@@ -226,7 +226,7 @@ export default function ReportsPage() {
     {
       field: "lastAccessedDate", headerName: "Last Accessed", flex: 1, minWidth: 120, sortable: false,
       renderHeader: () => <ColHeader label="Last Accessed" />,
-      renderCell: (params) => <div className={`text-[13px]/[16px] truncate ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{params.row.lastAccessedDate}</div>,
+      renderCell: (params) => <div className={`text-[13px]/[16px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{params.row.lastAccessedDate}</div>,
     },
     {
       field: "createdBy", headerName: "Created By", flex: 1.2, minWidth: 140, sortable: false,
@@ -241,14 +241,14 @@ export default function ReportsPage() {
           <div className="flex items-center justify-end gap-0.5 w-full" onClick={e => e.stopPropagation()}>
             <Tooltip title={report.isPinned ? "Unpin" : "Pin"}>
               <IconButton size="small" onClick={() => togglePin(report.id)}
-                sx={{ color: report.isPinned ? "#F59E0B" : (isDark ? "#52525B" : "#CBD5E1") }}>
+                aria-label={report.isPinned ? `Unpin ${report.name}` : `Pin ${report.name}`} aria-pressed={!!report.isPinned} sx={{ color: report.isPinned ? "#F59E0B" : (isDark ? "#71717A" : "#94A3B8") }}>
                 <Star size={15} weight={report.isPinned ? "fill" : "duotone"} />
               </IconButton>
             </Tooltip>
             <Tooltip title="Actions">
-              <IconButton size="small" onClick={e => openRowMenu(e, report.id)}
+              <IconButton size="small" aria-label={`Actions for ${report.name}`} aria-haspopup="menu" onClick={e => openRowMenu(e, report.id)}
                 sx={{ borderRadius: "6px", p: 0.5, "&:hover": { bgcolor: isDark ? "#27272A" : "#E3ECFC" } }}>
-                <DotsThreeVertical size={15} color="#94A3B8" weight="duotone" />
+                <DotsThreeVertical size={16} color={isDark ? "#A1A1AA" : "#64748B"} weight="bold" />
               </IconButton>
             </Tooltip>
           </div>
@@ -272,7 +272,7 @@ export default function ReportsPage() {
             </div>
             <div>
               <div className={`font-heading text-[14px] font-bold leading-tight ${isDark ? "text-[#FFFFFF]" : "text-slate-900"}`}>Reports</div>
-              <div className="text-[12px] text-slate-400 leading-tight">Browse &amp; organize</div>
+              <div className="text-[12px] text-slate-500 leading-tight">Browse &amp; organize</div>
             </div>
           </div>
           <span className="md:hidden shrink-0">
@@ -287,14 +287,14 @@ export default function ReportsPage() {
           {pinnedReports.length > 0 && (
             <div>
               <div className={`flex items-center justify-between w-full px-2 py-1.5 min-h-[32px]`}>
-                <span className={`font-heading text-[13px] font-bold uppercase tracking-widest truncate ${isDark ? "text-[#475569]" : "text-slate-400"}`}>Pinned</span>
+                <span className={`font-heading text-[13px] font-bold uppercase tracking-widest truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Pinned</span>
               </div>
               <div className="space-y-0.5 mb-1.5">
                 {pinnedReports.map(report => (
                   <button key={report.id}
                     onClick={(e) => { goToReport(report.id); e.currentTarget.blur(); }}
                     style={{ WebkitTapHighlightColor: "transparent" }}
-                    className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 ${
+                    className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#3B82F6] ${
                       isDark ? "focus-visible:ring-[#3B82F6]" : "focus-visible:ring-[#1D4ED8]"
                     } ${
                       isDark ? "text-[#9CA3AF] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "text-slate-500 hover:bg-[#EFF6FF]/60 hover:text-slate-700"
@@ -313,14 +313,14 @@ export default function ReportsPage() {
             const isOpen = expandedCategories.includes(name);
             return (
               <div key={name}>
-                <button onClick={() => toggleCategory(name)}
-                  className={`flex items-center justify-between w-full px-2 py-1.5 rounded-lg transition-colors group min-h-[32px] outline-hidden ${isDark ? "hover:bg-brand-700/15" : "hover:bg-[#EFF6FF]"}`}>
-                  <span className={`font-heading text-[13px] font-bold uppercase tracking-widest transition-colors truncate ${isDark ? "text-[#475569] group-hover:text-[#64748B]" : "text-slate-400 group-hover:text-slate-500"}`}>
+                <button onClick={() => toggleCategory(name)} aria-expanded={isOpen}
+                  className={`flex items-center justify-between w-full px-2 py-1.5 rounded-lg transition-colors group min-h-[32px] outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6] ${isDark ? "hover:bg-brand-700/15" : "hover:bg-[#EFF6FF]"}`}>
+                  <span className={`font-heading text-[13px] font-bold uppercase tracking-widest transition-colors truncate ${isDark ? "text-[#A1A1AA] group-hover:text-[#D4D4D8]" : "text-slate-500 group-hover:text-slate-700"}`}>
                     {name}
                   </span>
                   <div className="flex items-center gap-1.5">
                     <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${isDark ? "bg-[#27272A] text-[#9CA3AF]" : "bg-border-light text-slate-500"}`}>{count}</span>
-                    {isOpen ? <CaretUp size={10} color={isDark ? "#475569" : "#E2E8F0"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#475569" : "#E2E8F0"} weight="bold" />}
+                    {isOpen ? <CaretUp size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" />}
                   </div>
                 </button>
 
@@ -330,7 +330,7 @@ export default function ReportsPage() {
                       <button key={report.id}
                         onClick={(e) => { goToReport(report.id); e.currentTarget.blur(); }}
                         style={{ WebkitTapHighlightColor: "transparent" }}
-                        className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 ${
+                        className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#3B82F6] ${
                           isDark ? "focus-visible:ring-[#3B82F6]" : "focus-visible:ring-[#1D4ED8]"
                         } ${
                           isDark ? "text-[#9CA3AF] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "text-slate-500 hover:bg-[#EFF6FF]/60 hover:text-slate-700"
@@ -354,14 +354,14 @@ export default function ReportsPage() {
           {/* Page header */}
           <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
             <div>
-              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
+              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                 <House size={16} weight="duotone" />
                 <CaretRight size={12} weight="duotone" />
                 <Link href="/reports" className={`transition-colors font-medium ${isDark ? "hover:text-[#D4D4D8]" : "hover:text-brand-700"}`}>Reports</Link>
               </div>
               <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
                 <h1 className="font-heading text-lg sm:text-[22px]/[28px] font-semibold text-slate-900 tracking-tight m-0">Reports</h1>
-                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-xs flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#E4E4E7]" : "bg-surface border-border-light text-slate-400"}`}>
+                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-xs flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#A1A1AA]" : "bg-surface border-border-light text-slate-500"}`}>
                   {reports.length} total
                 </span>
               </div>
@@ -369,16 +369,16 @@ export default function ReportsPage() {
 
             <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
               {/* View toggle - hidden on mobile */}
-              <div className={`hidden sm:flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-white border-slate-100"}`}>
+              <div className={`hidden sm:flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
                 {[
                   { k: "list", Icon: ListIcon, label: "List" },
                   { k: "grid", Icon: GridFour, label: "Grid" },
                 ].map(({ k, Icon, label }) => (
-                  <button key={k} onClick={() => setView(k as typeof view)}
+                  <button key={k} onClick={() => setView(k as typeof view)} aria-pressed={view === k} aria-label={`${label} view`}
                     className={`flex items-center gap-1 px-2 py-[6px] rounded-lg text-[13px]/[16px] font-medium transition-all ${
                       view === k
-                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-surface text-brand-700"
-                        : isDark ? "text-[#E4E4E7] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-surface text-slate-400 hover:bg-border-light"
+                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-white text-brand-700 shadow-xs"
+                        : isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "text-slate-600 hover:bg-white/70 hover:text-brand-700"
                     }`}>
                     <Icon size={14} weight="duotone" />
                     <span className="hidden sm:inline">{label}</span>
@@ -397,12 +397,12 @@ export default function ReportsPage() {
 
           {/* Toolbar: Search | Sort | Record count */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
-            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 sm:w-72 focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#60A5FA] transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
+            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
-              <InputBase placeholder="Search All Reports" value={search} onChange={e => setSearch(e.target.value)}
+              <InputBase placeholder="Search All Reports" value={search} inputProps={{ "aria-label": "Search all reports" }} onChange={e => setSearch(e.target.value)}
                 sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#94A3B8", opacity: 1 } }}
               />
-              {search && <button onClick={() => setSearch("")} className="text-slate-300 hover:text-slate-500 transition-colors text-[15px]/[20px]">✕</button>}
+              {search && <button onClick={() => setSearch("")} aria-label="Clear search" className={`rounded-md px-1 transition-colors text-[15px]/[20px] ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}`}>✕</button>}
             </div>
 
             <Button variant="outlined" size="small"
@@ -443,7 +443,7 @@ export default function ReportsPage() {
               ]}
             </Menu>
 
-            <span className={`ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#E4E4E7] bg-[#0A0A0A]" : "text-slate-400 bg-surface"}`}>
+            <span aria-live="polite" className={`text-right sm:ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#A1A1AA] bg-[#0A0A0A]" : "text-slate-500 bg-surface"}`}>
               {sorted.length} of {reports.length} records
             </span>
           </div>
@@ -462,26 +462,26 @@ export default function ReportsPage() {
                     <div className="flex items-center gap-1" onClick={e => e.stopPropagation()}>
                       <Tooltip title={report.isPinned ? "Unpin" : "Pin"}>
                         <IconButton size="small" onClick={() => togglePin(report.id)}
-                          sx={{ color: report.isPinned ? "#F59E0B" : (isDark ? "#52525B" : "#CBD5E1") }}>
+                          aria-label={report.isPinned ? `Unpin ${report.name}` : `Pin ${report.name}`} aria-pressed={!!report.isPinned} sx={{ color: report.isPinned ? "#F59E0B" : (isDark ? "#71717A" : "#94A3B8") }}>
                           <Star size={15} weight={report.isPinned ? "fill" : "duotone"} />
                         </IconButton>
                       </Tooltip>
                       <Tooltip title="More actions">
-                        <IconButton size="small" onClick={e => openRowMenu(e, report.id)}
-                          sx={{ color: isDark ? "#A1A1AA" : "#64748B", bgcolor: isDark ? "#27272A" : "#F1F5F9", "&:hover": { bgcolor: isDark ? "#3F3F46" : "#E2E8F0", color: isDark ? "#F4F4F5" : "#0F172A" } }}>
+                        <IconButton size="small" aria-label={`Actions for ${report.name}`} aria-haspopup="menu" onClick={e => openRowMenu(e, report.id)}
+                          sx={{ color: isDark ? "#A1A1AA" : "#64748B", bgcolor: isDark ? "#27272A" : "#F1F5F9", "&:hover": { bgcolor: isDark ? "#A1A1AA" : "#64748B", color: isDark ? "#F4F4F5" : "#0F172A" } }}>
                           <DotsThreeVertical size={15} weight="bold" />
                         </IconButton>
                       </Tooltip>
                     </div>
                   </div>
                   <div className={`text-[14px] font-semibold mb-1 ${isDark ? "text-[#60A5FA]" : "text-brand-700"}`}>{report.name}</div>
-                  <div className={`text-[12.5px] mb-3 line-clamp-2 ${report.description ? (isDark ? "text-[#D4D4D8]" : "text-slate-600") : (isDark ? "text-[#3F3F46]" : "text-slate-300")}`}>{report.description || "No description"}</div>
+                  <div className={`text-[12.5px] mb-3 line-clamp-2 ${report.description ? (isDark ? "text-[#D4D4D8]" : "text-slate-600") : (isDark ? "text-[#A1A1AA]" : "text-slate-500")}`}>{report.description || "No description"}</div>
                   <div className="flex items-center gap-1.5 flex-wrap mb-3">
                     {report.tags.slice(0, 3).map(tag => (
-                      <span key={tag} className={`inline-flex px-2 py-0.5 rounded-full text-[11px] font-semibold ${isDark ? "bg-[#18181B] text-[#71717A]" : "bg-border-light text-[#4A5675]"}`}>{tag}</span>
+                      <span key={tag} className={`inline-flex px-2 py-0.5 rounded-full text-[11px] font-semibold ${isDark ? "bg-[#18181B] text-[#A1A1AA]" : "bg-border-light text-[#4A5675]"}`}>{tag}</span>
                     ))}
                   </div>
-                  <div className={`flex items-center justify-between text-[11px] pt-3 border-t ${isDark ? "border-[#1C1C1E] text-[#71717A]" : "border-[#EFF6FF] text-slate-400"}`}>
+                  <div className={`flex items-center justify-between text-[11px] pt-3 border-t ${isDark ? "border-[#1C1C1E] text-[#A1A1AA]" : "border-[#EFF6FF] text-slate-500"}`}>
                     <span>{report.lastAccessedDate}</span>
                     <span className="truncate max-w-[45%]">{report.createdBy}</span>
                   </div>
@@ -515,11 +515,11 @@ export default function ReportsPage() {
                         <MagnifyingGlass size={22} color={isDark ? "#E4E4E7" : "#94A3B8"} weight="duotone" />
                       </div>
                       <p className={`font-heading text-[15px]/[20px] font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No reports found</p>
-                      <p className={`text-[13px]/[16px] mt-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-300"}`}>Try adjusting your search</p>
+                      <p className={`text-[13px]/[16px] mt-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Try adjusting your search</p>
                     </div>
                   ),
                 }}
-                sx={getDataGridSx(isDark)}
+                sx={listGridSx(isDark)}
               />
             </div>
           )}

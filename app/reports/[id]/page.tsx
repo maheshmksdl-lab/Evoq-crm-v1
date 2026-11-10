@@ -127,7 +127,7 @@ const ChartTooltip = ({ active, payload, label }: any) => {
   if (!active || !payload?.length) return null;
   return (
     <div className="bg-slate-900 text-white px-3 py-2 rounded-xl text-xs shadow-xl border border-white/10">
-      {label && <p className="text-slate-400 text-[12px] mb-1">{label}</p>}
+      {label && <p className="text-slate-500 text-[12px] mb-1">{label}</p>}
       {payload.map((p: any, i: number) => (
         <p key={i} className="font-bold text-[13px]" style={{ color: p.color }}>{p.name}: {p.value.toLocaleString()}</p>
       ))}
@@ -314,15 +314,15 @@ function ShowDetailsMenu({
     <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={onClose}
       PaperProps={{ sx: { borderRadius: "12px", minWidth: 200, bgcolor: isDark ? "#18181B" : "#fff", border: `1px solid ${isDark ? "#27272A" : "#E3ECFC"}` } }}>
       <MenuItem onClick={() => setGrandTotals(!grandTotals)} sx={{ py: 0.5 }}>
-        <Checkbox size="small" checked={grandTotals} sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "#1D4ED8" } }} />
+        <Checkbox size="small" checked={grandTotals} sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "#1D4ED8" } }} />
         <ListItemText primaryTypographyProps={{ fontSize: 13.5, color: isDark ? "#D4D4D8" : "#334155" }}>Grand Totals</ListItemText>
       </MenuItem>
       <MenuItem onClick={() => setSplitAggregates(!splitAggregates)} sx={{ py: 0.5 }}>
-        <Checkbox size="small" checked={splitAggregates} sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "#1D4ED8" } }} />
+        <Checkbox size="small" checked={splitAggregates} sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "#1D4ED8" } }} />
         <ListItemText primaryTypographyProps={{ fontSize: 13.5, color: isDark ? "#D4D4D8" : "#334155" }}>Split Aggregates</ListItemText>
       </MenuItem>
       <MenuItem onClick={() => setWrapText(!wrapText)} sx={{ py: 0.5 }}>
-        <Checkbox size="small" checked={wrapText} sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "#1D4ED8" } }} />
+        <Checkbox size="small" checked={wrapText} sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "#1D4ED8" } }} />
         <ListItemText primaryTypographyProps={{ fontSize: 13.5, color: isDark ? "#D4D4D8" : "#334155" }}>Wrap Text</ListItemText>
       </MenuItem>
     </Menu>
@@ -398,7 +398,7 @@ function ReportDataSection({
                   <div key={idx} className={`rounded-xl border p-3.5 ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-surface"}`}>
                     {columns.map((col) => (
                       <div key={col.name} className="flex items-baseline justify-between gap-3 py-1">
-                        <span className={`text-[11px] font-semibold uppercase tracking-wide shrink-0 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{col.label}</span>
+                        <span className={`text-[11px] font-semibold uppercase tracking-wide shrink-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{col.label}</span>
                         <span className={`text-[13px] font-semibold text-right ${textClass} ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{fmtVal(col, row[col.name])}</span>
                       </div>
                     ))}
@@ -569,7 +569,7 @@ function FilterPanel({
           {filters.map((filter) => (
             <div key={filter.id} className={`p-3 rounded-lg border ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-surface"} space-y-2`}>
               <div className="flex items-center justify-between">
-                <span className={`text-[11px] font-bold uppercase ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Field</span>
+                <span className={`text-[11px] font-bold uppercase ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Field</span>
                 <button onClick={() => removeFilter(filter.id)} className={`text-[12px] font-semibold ${isDark ? "text-[#EF4444]" : "text-red-600"} hover:underline`}>
                   Remove
                 </button>
@@ -588,7 +588,7 @@ function FilterPanel({
               </select>
 
               <div>
-                <span className={`text-[11px] font-bold uppercase ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Operator</span>
+                <span className={`text-[11px] font-bold uppercase ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Operator</span>
                 <select
                   value={filter.operator}
                   onChange={(e) => updateFilter(filter.id, "operator", e.target.value)}
@@ -604,7 +604,7 @@ function FilterPanel({
 
               {filter.operator !== "is empty" && filter.operator !== "is not empty" && (
                 <div>
-                  <span className={`text-[11px] font-bold uppercase ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Value</span>
+                  <span className={`text-[11px] font-bold uppercase ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Value</span>
                   <input
                     type="text"
                     value={filter.value}
@@ -768,7 +768,7 @@ function EditActionsButton({
             className={`${itemClass} justify-between ${exportOpen ? (isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]") : ""}`}
             onClick={() => setExportOpen((v) => !v)}>
             <span className="flex items-center gap-2.5"><DownloadSimple size={16} weight="duotone" />Export</span>
-            <CaretRight size={13} className={isDark ? "text-[#71717A]" : "text-slate-400"} />
+            <CaretRight size={13} className={isDark ? "text-[#A1A1AA]" : "text-slate-500"} />
           </button>
 
           {exportOpen && (
@@ -981,7 +981,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                 </div>
                 <div className="flex items-center gap-3">
                   <Button size="small" onClick={(e) => setShowDetailsAnchor(e.currentTarget)}
-                    sx={{ textTransform: "none", fontSize: "12px", fontWeight: 600, color: isDark ? "#D4D4D8" : "#64748B" }}>
+                    sx={{ textTransform: "none", fontSize: "12px", fontWeight: 600, color: isDark ? "#D4D4D8" : "#475569" }}>
                     Show Details
                     <CaretDown size={12} weight="duotone" className="ml-1" />
                   </Button>
@@ -1032,7 +1032,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
 
           {/* Chart Type Selection */}
           <div className={`px-4 sm:px-6 pt-4 ${isDark ? "bg-[#111113]" : "bg-[#F8FAFF]"}`}>
-            <div className={`text-[11px] font-bold uppercase tracking-widest mb-3 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>Select Type</div>
+            <div className={`text-[11px] font-bold uppercase tracking-widest mb-3 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Select Type</div>
             <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5 pb-4">
               {CHART_TYPES.map(ct => (
                 <button key={ct.key} onClick={() => setChartType(ct.key)}
@@ -1092,7 +1092,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                 <div className={`text-[12px] font-bold mb-3 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Preview</div>
                 <div className={`w-full rounded-lg border overflow-hidden ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-white"}`}>
                   <ChartTypePreview chartType={chartType} isDark={isDark} />
-                  <p className={`text-center text-[11px] pb-3 ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>
+                  <p className={`text-center text-[11px] pb-3 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                     {chartName ? chartName : "Untitled"}
                   </p>
                 </div>
@@ -1158,7 +1158,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                 </Tooltip>
               </div>
               <div className="flex items-center gap-2 flex-wrap">
-                <span className={`hidden sm:inline text-[12px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{lastRefreshed ? `Updated ${lastRefreshed.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : "Updated 26 days ago"}</span>
+                <span className={`hidden sm:inline text-[12px] ${isDark ? "text-[#9CA3AF]" : "text-slate-600"}`}>{lastRefreshed ? `Updated ${lastRefreshed.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : "Updated 26 days ago"}</span>
                 <Tooltip title="Refresh">
                   <IconButton size="small" onClick={handleRefresh} sx={{ color: isDark ? "#71717A" : "#64748B", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
                     <ArrowsClockwise size={16} weight="bold" className={refreshing ? "animate-spin" : ""} />
@@ -1199,7 +1199,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               </div>
               <div className="flex items-center gap-3">
                 <Button size="small" onClick={(e) => setShowDetailsAnchor(e.currentTarget)}
-                  sx={{ textTransform: "none", fontSize: "12px", fontWeight: 600, color: isDark ? "#D4D4D8" : "#64748B" }}>
+                  sx={{ textTransform: "none", fontSize: "12px", fontWeight: 600, color: isDark ? "#D4D4D8" : "#475569" }}>
                   Show Details
                   <CaretDown size={12} weight="duotone" className="ml-1" />
                 </Button>
@@ -1311,7 +1311,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
 
         {/* Chart Type Selection */}
         <div className={`px-4 sm:px-6 pt-4 ${isDark ? "bg-[#111113]" : "bg-[#F8FAFF]"}`}>
-          <div className={`text-[11px] font-bold uppercase tracking-widest mb-3 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>Select Type</div>
+          <div className={`text-[11px] font-bold uppercase tracking-widest mb-3 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Select Type</div>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-2.5 pb-4">
             {CHART_TYPES.map(ct => (
               <button key={ct.key} onClick={() => setChartType(ct.key)}
@@ -1371,7 +1371,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               <div className={`text-[12px] font-bold mb-3 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Preview</div>
               <div className={`w-full rounded-lg border overflow-hidden ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-white"}`}>
                 <ChartTypePreview chartType={chartType} isDark={isDark} />
-                <p className={`text-center text-[11px] pb-3 ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>
+                <p className={`text-center text-[11px] pb-3 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                   {chartName ? chartName : "Untitled"}
                 </p>
               </div>

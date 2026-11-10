@@ -42,7 +42,7 @@ function AddressBlock({ title, prefix, form, set, isDark, fx }: {
   const clearAll = () => ["Country","Building","Street","City","State","Zip","Lat","Lng"].forEach(f => set(k(f.toLowerCase()), ""));
   return (
     <div className={`flex-1 min-w-0 rounded-xl border p-4 space-y-2.5 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF]/60 border-border-light"}`}>
-      <p className={`font-heading text-[12px] font-bold uppercase tracking-wider mb-3 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>{title}</p>
+      <p className={`font-heading text-[12px] font-bold uppercase tracking-wider mb-3 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{title}</p>
       <FormControl size="small" fullWidth sx={fx}>
         <InputLabel>Country / Region</InputLabel>
         <Select label="Country / Region" value={form[k("country")] || ""} onChange={e => set(k("country"), e.target.value)}>

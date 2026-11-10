@@ -234,7 +234,7 @@ export default function NewTaskDrawer({ open, onClose }: Props) {
 
             {/* Task Owner — fieldset-style */}
             <fieldset className={`rounded-[10px] border px-3 pb-3 pt-1 ${isDark ? "border-[#3F3F46] bg-[#1C1C1E]" : "border-border-light bg-[#EFF6FF]"}`}>
-              <legend className={`text-[11.5px] font-semibold uppercase tracking-wider px-1 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>Task Owner</legend>
+              <legend className={`text-[11.5px] font-semibold uppercase tracking-wider px-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Task Owner</legend>
               <FormControl size="small" fullWidth sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: "8px", fontSize: "0.82rem",

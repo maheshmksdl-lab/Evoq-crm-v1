@@ -100,15 +100,15 @@ export default function DashboardPage() {
           </div>
 
           {/* ── CHARTS ROW ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6">
-            <div className="lg:col-span-2"><RevenueChart isDark={isDark} /></div>
-            <div className="lg:col-span-1"><DealStageChart isDark={isDark} /></div>
+          <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-4 md:gap-6">
+            <div className="min-w-0"><RevenueChart isDark={isDark} /></div>
+            <div className="min-w-0"><DealStageChart isDark={isDark} /></div>
           </div>
 
           {/* ── BOTTOM ROW ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 pb-8">
-            <div className="lg:col-span-2"><RecentDeals isDark={isDark} /></div>
-            <div className="lg:col-span-1"><ActivityFeed isDark={isDark} /></div>
+          <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-4 md:gap-6 pb-8">
+            <div className="min-w-0"><RecentDeals isDark={isDark} /></div>
+            <div className="min-w-0"><ActivityFeed isDark={isDark} /></div>
           </div>
         </main>
       </div>

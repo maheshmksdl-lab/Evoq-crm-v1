@@ -40,7 +40,7 @@ export default function AccountGridView({ accounts }: Props) {
 
   if (accounts.length === 0) {
     return (
-      <div className={`flex flex-col items-center justify-center py-20 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>
+      <div className={`flex flex-col items-center justify-center py-20 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>
         <p className="font-heading text-sm font-semibold">No accounts found</p>
         <p className="text-xs mt-1">Adjust filters or add a new account</p>
       </div>
@@ -122,7 +122,7 @@ export default function AccountGridView({ accounts }: Props) {
                   <Avatar src={OWNER_AVATARS[acc.ownerName]} sx={{ width: 20, height: 20, bgcolor: owCol, fontSize: "0.48rem", fontWeight: 800 }}>
                     {acc.ownerInitials}
                   </Avatar>
-                  <span className={`text-[12px] font-medium ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>{acc.ownerName}</span>
+                  <span className={`text-[12px] font-medium ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{acc.ownerName}</span>
                 </div>
               </Tooltip>
               <span className={`text-[12px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{acc.creation.split(",")[0]}</span>

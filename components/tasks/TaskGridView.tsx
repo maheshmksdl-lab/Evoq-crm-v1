@@ -27,9 +27,9 @@ const STATUS_CFG: Record<string, { bg: string; text: string; dot: string; bgDark
 };
 
 const PRIORITY_CFG: Record<string, { bg: string; text: string; bgDark: string; textDark: string }> = {
-  "High":   { bg: "#FEF2F2", text: "#DC2626", bgDark: "rgba(239,68,68,0.15)",  textDark: "#F87171" },
-  "Medium": { bg: "#FEF3C7", text: "#D97706", bgDark: "rgba(245,158,11,0.15)", textDark: "#FBBF24" },
-  "Low":    { bg: "#F0FDF4", text: "#16A34A", bgDark: "rgba(16,185,129,0.15)", textDark: "#34D399" },
+  "High":   { bg: "#FEF2F2", text: "#B91C1C", bgDark: "rgba(239,68,68,0.15)",  textDark: "#F87171" },
+  "Medium": { bg: "#FEF3C7", text: "#B45309", bgDark: "rgba(245,158,11,0.15)", textDark: "#FBBF24" },
+  "Low":    { bg: "#F0FDF4", text: "#15803D", bgDark: "rgba(16,185,129,0.15)", textDark: "#34D399" },
 };
 
 const PASTELS = [
@@ -57,7 +57,7 @@ export default function TaskGridView({ tasks }: Props) {
 
   if (tasks.length === 0) {
     return (
-      <div className={`flex flex-col items-center justify-center py-20 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>
+      <div className={`flex flex-col items-center justify-center py-20 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>
         <p className="font-heading text-sm font-semibold">No tasks found</p>
         <p className="text-xs mt-1">Adjust filters or create a new task</p>
       </div>
@@ -91,7 +91,7 @@ export default function TaskGridView({ tasks }: Props) {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div className="min-w-0 flex-1">
                   {task.type && (
-                    <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide mb-1 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>
+                    <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide mb-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                       <Tag size={10} weight="duotone" />
                       {task.type}
                     </span>
@@ -122,19 +122,19 @@ export default function TaskGridView({ tasks }: Props) {
               {/* Due date + Contact + Related To */}
               <div className="space-y-1.5">
                 {task.dueDate && (
-                  <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>
+                  <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                     <CalendarBlank size={11} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="truncate">Due {task.dueDate}</span>
                   </div>
                 )}
                 {task.contact && (
-                  <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>
+                  <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                     <User size={11} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="truncate">{task.contact}</span>
                   </div>
                 )}
                 {task.relatedTo && (
-                  <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>
+                  <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                     <LinkSimple size={11} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="truncate">{task.relatedTo}</span>
                   </div>
@@ -144,7 +144,7 @@ export default function TaskGridView({ tasks }: Props) {
 
             {/* Footer: owner */}
             <div className={`flex items-center px-3 sm:px-4 py-2.5 border-t ${isDark ? "border-[#27272A] bg-black/20" : "border-white/50 bg-surface/30"}`}>
-              <span className={`text-[12px] truncate ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{task.taskOwner}</span>
+              <span className={`text-[12px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{task.taskOwner}</span>
             </div>
           </div>
         );

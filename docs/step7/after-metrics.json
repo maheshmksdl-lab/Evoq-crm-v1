@@ -1,0 +1,3797 @@
+{
+ "light-desktop-dashboard": {
+  "textNodes": 104,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "↑ 30.4% growth",
+    "cr": 3.48,
+    "c": "lab(55.0481 -49.9246 15.93)"
+   },
+   {
+    "t": "Dashboard V1",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 20,
+  "withRing": 19,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode"
+  ],
+  "url": "/",
+  "errors": []
+ },
+ "light-desktop-leads": {
+  "textNodes": 112,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "light-desktop-lead-detail": {
+  "textNodes": 123,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads/12",
+  "errors": []
+ },
+ "light-desktop-leads-grid": {
+  "textNodes": 108,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "No contact info",
+    "cr": 3.71,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "light-desktop-leads-kanban": {
+  "textNodes": 90,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "light-desktop-deals": {
+  "textNodes": 140,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "13",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/deals",
+  "errors": []
+ },
+ "light-desktop-deals-grid": {
+  "textNodes": 142,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "13",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/deals",
+  "errors": []
+ },
+ "light-desktop-deals-kanban": {
+  "textNodes": 146,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "No deals",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "No deals",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/deals",
+  "errors": []
+ },
+ "light-desktop-deal-detail": {
+  "textNodes": 126,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/deals/1",
+  "errors": []
+ },
+ "light-desktop-accounts": {
+  "textNodes": 127,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-desktop-accounts-grid": {
+  "textNodes": 89,
+  "lowContrast": 20,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "23 Mar 2026",
+    "cr": 3.83,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "13 Apr 2026",
+    "cr": 3.89,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 17,
+  "withRing": 17,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [],
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-desktop-account-detail": {
+  "textNodes": 114,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 21,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "light-desktop-contacts": {
+  "textNodes": 95,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-desktop-contacts-grid": {
+  "textNodes": 87,
+  "lowContrast": 9,
+  "worst": [
+   {
+    "t": "CM",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "RR",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "SS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "ML",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "VR",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "JD",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "No contact info",
+    "cr": 3.71,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "L1",
+    "cr": 4.44,
+    "c": "rgb(249, 251, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 17,
+  "withRing": 17,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [],
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-desktop-contact-detail": {
+  "textNodes": 112,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "PS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "CM",
+    "cr": 2.68,
+    "c": "rgb(249, 251, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 21,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "light-desktop-tasks": {
+  "textNodes": 67,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-desktop-tasks-grid": {
+  "textNodes": 56,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 23,
+  "withRing": 23,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-desktop-task-detail": {
+  "textNodes": 70,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 23,
+  "withRing": 23,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "light-desktop-reports": {
+  "textNodes": 67,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 22,
+  "withRing": 22,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/reports",
+  "errors": []
+ },
+ "light-desktop-report-detail": {
+  "textNodes": 82,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 20,
+  "unnamed": [
+   "button:",
+   "g:"
+  ],
+  "noRing": [
+   "button:Toggle dark mode"
+  ],
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "light-desktop-report-edit": {
+  "textNodes": 49,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Primary",
+    "cr": 3.19,
+    "c": "rgb(217, 119, 6)"
+   },
+   {
+    "t": "Ready",
+    "cr": 3.43,
+    "c": "rgb(5, 150, 105)"
+   },
+   {
+    "t": "Edit report",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 24,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "div:Deals\nPRIMARY\nData sourc"
+  ],
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "light-desktop-report-create": {
+  "textNodes": 97,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "↑ 30.4% growth",
+    "cr": 3.48,
+    "c": "lab(55.0481 -49.9246 15.93)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 18,
+  "withRing": 17,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode"
+  ],
+  "url": "/reports/create",
+  "errors": []
+ },
+ "light-desktop-comms": {
+  "textNodes": 14,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 13,
+  "withRing": 12,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode"
+  ],
+  "url": "/comms",
+  "errors": []
+ },
+ "light-desktop-settings": {
+  "textNodes": 55,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-personal-settings": {
+  "textNodes": 55,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-users": {
+  "textNodes": 102,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "MS",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "pm@socialdnalabs.com",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "SM",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-organization": {
+  "textNodes": 63,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-roles": {
+  "textNodes": 50,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "List",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-permissions": {
+  "textNodes": 66,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-email": {
+  "textNodes": 32,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-modules-and-fields": {
+  "textNodes": 57,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-dashboard-customization": {
+  "textNodes": 38,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "No description",
+    "cr": 3.71,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-import": {
+  "textNodes": 35,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Upload CSV or Excel files to imp",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-export": {
+  "textNodes": 32,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-data-backup": {
+  "textNodes": 32,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-home-edit": {
+  "textNodes": 111,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Home",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Dashboard Customization",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 21,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [],
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "light-desktop-login": {
+  "textNodes": 17,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Sign in",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 8,
+  "withRing": 8,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [],
+  "url": "/login",
+  "errors": []
+ },
+ "light-desktop-register": {
+  "textNodes": 14,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Submit",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 7,
+  "withRing": 7,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [],
+  "url": "/register",
+  "errors": []
+ },
+ "light-desktop-forgot": {
+  "textNodes": 20,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Send reset link",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 16,
+  "withRing": 15,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode"
+  ],
+  "url": "/forgot-password",
+  "errors": []
+ },
+ "light-tablet-dashboard": {
+  "textNodes": 92,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "↑ 30.4% growth",
+    "cr": 3.48,
+    "c": "lab(55.0481 -49.9246 15.93)"
+   },
+   {
+    "t": "Dashboard V1",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/",
+  "errors": []
+ },
+ "light-tablet-leads": {
+  "textNodes": 88,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "light-tablet-lead-detail": {
+  "textNodes": 99,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads/12",
+  "errors": []
+ },
+ "light-tablet-leads-grid": {
+  "textNodes": 97,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "No contact info",
+    "cr": 3.71,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "light-tablet-leads-kanban": {
+  "textNodes": 79,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "light-tablet-deals": {
+  "textNodes": 100,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "13",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "light-tablet-deals-grid": {
+  "textNodes": 130,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "13",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "light-tablet-deals-kanban": {
+  "textNodes": 134,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "No deals",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Add deal",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "No deals",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "light-tablet-deal-detail": {
+  "textNodes": 102,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals/1",
+  "errors": []
+ },
+ "light-tablet-accounts": {
+  "textNodes": 115,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-tablet-accounts-grid": {
+  "textNodes": 77,
+  "lowContrast": 20,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "23 Mar 2026",
+    "cr": 3.83,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "13 Apr 2026",
+    "cr": 3.89,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-tablet-account-detail": {
+  "textNodes": 90,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "light-tablet-contacts": {
+  "textNodes": 83,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-tablet-contacts-grid": {
+  "textNodes": 75,
+  "lowContrast": 9,
+  "worst": [
+   {
+    "t": "CM",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "RR",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "SS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "ML",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "VR",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "JD",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "No contact info",
+    "cr": 3.71,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "L1",
+    "cr": 4.44,
+    "c": "rgb(249, 251, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-tablet-contact-detail": {
+  "textNodes": 88,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "PS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "CM",
+    "cr": 2.68,
+    "c": "rgb(249, 251, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "light-tablet-tasks": {
+  "textNodes": 46,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-tablet-tasks-grid": {
+  "textNodes": 44,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-tablet-task-detail": {
+  "textNodes": 46,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "light-tablet-reports": {
+  "textNodes": 49,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports",
+  "errors": []
+ },
+ "light-tablet-report-detail": {
+  "textNodes": 70,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "light-tablet-report-edit": {
+  "textNodes": 37,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Primary",
+    "cr": 3.19,
+    "c": "rgb(217, 119, 6)"
+   },
+   {
+    "t": "Ready",
+    "cr": 3.43,
+    "c": "rgb(5, 150, 105)"
+   },
+   {
+    "t": "Edit report",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "light-tablet-report-create": {
+  "textNodes": 85,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "↑ 30.4% growth",
+    "cr": 3.48,
+    "c": "lab(55.0481 -49.9246 15.93)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/create",
+  "errors": []
+ },
+ "light-tablet-comms": {
+  "textNodes": 2,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/comms",
+  "errors": []
+ },
+ "light-tablet-settings": {
+  "textNodes": 43,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-personal-settings": {
+  "textNodes": 43,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-users": {
+  "textNodes": 90,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "MS",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "pm@socialdnalabs.com",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "SM",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-organization": {
+  "textNodes": 51,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-roles": {
+  "textNodes": 38,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "List",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-permissions": {
+  "textNodes": 54,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-email": {
+  "textNodes": 20,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-modules-and-fields": {
+  "textNodes": 45,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-dashboard-customization": {
+  "textNodes": 26,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "No description",
+    "cr": 3.71,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-import": {
+  "textNodes": 23,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Upload CSV or Excel files to imp",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-export": {
+  "textNodes": 20,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-data-backup": {
+  "textNodes": 20,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-home-edit": {
+  "textNodes": 87,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Home",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Dashboard Customization",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "light-tablet-login": {
+  "textNodes": 17,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Sign in",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/login",
+  "errors": []
+ },
+ "light-tablet-register": {
+  "textNodes": 14,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Submit",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/register",
+  "errors": []
+ },
+ "light-tablet-forgot": {
+  "textNodes": 8,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Send reset link",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/forgot-password",
+  "errors": []
+ },
+ "light-mobile-dashboard": {
+  "textNodes": 92,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "↑ 30.4% growth",
+    "cr": 3.48,
+    "c": "lab(55.0481 -49.9246 15.93)"
+   },
+   {
+    "t": "Dashboard V1",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/",
+  "errors": []
+ },
+ "light-mobile-leads": {
+  "textNodes": 45,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "light-mobile-lead-detail": {
+  "textNodes": 99,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads/12",
+  "errors": []
+ },
+ "light-mobile-leads-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-leads-kanban": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-deals": {
+  "textNodes": 73,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "13",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "light-mobile-deals-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-deals-kanban": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-deal-detail": {
+  "textNodes": 102,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals/1",
+  "errors": []
+ },
+ "light-mobile-accounts": {
+  "textNodes": 68,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-mobile-accounts-grid": {
+  "textNodes": 77,
+  "lowContrast": 20,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "23 Mar 2026",
+    "cr": 3.83,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "13 Apr 2026",
+    "cr": 3.89,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-mobile-account-detail": {
+  "textNodes": 90,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "light-mobile-contacts": {
+  "textNodes": 61,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-mobile-contacts-grid": {
+  "textNodes": 75,
+  "lowContrast": 9,
+  "worst": [
+   {
+    "t": "CM",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "RR",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "SS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "ML",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "VR",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "JD",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "No contact info",
+    "cr": 3.71,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "L1",
+    "cr": 4.44,
+    "c": "rgb(249, 251, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-mobile-contact-detail": {
+  "textNodes": 88,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "PS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "CM",
+    "cr": 2.68,
+    "c": "rgb(249, 251, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "light-mobile-tasks": {
+  "textNodes": 39,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-mobile-tasks-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-task-detail": {
+  "textNodes": 46,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "light-mobile-reports": {
+  "textNodes": 30,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports",
+  "errors": []
+ },
+ "light-mobile-report-detail": {
+  "textNodes": 69,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "light-mobile-report-edit": {
+  "textNodes": 37,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Primary",
+    "cr": 3.19,
+    "c": "rgb(217, 119, 6)"
+   },
+   {
+    "t": "Ready",
+    "cr": 3.43,
+    "c": "rgb(5, 150, 105)"
+   },
+   {
+    "t": "Edit report",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "light-mobile-report-create": {
+  "textNodes": 85,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "↑ 30.4% growth",
+    "cr": 3.48,
+    "c": "lab(55.0481 -49.9246 15.93)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/create",
+  "errors": []
+ },
+ "light-mobile-comms": {
+  "textNodes": 2,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/comms",
+  "errors": []
+ },
+ "light-mobile-settings": {
+  "textNodes": 43,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-personal-settings": {
+  "textNodes": 43,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-users": {
+  "textNodes": 74,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "MS",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "pm@socialdnalabs.com",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "SM",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-organization": {
+  "textNodes": 51,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-roles": {
+  "textNodes": 27,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "List",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-permissions": {
+  "textNodes": 199,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-email": {
+  "textNodes": 14,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-modules-and-fields": {
+  "textNodes": 37,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-dashboard-customization": {
+  "textNodes": 17,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "No description",
+    "cr": 3.71,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-import": {
+  "textNodes": 12,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Upload CSV or Excel files to imp",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-export": {
+  "textNodes": 9,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-data-backup": {
+  "textNodes": 9,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-home-edit": {
+  "textNodes": 56,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Home",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "Dashboard Customization",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "light-mobile-login": {
+  "textNodes": 17,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Sign in",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/login",
+  "errors": []
+ },
+ "light-mobile-register": {
+  "textNodes": 14,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Submit",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/register",
+  "errors": []
+ },
+ "light-mobile-forgot": {
+  "textNodes": 8,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Send reset link",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/forgot-password",
+  "errors": []
+ },
+ "dark-desktop-dashboard": {
+  "textNodes": 104,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 20,
+  "withRing": 19,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode"
+  ],
+  "url": "/",
+  "errors": []
+ },
+ "dark-desktop-leads": {
+  "textNodes": 112,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Unqualified",
+    "cr": 4.37,
+    "c": "rgb(168, 85, 247)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-desktop-lead-detail": {
+  "textNodes": 123,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads/12",
+  "errors": []
+ },
+ "dark-desktop-leads-grid": {
+  "textNodes": 108,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Qualified",
+    "cr": 4.4,
+    "c": "rgb(161, 161, 170)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-desktop-leads-kanban": {
+  "textNodes": 90,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-desktop-deals": {
+  "textNodes": 140,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-desktop-deals-grid": {
+  "textNodes": 142,
+  "lowContrast": 16,
+  "worst": [
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-desktop-deals-kanban": {
+  "textNodes": 146,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-desktop-deal-detail": {
+  "textNodes": 126,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/deals/1",
+  "errors": []
+ },
+ "dark-desktop-accounts": {
+  "textNodes": 127,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-desktop-accounts-grid": {
+  "textNodes": 89,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Individual",
+    "cr": 4.4,
+    "c": "rgb(161, 161, 170)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 17,
+  "withRing": 17,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [],
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-desktop-account-detail": {
+  "textNodes": 114,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 21,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "dark-desktop-contacts": {
+  "textNodes": 95,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-desktop-contacts-grid": {
+  "textNodes": 87,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "JS",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "MM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "TT",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "SM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "TU",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 17,
+  "withRing": 17,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [],
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-desktop-contact-detail": {
+  "textNodes": 112,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 21,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "dark-desktop-tasks": {
+  "textNodes": 67,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-desktop-tasks-grid": {
+  "textNodes": 56,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 23,
+  "withRing": 23,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-desktop-task-detail": {
+  "textNodes": 70,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 23,
+  "withRing": 23,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "dark-desktop-reports": {
+  "textNodes": 67,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 22,
+  "withRing": 22,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/reports",
+  "errors": []
+ },
+ "dark-desktop-report-detail": {
+  "textNodes": 82,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 20,
+  "unnamed": [
+   "button:",
+   "g:"
+  ],
+  "noRing": [
+   "button:Toggle dark mode"
+  ],
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "dark-desktop-report-edit": {
+  "textNodes": 49,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 24,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "div:Deals\nPRIMARY\nData sourc"
+  ],
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "dark-desktop-report-create": {
+  "textNodes": 97,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 18,
+  "withRing": 17,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode"
+  ],
+  "url": "/reports/create",
+  "errors": []
+ },
+ "dark-desktop-comms": {
+  "textNodes": 14,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 13,
+  "withRing": 12,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode"
+  ],
+  "url": "/comms",
+  "errors": []
+ },
+ "dark-desktop-settings": {
+  "textNodes": 55,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-personal-settings": {
+  "textNodes": 55,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-users": {
+  "textNodes": 102,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "MS",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SM",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-organization": {
+  "textNodes": 63,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "9988775566",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-roles": {
+  "textNodes": 50,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-permissions": {
+  "textNodes": 66,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-email": {
+  "textNodes": 32,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-modules-and-fields": {
+  "textNodes": 57,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-dashboard-customization": {
+  "textNodes": 38,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-import": {
+  "textNodes": 35,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-export": {
+  "textNodes": 32,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-data-backup": {
+  "textNodes": 32,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-home-edit": {
+  "textNodes": 111,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 21,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [],
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "dark-tablet-dashboard": {
+  "textNodes": 92,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/",
+  "errors": []
+ },
+ "dark-tablet-leads": {
+  "textNodes": 88,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Unqualified",
+    "cr": 4.37,
+    "c": "rgb(168, 85, 247)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-tablet-lead-detail": {
+  "textNodes": 99,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads/12",
+  "errors": []
+ },
+ "dark-tablet-leads-grid": {
+  "textNodes": 97,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Qualified",
+    "cr": 4.4,
+    "c": "rgb(161, 161, 170)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-tablet-leads-kanban": {
+  "textNodes": 79,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-tablet-deals": {
+  "textNodes": 100,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-tablet-deals-grid": {
+  "textNodes": 130,
+  "lowContrast": 16,
+  "worst": [
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-tablet-deals-kanban": {
+  "textNodes": 134,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "PM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-tablet-deal-detail": {
+  "textNodes": 102,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals/1",
+  "errors": []
+ },
+ "dark-tablet-accounts": {
+  "textNodes": 115,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-tablet-accounts-grid": {
+  "textNodes": 77,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Individual",
+    "cr": 4.4,
+    "c": "rgb(161, 161, 170)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-tablet-account-detail": {
+  "textNodes": 90,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "dark-tablet-contacts": {
+  "textNodes": 83,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-tablet-contacts-grid": {
+  "textNodes": 75,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "JS",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "MM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "TT",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "SM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "TU",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-tablet-contact-detail": {
+  "textNodes": 88,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "dark-tablet-tasks": {
+  "textNodes": 46,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-tablet-tasks-grid": {
+  "textNodes": 44,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-tablet-task-detail": {
+  "textNodes": 46,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "dark-tablet-reports": {
+  "textNodes": 49,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports",
+  "errors": []
+ },
+ "dark-tablet-report-detail": {
+  "textNodes": 70,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "dark-tablet-report-edit": {
+  "textNodes": 37,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "dark-tablet-report-create": {
+  "textNodes": 85,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/create",
+  "errors": []
+ },
+ "dark-tablet-comms": {
+  "textNodes": 2,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/comms",
+  "errors": []
+ },
+ "dark-tablet-settings": {
+  "textNodes": 43,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-personal-settings": {
+  "textNodes": 43,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-users": {
+  "textNodes": 90,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "MS",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SM",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-organization": {
+  "textNodes": 51,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "9988775566",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-roles": {
+  "textNodes": 38,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-permissions": {
+  "textNodes": 54,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-email": {
+  "textNodes": 20,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-modules-and-fields": {
+  "textNodes": 45,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-dashboard-customization": {
+  "textNodes": 26,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-import": {
+  "textNodes": 23,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-export": {
+  "textNodes": 20,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-data-backup": {
+  "textNodes": 20,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-home-edit": {
+  "textNodes": 87,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "dark-mobile-dashboard": {
+  "textNodes": 92,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/",
+  "errors": []
+ },
+ "dark-mobile-leads": {
+  "textNodes": 45,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-mobile-lead-detail": {
+  "textNodes": 99,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads/12",
+  "errors": []
+ },
+ "dark-mobile-leads-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-leads-kanban": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-deals": {
+  "textNodes": 73,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-mobile-deals-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-deals-kanban": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-deal-detail": {
+  "textNodes": 102,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals/1",
+  "errors": []
+ },
+ "dark-mobile-accounts": {
+  "textNodes": 68,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-mobile-accounts-grid": {
+  "textNodes": 77,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Individual",
+    "cr": 4.4,
+    "c": "rgb(161, 161, 170)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-mobile-account-detail": {
+  "textNodes": 90,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "dark-mobile-contacts": {
+  "textNodes": 61,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-mobile-contacts-grid": {
+  "textNodes": 75,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "JS",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "MM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "TT",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "SM",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   },
+   {
+    "t": "TU",
+    "cr": 3.69,
+    "c": "rgb(0, 0, 0)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-mobile-contact-detail": {
+  "textNodes": 88,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "dark-mobile-tasks": {
+  "textNodes": 39,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-mobile-tasks-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-task-detail": {
+  "textNodes": 46,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "dark-mobile-reports": {
+  "textNodes": 30,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports",
+  "errors": []
+ },
+ "dark-mobile-report-detail": {
+  "textNodes": 69,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "dark-mobile-report-edit": {
+  "textNodes": 37,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "dark-mobile-report-create": {
+  "textNodes": 85,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/create",
+  "errors": []
+ },
+ "dark-mobile-comms": {
+  "textNodes": 2,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/comms",
+  "errors": []
+ },
+ "dark-mobile-settings": {
+  "textNodes": 43,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-personal-settings": {
+  "textNodes": 43,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-users": {
+  "textNodes": 74,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "MS",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SM",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-organization": {
+  "textNodes": 51,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "9988775566",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-roles": {
+  "textNodes": 27,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-permissions": {
+  "textNodes": 199,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-email": {
+  "textNodes": 14,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-modules-and-fields": {
+  "textNodes": 37,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-dashboard-customization": {
+  "textNodes": 17,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-import": {
+  "textNodes": 12,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-export": {
+  "textNodes": 9,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-data-backup": {
+  "textNodes": 9,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-home-edit": {
+  "textNodes": 56,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/home/1/edit",
+  "errors": []
+ }
+}

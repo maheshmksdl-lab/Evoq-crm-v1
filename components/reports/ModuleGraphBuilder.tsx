@@ -71,7 +71,7 @@ function GraphCanvas({
       {nodes.length === 0 && (
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
           <div className={`text-center max-w-sm ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>
-            <div className={`text-[32px] mb-3 ${isDark ? "text-[#52525B]" : "text-slate-300"}`}>📊</div>
+            <div className={`text-[32px] mb-3 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>📊</div>
             <h3 className={`text-[16px] font-semibold mb-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>
               Start by Adding a Module
             </h3>

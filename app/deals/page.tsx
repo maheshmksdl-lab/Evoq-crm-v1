@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
-import { getDataGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
+import { listGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
 import {
   Plus, MagnifyingGlass, SlidersHorizontal, SortAscending, Columns,
   ArrowsDownUp, List, GridFour, Kanban, CaretDown, House, CaretRight,
@@ -168,7 +168,7 @@ export default function DealsPage() {
       renderHeader: () => <ColHeader label="Account Name" icon={Buildings} />,
       renderCell: (params) => (
         <p className={`m-0 text-[15px]/[20px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
-          {params.row.account || <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+          {params.row.account || <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </p>
       ),
     },
@@ -206,29 +206,29 @@ export default function DealsPage() {
       renderHeader: () => <ColHeader label="Contact Name" icon={User} />,
       renderCell: (params) => (
         <p className={`m-0 text-[15px]/[20px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
-          {params.row.contactName || <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+          {params.row.contactName || <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </p>
       ),
     },
     createdBy: {
       field: "createdBy", headerName: "Created By", flex: 1.2, minWidth: 110, sortable: false,
       renderHeader: () => <ColHeader label="Created By" icon={UserCircle} />,
-      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{params.row.createdBy}</p>,
+      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{params.row.createdBy}</p>,
     },
     modifiedBy: {
       field: "modifiedBy", headerName: "Modified By", flex: 1.2, minWidth: 110, sortable: false,
       renderHeader: () => <ColHeader label="Modified By" icon={UserCircle} />,
-      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{params.row.modifiedBy}</p>,
+      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{params.row.modifiedBy}</p>,
     },
     creation: {
       field: "creation", headerName: "Creation", flex: 1.5, minWidth: 150, sortable: false,
       renderHeader: () => <ColHeader label="Creation" icon={CalendarBlank} />,
-      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{params.row.creation}</p>,
+      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{params.row.creation}</p>,
     },
     modified: {
       field: "modified", headerName: "Modified", flex: 1.5, minWidth: 150, sortable: false,
       renderHeader: () => <ColHeader label="Modified" icon={CalendarBlank} />,
-      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{params.row.modified}</p>,
+      renderCell: (params) => <p className={`m-0 text-[13px]/[16px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{params.row.modified}</p>,
     },
   };
 
@@ -236,11 +236,11 @@ export default function DealsPage() {
     ...COL_DEFS.filter(c => visibleCols.has(c.key)).map(c => COLUMN_BUILDERS[c.key]),
     {
       field: "actions", headerName: "", width: 50, sortable: false, disableColumnMenu: true,
-      renderCell: () => (
-        <div className="flex justify-end w-full opacity-0 group-hover:opacity-100 transition-opacity">
+      renderCell: (params) => (
+        <div className="row-actions flex justify-end w-full">
           <Tooltip title="Actions">
-            <IconButton size="small" onClick={e => e.stopPropagation()} sx={{ borderRadius: "6px", p: 0.5, "&:hover": { bgcolor: "#E3ECFC" } }}>
-              <DotsThreeVertical size={15} color="#94A3B8" weight="duotone" />
+            <IconButton size="small" aria-label={`Actions for ${params.row.name}`} onClick={e => e.stopPropagation()} sx={{ borderRadius: "6px", p: 0.5, "&:hover": { bgcolor: "#E3ECFC" } }}>
+              <DotsThreeVertical size={16} color={isDark ? "#A1A1AA" : "#64748B"} weight="bold" />
             </IconButton>
           </Tooltip>
         </div>
@@ -256,18 +256,18 @@ export default function DealsPage() {
           {/* -- Breadcrumb + Header -- */}
           <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
             <div>
-              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
+              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                 <House size={16} weight="duotone" />
                 <CaretRight size={12} weight="duotone" />
                 <Link href="/deals" className={`transition-colors font-medium ${isDark ? "hover:text-[#D4D4D8]" : "hover:text-brand-700"}`}>Deals</Link>
               </div>
               <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
                 <h1 className="font-heading text-lg sm:text-[22px]/[28px] font-semibold text-slate-900 tracking-tight m-0">Deals</h1>
-                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-xs flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#E4E4E7]" : "bg-surface border-border-light text-slate-400"}`}>
+                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-xs flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#A1A1AA]" : "bg-surface border-border-light text-slate-500"}`}>
                   {ALL_DEALS.length} total
                 </span>
                 {/* Total pipeline value */}
-                <span className={`flex items-center gap-1 text-[12px] sm:text-[13px]/[16px] font-medium px-2 sm:px-2.5 py-1 rounded-full border whitespace-nowrap ${isDark ? "text-[#34D399] bg-[#064E3B] border-[#047857]" : "text-[#059669] bg-emerald-50 border-emerald-100"}`}>
+                <span className={`flex items-center gap-1 text-[12px] sm:text-[13px]/[16px] font-medium px-2 sm:px-2.5 py-1 rounded-full border whitespace-nowrap ${isDark ? "text-[#34D399] bg-[#064E3B] border-[#047857]" : "text-emerald-700 bg-emerald-50 border-emerald-100"}`}>
                   <TrendUp size={10} weight="duotone" />
                   Pipeline: ₹{(ALL_DEALS.reduce((s, d) => s + d.amount, 0) / 100000).toFixed(1)}L
                 </span>
@@ -276,17 +276,17 @@ export default function DealsPage() {
 
             <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
               {/* View toggle */}
-              <div className={`flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-white border-slate-100"}`}>
+              <div className={`flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
                 {[
                   { k: "list",   Icon: List,     label: "List"   },
                   { k: "grid",   Icon: GridFour, label: "Grid"   },
                   { k: "kanban", Icon: Kanban,   label: "Kanban" },
                 ].map(({ k, Icon, label }) => (
-                  <button key={k} onClick={() => setView(k as typeof view)}
+                  <button key={k} onClick={() => setView(k as typeof view)} aria-pressed={view === k}
                     className={`flex items-center gap-1 px-2 sm:px-2.5 py-[6px] sm:py-[7px] rounded-lg text-[13px] sm:text-[14px]/[18px] font-medium transition-all ${
                       view === k
-                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-surface text-brand-700"
-                        : isDark ? "text-[#E4E4E7] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-surface text-slate-400 hover:bg-border-light"
+                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-white text-brand-700 shadow-xs"
+                        : isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "text-slate-600 hover:bg-white/70 hover:text-brand-700"
                     }`}>
                     <Icon size={14} weight="duotone" />
                     <span className="hidden sm:inline">{label}</span>
@@ -311,7 +311,7 @@ export default function DealsPage() {
               const active = activeStage === stage;
               if (stage !== "All" && cnt === 0) return null;
               return (
-                <button key={stage} onClick={() => setActiveStage(stage)}
+                <button key={stage} onClick={() => setActiveStage(stage)} aria-pressed={active}
                   className={`flex items-center gap-1.5 px-3 py-[7px] rounded-xl text-[14px]/[18px] font-medium whitespace-nowrap transition-all border ${
                     active
                       ? isDark ? "bg-[#18181B] text-white shadow-xs shadow-[#27272A]/10 border-[#27272A]" : "bg-brand-700 text-white shadow-xs shadow-[#1D4ED8]/25 border-brand-700"
@@ -329,13 +329,13 @@ export default function DealsPage() {
           {/* -- Toolbar -- */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
             {/* Search */}
-            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 sm:w-72 focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#60A5FA] transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
+            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 basis-full sm:basis-auto sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
-              <InputBase placeholder="Search deals…" value={search}
+              <InputBase placeholder="Search deals…" value={search} inputProps={{ "aria-label": "Search deals" }}
                 onChange={e => setSearch(e.target.value)}
                 sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#94A3B8", opacity: 1 } }}
               />
-              {search && <button onClick={() => setSearch("")} className="text-slate-300 hover:text-slate-500 text-sm">✕</button>}
+              {search && <button onClick={() => setSearch("")} aria-label="Clear search" className={`rounded-md px-1 text-[15px]/[20px] transition-colors ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}`}>✕</button>}
             </div>
 
             <div className="flex items-center gap-2.5 flex-wrap">
@@ -395,11 +395,11 @@ export default function DealsPage() {
             {/* Filtered value + Records count */}
             <div className="sm:ml-auto flex items-center gap-3 flex-wrap">
               {filtered.length !== ALL_DEALS.length && (
-                <span className={`text-[13px]/[16px] font-medium px-2.5 py-1 rounded-full border ${isDark ? "text-[#34D399] bg-[#064E3B] border-[#047857]" : "text-emerald-600 bg-emerald-50 border-emerald-100"}`}>
+                <span className={`text-[13px]/[16px] font-medium px-2.5 py-1 rounded-full border ${isDark ? "text-[#34D399] bg-[#064E3B] border-[#047857]" : "text-emerald-700 bg-emerald-50 border-emerald-100"}`}>
                   ₹{(totalValue / 100000).toFixed(1)}L filtered
                 </span>
               )}
-              <span className={`sm:ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#E4E4E7] bg-[#0A0A0A]" : "text-slate-400 bg-surface"}`}>
+              <span aria-live="polite" className={`sm:ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#A1A1AA] bg-[#0A0A0A]" : "text-slate-500 bg-surface"}`}>
                 {filtered.length} of {ALL_DEALS.length} records
               </span>
             </div>
@@ -407,7 +407,7 @@ export default function DealsPage() {
 
           {/* -- Bulk action bar -- */}
           {selected.length > 0 && (
-            <div className={`flex items-center gap-3 px-4 py-2.5 rounded-xl border animate-slide-up shadow-xs flex-wrap ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
+            <div role="toolbar" aria-label="Bulk actions" className={`flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-2.5 rounded-xl border animate-slide-up shadow-xs flex-wrap ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
               <div className="flex items-center gap-2">
                 <span className="w-5 h-5 rounded-md bg-brand-700 text-white flex items-center justify-center text-[13px]">{selected.length}</span>
                 <span className={`text-[14px]/[18px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-[#0C2472]"}`}>selected</span>
@@ -415,7 +415,7 @@ export default function DealsPage() {
               <div className={`w-px h-4 hidden sm:block ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
               <button className={`text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>Update Stage</button>
               <button className={`text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>Assign Owner</button>
-              <button onClick={() => setSelected([])} className={`sm:ml-auto text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#9CA3AF] hover:text-[#A1A1AA]" : "text-slate-400 hover:text-slate-600"}`}>Clear</button>
+              <button onClick={() => setSelected([])} className={`sm:ml-auto text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#9CA3AF] hover:text-[#A1A1AA]" : "text-slate-500 hover:text-slate-600"}`}>Clear</button>
               <button className={`flex items-center gap-1.5 text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-red-400 hover:text-red-300" : "text-red-600 hover:text-red-700"}`}>
                 <Trash size={14} weight="duotone" /> Delete
               </button>
@@ -447,16 +447,16 @@ export default function DealsPage() {
                 pageSizeOptions={ROWS_PER_PAGE_OPTIONS}
                 slots={{
                   noRowsOverlay: () => (
-                    <div className="py-16 text-center">
+                    <div className="py-16 px-4 text-center break-words" role="status">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                         <MagnifyingGlass size={22} color={isDark ? "#E4E4E7" : "#94A3B8"} weight="duotone" />
                       </div>
                       <p className={`font-heading text-sm font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No deals found</p>
-                      <p className={`text-xs mt-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-300"}`}>Try adjusting your search or stage filter</p>
+                      <p className={`text-xs mt-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Try adjusting your search or stage filter</p>
                     </div>
                   ),
                 }}
-                sx={getDataGridSx(isDark)}
+                sx={listGridSx(isDark)}
               />
             </div>
           )}

@@ -42,7 +42,7 @@ export default function ContactGridView({ contacts }: Props) {
 
   if (contacts.length === 0) {
     return (
-      <div className={`flex flex-col items-center justify-center py-20 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>
+      <div className={`flex flex-col items-center justify-center py-20 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>
         <p className="font-heading text-sm font-semibold">No contacts found</p>
         <p className="text-xs mt-1">Adjust filters or add a new contact</p>
       </div>
@@ -87,7 +87,7 @@ export default function ContactGridView({ contacts }: Props) {
                     {fullName}
                   </p>
                   {contact.accountName && (
-                    <p className={`text-[12px] truncate flex items-center gap-1 mt-0.5 ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>
+                    <p className={`text-[12px] truncate flex items-center gap-1 mt-0.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                       <Buildings size={10} color={cardT.deep} weight="duotone" />
                       {contact.accountName}
                     </p>
@@ -120,7 +120,7 @@ export default function ContactGridView({ contacts }: Props) {
                   </div>
                 ) : null}
                 {!contact.email && !contact.phone && !contact.mobile && (
-                  <p className={`text-[14px] italic ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>No contact info</p>
+                  <p className={`text-[14px] italic ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>No contact info</p>
                 )}
               </div>
             </div>
@@ -136,7 +136,7 @@ export default function ContactGridView({ contacts }: Props) {
                   <Avatar src={OWNER_AVATARS[contact.ownerName]} sx={{ width: 20, height: 20, bgcolor: owCol, fontSize: "0.48rem", fontWeight: 800 }}>
                     {contact.ownerInitials}
                   </Avatar>
-                  <span className={`text-[12px] font-medium ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>{contact.ownerName}</span>
+                  <span className={`text-[12px] font-medium ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{contact.ownerName}</span>
                 </div>
               </Tooltip>
             </div>

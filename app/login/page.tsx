@@ -76,7 +76,7 @@ export default function LoginPage() {
             <h1 className="m-0 text-[22px] font-extrabold text-slate-900 tracking-tight leading-tight">
               Welcome back
             </h1>
-            <p className="text-slate-400 text-[13px] mt-0.5 font-medium">
+            <p className="text-slate-500 text-[13px] mt-0.5 font-medium">
               Sign in to your EVOQ CRM workspace
             </p>
           </div>
@@ -99,7 +99,7 @@ export default function LoginPage() {
                   top: emailFocus || email ? "8px" : "50%",
                   transform: emailFocus || email ? "translateY(0) scale(0.8)" : "translateY(-50%)",
                   transformOrigin: "left",
-                  color: emailFocus ? "#1D4ED8" : "#94A3B8",
+                  color: emailFocus ? "#1D4ED8" : "#64748B",
                   fontSize: emailFocus || email ? "10px" : "14px",
                 }}
               >
@@ -131,7 +131,7 @@ export default function LoginPage() {
                   top: passFocus || password ? "8px" : "50%",
                   transform: passFocus || password ? "translateY(0) scale(0.8)" : "translateY(-50%)",
                   transformOrigin: "left",
-                  color: passFocus ? "#1D4ED8" : "#94A3B8",
+                  color: passFocus ? "#1D4ED8" : "#64748B",
                   fontSize: passFocus || password ? "10px" : "14px",
                 }}
               >
@@ -154,7 +154,7 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => setShowPass(p => !p)}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 transition-colors p-1 rounded-lg hover:bg-slate-100"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-600 transition-colors p-1 rounded-lg hover:bg-slate-100"
               >
                 {showPass ? <EyeSlash size={17} weight="duotone" /> : <Eye size={17} weight="duotone" />}
               </button>
@@ -240,7 +240,7 @@ export default function LoginPage() {
           {/* Divider */}
           <div className="flex items-center gap-3 my-3">
             <div className="flex-1 h-px" style={{ background: "#E3ECFC" }} />
-            <span className="text-[12px] font-semibold text-slate-400 uppercase tracking-wider">Or</span>
+            <span className="text-[12px] font-semibold text-slate-500 uppercase tracking-wider">Or</span>
             <div className="flex-1 h-px" style={{ background: "#E3ECFC" }} />
           </div>
 
@@ -263,7 +263,7 @@ export default function LoginPage() {
           {/* Social login */}
           <div className="flex items-center gap-3 mb-3">
             <div className="flex-1 h-px" style={{ background: "#E3ECFC" }} />
-            <span className="text-[12px] font-semibold text-slate-400 uppercase tracking-wider whitespace-nowrap">Or, login with</span>
+            <span className="text-[12px] font-semibold text-slate-500 uppercase tracking-wider whitespace-nowrap">Or, login with</span>
             <div className="flex-1 h-px" style={{ background: "#E3ECFC" }} />
           </div>
 
@@ -306,7 +306,7 @@ export default function LoginPage() {
 
         {/* Footer */}
         <div className="px-10 py-4 border-t text-center" style={{ borderColor: "#E3ECFC", background: "#F8FBFF" }}>
-          <p className="text-[11.5px] text-slate-400 font-medium">
+          <p className="text-[11.5px] text-slate-500 font-medium">
             © 2026 Social DNA Labs · <span className="text-brand-700 cursor-pointer hover:underline">Privacy</span> · <span className="text-brand-700 cursor-pointer hover:underline">Terms</span>
           </p>
         </div>

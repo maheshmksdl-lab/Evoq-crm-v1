@@ -1,0 +1,114 @@
+[
+ {
+  "theme": "light",
+  "group": "responsive-recheck",
+  "name": "320px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive-recheck",
+  "name": "375px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive-recheck",
+  "name": "414px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive-recheck",
+  "name": "768px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive-recheck",
+  "name": "1024px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive-recheck",
+  "name": "1280px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive-recheck",
+  "name": "1440px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive-recheck",
+  "name": "1920px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive-recheck",
+  "name": "320px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive-recheck",
+  "name": "375px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive-recheck",
+  "name": "414px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive-recheck",
+  "name": "768px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive-recheck",
+  "name": "1024px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive-recheck",
+  "name": "1280px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive-recheck",
+  "name": "1440px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive-recheck",
+  "name": "1920px: Accounts + Contacts (list, grid, detail) — no horizontal overflow, no console errors",
+  "ok": true,
+  "note": ""
+ }
+]

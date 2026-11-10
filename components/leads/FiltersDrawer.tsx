@@ -140,7 +140,7 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
             </span>
           )}
         </div>
-        {subtitle && <span className={`text-caption ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{subtitle}</span>}
+        {subtitle && <span className={`text-caption ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{subtitle}</span>}
       </div>
 
       {/* Body */}
@@ -159,7 +159,7 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
                           className={`text-[11px] font-bold px-2.5 py-1 rounded-md transition-all ${
                             row.logic === l
                               ? isDark ? "bg-[#3F3F46] text-[#F4F4F5] shadow-xs" : "bg-white text-brand-700 shadow-xs"
-                              : isDark ? "text-[#71717A] hover:text-[#A1A1AA]" : "text-slate-400 hover:text-slate-600"
+                              : isDark ? "text-[#71717A] hover:text-[#A1A1AA]" : "text-slate-500 hover:text-slate-600"
                           }`}>
                           {l}
                         </button>
@@ -211,7 +211,7 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
                       )}
                       {noValue && (
                         <div className={`flex items-center px-3 py-2 rounded-lg border ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-white border-slate-100"}`}>
-                          <p className={`m-0 text-caption italic ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>No value needed for this condition</p>
+                          <p className={`m-0 text-caption italic ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No value needed for this condition</p>
                         </div>
                       )}
                     </div>

@@ -1,0 +1,9550 @@
+{
+ "light-desktop-dashboard": {
+  "textNodes": 100,
+  "lowContrast": 31,
+  "worst": [
+   {
+    "t": "4.7",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "6.3",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "8.2",
+    "cr": 1.75,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "12.1",
+    "cr": 1.77,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Booked revenue · last 6 months",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Active deals distribution",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "· 5 latest active deals",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 20,
+  "withRing": 12,
+  "unnamed": [],
+  "noRing": [
+   "button:Dashboard V1",
+   "button:Source Report: Deal List",
+   "button:Source Report: Deal 30",
+   "button:Source Report: Account W",
+   "button:Source Report: Deal with",
+   "button:View All"
+  ],
+  "url": "/",
+  "errors": []
+ },
+ "light-desktop-leads": {
+  "textNodes": 112,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "light-desktop-lead-detail": {
+  "textNodes": 123,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads/12",
+  "errors": []
+ },
+ "light-desktop-leads-grid": {
+  "textNodes": 108,
+  "lowContrast": 4,
+  "worst": [
+   {
+    "t": "No contact info",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "light-desktop-leads-kanban": {
+  "textNodes": 90,
+  "lowContrast": 27,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Shobha Realty",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "PM SDL",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Apex Group",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Nair & Co",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "light-desktop-deals": {
+  "textNodes": 140,
+  "lowContrast": 34,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deals",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Kanban",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "27 May 2026, 03:14 PM",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "30 May 2026, 02:10 PM",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 20,
+  "unnamed": [],
+  "noRing": [
+   "button:New Deal",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort"
+  ],
+  "url": "/deals",
+  "errors": []
+ },
+ "light-desktop-deals-grid": {
+  "textNodes": 142,
+  "lowContrast": 21,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deals",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "List",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Kanban",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Pipeline: ₹",
+    "cr": 3.57,
+    "c": "rgb(5, 150, 105)"
+   },
+   {
+    "t": "27 May 2026, 03:14 PM",
+    "cr": 3.83,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 19,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:New Deal",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:"
+  ],
+  "url": "/deals",
+  "errors": []
+ },
+ "light-desktop-deals-kanban": {
+  "textNodes": 146,
+  "lowContrast": 73,
+  "worst": [
+   {
+    "t": "No deals",
+    "cr": 1.36,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No deals",
+    "cr": 1.36,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "10",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "10",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "20",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "20",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "20",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "40",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 19,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:New Deal",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:"
+  ],
+  "url": "/deals",
+  "errors": []
+ },
+ "light-desktop-deal-detail": {
+  "textNodes": 126,
+  "lowContrast": 29,
+  "worst": [
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deals",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CRM DEAL 2026 00001",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Start",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Closing",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 19,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:Convert",
+   "button:Send Email",
+   "button:Edit",
+   "button:More options",
+   "button:Won",
+   "button:Lost"
+  ],
+  "url": "/deals/1",
+  "errors": []
+ },
+ "light-desktop-accounts": {
+  "textNodes": 127,
+  "lowContrast": 39,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Accounts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 18,
+  "withRing": 13,
+  "unnamed": [],
+  "noRing": [
+   "button:New Account",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:Actions"
+  ],
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-desktop-accounts-grid": {
+  "textNodes": 89,
+  "lowContrast": 25,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Accounts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "List",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 17,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:New Account",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:"
+  ],
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-desktop-account-detail": {
+  "textNodes": 114,
+  "lowContrast": 31,
+  "worst": [
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Accounts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 19,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:Send Email",
+   "button:Edit",
+   "button:",
+   "button:New Task",
+   "button:Attach",
+   "button:New Deal"
+  ],
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "light-desktop-contacts": {
+  "textNodes": 95,
+  "lowContrast": 18,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Contacts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "27 May 2026, 02:38 PM",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "15 May 2026, 09:31 AM",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "15 Apr 2026, 11:13 AM",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 18,
+  "withRing": 13,
+  "unnamed": [],
+  "noRing": [
+   "button:New Contact",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:Actions"
+  ],
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-desktop-contacts-grid": {
+  "textNodes": 87,
+  "lowContrast": 14,
+  "worst": [
+   {
+    "t": "No contact info",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CM",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "RR",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "SS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Contacts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "ML",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "VR",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 17,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:New Contact",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:"
+  ],
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-desktop-contact-detail": {
+  "textNodes": 112,
+  "lowContrast": 39,
+  "worst": [
+   {
+    "t": "No",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "PS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Contacts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Sweany Inc",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 20,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:Send Email",
+   "button:Edit",
+   "button:More actions",
+   "button:",
+   "button:New Task",
+   "button:Attach"
+  ],
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "light-desktop-tasks": {
+  "textNodes": 67,
+  "lowContrast": 17,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Tasks",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "total",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "of",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "pm@socialdnalabs.com",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "07/05/2026",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "pm@socialdnalabs.com",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 17,
+  "unnamed": [],
+  "noRing": [
+   "button:New Task",
+   "button:More options",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "a:New"
+  ],
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-desktop-tasks-grid": {
+  "textNodes": 56,
+  "lowContrast": 16,
+  "worst": [
+   {
+    "t": "Task",
+    "cr": 2,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Task",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Quote",
+    "cr": 2.12,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Tasks",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "total",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "List",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "of",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 23,
+  "withRing": 18,
+  "unnamed": [],
+  "noRing": [
+   "button:New Task",
+   "button:More options",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort"
+  ],
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-desktop-task-detail": {
+  "textNodes": 70,
+  "lowContrast": 20,
+  "worst": [
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Tasks",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Task",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Type",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Subject",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Due Date",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 20,
+  "withRing": 13,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "a:Tasks",
+   "button:Edit",
+   "button:More actions",
+   "button:",
+   "button:Attach",
+   "button:Notes"
+  ],
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "light-desktop-reports": {
+  "textNodes": 67,
+  "lowContrast": 14,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Reports",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Browse & organize",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Pinned",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Account Reports",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deal Reports",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "total",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 22,
+  "withRing": 13,
+  "unnamed": [],
+  "noRing": [
+   "button:Reports\nBrowse & organiz",
+   "button:Deal 30",
+   "button:Account Wise Deal Summar",
+   "button:ACCOUNT REPORTS\n1",
+   "button:DEAL REPORTS\n4",
+   "button:Deal with Stage"
+  ],
+  "url": "/reports",
+  "errors": []
+ },
+ "light-desktop-report-detail": {
+  "textNodes": 82,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deals grouped by contact",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deal value distribution",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deal count per rep, compared",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "5 of 14 records",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Show Details",
+    "cr": 4.37,
+    "c": "rgb(100, 116, 139)"
+   },
+   {
+    "t": "Updated 26 days ago",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 12,
+  "unnamed": [
+   "button:",
+   "g:"
+  ],
+  "noRing": [
+   "button:",
+   "button:Report info",
+   "button:Refresh",
+   "button:Edit",
+   "button:Create Chart",
+   "button:Filter"
+  ],
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "light-desktop-report-edit": {
+  "textNodes": 49,
+  "lowContrast": 14,
+  "worst": [
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "currency",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "select",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "date",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "number",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 10,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:",
+   "button:Preview",
+   "button:Cancel",
+   "button:Save Report",
+   "button:Add Module",
+   "div:Deals\nPRIMARY\nData sourc"
+  ],
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "light-desktop-report-create": {
+  "textNodes": 97,
+  "lowContrast": 30,
+  "worst": [
+   {
+    "t": "4.7",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "6.3",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "8.2",
+    "cr": 1.75,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "12.1",
+    "cr": 1.77,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Booked revenue · last 6 months",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Active deals distribution",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "· 5 latest active deals",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 18,
+  "withRing": 12,
+  "unnamed": [],
+  "noRing": [
+   "button:Source Report: Account W",
+   "button:Source Report: Deal with",
+   "button:View All",
+   "button:Source Report: Deal 30",
+   "button:Toggle dark mode",
+   "button:3 unread notifications"
+  ],
+  "url": "/reports/create",
+  "errors": []
+ },
+ "light-desktop-comms": {
+  "textNodes": 14,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 13,
+  "withRing": 11,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode",
+   "button:3 unread notifications"
+  ],
+  "url": "/comms",
+  "errors": []
+ },
+ "light-desktop-settings": {
+  "textNodes": 55,
+  "lowContrast": 16,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "First Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-personal-settings": {
+  "textNodes": 55,
+  "lowContrast": 16,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "First Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-users": {
+  "textNodes": 102,
+  "lowContrast": 30,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "pm@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-organization": {
+  "textNodes": 63,
+  "lowContrast": 24,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "India · INR",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-roles": {
+  "textNodes": 50,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "List",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-permissions": {
+  "textNodes": 66,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "Team Leader",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Support Executive",
+    "cr": 2.43,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "a:Dashboard",
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-email": {
+  "textNodes": 32,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "This section is coming soon.",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "a:Contacts",
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-modules-and-fields": {
+  "textNodes": 57,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-dashboard-customization": {
+  "textNodes": 38,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "No description",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-import": {
+  "textNodes": 35,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Upload CSV or Excel files to imp",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-export": {
+  "textNodes": 32,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "This section is coming soon.",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-settings-data-backup": {
+  "textNodes": 32,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "This section is coming soon.",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "light-desktop-home-edit": {
+  "textNodes": 111,
+  "lowContrast": 29,
+  "worst": [
+   {
+    "t": "12",
+    "cr": 2.4,
+    "c": "lab(66.9756 -58.27 19.5419)"
+   },
+   {
+    "t": "28",
+    "cr": 2.4,
+    "c": "lab(66.9756 -58.27 19.5419)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Today",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "You",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Jun 30",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Sarah Lee",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 10,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:Home",
+   "button:Dashboard Customization",
+   "button:Dashboard V1",
+   "button:Restore this dashboard's",
+   "button:Cancel",
+   "button:Save"
+  ],
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "light-desktop-login": {
+  "textNodes": 17,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "Sign in",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "© 2026 Social DNA Labs ·",
+    "cr": 2.53,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Email or mobile number",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Password",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Sign in to your EVOQ CRM workspa",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Or",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Or, login with",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 8,
+  "withRing": 5,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:",
+   "button:Forgot password?",
+   "button:Create your account"
+  ],
+  "url": "/login",
+  "errors": []
+ },
+ "light-desktop-register": {
+  "textNodes": 14,
+  "lowContrast": 9,
+  "worst": [
+   {
+    "t": "Submit",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "© 2026 Social DNA Labs ·",
+    "cr": 2.53,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Full Name",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Email",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Mobile Number",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Address",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Password",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Confirm Password",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 7,
+  "withRing": 5,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:",
+   "button:Sign in"
+  ],
+  "url": "/register",
+  "errors": []
+ },
+ "light-desktop-forgot": {
+  "textNodes": 20,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "Send reset link",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "© 2026 Social DNA Labs ·",
+    "cr": 2.53,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Email address",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Enter your email and we'll send ",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 16,
+  "withRing": 14,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode",
+   "button:3 unread notifications"
+  ],
+  "url": "/forgot-password",
+  "errors": []
+ },
+ "light-tablet-dashboard": {
+  "textNodes": 88,
+  "lowContrast": 30,
+  "worst": [
+   {
+    "t": "4.7",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "6.3",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "8.2",
+    "cr": 1.75,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "12.1",
+    "cr": 1.77,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "Booked revenue · last 6 months",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Active deals distribution",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "· 5 latest active deals",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CRM-2026-0013",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/",
+  "errors": []
+ },
+ "light-tablet-leads": {
+  "textNodes": 88,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "light-tablet-lead-detail": {
+  "textNodes": 99,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads/12",
+  "errors": []
+ },
+ "light-tablet-leads-grid": {
+  "textNodes": 97,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "No contact info",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "light-tablet-leads-kanban": {
+  "textNodes": 79,
+  "lowContrast": 26,
+  "worst": [
+   {
+    "t": "Shobha Realty",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "PM SDL",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Apex Group",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Admin",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Nair & Co",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "SE User 1",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "light-tablet-deals": {
+  "textNodes": 100,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "Deals",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Kanban",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Pipeline: ₹",
+    "cr": 3.57,
+    "c": "rgb(5, 150, 105)"
+   },
+   {
+    "t": "13",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "light-tablet-deals-grid": {
+  "textNodes": 130,
+  "lowContrast": 20,
+  "worst": [
+   {
+    "t": "Deals",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "List",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Kanban",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Pipeline: ₹",
+    "cr": 3.57,
+    "c": "rgb(5, 150, 105)"
+   },
+   {
+    "t": "27 May 2026, 03:14 PM",
+    "cr": 3.83,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "25 Mar 2026, 08:10 PM",
+    "cr": 3.83,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "light-tablet-deals-kanban": {
+  "textNodes": 134,
+  "lowContrast": 72,
+  "worst": [
+   {
+    "t": "No deals",
+    "cr": 1.36,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No deals",
+    "cr": 1.36,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "10",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "10",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "20",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "20",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "20",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "40",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "light-tablet-deal-detail": {
+  "textNodes": 102,
+  "lowContrast": 27,
+  "worst": [
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "Deals",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CRM DEAL 2026 00001",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Start",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Closing",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Negotiation/Review",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Closed Won",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals/1",
+  "errors": []
+ },
+ "light-tablet-accounts": {
+  "textNodes": 115,
+  "lowContrast": 38,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Accounts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-tablet-accounts-grid": {
+  "textNodes": 77,
+  "lowContrast": 24,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Accounts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "List",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-tablet-account-detail": {
+  "textNodes": 90,
+  "lowContrast": 29,
+  "worst": [
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "Accounts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "ID #",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Account Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "light-tablet-contacts": {
+  "textNodes": 83,
+  "lowContrast": 17,
+  "worst": [
+   {
+    "t": "Contacts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "27 May 2026, 02:38 PM",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "15 May 2026, 09:31 AM",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "15 Apr 2026, 11:13 AM",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13 Apr 2026, 06:00 PM",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-tablet-contacts-grid": {
+  "textNodes": 75,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "No contact info",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CM",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "RR",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "SS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "Contacts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "ML",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "VR",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "JD",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-tablet-contact-detail": {
+  "textNodes": 88,
+  "lowContrast": 37,
+  "worst": [
+   {
+    "t": "No",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "PS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "Contacts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Sweany Inc",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "ID:",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Sweany Inc",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "light-tablet-tasks": {
+  "textNodes": 46,
+  "lowContrast": 11,
+  "worst": [
+   {
+    "t": "Tasks",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "total",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "of",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "07/05/2026",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "17/04/2026",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "16/04/2026",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "24/03/2026",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-tablet-tasks-grid": {
+  "textNodes": 44,
+  "lowContrast": 15,
+  "worst": [
+   {
+    "t": "Task",
+    "cr": 2,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Task",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Quote",
+    "cr": 2.12,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Tasks",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "total",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "List",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "of",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Task",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-tablet-task-detail": {
+  "textNodes": 46,
+  "lowContrast": 18,
+  "worst": [
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "Tasks",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Task",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Type",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Subject",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Due Date",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Status",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Priority",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "light-tablet-reports": {
+  "textNodes": 49,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "Reports",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Browse & organize",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Pinned",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Account Reports",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deal Reports",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "total",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "of",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports",
+  "errors": []
+ },
+ "light-tablet-report-detail": {
+  "textNodes": 70,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "Deals grouped by contact",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deal value distribution",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deal count per rep, compared",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "5 of 14 records",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Show Details",
+    "cr": 4.37,
+    "c": "rgb(100, 116, 139)"
+   },
+   {
+    "t": "Updated 26 days ago",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "light-tablet-report-edit": {
+  "textNodes": 37,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "currency",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "select",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "date",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "number",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "light-tablet-report-create": {
+  "textNodes": 85,
+  "lowContrast": 29,
+  "worst": [
+   {
+    "t": "4.7",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "6.3",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "8.2",
+    "cr": 1.75,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "12.1",
+    "cr": 1.77,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "Booked revenue · last 6 months",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Active deals distribution",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "· 5 latest active deals",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CRM-2026-0013",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/create",
+  "errors": []
+ },
+ "light-tablet-comms": {
+  "textNodes": 2,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/comms",
+  "errors": []
+ },
+ "light-tablet-settings": {
+  "textNodes": 43,
+  "lowContrast": 15,
+  "worst": [
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "First Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Last Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-personal-settings": {
+  "textNodes": 43,
+  "lowContrast": 15,
+  "worst": [
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "First Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Last Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-users": {
+  "textNodes": 90,
+  "lowContrast": 29,
+  "worst": [
+   {
+    "t": "pm@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "sdlaug0701@mailinator.com",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-organization": {
+  "textNodes": 51,
+  "lowContrast": 23,
+  "worst": [
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "India · INR",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Company Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-roles": {
+  "textNodes": 38,
+  "lowContrast": 12,
+  "worst": [
+   {
+    "t": "List",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Role Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-permissions": {
+  "textNodes": 54,
+  "lowContrast": 12,
+  "worst": [
+   {
+    "t": "Team Leader",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Support Executive",
+    "cr": 2.43,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-email": {
+  "textNodes": 20,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-modules-and-fields": {
+  "textNodes": 45,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-dashboard-customization": {
+  "textNodes": 26,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "No description",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-import": {
+  "textNodes": 23,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Upload CSV or Excel files to imp",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-export": {
+  "textNodes": 20,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-settings-data-backup": {
+  "textNodes": 20,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-tablet-home-edit": {
+  "textNodes": 87,
+  "lowContrast": 27,
+  "worst": [
+   {
+    "t": "12",
+    "cr": 2.4,
+    "c": "lab(66.9756 -58.27 19.5419)"
+   },
+   {
+    "t": "28",
+    "cr": 2.4,
+    "c": "lab(66.9756 -58.27 19.5419)"
+   },
+   {
+    "t": "Today",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "You",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Jun 30",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Sarah Lee",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Jul 2",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "You",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "light-tablet-login": {
+  "textNodes": 17,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "Sign in",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "© 2026 Social DNA Labs ·",
+    "cr": 2.53,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Email or mobile number",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Password",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Sign in to your EVOQ CRM workspa",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Or",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Or, login with",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/login",
+  "errors": []
+ },
+ "light-tablet-register": {
+  "textNodes": 14,
+  "lowContrast": 9,
+  "worst": [
+   {
+    "t": "Submit",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "© 2026 Social DNA Labs ·",
+    "cr": 2.53,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Full Name",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Email",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Mobile Number",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Address",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Password",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Confirm Password",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/register",
+  "errors": []
+ },
+ "light-tablet-forgot": {
+  "textNodes": 8,
+  "lowContrast": 4,
+  "worst": [
+   {
+    "t": "Send reset link",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "© 2026 Social DNA Labs ·",
+    "cr": 2.53,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Email address",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Enter your email and we'll send ",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/forgot-password",
+  "errors": []
+ },
+ "light-mobile-dashboard": {
+  "textNodes": 88,
+  "lowContrast": 30,
+  "worst": [
+   {
+    "t": "4.7",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "6.3",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "8.2",
+    "cr": 1.75,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "12.1",
+    "cr": 1.77,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "Booked revenue · last 6 months",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Active deals distribution",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "· 5 latest active deals",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CRM-2026-0013",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/",
+  "errors": []
+ },
+ "light-mobile-leads": {
+  "textNodes": 45,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Leads",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   },
+   {
+    "t": "12",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "light-mobile-lead-detail": {
+  "textNodes": 99,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads/12",
+  "errors": []
+ },
+ "light-mobile-leads-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-leads-kanban": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-deals": {
+  "textNodes": 73,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "Deals",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Pipeline: ₹",
+    "cr": 3.57,
+    "c": "rgb(5, 150, 105)"
+   },
+   {
+    "t": "13",
+    "cr": 4.42,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "light-mobile-deals-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-deals-kanban": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-deal-detail": {
+  "textNodes": 102,
+  "lowContrast": 27,
+  "worst": [
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "Deals",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CRM DEAL 2026 00001",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Start",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Closing",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Negotiation/Review",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Closed Won",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals/1",
+  "errors": []
+ },
+ "light-mobile-accounts": {
+  "textNodes": 68,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Accounts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 53,
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-mobile-accounts-grid": {
+  "textNodes": 77,
+  "lowContrast": 24,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Accounts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "List",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "14",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 53,
+  "url": "/accounts",
+  "errors": []
+ },
+ "light-mobile-account-detail": {
+  "textNodes": 90,
+  "lowContrast": 29,
+  "worst": [
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "Accounts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "ID #",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Account Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "light-mobile-contacts": {
+  "textNodes": 61,
+  "lowContrast": 4,
+  "worst": [
+   {
+    "t": "Contacts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Grid",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "13",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 44,
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-mobile-contacts-grid": {
+  "textNodes": 75,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "No contact info",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CM",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "RR",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "SS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "Contacts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "ML",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "VR",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "JD",
+    "cr": 2.45,
+    "c": "rgb(249, 251, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 44,
+  "url": "/contacts",
+  "errors": []
+ },
+ "light-mobile-contact-detail": {
+  "textNodes": 88,
+  "lowContrast": 37,
+  "worst": [
+   {
+    "t": "No",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "PS",
+    "cr": 2.07,
+    "c": "rgb(249, 251, 255)"
+   },
+   {
+    "t": "Contacts",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Sweany Inc",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "ID:",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Sweany Inc",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "light-mobile-tasks": {
+  "textNodes": 39,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "Tasks",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "total",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "of",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "07/05/2026",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "17/04/2026",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "16/04/2026",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "24/03/2026",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Medium",
+    "cr": 2.86,
+    "c": "rgb(217, 119, 6)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "light-mobile-tasks-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "light-mobile-task-detail": {
+  "textNodes": 46,
+  "lowContrast": 18,
+  "worst": [
+   {
+    "t": "No attachments yet",
+    "cr": 1.43,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "Tasks",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Task",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Type",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Subject",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Due Date",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Status",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Priority",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "light-mobile-reports": {
+  "textNodes": 30,
+  "lowContrast": 4,
+  "worst": [
+   {
+    "t": "Reports",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Browse & organize",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "total",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "of",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports",
+  "errors": []
+ },
+ "light-mobile-report-detail": {
+  "textNodes": 69,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "Deals grouped by contact",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deal value distribution",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Deal count per rep, compared",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "5 of 14 records",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Show Details",
+    "cr": 4.37,
+    "c": "rgb(100, 116, 139)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "light-mobile-report-edit": {
+  "textNodes": 37,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "currency",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "select",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "text",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "date",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   },
+   {
+    "t": "number",
+    "cr": 1.48,
+    "c": "lab(84.7652 -1.94535 -7.93337)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "light-mobile-report-create": {
+  "textNodes": 85,
+  "lowContrast": 29,
+  "worst": [
+   {
+    "t": "4.7",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "6.3",
+    "cr": 1.74,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "8.2",
+    "cr": 1.75,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "12.1",
+    "cr": 1.77,
+    "c": "lab(75.0771 -60.7313 19.4146)"
+   },
+   {
+    "t": "Booked revenue · last 6 months",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Active deals distribution",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "· 5 latest active deals",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "CRM-2026-0013",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/create",
+  "errors": []
+ },
+ "light-mobile-comms": {
+  "textNodes": 2,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/comms",
+  "errors": []
+ },
+ "light-mobile-settings": {
+  "textNodes": 43,
+  "lowContrast": 15,
+  "worst": [
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "First Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Last Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-personal-settings": {
+  "textNodes": 43,
+  "lowContrast": 15,
+  "worst": [
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "First Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Last Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-users": {
+  "textNodes": 74,
+  "lowContrast": 20,
+  "worst": [
+   {
+    "t": "pm@socialdnalabs.com",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "sdlaug0701@mailinator.com",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-organization": {
+  "textNodes": 51,
+  "lowContrast": 23,
+  "worst": [
+   {
+    "t": "Manage workspace",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "General",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "India · INR",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Company Name",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-roles": {
+  "textNodes": 27,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "List",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-permissions": {
+  "textNodes": 199,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Summary View",
+    "cr": 2.63,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Administrator",
+    "cr": 3.68,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-email": {
+  "textNodes": 14,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-modules-and-fields": {
+  "textNodes": 37,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-dashboard-customization": {
+  "textNodes": 17,
+  "lowContrast": 4,
+  "worst": [
+   {
+    "t": "No description",
+    "cr": 2.04,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-import": {
+  "textNodes": 12,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Upload CSV or Excel files to imp",
+    "cr": 4.38,
+    "c": "lab(48.0876 -2.03595 -16.5814)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-export": {
+  "textNodes": 9,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-settings-data-backup": {
+  "textNodes": 9,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "This section is coming soon.",
+    "cr": 2.41,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "light-mobile-home-edit": {
+  "textNodes": 56,
+  "lowContrast": 11,
+  "worst": [
+   {
+    "t": "12",
+    "cr": 2.4,
+    "c": "lab(66.9756 -58.27 19.5419)"
+   },
+   {
+    "t": "28",
+    "cr": 2.4,
+    "c": "lab(66.9756 -58.27 19.5419)"
+   },
+   {
+    "t": "Today",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "You",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Jun 30",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Sarah Lee",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Jul 2",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "You",
+    "cr": 2.54,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "light-mobile-login": {
+  "textNodes": 17,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "Sign in",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "© 2026 Social DNA Labs ·",
+    "cr": 2.53,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Email or mobile number",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Password",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Sign in to your EVOQ CRM workspa",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Or",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Or, login with",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/login",
+  "errors": []
+ },
+ "light-mobile-register": {
+  "textNodes": 14,
+  "lowContrast": 9,
+  "worst": [
+   {
+    "t": "Submit",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "© 2026 Social DNA Labs ·",
+    "cr": 2.53,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Full Name",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Email",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Mobile Number",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Address",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Password",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Confirm Password",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/register",
+  "errors": []
+ },
+ "light-mobile-forgot": {
+  "textNodes": 8,
+  "lowContrast": 4,
+  "worst": [
+   {
+    "t": "Send reset link",
+    "cr": 1.01,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "© 2026 Social DNA Labs ·",
+    "cr": 2.53,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   },
+   {
+    "t": "Email address",
+    "cr": 2.55,
+    "c": "rgb(148, 163, 184)"
+   },
+   {
+    "t": "Enter your email and we'll send ",
+    "cr": 2.61,
+    "c": "lab(65.5349 -2.25151 -14.5072)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/forgot-password",
+  "errors": []
+ },
+ "dark-desktop-dashboard": {
+  "textNodes": 100,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 20,
+  "withRing": 12,
+  "unnamed": [],
+  "noRing": [
+   "button:Dashboard V1",
+   "button:Source Report: Deal List",
+   "button:Source Report: Deal 30",
+   "button:Source Report: Account W",
+   "button:Source Report: Deal with",
+   "button:View All"
+  ],
+  "url": "/",
+  "errors": []
+ },
+ "dark-desktop-leads": {
+  "textNodes": 112,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Unqualified",
+    "cr": 4.37,
+    "c": "rgb(168, 85, 247)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-desktop-lead-detail": {
+  "textNodes": 123,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 25,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads/12",
+  "errors": []
+ },
+ "dark-desktop-leads-grid": {
+  "textNodes": 108,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Qualified",
+    "cr": 4.4,
+    "c": "rgb(161, 161, 170)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-desktop-leads-kanban": {
+  "textNodes": 90,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 24,
+  "unnamed": [],
+  "noRing": [],
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-desktop-deals": {
+  "textNodes": 140,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 20,
+  "unnamed": [],
+  "noRing": [
+   "button:New Deal",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort"
+  ],
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-desktop-deals-grid": {
+  "textNodes": 142,
+  "lowContrast": 63,
+  "worst": [
+   {
+    "t": "20",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Raja rajan",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "20",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "mmmm mmmm",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "20",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "test",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 19,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:New Deal",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:"
+  ],
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-desktop-deals-kanban": {
+  "textNodes": 146,
+  "lowContrast": 28,
+  "worst": [
+   {
+    "t": "10",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "10",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "20",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "20",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "20",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "40",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "60",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "75",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 19,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:New Deal",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:"
+  ],
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-desktop-deal-detail": {
+  "textNodes": 126,
+  "lowContrast": 16,
+  "worst": [
+   {
+    "t": "Negotiation/Review",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Closed Won",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Qualification",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Needs Analysis",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Value Proposition",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Identify Decision Makers",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 19,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:Convert",
+   "button:Send Email",
+   "button:Edit",
+   "button:More options",
+   "button:Won",
+   "button:Lost"
+  ],
+  "url": "/deals/1",
+  "errors": []
+ },
+ "dark-desktop-accounts": {
+  "textNodes": 127,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 18,
+  "withRing": 13,
+  "unnamed": [],
+  "noRing": [
+   "button:New Account",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:Actions"
+  ],
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-desktop-accounts-grid": {
+  "textNodes": 89,
+  "lowContrast": 22,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "PM SDL",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 17,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:New Account",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:"
+  ],
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-desktop-account-detail": {
+  "textNodes": 114,
+  "lowContrast": 29,
+  "worst": [
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Subject",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Status",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Deal Name",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 19,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:Send Email",
+   "button:Edit",
+   "button:",
+   "button:New Task",
+   "button:Attach",
+   "button:New Deal"
+  ],
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "dark-desktop-contacts": {
+  "textNodes": 95,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 18,
+  "withRing": 13,
+  "unnamed": [],
+  "noRing": [
+   "button:New Contact",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:Actions"
+  ],
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-desktop-contacts-grid": {
+  "textNodes": 87,
+  "lowContrast": 28,
+  "worst": [
+   {
+    "t": "SDL LEAD1",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SDL",
+    "cr": 3.25,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.32,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Speedy Motors",
+    "cr": 3.42,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "PM SDL",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.5,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Sears Homelife",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 17,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:New Contact",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "button:"
+  ],
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-desktop-contact-detail": {
+  "textNodes": 112,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "No",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Contact Owner",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Email",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Phone",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Mobile",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Department",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 20,
+  "withRing": 12,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:Send Email",
+   "button:Edit",
+   "button:More actions",
+   "button:",
+   "button:New Task",
+   "button:Attach"
+  ],
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "dark-desktop-tasks": {
+  "textNodes": 67,
+  "lowContrast": 4,
+  "worst": [
+   {
+    "t": "Medium",
+    "cr": 2.86,
+    "c": "rgb(217, 119, 6)"
+   },
+   {
+    "t": "Low",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "High",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 24,
+  "withRing": 17,
+  "unnamed": [],
+  "noRing": [
+   "button:New Task",
+   "button:More options",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort",
+   "a:New"
+  ],
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-desktop-tasks-grid": {
+  "textNodes": 56,
+  "lowContrast": 14,
+  "worst": [
+   {
+    "t": "Task",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Due",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SDL Test Test-SDL",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SDL - Account",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Task",
+    "cr": 3.25,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Quote",
+    "cr": 3.32,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Due",
+    "cr": 3.32,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Task",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 23,
+  "withRing": 18,
+  "unnamed": [],
+  "noRing": [
+   "button:New Task",
+   "button:More options",
+   "button:Filters",
+   "button:Columns",
+   "button:Sort"
+  ],
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-desktop-task-detail": {
+  "textNodes": 70,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Type",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Subject",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Due Date",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Priority",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Status",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 20,
+  "withRing": 13,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "a:Tasks",
+   "button:Edit",
+   "button:More actions",
+   "button:",
+   "button:Attach",
+   "button:Notes"
+  ],
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "dark-desktop-reports": {
+  "textNodes": 67,
+  "lowContrast": 14,
+  "worst": [
+   {
+    "t": "Pinned",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Account Reports",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Deal Reports",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "deals",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "sales",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "deals",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "pipeline",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 22,
+  "withRing": 13,
+  "unnamed": [],
+  "noRing": [
+   "button:Reports\nBrowse & organiz",
+   "button:Deal 30",
+   "button:Account Wise Deal Summar",
+   "button:ACCOUNT REPORTS\n1",
+   "button:DEAL REPORTS\n4",
+   "button:Deal with Stage"
+  ],
+  "url": "/reports",
+  "errors": []
+ },
+ "dark-desktop-report-detail": {
+  "textNodes": 82,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 12,
+  "unnamed": [
+   "button:",
+   "g:"
+  ],
+  "noRing": [
+   "button:",
+   "button:Report info",
+   "button:Refresh",
+   "button:Edit",
+   "button:Create Chart",
+   "button:Filter"
+  ],
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "dark-desktop-report-edit": {
+  "textNodes": 49,
+  "lowContrast": 11,
+  "worst": [
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "currency",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "select",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "date",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "number",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 10,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:",
+   "button:Preview",
+   "button:Cancel",
+   "button:Save Report",
+   "button:Add Module",
+   "div:Deals\nPRIMARY\nData sourc"
+  ],
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "dark-desktop-report-create": {
+  "textNodes": 97,
+  "lowContrast": 4,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 18,
+  "withRing": 12,
+  "unnamed": [],
+  "noRing": [
+   "button:Source Report: Account W",
+   "button:Source Report: Deal with",
+   "button:View All",
+   "button:Source Report: Deal 30",
+   "button:Toggle dark mode",
+   "button:3 unread notifications"
+  ],
+  "url": "/reports/create",
+  "errors": []
+ },
+ "dark-desktop-comms": {
+  "textNodes": 14,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 13,
+  "withRing": 11,
+  "unnamed": [],
+  "noRing": [
+   "button:Toggle dark mode",
+   "button:3 unread notifications"
+  ],
+  "url": "/comms",
+  "errors": []
+ },
+ "dark-desktop-settings": {
+  "textNodes": 55,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-personal-settings": {
+  "textNodes": 55,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-users": {
+  "textNodes": 102,
+  "lowContrast": 9,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "MS",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-organization": {
+  "textNodes": 63,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "9988775566",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-roles": {
+  "textNodes": 50,
+  "lowContrast": 11,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "VP of Operations",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Operations Manager",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-permissions": {
+  "textNodes": 66,
+  "lowContrast": 21,
+  "worst": [
+   {
+    "t": "Team Leader",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Support Executive",
+    "cr": 2.43,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Operations Manager",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-email": {
+  "textNodes": 32,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-modules-and-fields": {
+  "textNodes": 57,
+  "lowContrast": 21,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Displayed In Tabs As",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Module Name",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-dashboard-customization": {
+  "textNodes": 38,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "No description",
+    "cr": 2.29,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Created",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-import": {
+  "textNodes": 35,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-export": {
+  "textNodes": 32,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-settings-data-backup": {
+  "textNodes": 32,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Admin · dmops@socialdnalabs.com",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 25,
+  "withRing": 9,
+  "unnamed": [],
+  "noRing": [
+   "button:GENERAL",
+   "button:Personal Settings",
+   "button:Users",
+   "button:Organization",
+   "button:SECURITY CONTROL",
+   "button:Roles"
+  ],
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-desktop-home-edit": {
+  "textNodes": 111,
+  "lowContrast": 24,
+  "worst": [
+   {
+    "t": "Total accounts count",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Total contacts",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Total leads",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Total deals",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Deal distribution by stage",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Leads by source",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Revenue over time",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Latest 30 deals",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "focusables": 21,
+  "withRing": 10,
+  "unnamed": [
+   "button:"
+  ],
+  "noRing": [
+   "button:Home",
+   "button:Dashboard Customization",
+   "button:Dashboard V1",
+   "button:Restore this dashboard's",
+   "button:Cancel",
+   "button:Save"
+  ],
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "dark-tablet-dashboard": {
+  "textNodes": 88,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/",
+  "errors": []
+ },
+ "dark-tablet-leads": {
+  "textNodes": 88,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Unqualified",
+    "cr": 4.37,
+    "c": "rgb(168, 85, 247)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-tablet-lead-detail": {
+  "textNodes": 99,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads/12",
+  "errors": []
+ },
+ "dark-tablet-leads-grid": {
+  "textNodes": 97,
+  "lowContrast": 1,
+  "worst": [
+   {
+    "t": "Qualified",
+    "cr": 4.4,
+    "c": "rgb(161, 161, 170)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-tablet-leads-kanban": {
+  "textNodes": 79,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-tablet-deals": {
+  "textNodes": 100,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-tablet-deals-grid": {
+  "textNodes": 130,
+  "lowContrast": 62,
+  "worst": [
+   {
+    "t": "20",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Raja rajan",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "20",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "mmmm mmmm",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "20",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "test",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-tablet-deals-kanban": {
+  "textNodes": 134,
+  "lowContrast": 27,
+  "worst": [
+   {
+    "t": "10",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "10",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "20",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "20",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "20",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "40",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "60",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "75",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-tablet-deal-detail": {
+  "textNodes": 102,
+  "lowContrast": 14,
+  "worst": [
+   {
+    "t": "Negotiation/Review",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Closed Won",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Qualification",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Needs Analysis",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Value Proposition",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Identify Decision Makers",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals/1",
+  "errors": []
+ },
+ "dark-tablet-accounts": {
+  "textNodes": 115,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-tablet-accounts-grid": {
+  "textNodes": 77,
+  "lowContrast": 21,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "PM SDL",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-tablet-account-detail": {
+  "textNodes": 90,
+  "lowContrast": 27,
+  "worst": [
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Subject",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Status",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Deal Name",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "dark-tablet-contacts": {
+  "textNodes": 83,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-tablet-contacts-grid": {
+  "textNodes": 75,
+  "lowContrast": 27,
+  "worst": [
+   {
+    "t": "SDL LEAD1",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SDL",
+    "cr": 3.25,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.32,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Speedy Motors",
+    "cr": 3.42,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "PM SDL",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.5,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Sears Homelife",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-tablet-contact-detail": {
+  "textNodes": 88,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "No",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Contact Owner",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Email",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Phone",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Mobile",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Department",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "dark-tablet-tasks": {
+  "textNodes": 46,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Medium",
+    "cr": 2.86,
+    "c": "rgb(217, 119, 6)"
+   },
+   {
+    "t": "Low",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "High",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-tablet-tasks-grid": {
+  "textNodes": 44,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "Task",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Due",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SDL Test Test-SDL",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SDL - Account",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Task",
+    "cr": 3.25,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Quote",
+    "cr": 3.32,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Due",
+    "cr": 3.32,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Task",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-tablet-task-detail": {
+  "textNodes": 46,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Type",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Subject",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Due Date",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Priority",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Status",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "dark-tablet-reports": {
+  "textNodes": 49,
+  "lowContrast": 13,
+  "worst": [
+   {
+    "t": "Pinned",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Account Reports",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Deal Reports",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "deals",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "sales",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "deals",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "pipeline",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "deals",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports",
+  "errors": []
+ },
+ "dark-tablet-report-detail": {
+  "textNodes": 70,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "dark-tablet-report-edit": {
+  "textNodes": 37,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "currency",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "select",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "date",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "number",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "dark-tablet-report-create": {
+  "textNodes": 85,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/create",
+  "errors": []
+ },
+ "dark-tablet-comms": {
+  "textNodes": 2,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/comms",
+  "errors": []
+ },
+ "dark-tablet-settings": {
+  "textNodes": 43,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-personal-settings": {
+  "textNodes": 43,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-users": {
+  "textNodes": 90,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "MS",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SM",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-organization": {
+  "textNodes": 51,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "9988775566",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-roles": {
+  "textNodes": 38,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "VP of Operations",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Operations Manager",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Support Executive",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-permissions": {
+  "textNodes": 54,
+  "lowContrast": 20,
+  "worst": [
+   {
+    "t": "Team Leader",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Support Executive",
+    "cr": 2.43,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "Operations Manager",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-email": {
+  "textNodes": 20,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-modules-and-fields": {
+  "textNodes": 45,
+  "lowContrast": 20,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Displayed In Tabs As",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Module Name",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Shared To",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-dashboard-customization": {
+  "textNodes": 26,
+  "lowContrast": 9,
+  "worst": [
+   {
+    "t": "No description",
+    "cr": 2.29,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Created",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Modified",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-import": {
+  "textNodes": 23,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-export": {
+  "textNodes": 20,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-settings-data-backup": {
+  "textNodes": 20,
+  "lowContrast": 5,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-tablet-home-edit": {
+  "textNodes": 87,
+  "lowContrast": 22,
+  "worst": [
+   {
+    "t": "Total accounts count",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Total contacts",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Total leads",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Total deals",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Deal distribution by stage",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Leads by source",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Revenue over time",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Latest 30 deals",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/home/1/edit",
+  "errors": []
+ },
+ "dark-mobile-dashboard": {
+  "textNodes": 88,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/",
+  "errors": []
+ },
+ "dark-mobile-leads": {
+  "textNodes": 45,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads",
+  "errors": []
+ },
+ "dark-mobile-lead-detail": {
+  "textNodes": 99,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/leads/12",
+  "errors": []
+ },
+ "dark-mobile-leads-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-leads-kanban": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-deals": {
+  "textNodes": 73,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals",
+  "errors": []
+ },
+ "dark-mobile-deals-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-deals-kanban": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-deal-detail": {
+  "textNodes": 102,
+  "lowContrast": 14,
+  "worst": [
+   {
+    "t": "Negotiation/Review",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Closed Won",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Qualification",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Needs Analysis",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Value Proposition",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Identify Decision Makers",
+    "cr": 3.08,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/deals/1",
+  "errors": []
+ },
+ "dark-mobile-accounts": {
+  "textNodes": 68,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 53,
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-mobile-accounts-grid": {
+  "textNodes": 77,
+  "lowContrast": 21,
+  "worst": [
+   {
+    "t": "SD",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SP",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "TE",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "DF",
+    "cr": 2.15,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "SW",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "RM",
+    "cr": 2.54,
+    "c": "rgb(255, 255, 255)"
+   },
+   {
+    "t": "PM SDL",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 53,
+  "url": "/accounts",
+  "errors": []
+ },
+ "dark-mobile-account-detail": {
+  "textNodes": 90,
+  "lowContrast": 27,
+  "worst": [
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Subject",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Status",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Deal Name",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/accounts/1",
+  "errors": []
+ },
+ "dark-mobile-contacts": {
+  "textNodes": 61,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 44,
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-mobile-contacts-grid": {
+  "textNodes": 75,
+  "lowContrast": 27,
+  "worst": [
+   {
+    "t": "SDL LEAD1",
+    "cr": 3.18,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SDL",
+    "cr": 3.25,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.32,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Speedy Motors",
+    "cr": 3.42,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "PM SDL",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Admin",
+    "cr": 3.47,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "RMVT",
+    "cr": 3.5,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Sears Homelife",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 44,
+  "url": "/contacts",
+  "errors": []
+ },
+ "dark-mobile-contact-detail": {
+  "textNodes": 88,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "No",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No rows",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Contact Owner",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Email",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Phone",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Mobile",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Department",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/contacts/1",
+  "errors": []
+ },
+ "dark-mobile-tasks": {
+  "textNodes": 39,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Medium",
+    "cr": 2.86,
+    "c": "rgb(217, 119, 6)"
+   },
+   {
+    "t": "Low",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "High",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks",
+  "errors": []
+ },
+ "dark-mobile-tasks-grid": {
+  "skipped": "view toggle not visible"
+ },
+ "dark-mobile-task-detail": {
+  "textNodes": 46,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "No attachments yet",
+    "cr": 1.63,
+    "c": "rgb(63, 63, 70)"
+   },
+   {
+    "t": "Type",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Subject",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Due Date",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Priority",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Status",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/tasks/1",
+  "errors": []
+ },
+ "dark-mobile-reports": {
+  "textNodes": 30,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "deals",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "sales",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "deals",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "pipeline",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "deals",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "sales",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "accounts",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "deals",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports",
+  "errors": []
+ },
+ "dark-mobile-report-detail": {
+  "textNodes": 69,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1",
+  "errors": []
+ },
+ "dark-mobile-report-edit": {
+  "textNodes": 37,
+  "lowContrast": 10,
+  "worst": [
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "currency",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "select",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "text",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "date",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "number",
+    "cr": 2.56,
+    "c": "rgb(82, 82, 91)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/r1/edit",
+  "errors": []
+ },
+ "dark-mobile-report-create": {
+  "textNodes": 85,
+  "lowContrast": 3,
+  "worst": [
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/reports/create",
+  "errors": []
+ },
+ "dark-mobile-comms": {
+  "textNodes": 2,
+  "lowContrast": 0,
+  "worst": [],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/comms",
+  "errors": []
+ },
+ "dark-mobile-settings": {
+  "textNodes": 43,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-personal-settings": {
+  "textNodes": 43,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-users": {
+  "textNodes": 74,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "MS",
+    "cr": 3.15,
+    "c": "rgb(22, 163, 74)"
+   },
+   {
+    "t": "7788778855",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "SM",
+    "cr": 4.41,
+    "c": "rgb(220, 38, 38)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-organization": {
+  "textNodes": 51,
+  "lowContrast": 6,
+  "worst": [
+   {
+    "t": "General",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "9988775566",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-roles": {
+  "textNodes": 27,
+  "lowContrast": 9,
+  "worst": [
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "VP of Operations",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Operations Manager",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Support Executive",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Team Leader",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-permissions": {
+  "textNodes": 199,
+  "lowContrast": 15,
+  "worst": [
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Full Access",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Create",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Read",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Update",
+    "cr": 3.52,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-email": {
+  "textNodes": 14,
+  "lowContrast": 4,
+  "worst": [
+   {
+    "t": "Security Control",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-modules-and-fields": {
+  "textNodes": 37,
+  "lowContrast": 18,
+  "worst": [
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Displayed In Tabs As",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Module Name",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Shared To",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Last Modified",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Status",
+    "cr": 3.9,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-dashboard-customization": {
+  "textNodes": 17,
+  "lowContrast": 7,
+  "worst": [
+   {
+    "t": "No description",
+    "cr": 2.29,
+    "c": "rgb(82, 82, 91)"
+   },
+   {
+    "t": "Channels",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Created",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Modified",
+    "cr": 3.67,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Create Dashboard",
+    "cr": 4.1,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-import": {
+  "textNodes": 12,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-export": {
+  "textNodes": 9,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-settings-data-backup": {
+  "textNodes": 9,
+  "lowContrast": 2,
+  "worst": [
+   {
+    "t": "Customization",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   },
+   {
+    "t": "Data Administration",
+    "cr": 2.61,
+    "c": "rgb(71, 85, 105)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/settings",
+  "errors": []
+ },
+ "dark-mobile-home-edit": {
+  "textNodes": 56,
+  "lowContrast": 8,
+  "worst": [
+   {
+    "t": "Source Report:",
+    "cr": 4.1,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 4.1,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 4.1,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 4.1,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 4.1,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 4.1,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 4.1,
+    "c": "rgb(113, 113, 122)"
+   },
+   {
+    "t": "Source Report:",
+    "cr": 4.1,
+    "c": "rgb(113, 113, 122)"
+   }
+  ],
+  "docOverflowX": 0,
+  "scOverflowX": 0,
+  "url": "/home/1/edit",
+  "errors": []
+ }
+}

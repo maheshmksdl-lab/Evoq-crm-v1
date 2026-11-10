@@ -68,7 +68,7 @@ export default function KPICard({
             {value}
           </p>
           <span className={`inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-1 rounded-full ${isDark ? "bg-black/40" : "bg-surface/70"} ${
-            isPositive ? "text-emerald-400" : "text-red-400"
+            isPositive ? (isDark ? "text-emerald-400" : "text-emerald-700") : (isDark ? "text-red-400" : "text-red-700")
           }`}>
             {isPositive ? "↑" : "↓"} {Math.abs(trend)}% vs last month
           </span>
@@ -102,7 +102,7 @@ export default function KPICard({
 
       {sourceReportId && sourceReportName && (
         <button onClick={(e) => { e.stopPropagation(); router.push(`/reports/${sourceReportId}`); }}
-          className={`w-full flex items-center justify-center gap-1 mt-4 pt-3 border-t text-[10.5px] font-bold transition-colors ${isDark ? "border-white/10 text-[#71717A] hover:text-[#93C5FD]" : "border-black/5 text-[#4A5675] hover:text-brand-700"}`}>
+          className={`w-full flex items-center justify-center gap-1 mt-4 pt-3 border-t text-[10.5px] font-bold transition-colors ${isDark ? "border-white/10 text-[#A1A1AA] hover:text-[#93C5FD]" : "border-black/5 text-[#4A5675] hover:text-brand-700"}`}>
           <FileText size={11} weight="duotone" />
           <span>Source Report: {sourceReportName}</span>
           <ArrowSquareOut size={10} weight="bold" />

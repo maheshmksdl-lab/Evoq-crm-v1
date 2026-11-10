@@ -182,7 +182,7 @@ function KV({ label, value, link, editable, onSave }: {
   return (
     <div className={`py-2.5 border-b last:border-0 flex items-start justify-between group ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
       <div className="flex-1 min-w-0">
-        <div className={`text-[11.5px] font-semibold uppercase tracking-wider mb-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{label}</div>
+        <div className={`text-[11.5px] font-semibold uppercase tracking-wider mb-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{label}</div>
         {isEditing ? (
           <div className="flex items-center gap-1.5 -mx-2">
             <input
@@ -199,14 +199,14 @@ function KV({ label, value, link, editable, onSave }: {
             <button onClick={handleSave} className={`px-2 py-1 text-[11px] font-bold rounded-sm whitespace-nowrap transition-colors ${isDark ? "bg-[#3F3F46] text-[#D4D4D8] hover:bg-[#9CA3AF]" : "bg-brand-700 text-white hover:bg-[#60A5FA]"}`}>
               Save
             </button>
-            <button onClick={handleCancel} className={`px-2 py-1 text-[11px] font-semibold border rounded-sm whitespace-nowrap transition-colors ${isDark ? "border-[#3F3F46] text-[#71717A] hover:bg-[#27272A]" : "border-border-light text-slate-500 hover:bg-slate-50"}`}>
+            <button onClick={handleCancel} className={`px-2 py-1 text-[11px] font-semibold border rounded-sm whitespace-nowrap transition-colors ${isDark ? "border-[#3F3F46] text-[#A1A1AA] hover:bg-[#27272A]" : "border-border-light text-slate-500 hover:bg-slate-50"}`}>
               Cancel
             </button>
           </div>
         ) : (
           <div
             title={empty ? undefined : editValue}
-            className={`text-[14px] font-bold leading-snug truncate ${link ? (isDark ? "text-[#A1A1AA]" : "text-brand-700") : empty ? (isDark ? "text-[#3F3F46]" : "text-slate-300") : (isDark ? "text-[#D4D4D8]" : "text-slate-700")}`}>
+            className={`text-[14px] font-bold leading-snug truncate ${link ? (isDark ? "text-[#A1A1AA]" : "text-brand-700") : empty ? (isDark ? "text-[#A1A1AA]" : "text-slate-500") : (isDark ? "text-[#D4D4D8]" : "text-slate-700")}`}>
             {empty ? "—" : editValue}
           </div>
         )}
@@ -216,7 +216,7 @@ function KV({ label, value, link, editable, onSave }: {
           <IconButton
             onClick={() => setIsEditing(true)}
             size="small"
-            sx={{ p:0.4, mt:0.5, color: isDark ? "#3F3F46" : "#E2E8F0", opacity:0, transition:"opacity 0.15s", ".group:hover &":{opacity:1}, "&:hover":{color: isDark ? "#71717A" : "#E3ECFC", bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px", cursor:"pointer" }}>
+            sx={{ p:0.4, mt:0.5, color: isDark ? "#A1A1AA" : "#64748B", opacity:0, transition:"opacity 0.15s", ".group:hover &":{opacity:1}, "&:hover":{color: isDark ? "#71717A" : "#E3ECFC", bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px", cursor:"pointer" }}>
             <PencilSimple size={13} weight="duotone" />
           </IconButton>
         </Tooltip>
@@ -266,7 +266,7 @@ function ProfileHero({ initials, name, role, subtitle, contacts, avatarBg, avata
             <span className={`text-[16px] font-extrabold tracking-tight leading-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>{name}</span>
             <RoleBadge role={role} />
           </div>
-          {subtitle && <div className={`text-[12px] mb-1.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>{subtitle}</div>}
+          {subtitle && <div className={`text-[12px] mb-1.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{subtitle}</div>}
           <div className="flex items-center gap-3 flex-wrap">
             {contacts.map(({ icon: Icon, value, link }, i) => (
               <div key={i} className={`flex items-center gap-1.5 text-[12px] ${link ? (isDark ? "text-[#A1A1AA]" : "text-brand-700") : (isDark ? "text-[#71717A]" : "text-slate-500")}`}>
@@ -765,7 +765,7 @@ function UsersPanel() {
                       <RoleBadge role={user.role} />
                     </div>
                   </div>
-                  <div className="text-[12px] text-slate-400 truncate">{user.email}</div>
+                  <div className="text-[12px] text-slate-500 truncate">{user.email}</div>
                 </div>
                 {/* Online dot */}
                 <div className={`w-2 h-2 rounded-full shrink-0 ${user.id <= 2 ? "bg-[#10B981]" : "bg-slate-200"}`} />
@@ -776,7 +776,7 @@ function UsersPanel() {
 
         {/* Pagination */}
         <div className="px-4 py-2.5 border-t border-border-light flex items-center justify-between">
-          <span className="text-[12px] text-slate-400">Rows per page: <span className="font-semibold text-slate-600">25</span></span>
+          <span className="text-[12px] text-slate-500">Rows per page: <span className="font-semibold text-slate-600">25</span></span>
           <span className="text-[12px] text-slate-500 font-medium">1–{filtered.length} of {filtered.length}</span>
         </div>
       </div>
@@ -1020,7 +1020,7 @@ function RoleTreeNode({ node, depth, selectedId, expandedIds, onSelect, onToggle
         <div className={`text-[14px] font-medium flex-1 ${
           isSelected
             ? isDark ? "text-[#D4D4D8] font-semibold" : "text-[#0C2472] font-semibold"
-            : isDark ? "text-[#71717A]" : "text-slate-500"
+            : isDark ? "text-[#A1A1AA]" : "text-slate-500"
         }`}>
           {node.name}
         </div>
@@ -1076,11 +1076,11 @@ function RolesPanel() {
           <div className={`text-[14px] font-semibold ${
             selectedRole.id === role.id
               ? isDark ? "text-[#D4D4D8]" : "text-[#0C2472]"
-              : isDark ? "text-[#71717A]" : "text-slate-600"
+              : isDark ? "text-[#A1A1AA]" : "text-slate-600"
           }`}>
             {role.name}
           </div>
-          <div className={`text-[12px] mt-0.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>{role.description}</div>
+          <div className={`text-[12px] mt-0.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{role.description}</div>
         </button>
       ))}
     </div>
@@ -1097,7 +1097,7 @@ function RolesPanel() {
               className={`flex items-center gap-1.5 px-2 py-1 rounded-lg text-[11px] font-semibold transition-colors ${
                 viewMode === "tree"
                   ? isDark ? "bg-[#27272A] text-[#D4D4D8]" : "bg-border-light text-[#0C2472]"
-                  : isDark ? "text-[#9CA3AF]" : "text-slate-400"
+                  : isDark ? "text-[#9CA3AF]" : "text-slate-500"
               }`}>
               <Tree size={12} weight="duotone" />
               Tree
@@ -1106,7 +1106,7 @@ function RolesPanel() {
               className={`flex items-center gap-1.5 px-2 py-1 rounded-lg text-[11px] font-semibold transition-colors ${
                 viewMode === "list"
                   ? isDark ? "bg-[#27272A] text-[#D4D4D8]" : "bg-border-light text-[#0C2472]"
-                  : isDark ? "text-[#9CA3AF]" : "text-slate-400"
+                  : isDark ? "text-[#9CA3AF]" : "text-slate-500"
               }`}>
               <ListBullets size={12} weight="duotone" />
               List
@@ -1199,7 +1199,7 @@ function RolesPanel() {
                     <div key={date}>
                       {/* Date divider */}
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="text-[12px] font-semibold text-slate-400 whitespace-nowrap">{date}</span>
+                        <span className="text-[12px] font-semibold text-slate-500 whitespace-nowrap">{date}</span>
                         <div className="flex-1 h-px bg-border-light" />
                       </div>
                       {/* Items for this date */}
@@ -1211,7 +1211,7 @@ function RolesPanel() {
                           return (
                             <div key={activity.id} className="flex items-start gap-4">
                               {/* Time */}
-                              <span className="text-[12px] text-slate-400 font-medium w-[60px] shrink-0 pt-0.5">{time}</span>
+                              <span className="text-[12px] text-slate-500 font-medium w-[60px] shrink-0 pt-0.5">{time}</span>
                               {/* Icon */}
                               <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: bg }}>
                                 <Icon size={13} color={color} weight="duotone" />
@@ -1232,7 +1232,7 @@ function RolesPanel() {
                   ))}
                 </div>
               ) : (
-                <div className="px-5 py-8 text-center text-slate-400 text-[14px]">
+                <div className="px-5 py-8 text-center text-slate-500 text-[14px]">
                   No activity recorded for this role.
                 </div>
               )}
@@ -1282,11 +1282,11 @@ const PERM_MODULES = [
 ];
 
 const PERM_ROLES = [
-  { key:"administrator",  label:"Administrator",      color:"#3B82F6" },
-  { key:"vpOperations",   label:"VP of Operations",   color:"#8B5CF6" },
-  { key:"opsManager",     label:"Operations Manager", color:"#10B981" },
-  { key:"supportExec",    label:"Support Executive",  color:"#06B6D4" },
-  { key:"teamLeader",     label:"Team Leader",        color:"#F59E0B" },
+  { key:"administrator",  label:"Administrator",      color:"#2563EB" },
+  { key:"vpOperations",   label:"VP of Operations",   color:"#7C3AED" },
+  { key:"opsManager",     label:"Operations Manager", color:"#047857" },
+  { key:"supportExec",    label:"Support Executive",  color:"#0E7490" },
+  { key:"teamLeader",     label:"Team Leader",        color:"#B45309" },
 ];
 
 function buildDefaultPerms(): PermState {
@@ -1306,8 +1306,8 @@ function buildDefaultPerms(): PermState {
 
 function MiniToggle({ checked, onChange }: { checked: boolean; onChange: () => void }) {
   return (
-    <button onClick={onChange}
-      className={`relative inline-flex w-[28px] h-[15px] rounded-full transition-colors duration-200 focus:outline-hidden shrink-0 ${checked ? "bg-[#10B981]" : "bg-slate-200"}`}>
+    <button onClick={onChange} role="switch" aria-checked={checked}
+      className={`relative inline-flex w-[28px] h-[15px] rounded-full transition-colors duration-200 focus:outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6] shrink-0 ${checked ? "bg-[#10B981]" : "bg-slate-400 dark:bg-[#52525B]"}`}>
       <span className={`inline-block w-[11px] h-[11px] rounded-full bg-white shadow-xs transform transition-transform duration-200 absolute top-[2px] ${checked ? "translate-x-[15px]" : "translate-x-[2px]"}`} />
     </button>
   );
@@ -1378,7 +1378,7 @@ function PermissionPanel() {
             className={`px-4 py-1.5 rounded-t-xl text-[14px] font-semibold transition-all border border-b-0 ${
               tab === t
                 ? isDark ? "bg-[#1C1C1E] border-[#27272A] text-[#D4D4D8]" : "bg-white border-border-light text-slate-900"
-                : isDark ? "bg-transparent border-transparent text-[#9CA3AF] hover:text-[#A1A1AA]" : "bg-transparent border-transparent text-slate-400 hover:text-slate-600"
+                : isDark ? "bg-transparent border-transparent text-[#9CA3AF] hover:text-[#A1A1AA]" : "bg-transparent border-transparent text-slate-500 hover:text-slate-600"
             }`}>
             {t === "matrix" ? "Permission Matrix" : "Summary View"}
           </button>
@@ -1550,7 +1550,7 @@ function PermissionPanel() {
               return (
                 <div key={key} className="flex items-center gap-1.5">
                   <Icon size={12} color={meta.color} weight={key==="fullAccess"||key==="delete"?"fill":"duotone"} />
-                  <span className={`text-[11.5px] ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>{meta.label}</span>
+                  <span className={`text-[11.5px] ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{meta.label}</span>
                 </div>
               );
             })}
@@ -1660,7 +1660,7 @@ function FieldCell({ field, isDark = false }: { field: LField; isDark?: boolean 
       <div className="flex items-center gap-1.5 shrink-0 ml-2">
         {field.prefix && <span className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-600"}`}>{field.prefix} ·</span>}
         {field.type && <span className="text-[13px] text-inherit">{field.type}</span>}
-        <span className={`text-[11px] font-bold ${isDark ? "text-[#3F3F46] group-hover:text-[#71717A]" : "text-slate-300 group-hover:text-slate-500"}`}>···</span>
+        <span className={`text-[11px] font-bold ${isDark ? "text-[#A1A1AA] group-hover:text-[#71717A]" : "text-slate-500 group-hover:text-slate-500"}`}>···</span>
       </div>
     </div>
   );
@@ -1755,7 +1755,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                   <div className="text-[13px] font-bold uppercase tracking-wider mb-1.5 px-1" style={{ color: isDark ? "#93C5FD" : "#0C2472" }}>{sec}</div>
                   {flds.map(f => (
                     <div key={f} className={`flex items-center gap-2 px-2 py-1.5 mb-0.5 border rounded-lg text-[13px] cursor-grab transition-colors ${isDark ? "border-[#3F3F46] bg-[#18181B] hover:border-[#60A5FA] hover:bg-[#1E293B]" : "border-border-light bg-white hover:border-brand-700 hover:bg-[#EFF6FF]"}`} style={{ color: isDark ? "#93C5FD" : "#0C2472" }}>
-                      <DotsSixVertical size={11} color={isDark ? "#3F3F46" : "#E2E8F0"}/>
+                      <DotsSixVertical size={11} color={isDark ? "#71717A" : "#94A3B8"}/>
                       {f}
                     </div>
                   ))}
@@ -1789,7 +1789,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                     className={`px-5 py-2.5 text-[15px] font-semibold transition-all border-b-2 -mb-px ${
                       tab===t
                         ? isDark ? "border-[#60A5FA] text-[#60A5FA]" : "border-brand-700 text-brand-700"
-                        : isDark ? "border-transparent text-[#71717A] hover:text-[#D4D4D8]" : "border-transparent text-slate-400 hover:text-slate-600"
+                        : isDark ? "border-transparent text-[#A1A1AA] hover:text-[#D4D4D8]" : "border-transparent text-slate-500 hover:text-slate-600"
                     }`}>
                     {labels[t]}
                   </button>
@@ -1805,7 +1805,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
               {LEADS_CREATE_SECTIONS.map(section => (
                 <div key={section.title} className={`rounded-xl border overflow-hidden ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-white border-border-light"}`}>
                   <div className={`flex items-center gap-2 px-4 py-2.5 border-b ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-[#fafcff]"}`}>
-                    <DotsSixVertical size={14} color={isDark ? "#3F3F46" : "#E2E8F0"}/>
+                    <DotsSixVertical size={14} color={isDark ? "#71717A" : "#94A3B8"}/>
                     <span className={`text-[13px] font-bold flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{section.title}</span>
                     <IconButton size="small" sx={{ p:0.3, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "#1D4ED8"}, borderRadius:"6px" }}>
                       <Gear size={13} weight="duotone"/>
@@ -1818,7 +1818,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                           <span className={`text-[15px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
                           <div className="flex items-center gap-1.5">
                             {f.type && <span className="text-[13px] text-inherit">{f.type}</span>}
-                            <span className={`text-[11px] font-bold ${isDark ? "text-[#3F3F46] group-hover:text-[#71717A]" : "text-slate-300 group-hover:text-slate-500"}`}>···</span>
+                            <span className={`text-[11px] font-bold ${isDark ? "text-[#A1A1AA] group-hover:text-[#71717A]" : "text-slate-500 group-hover:text-slate-500"}`}>···</span>
                           </div>
                         </div>
                       ))}
@@ -1826,7 +1826,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                         {section.fields.slice(-2).map((f,i) => (
                           <div key={i} className={`flex items-center justify-between px-3 py-2 border rounded-lg transition-colors cursor-pointer group ${isDark ? "border-[#27272A] bg-[#111113] hover:border-[#60A5FA]" : "border-border-light bg-[#fafcff] hover:border-[#4A7AE8]"}`}>
                             <span className={`text-[15px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
-                            <span className={`text-[11px] font-bold ${isDark ? "text-[#3F3F46] group-hover:text-[#71717A]" : "text-slate-300 group-hover:text-slate-500"}`}>···</span>
+                            <span className={`text-[11px] font-bold ${isDark ? "text-[#A1A1AA] group-hover:text-[#71717A]" : "text-slate-500 group-hover:text-slate-500"}`}>···</span>
                           </div>
                         ))}
                       </div>
@@ -1879,7 +1879,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                 <div className={`divide-y ${isDark ? "divide-[#27272A]" : "divide-[#EFF6FF]"}`}>
                   {DV_BC_FIELDS.map((f,i) => (
                     <div key={i} className="flex items-center gap-3 px-4 py-2.5">
-                      <DotsSixVertical size={13} color={isDark ? "#3F3F46" : "#E2E8F0"}/>
+                      <DotsSixVertical size={13} color={isDark ? "#71717A" : "#94A3B8"}/>
                       <span className={`text-[15px] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
                       <span className="text-[13px] text-inherit">{f.type}</span>
                     </div>
@@ -1950,7 +1950,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                 <h3 className={`text-[17px] font-bold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Customize Business Card</h3>
                 <p className={`text-[13px] mt-0.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Drag to reorder · Max 5 fields</p>
               </div>
-              <button onClick={() => { setBcCustomizeOpen(false); setBcDragIdx(null); setBcDropIdx(null); }} className={isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}>
+              <button onClick={() => { setBcCustomizeOpen(false); setBcDragIdx(null); setBcDropIdx(null); }} className={isDark ? "text-[#A1A1AA] hover:text-[#D4D4D8]" : "text-slate-500 hover:text-slate-600"}>
                 <X size={18} weight="bold" />
               </button>
             </div>
@@ -1982,15 +1982,15 @@ function LayoutEditor({ module, layoutName, onClose }: {
                   <DotsSixVertical size={16} color={bcDropIdx === idx ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#71717A" : "#94A3B8")} weight="bold" />
                   <div className="flex-1 min-w-0">
                     <div className={`text-[15px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-800"}`}>{field.label}</div>
-                    <div className={`text-[12px] capitalize ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{field.type}</div>
+                    <div className={`text-[12px] capitalize ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{field.type}</div>
                   </div>
-                  <span className={`text-[12px] font-semibold rounded-sm px-1.5 py-0.5 ${isDark ? "text-[#9CA3AF] bg-[#27272A]" : "text-slate-400 bg-slate-100"}`}>{idx + 1}</span>
+                  <span className={`text-[12px] font-semibold rounded-sm px-1.5 py-0.5 ${isDark ? "text-[#9CA3AF] bg-[#27272A]" : "text-slate-500 bg-slate-100"}`}>{idx + 1}</span>
                 </div>
               ))}
             </div>
 
             <div className={`px-6 py-4 border-t flex items-center justify-between ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
-              <span className={`text-[13px] ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{bcFields.length}/5 fields</span>
+              <span className={`text-[13px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{bcFields.length}/5 fields</span>
               <div className="flex items-center gap-2">
                 <button onClick={() => { setBcCustomizeOpen(false); setBcDragIdx(null); setBcDropIdx(null); }} className={`px-4 py-2 text-[15px] font-medium border rounded-lg transition-colors ${isDark ? "text-[#9CA3AF] border-[#3F3F46] hover:bg-[#18181B]" : "text-slate-600 border-border-light hover:bg-slate-50"}`}>
                   Cancel
@@ -2021,13 +2021,13 @@ function LayoutEditor({ module, layoutName, onClose }: {
                 <div key={section.title}>
                   <div className={`text-[12px] font-bold uppercase tracking-wider mb-2 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{section.title}</div>
                   {section.fields.length === 0 ? (
-                    <div className={`text-[14px] italic ${isDark ? "text-[#52525B]" : "text-slate-300"}`}>No fields in this section.</div>
+                    <div className={`text-[14px] italic ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No fields in this section.</div>
                   ) : (
                     <div className="grid grid-cols-2 gap-3">
                       {section.fields.map(f => (
                         <div key={f.label} className={f.fullWidth ? "col-span-2" : undefined}>
                           <label className={`block text-[11.5px] font-semibold mb-1 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{f.label}{f.required && <span className="text-red-500"> *</span>}</label>
-                          <div className={`px-3 py-2 rounded-lg border text-[14px] ${isDark ? "border-[#27272A] bg-[#18181B] text-[#52525B]" : "border-border-light bg-white text-slate-300"}`}>
+                          <div className={`px-3 py-2 rounded-lg border text-[14px] ${isDark ? "border-[#27272A] bg-[#18181B] text-[#A1A1AA]" : "border-border-light bg-white text-slate-500"}`}>
                             {f.prefix ? `${f.prefix} ` : ""}{f.label.toLowerCase()}
                           </div>
                         </div>
@@ -2108,7 +2108,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
           <ArrowLeft size={14} weight="bold" />
           {modDef?.label ?? module}
         </button>
-        <span className={`hidden sm:inline text-[14px] font-semibold ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>add</span>
+        <span className={`hidden sm:inline text-[14px] font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>add</span>
         <div className="relative">
           <input
             value={layoutName}
@@ -2176,8 +2176,8 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                                 ? "border-[#3F3F46] bg-[#18181B] hover:border-[#60A5FA] hover:bg-[#1E293B] cursor-grab active:cursor-grabbing"
                                 : "border-border-light bg-white hover:border-brand-700 hover:bg-[#EFF6FF] cursor-grab active:cursor-grabbing"
                               : isDark
-                                ? "border-[#27272A] bg-[#111113] text-[#52525B] cursor-not-allowed"
-                                : "border-[#EFF6FF] bg-slate-50 text-slate-300 cursor-not-allowed"
+                                ? "border-[#27272A] bg-[#111113] text-[#A1A1AA] cursor-not-allowed"
+                                : "border-[#EFF6FF] bg-slate-50 text-slate-500 cursor-not-allowed"
                           }`}
                           style={canDragFields ? { color: isDark ? "#93C5FD" : "#0C2472" } : {}}>
                           <Icon size={11} color={canDragFields ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#3F3F46" : "#CBD5E1")} weight="duotone" className="shrink-0" />
@@ -2209,7 +2209,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                     className={`px-5 py-2.5 text-[14px] font-semibold transition-all border-b-2 -mb-px ${
                       tab===t
                         ? isDark ? "border-[#60A5FA] text-[#60A5FA]" : "border-brand-700 text-brand-700"
-                        : isDark ? "border-transparent text-[#71717A] hover:text-[#D4D4D8]" : "border-transparent text-slate-400 hover:text-slate-600"
+                        : isDark ? "border-transparent text-[#A1A1AA] hover:text-[#D4D4D8]" : "border-transparent text-slate-500 hover:text-slate-600"
                     }`}>
                     {labels[t]}
                   </button>
@@ -2222,14 +2222,14 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
           {tab === "create" ? (
             <div className="px-4 sm:px-6 py-5 space-y-4">
               {sections.length === 0 ? (
-                <div className={`border-2 border-dashed rounded-xl py-16 flex flex-col items-center justify-center gap-2 ${isDark ? "border-[#3F3F46] text-[#52525B]" : "border-[#CBD5E1] text-slate-300"}`}>
+                <div className={`border-2 border-dashed rounded-xl py-16 flex flex-col items-center justify-center gap-2 ${isDark ? "border-[#3F3F46] text-[#A1A1AA]" : "border-[#CBD5E1] text-slate-500"}`}>
                   <SquaresFour size={28} weight="duotone"/>
-                  <span className={`text-[14px] font-semibold ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Click &quot;New Section&quot; to start building this layout</span>
+                  <span className={`text-[14px] font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Click &quot;New Section&quot; to start building this layout</span>
                 </div>
               ) : sections.map(section => (
                 <div key={section.id} className={`rounded-xl border overflow-hidden ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-white border-border-light"}`}>
                   <div className={`flex items-center gap-2 px-4 py-2.5 border-b ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-[#fafcff]"}`}>
-                    <DotsSixVertical size={14} color={isDark ? "#3F3F46" : "#E2E8F0"}/>
+                    <DotsSixVertical size={14} color={isDark ? "#71717A" : "#94A3B8"}/>
                     <span className={`text-[14px] font-bold flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{section.title}</span>
                     <IconButton size="small" onClick={() => removeSection(section.id)} sx={{ p:0.3, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color:"#EF4444"}, borderRadius:"6px" }}>
                       <Trash size={13} weight="duotone"/>
@@ -2241,13 +2241,13 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                     onDrop={() => handleDrop(section.id)}
                     className={`p-3 grid grid-cols-2 gap-1.5 min-h-[64px] rounded-b-xl transition-colors ${dragOverSection === section.id ? (isDark ? "bg-[#18181B]" : "bg-[#EFF6FF]") : ""}`}>
                     {section.fields.length === 0 ? (
-                      <div className={`col-span-2 flex items-center justify-center py-6 text-[14px] border border-dashed rounded-lg ${isDark ? "text-[#52525B] border-[#3F3F46]" : "text-slate-300 border-border-light"}`}>
+                      <div className={`col-span-2 flex items-center justify-center py-6 text-[14px] border border-dashed rounded-lg ${isDark ? "text-[#A1A1AA] border-[#3F3F46]" : "text-slate-500 border-border-light"}`}>
                         Drag fields here
                       </div>
                     ) : section.fields.map(f => (
                       <div key={f.id} className={`flex items-center justify-between px-3 py-2 border rounded-lg transition-colors group ${isDark ? "border-[#27272A] bg-[#111113] hover:border-[#60A5FA]" : "border-border-light bg-[#fafcff] hover:border-[#4A7AE8]"}`}>
                         <span className={`text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
-                        <button onClick={() => removeField(section.id, f.id)} className="opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button onClick={() => removeField(section.id, f.id)} aria-label={`Remove ${f.label}`} className="rounded-sm opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100 transition-opacity">
                           <X size={11} color={isDark ? "#71717A" : "#94A3B8"} weight="bold"/>
                         </button>
                       </div>
@@ -2268,7 +2268,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                   onDrop={handleQcDrop}
                   className={`transition-colors ${qcDragOver ? (isDark ? "bg-[#18181B]" : "bg-[#EFF6FF]") : ""}`}>
                   {qcFields.length === 0 ? (
-                    <div className={`flex items-center justify-center py-10 text-[14px] m-3 border border-dashed rounded-lg ${isDark ? "text-[#52525B] border-[#3F3F46]" : "text-slate-300 border-border-light"}`}>
+                    <div className={`flex items-center justify-center py-10 text-[14px] m-3 border border-dashed rounded-lg ${isDark ? "text-[#A1A1AA] border-[#3F3F46]" : "text-slate-500 border-border-light"}`}>
                       Drag fields here
                     </div>
                   ) : (
@@ -2276,7 +2276,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                       {qcFields.map(f => (
                         <div key={f.id} className="flex items-center px-4 py-2.5 group">
                           <span className={`text-[14px] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
-                          <button onClick={() => removeQcField(f.id)} className="opacity-0 group-hover:opacity-100 transition-opacity">
+                          <button onClick={() => removeQcField(f.id)} aria-label={`Remove ${f.label}`} className="rounded-sm opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100 transition-opacity">
                             <X size={11} color={isDark ? "#71717A" : "#94A3B8"} weight="bold"/>
                           </button>
                         </div>
@@ -2285,7 +2285,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                   )}
                 </div>
               </div>
-              <p className={`text-[14px] font-medium mt-3 text-center max-w-[420px] ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>
+              <p className={`text-[14px] font-medium mt-3 text-center max-w-[420px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                 Fields shown here appear in the Quick Create popup used to add a new {modDef?.label.toLowerCase().replace(/s$/, "") ?? "record"} from a list view.
               </p>
             </div>
@@ -2305,9 +2305,9 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                     <div className={`divide-y ${isDark ? "divide-[#27272A]" : "divide-[#EFF6FF]"}`}>
                       {dvBcFields.map(f => (
                         <div key={f.id} className="flex items-center gap-3 px-4 py-2.5">
-                          <DotsSixVertical size={13} color={isDark ? "#3F3F46" : "#E2E8F0"}/>
+                          <DotsSixVertical size={13} color={isDark ? "#71717A" : "#94A3B8"}/>
                           <span className={`text-[14px] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
-                          <span className={`text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{f.type}</span>
+                          <span className={`text-[12px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{f.type}</span>
                         </div>
                       ))}
                     </div>
@@ -2338,7 +2338,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                   <div className={`divide-y ${isDark ? "divide-[#27272A]" : "divide-[#EFF6FF]"}`}>
                     {allFields.map(f => (
                       <div key={f.id} className="flex items-center gap-3 px-4 py-2.5">
-                        <DotsSixVertical size={13} color={isDark ? "#3F3F46" : "#E2E8F0"}/>
+                        <DotsSixVertical size={13} color={isDark ? "#71717A" : "#94A3B8"}/>
                         <span className={`text-[14px] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
                       </div>
                     ))}
@@ -2371,20 +2371,20 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
             </div>
             <div className={`flex-1 overflow-y-auto px-5 py-5 space-y-5 ${isDark ? "bg-[#000000]" : "bg-[#F8FAFC]"}`}>
               {sections.length === 0 ? (
-                <div className={`text-center text-[14px] py-10 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>
+                <div className={`text-center text-[14px] py-10 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                   No sections added yet. Build the Create tab to preview the form here.
                 </div>
               ) : sections.map(section => (
                 <div key={section.id}>
                   <div className={`text-[12px] font-bold uppercase tracking-wider mb-2 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{section.title}</div>
                   {section.fields.length === 0 ? (
-                    <div className={`text-[14px] italic ${isDark ? "text-[#52525B]" : "text-slate-300"}`}>No fields in this section.</div>
+                    <div className={`text-[14px] italic ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No fields in this section.</div>
                   ) : (
                     <div className="grid grid-cols-2 gap-3">
                       {section.fields.map(f => (
                         <div key={f.id}>
                           <label className={`block text-[11.5px] font-semibold mb-1 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{f.label}</label>
-                          <div className={`px-3 py-2 rounded-lg border text-[14px] ${isDark ? "border-[#27272A] bg-[#18181B] text-[#52525B]" : "border-border-light bg-white text-slate-300"}`}>
+                          <div className={`px-3 py-2 rounded-lg border text-[14px] ${isDark ? "border-[#27272A] bg-[#18181B] text-[#A1A1AA]" : "border-border-light bg-white text-slate-500"}`}>
                             {f.label.toLowerCase()}
                           </div>
                         </div>
@@ -2407,14 +2407,14 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                 <h3 className={`text-[17px] font-bold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Customize Business Card</h3>
                 <p className={`text-[13px] mt-0.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Drag to reorder · Max 5 fields</p>
               </div>
-              <button onClick={() => { setDvBcCustomizeOpen(false); setDvBcDragIdx(null); setDvBcDropIdx(null); }} className={isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}>
+              <button onClick={() => { setDvBcCustomizeOpen(false); setDvBcDragIdx(null); setDvBcDropIdx(null); }} className={isDark ? "text-[#A1A1AA] hover:text-[#D4D4D8]" : "text-slate-500 hover:text-slate-600"}>
                 <X size={18} weight="bold" />
               </button>
             </div>
 
             <div className="flex-1 overflow-y-auto px-6 py-4 space-y-2">
               {dvBcFields.length === 0 ? (
-                <div className={`text-center py-10 text-[13px] ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>
+                <div className={`text-center py-10 text-[13px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                   Add fields in the Create tab to customize the Business Card.
                 </div>
               ) : dvBcFields.map((field, idx) => (
@@ -2443,15 +2443,15 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                   <DotsSixVertical size={16} color={dvBcDropIdx === idx ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#71717A" : "#94A3B8")} weight="bold" />
                   <div className="flex-1 min-w-0">
                     <div className={`text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-800"}`}>{field.label}</div>
-                    {'type' in field && <div className={`text-[11px] capitalize ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{(field as any).type}</div>}
+                    {'type' in field && <div className={`text-[11px] capitalize ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{(field as any).type}</div>}
                   </div>
-                  <span className={`text-[11px] font-semibold rounded-sm px-1.5 py-0.5 ${isDark ? "text-[#9CA3AF] bg-[#27272A]" : "text-slate-400 bg-slate-100"}`}>{idx + 1}</span>
+                  <span className={`text-[11px] font-semibold rounded-sm px-1.5 py-0.5 ${isDark ? "text-[#9CA3AF] bg-[#27272A]" : "text-slate-500 bg-slate-100"}`}>{idx + 1}</span>
                 </div>
               ))}
             </div>
 
             <div className={`px-6 py-4 border-t flex items-center justify-between ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
-              <span className={`text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{dvBcFields.length}/5 fields</span>
+              <span className={`text-[12px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{dvBcFields.length}/5 fields</span>
               <div className="flex items-center gap-2">
                 <button onClick={() => { setDvBcCustomizeOpen(false); setDvBcDragIdx(null); setDvBcDropIdx(null); }} className={`px-4 py-2 text-[14px] font-medium border rounded-lg transition-colors ${isDark ? "text-[#9CA3AF] border-[#3F3F46] hover:bg-[#18181B]" : "text-slate-600 border-border-light hover:bg-slate-50"}`}>
                   Cancel
@@ -2580,8 +2580,8 @@ const MODULE_FIELDS: Record<string, { name: string; dataType: string; custom: bo
 
 function GreenSwitch({ checked, onChange }: { checked: boolean; onChange?: () => void }) {
   return (
-    <button onClick={onChange}
-      className={`relative inline-flex w-9 h-5 rounded-full transition-colors duration-200 focus:outline-hidden shrink-0 ${checked ? "bg-[#10B981]" : "bg-slate-200"}`}>
+    <button onClick={onChange} role="switch" aria-checked={checked}
+      className={`relative inline-flex w-9 h-5 rounded-full transition-colors duration-200 focus:outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6] shrink-0 ${checked ? "bg-[#10B981]" : "bg-slate-400 dark:bg-[#52525B]"}`}>
       <span className={`inline-block w-[14px] h-[14px] rounded-full bg-white shadow-sm transform transition-transform duration-200 absolute top-[3px] ${checked ? "translate-x-[19px]" : "translate-x-[3px]"}`} />
     </button>
   );
@@ -2686,7 +2686,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
       {/* Main content */}
       <div className="flex-1 overflow-y-auto flex flex-col">
         {/* Breadcrumb */}
-        <div className="px-4 sm:px-6 pt-5 pb-1 flex items-center gap-1.5 text-[12px] text-slate-400 flex-wrap">
+        <div className="px-4 sm:px-6 pt-5 pb-1 flex items-center gap-1.5 text-[12px] text-slate-500 flex-wrap">
           <House size={11} weight="duotone" />
           {["Setup","Customization","Modules"].map(crumb => (
             <span key={crumb} className="flex items-center gap-1.5">
@@ -2710,7 +2710,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
           {(["layouts","fields"] as const).map(t => (
             <button key={t} onClick={() => setTab(t)}
               className={`px-4 py-2.5 text-[15px] font-semibold capitalize transition-all border-b-2 -mb-px ${
-                tab === t ? "border-brand-700 text-brand-700" : "border-transparent text-slate-400 hover:text-slate-600"
+                tab === t ? "border-brand-700 text-brand-700" : "border-transparent text-slate-500 hover:text-slate-600"
               }`}>
               {t.charAt(0).toUpperCase() + t.slice(1)}
             </button>
@@ -2742,7 +2742,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                   </thead>
                   <tbody>
                     {layouts.length === 0 ? (
-                      <tr><td colSpan={4} className="px-4 py-8 text-center text-[15px] text-slate-300">No records found.</td></tr>
+                      <tr><td colSpan={4} className="px-4 py-8 text-center text-[15px] text-slate-500">No records found.</td></tr>
                     ) : layouts.map((l, i) => (
                       <tr key={i} className="border-b border-[#EFF6FF] last:border-0 hover:bg-[#fafcff] transition-colors">
                         <td className="px-4 py-3 text-[15px] font-semibold cursor-pointer hover:underline" style={{ color: isDark ? "#60A5FA" : "#1D4ED8" }} onClick={() => onOpenLayout(l.name)}>{l.name}</td>
@@ -2889,12 +2889,12 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                       </thead>
                       <tbody>
                         {filteredFields.length === 0 ? (
-                          <tr><td colSpan={4} className="px-4 py-10 text-center text-[15px] text-slate-300">No fields found.</td></tr>
+                          <tr><td colSpan={4} className="px-4 py-10 text-center text-[15px] text-slate-500">No fields found.</td></tr>
                         ) : filteredFields.map((f, i) => (
                           <tr key={i} className="border-b border-[#EFF6FF] last:border-0 hover:bg-[#fafcff] transition-colors">
                             <td className="px-4 py-3 text-[14px] text-slate-700 font-medium">{f.name}</td>
                             <td className="px-4 py-3 text-[14px] text-slate-500">{f.dataType}</td>
-                            <td className="px-4 py-3 text-[14px] text-slate-400">{f.custom ? "Yes" : ""}</td>
+                            <td className="px-4 py-3 text-[14px] text-slate-500">{f.custom ? "Yes" : ""}</td>
                             <td className="px-4 py-3 text-[14px] font-semibold text-brand-700 cursor-pointer hover:underline">{f.layout}</td>
                           </tr>
                         ))}
@@ -3199,11 +3199,11 @@ function ModulesAndFieldsPanel() {
       <table className="w-full min-w-[720px] border-collapse text-left">
         <thead>
           <tr className={isDark ? "bg-[#111113] border-b border-[#27272A]" : "bg-surface border-b border-border-light"}>
-            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>Displayed In Tabs As</th>
-            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>Module Name</th>
-            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>Shared To</th>
-            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>Last Modified</th>
-            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider text-center ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>Status</th>
+            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Displayed In Tabs As</th>
+            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Module Name</th>
+            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Shared To</th>
+            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Last Modified</th>
+            <th className={`px-6 py-3 text-[12.5px] font-bold uppercase tracking-wider text-center ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Status</th>
           </tr>
         </thead>
         <tbody>
@@ -3222,9 +3222,9 @@ function ModulesAndFieldsPanel() {
                   </button>
                 </td>
                 <td className={`px-6 py-4 text-[15px] ${isDark ? "text-[#D4D4D8]" : "text-slate-600"}`}>{mod.label}</td>
-                <td className={`px-6 py-4 text-[13px] ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>{mod.sharedTo}</td>
+                <td className={`px-6 py-4 text-[13px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{mod.sharedTo}</td>
                 <td className="px-6 py-4">
-                  <div className={`flex items-center gap-1.5 text-[13px] ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>
+                  <div className={`flex items-center gap-1.5 text-[13px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                     <User size={12} weight="duotone" />
                     {mod.lastMod}
                   </div>
@@ -3444,12 +3444,12 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                     ? "bg-brand-700 text-white"
                     : i === step
                       ? isDark ? "bg-brand-700/20 text-[#93C5FD] ring-2 ring-[#1D4ED8]" : "bg-brand-700/10 text-brand-700 ring-2 ring-[#1D4ED8]"
-                      : isDark ? "bg-[#27272A] text-[#71717A]" : "bg-border-light text-slate-400"
+                      : isDark ? "bg-[#27272A] text-[#A1A1AA]" : "bg-border-light text-slate-500"
                 }`}>
                   {i < step ? <CheckCircle size={15} weight="bold" /> : i + 1}
                 </div>
                 <span className={`hidden sm:block text-[10px] font-semibold text-center max-w-[70px] leading-tight ${
-                  i === step ? (isDark ? "text-[#F4F4F5]" : "text-slate-900") : (isDark ? "text-[#71717A]" : "text-slate-400")
+                  i === step ? (isDark ? "text-[#F4F4F5]" : "text-slate-900") : (isDark ? "text-[#A1A1AA]" : "text-slate-500")
                 }`}>{s.label}</span>
               </div>
               {i < STEPPER_STEPS.length - 1 && (
@@ -3472,7 +3472,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
             <div className="font-heading text-[12px] font-bold mb-4 uppercase tracking-wider text-slate-500">Dashboard Details</div>
             <TextField label="Dashboard Name" placeholder="e.g. Sales Performance Overview" value={name} onChange={e => setName(e.target.value)}
               size="small" fullWidth autoFocus sx={FX} />
-            <p className={`text-[12px] mt-2.5 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Give your dashboard a clear, descriptive name so it's easy to find later.</p>
+            <p className={`text-[12px] mt-2.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Give your dashboard a clear, descriptive name so it's easy to find later.</p>
           </div>
         )}
 
@@ -3511,7 +3511,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                   {ALL_ROLES.map(role => (
                     <label key={role} className={`flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer transition-colors ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}>
                       <Checkbox size="small" checked={sharedWith.includes(role)} onChange={() => toggleRole(role)}
-                        sx={{ p: 0.3, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "#1D4ED8" } }} />
+                        sx={{ p: 0.3, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "#1D4ED8" } }} />
                       <span className={`text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{role}</span>
                     </label>
                   ))}
@@ -3538,18 +3538,18 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                   {filteredUsers.map(u => (
                     <label key={u.id} className={`flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer transition-colors ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}>
                       <Checkbox size="small" checked={sharedUserIds.includes(u.id)} onChange={() => toggleUser(u.id)}
-                        sx={{ p: 0.3, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "#1D4ED8" } }} />
+                        sx={{ p: 0.3, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "#1D4ED8" } }} />
                       <div className="w-7 h-7 rounded-full flex items-center justify-center text-[10.5px] font-bold shrink-0"
                         style={{ backgroundColor: u.avatarColor, color: u.textColor }}>{u.initials}</div>
                       <div className="flex-1 min-w-0">
                         <div className={`text-[13.5px] font-semibold truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{u.name}</div>
-                        <div className={`text-[11.5px] truncate ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{u.email}</div>
+                        <div className={`text-[11.5px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{u.email}</div>
                       </div>
                       <span className={`text-[10.5px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${isDark ? "bg-[#27272A] text-[#9CA3AF]" : "bg-border-light text-slate-500"}`}>{u.role}</span>
                     </label>
                   ))}
                   {filteredUsers.length === 0 && (
-                    <div className={`text-[13px] text-center py-6 ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>No users match "{userSearch}"</div>
+                    <div className={`text-[13px] text-center py-6 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No users match "{userSearch}"</div>
                   )}
                 </div>
               </div>
@@ -3562,7 +3562,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
           <div className="space-y-5">
             <div>
               <div className="font-heading text-[12px] font-bold mb-1 uppercase tracking-wider text-slate-500">Global Filters</div>
-              <p className={`text-[12px] mb-4 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>These filters apply across every widget on the dashboard by default. Viewers can still adjust them unless locked.</p>
+              <p className={`text-[12px] mb-4 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>These filters apply across every widget on the dashboard by default. Viewers can still adjust them unless locked.</p>
             </div>
             <FormControl size="small" fullWidth sx={FX}>
               <InputLabel>Region</InputLabel>
@@ -3592,7 +3592,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
         {step === 3 && (
           <div>
             <div className="font-heading text-[12px] font-bold mb-1 uppercase tracking-wider text-slate-500">Lock Dashboard</div>
-            <p className={`text-[12px] mb-4 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Locking prevents viewers from changing filters or rearranging widgets — the dashboard shows exactly as designed.</p>
+            <p className={`text-[12px] mb-4 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Locking prevents viewers from changing filters or rearranging widgets — the dashboard shows exactly as designed.</p>
             <div className={`flex items-center justify-between gap-3 px-4 py-3.5 rounded-xl border ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-surface"}`}>
               <div className="flex items-center gap-3">
                 <div className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 ${locked ? "bg-brand-700" : isDark ? "bg-[#27272A]" : "bg-border-light"}`}>
@@ -3640,7 +3640,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                 </span>
               </div>
             </div>
-            <p className={`text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Saving will open the dashboard editor where you can build out the layout and preview it live.</p>
+            <p className={`text-[12px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Saving will open the dashboard editor where you can build out the layout and preview it live.</p>
           </div>
         )}
       </div>
@@ -3821,7 +3821,7 @@ function CustomizeHomepagePanel() {
                 )}
 
                 {/* Description */}
-                <p className={`text-[12.5px] leading-relaxed mb-4 line-clamp-2 ${hp.description ? (isDark ? "text-[#D4D4D8]" : "text-[#4A5675]") : (isDark ? "text-[#52525B]" : "text-slate-400")}`}>
+                <p className={`text-[12.5px] leading-relaxed mb-4 line-clamp-2 ${hp.description ? (isDark ? "text-[#D4D4D8]" : "text-[#4A5675]") : (isDark ? "text-[#A1A1AA]" : "text-slate-500")}`}>
                   {hp.description || "No description"}
                 </p>
 
@@ -3851,7 +3851,7 @@ function CustomizeHomepagePanel() {
                 </div>
 
                 {/* Footer: created / modified */}
-                <div className={`flex items-center justify-between text-[11px] font-semibold pt-3 border-t ${isDark ? "border-white/10 text-[#71717A]" : "border-black/5 text-[#4A5675]"}`}>
+                <div className={`flex items-center justify-between text-[11px] font-semibold pt-3 border-t ${isDark ? "border-white/10 text-[#A1A1AA]" : "border-black/5 text-[#4A5675]"}`}>
                   <span>Created {hp.created}</span>
                   <span>Modified {hp.lastModified}</span>
                 </div>
@@ -3861,7 +3861,7 @@ function CustomizeHomepagePanel() {
 
           {/* Add new homepage tile */}
           <button onClick={() => setCreateOpen(true)}
-            className={`rounded-2xl p-6 border-2 border-dashed flex flex-col items-center justify-center gap-2 min-h-[220px] transition-all duration-200 hover:shadow-lg ${isDark ? "border-[#27272A] hover:border-[#3F3F46] hover:bg-[#111113] text-[#71717A]" : "border-border-light hover:border-[#93C5FD] hover:bg-surface text-[#4A5675]"}`}>
+            className={`rounded-2xl p-6 border-2 border-dashed flex flex-col items-center justify-center gap-2 min-h-[220px] transition-all duration-200 hover:shadow-lg ${isDark ? "border-[#27272A] hover:border-[#3F3F46] hover:bg-[#111113] text-[#A1A1AA]" : "border-border-light hover:border-[#93C5FD] hover:bg-surface text-[#4A5675]"}`}>
             <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${isDark ? "bg-[#18181B]" : "bg-[#EFF6FF]"}`}>
               <Plus size={18} weight="bold" />
             </div>
@@ -3978,7 +3978,7 @@ function ImportPanel() {
                 ? "bg-brand-700 text-white hover:bg-[#1640B8]"
                 : "bg-brand-700 text-white hover:bg-[#1640B8]"
               : isDark
-                ? "bg-[#27272A] text-[#71717A] cursor-not-allowed"
+                ? "bg-[#27272A] text-[#A1A1AA] cursor-not-allowed"
                 : "bg-border-light text-[#94A3B8] cursor-not-allowed"
           }`}
         >
@@ -4002,7 +4002,7 @@ function PlaceholderPanel({ label }: { label: string }) {
           <Gear size={22} color={isDark ? "#9CA3AF" : "#94A3B8"} weight="duotone" />
         </div>
         <div className={`text-[15px] font-bold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{label}</div>
-        <div className={`text-[12px] mt-1 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>This section is coming soon.</div>
+        <div className={`text-[12px] mt-1 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>This section is coming soon.</div>
       </div>
     </div>
   );
@@ -4026,7 +4026,7 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
           </div>
           <div>
             <div className={`font-heading text-[14px] font-bold leading-tight ${isDark ? "text-[#FFFFFF]" : "text-slate-900"}`}>Settings</div>
-            <div className="text-[12px] text-slate-400 leading-tight">Manage workspace</div>
+            <div className="text-[12px] text-slate-500 leading-tight">Manage workspace</div>
           </div>
         </div>
       </div>
@@ -4036,12 +4036,12 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
           const isOpen = !collapsed[section.key];
           return (
             <div key={section.key}>
-              <button onClick={() => toggle(section.key)}
-                className={`flex items-center justify-between w-full px-2 py-1.5 rounded-lg transition-colors group min-h-[32px] outline-hidden ${isDark ? "hover:bg-brand-700/15" : "hover:bg-[#EFF6FF]"}`}>
-                <span className={`font-heading text-[13px] font-bold uppercase tracking-widest transition-colors truncate ${isDark ? "text-[#475569] group-hover:text-[#64748B]" : "text-slate-400 group-hover:text-slate-500"}`}>
+              <button onClick={() => toggle(section.key)} aria-expanded={isOpen}
+                className={`flex items-center justify-between w-full px-2 py-1.5 rounded-lg transition-colors group min-h-[32px] outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6] ${isDark ? "hover:bg-brand-700/15" : "hover:bg-[#EFF6FF]"}`}>
+                <span className={`font-heading text-[13px] font-bold uppercase tracking-widest transition-colors truncate ${isDark ? "text-[#A1A1AA] group-hover:text-[#D4D4D8]" : "text-slate-500 group-hover:text-slate-700"}`}>
                   {section.label}
                 </span>
-                {isOpen ? <CaretUp size={10} color={isDark ? "#475569" : "#E2E8F0"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#475569" : "#E2E8F0"} weight="bold" />}
+                {isOpen ? <CaretUp size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" />}
               </button>
 
               {isOpen && (
@@ -4050,10 +4050,10 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
                     const IIcon = item.icon;
                     const isActive = activeItem === item.key;
                     return (
-                      <button key={item.key}
+                      <button key={item.key} aria-current={isActive ? "page" : undefined}
                         onClick={(e) => { setActiveItem(item.key); e.currentTarget.blur(); }}
                         style={{ WebkitTapHighlightColor: "transparent" }}
-                        className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 ${
+                        className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#3B82F6] ${
                           isDark ? "focus-visible:ring-[#3B82F6]" : "focus-visible:ring-[#1D4ED8]"
                         } ${
                           isActive

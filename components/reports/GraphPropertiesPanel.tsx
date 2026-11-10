@@ -33,7 +33,7 @@ const GraphPropertiesPanel = memo(
       return (
         <div
           className={`w-full md:w-72 shrink-0 border-t md:border-t-0 md:border-l flex flex-col items-center justify-center py-6 px-6 text-center ${
-            isDark ? "border-[#27272A] bg-[#0A0A0A] text-[#71717A]" : "border-border-light bg-white text-slate-400"
+            isDark ? "border-[#27272A] bg-[#0A0A0A] text-[#A1A1AA]" : "border-border-light bg-white text-slate-500"
           }`}
         >
           <p className="text-[12px]">Select a module on the canvas to configure its fields and filters</p>
@@ -85,8 +85,8 @@ const GraphPropertiesPanel = memo(
                     ? "text-[#93C5FD] border-b-2 border-[#93C5FD]"
                     : "text-brand-700 border-b-2 border-brand-700"
                   : isDark
-                    ? "text-[#71717A]"
-                    : "text-slate-400"
+                    ? "text-[#A1A1AA]"
+                    : "text-slate-500"
               }`}
             >
               {tab === "fields" ? <ListChecks size={14} weight="duotone" /> : <Funnel size={14} weight="duotone" />}
@@ -123,7 +123,7 @@ const GraphPropertiesPanel = memo(
                     <span className={`text-[12px] font-medium flex-1 truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>
                       {field.label}
                     </span>
-                    <span className={`text-[10px] uppercase font-semibold ${isDark ? "text-[#52525B]" : "text-slate-300"}`}>
+                    <span className={`text-[10px] uppercase font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                       {field.type}
                     </span>
                   </button>
@@ -156,7 +156,7 @@ const GraphPropertiesPanel = memo(
 
               {/* Add filter form */}
               <div className="space-y-2">
-                <label className={`text-[11px] font-bold uppercase tracking-widest ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>
+                <label className={`text-[11px] font-bold uppercase tracking-widest ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>
                   Add Filter
                 </label>
                 <select

@@ -66,7 +66,7 @@ function SectionToggle({
           checked={checked}
           onChange={e => onToggle(e.target.checked)}
           size="small"
-          sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "inherit" }, flexShrink: 0 }}
+          sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "inherit" }, flexShrink: 0 }}
         />
         <div className="flex items-center gap-2.5 flex-1 min-w-0">
           <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
@@ -171,7 +171,7 @@ export default function ConvertToDealDrawer({
             <h2 className={`m-0 font-heading text-[15px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
               Convert Lead
             </h2>
-            <p className={`text-[11.5px] font-medium ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>
+            <p className={`text-[11.5px] font-medium ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
               ({shortName}{leadCompany ? ` – ${leadCompany}` : ""})
             </p>
           </div>
@@ -235,7 +235,7 @@ export default function ConvertToDealDrawer({
                     size="small" fullWidth sx={FX} />
                   <TextField label="Amount *" value={dealAmount} onChange={e => setDealAmount(e.target.value)}
                     size="small" fullWidth sx={FX}
-                    InputProps={{ startAdornment: <span className={`text-sm mr-1 font-medium ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>₹</span> }}
+                    InputProps={{ startAdornment: <span className={`text-sm mr-1 font-medium ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>₹</span> }}
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-3">
@@ -256,7 +256,7 @@ export default function ConvertToDealDrawer({
 
             {/* ── Owner of the New Records ── */}
             <div className={`rounded-2xl border shadow-xs p-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
-              <p className={`font-heading text-[10.5px] font-bold uppercase tracking-widest mb-3 ${isDark ? "text-[#71717A]" : "text-[#0C2472]"}`}>
+              <p className={`font-heading text-[10.5px] font-bold uppercase tracking-widest mb-3 ${isDark ? "text-[#A1A1AA]" : "text-[#0C2472]"}`}>
                 Owner of the New Records
               </p>
               <div className="flex items-center gap-3">
@@ -266,7 +266,7 @@ export default function ConvertToDealDrawer({
                 </Avatar>
                 <div>
                   <p className={`text-[13px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-800"}`}>{leadOwner}</p>
-                  <p className={`text-[11px] ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Record Owner</p>
+                  <p className={`text-[11px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Record Owner</p>
                 </div>
               </div>
             </div>
@@ -278,7 +278,7 @@ export default function ConvertToDealDrawer({
                   checked={notifyOwner}
                   onChange={e => setNotifyOwner(e.target.checked)}
                   size="small"
-                  sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "inherit" }, flexShrink: 0 }}
+                  sx={{ p: 0.5, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "inherit" }, flexShrink: 0 }}
                 />
                 <Bell size={15} color={isDark ? "#E4E4E7" : "#64748B"} weight="duotone" className="shrink-0" />
                 <span className={`text-[13px] font-medium ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
@@ -296,7 +296,7 @@ export default function ConvertToDealDrawer({
             <h3 className={`font-heading text-[18px] font-extrabold mb-2 tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
               Lead Converted!
             </h3>
-            <p className={`text-[12.5px] mb-4 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>
+            <p className={`text-[12.5px] mb-4 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
               <span className={`font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{shortName}</span> has been successfully converted.
             </p>
             <div className="flex flex-wrap gap-2 justify-center">

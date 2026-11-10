@@ -134,6 +134,7 @@ export default function DashboardPage() {
 
             <Button
               onClick={(e) => setMenuAnchor(e.currentTarget)}
+              aria-haspopup="menu" aria-expanded={!!menuAnchor}
               variant="outlined"
               endIcon={<CaretDown size={13} weight="bold" />}
               sx={{ textTransform: "none", fontWeight: 700, fontSize: "13px", borderRadius: "9px", color: isDark ? "#D4D4D8" : "#0C2472", borderColor: isDark ? "#27272A" : "#E3ECFC", bgcolor: isDark ? "#18181B" : "#fff", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF", borderColor: isDark ? "#27272A" : "#E3ECFC" }, width: { xs: "100%", sm: "auto" } }}>
@@ -178,10 +179,10 @@ export default function DashboardPage() {
               </p>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {quickStats.map(({ label, value, icon: Icon, color }) => (
-                  <div key={label} className={`flex items-center gap-1.5 sm:gap-2 ${color} backdrop-blur-xs rounded-lg sm:rounded-xl px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-[12px] font-semibold`}>
+                  <div key={label} title={label} className={`flex items-center gap-1.5 sm:gap-2 ${color} backdrop-blur-xs rounded-lg sm:rounded-xl px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-[12px] font-semibold`}>
                     <Icon size={12} weight="duotone" />
                     <span className="font-bold">{value}</span>
-                    <span className="font-medium opacity-80 hidden xs:inline">{label}</span>
+                    <span className="font-medium opacity-90 sr-only sm:not-sr-only">{label}</span>
                   </div>
                 ))}
               </div>
@@ -194,15 +195,15 @@ export default function DashboardPage() {
           </div>
 
           {/* ── CHARTS ROW ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6">
-            <div className="lg:col-span-2"><RevenueChart isDark={isDark} /></div>
-            <div className="lg:col-span-1"><DealStageChart isDark={isDark} /></div>
+          <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-3 sm:gap-4 lg:gap-6">
+            <div className="min-w-0"><RevenueChart isDark={isDark} /></div>
+            <div className="min-w-0"><DealStageChart isDark={isDark} /></div>
           </div>
 
           {/* ── BOTTOM ROW ── */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 sm:gap-4 lg:gap-6 pb-8">
-            <div className="lg:col-span-2"><RecentDeals isDark={isDark} /></div>
-            <div className="lg:col-span-1"><ActivityFeed isDark={isDark} /></div>
+          <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-3 sm:gap-4 lg:gap-6 pb-8">
+            <div className="min-w-0"><RecentDeals isDark={isDark} /></div>
+            <div className="min-w-0"><ActivityFeed isDark={isDark} /></div>
           </div>
       </main>
     </div>

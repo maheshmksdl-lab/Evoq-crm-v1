@@ -118,7 +118,7 @@ export default function Sidebar() {
             <button
               onClick={closeDrawer}
               className={`w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-150 shrink-0 ${
-                isDark ? "text-[#71717A] hover:text-[#F4F4F5] hover:bg-[#27272A]" : "text-slate-400 hover:text-slate-700 hover:bg-border-light"
+                isDark ? "text-[#A1A1AA] hover:text-[#F4F4F5] hover:bg-[#27272A]" : "text-slate-500 hover:text-slate-700 hover:bg-border-light"
               }`}
               aria-label="Close menu"
             >
@@ -156,8 +156,8 @@ export default function Sidebar() {
                     weight="duotone"
                     className={`shrink-0 transition-colors ${
                       isDark
-                        ? (active ? "text-[#60A5FA]" : "text-[#71717A] group-hover:text-[#60A5FA]")
-                        : (active ? "text-brand-700" : "text-slate-400 group-hover:text-brand-700")
+                        ? (active ? "text-[#60A5FA]" : "text-[#A1A1AA] group-hover:text-[#60A5FA]")
+                        : (active ? "text-brand-700" : "text-slate-500 group-hover:text-brand-700")
                     }`}
                   />
                   <span className="flex-1 truncate">{label}</span>
@@ -185,7 +185,7 @@ export default function Sidebar() {
                 isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#60A5FA]" : "text-slate-600 hover:bg-white hover:text-brand-700"
               }`}
             >
-              <GearSixIcon size={19} weight="duotone" className={`shrink-0 ${isDark ? "text-[#71717A] group-hover:text-[#60A5FA]" : "text-slate-400 group-hover:text-brand-700"}`} />
+              <GearSixIcon size={19} weight="duotone" className={`shrink-0 ${isDark ? "text-[#A1A1AA] group-hover:text-[#60A5FA]" : "text-slate-500 group-hover:text-brand-700"}`} />
               Settings
             </Link>
             <div className={`flex items-center gap-2.5 mt-1 px-3 py-2 rounded-xl border ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-white border-border-light"}`}>
@@ -248,8 +248,8 @@ export default function Sidebar() {
                 weight="duotone"
                 className={`shrink-0 transition-colors ${
                   isDark
-                    ? (active ? "text-[#60A5FA]" : "text-[#71717A] group-hover:text-[#60A5FA]")
-                    : (active ? "text-brand-700" : "text-slate-400 group-hover:text-brand-700")
+                    ? (active ? "text-[#60A5FA]" : "text-[#A1A1AA] group-hover:text-[#60A5FA]")
+                    : (active ? "text-brand-700" : "text-slate-500 group-hover:text-brand-700")
                 }`}
               />
               {!collapsed && (
@@ -291,7 +291,7 @@ export default function Sidebar() {
               <Link
                 href="/settings"
                 className={`flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-150 ${
-                  isDark ? "text-[#71717A] hover:text-[#60A5FA] hover:bg-[#27272A]" : "text-slate-400 hover:text-brand-700 hover:bg-[#EFF6FF]"
+                  isDark ? "text-[#A1A1AA] hover:text-[#60A5FA] hover:bg-[#27272A]" : "text-slate-500 hover:text-brand-700 hover:bg-[#EFF6FF]"
                 }`}
               >
                 <GearSixIcon size={18} weight="duotone" />
@@ -305,7 +305,7 @@ export default function Sidebar() {
               isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#60A5FA]" : "text-slate-600 hover:bg-[#EFF6FF] hover:text-brand-700"
             }`}
           >
-            <GearSixIcon size={18} weight="duotone" className={`shrink-0 ${isDark ? "text-[#71717A]" : "text-slate-400"}`} />
+            <GearSixIcon size={18} weight="duotone" className={`shrink-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`} />
             Settings
           </Link>
         )}
@@ -333,7 +333,7 @@ export default function Sidebar() {
             </div>
             <div className="min-w-0 flex-1">
               <p className={`text-[12px] font-semibold truncate ${isDark ? "text-[#F4F4F5]" : "text-[#0C2472]"}`}>PM SDL</p>
-              <p className={`text-[10px] truncate ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Admin · dmops@socialdnalabs.com</p>
+              <p className={`text-[10px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>Admin · dmops@socialdnalabs.com</p>
             </div>
           </div>
         )}

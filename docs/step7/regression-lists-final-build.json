@@ -1,0 +1,506 @@
+[
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=14"
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "14→1→14"
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/accounts/1"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=13"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "13→0→13"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/contacts/1"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=13"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "13→0→13"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "Kanban view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "stage tabs filter and expose aria-pressed",
+  "ok": true,
+  "note": "tabs=6 rows 13→6"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/deals/1"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=5"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "5→0→5"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "status tabs filter and expose aria-pressed",
+  "ok": true,
+  "note": "tabs=4 rows 5→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/tasks/1"
+ },
+ {
+  "theme": "light",
+  "group": "console",
+  "name": "no console errors / warnings during functional run",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=14"
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "14→1→14"
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/accounts/1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=13"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "13→0→13"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/contacts/1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=13"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "13→0→13"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "Kanban view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "stage tabs filter and expose aria-pressed",
+  "ok": true,
+  "note": "tabs=6 rows 13→6"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/deals/1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=5"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "5→0→5"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "status tabs filter and expose aria-pressed",
+  "ok": true,
+  "note": "tabs=4 rows 5→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/tasks/1"
+ },
+ {
+  "theme": "dark",
+  "group": "console",
+  "name": "no console errors / warnings during functional run",
+  "ok": true,
+  "note": ""
+ }
+]

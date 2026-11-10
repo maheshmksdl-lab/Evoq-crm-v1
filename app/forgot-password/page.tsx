@@ -59,7 +59,7 @@ export default function ForgotPasswordPage() {
 
               <div className="mb-6 text-center">
                 <h1 className="m-0 text-[20px] font-extrabold text-slate-900 tracking-tight">Forgot password?</h1>
-                <p className="text-slate-400 text-[13px] mt-1 font-medium leading-relaxed">
+                <p className="text-slate-500 text-[13px] mt-1 font-medium leading-relaxed">
                   Enter your email and we&apos;ll send you a link to reset your password.
                 </p>
               </div>
@@ -73,7 +73,7 @@ export default function ForgotPasswordPage() {
                       top: active ? 7 : "50%",
                       transform: active ? "translateY(0) scale(0.78)" : "translateY(-50%)",
                       transformOrigin: "left",
-                      color: focus ? "#1D4ED8" : "#94A3B8",
+                      color: focus ? "#1D4ED8" : "#64748B",
                       fontSize: active ? "10px" : "13.5px",
                     }}
                   >
@@ -127,7 +127,7 @@ export default function ForgotPasswordPage() {
                 </div>
               </div>
               <h2 className="text-[19px] font-extrabold text-slate-900 mb-2">Check your email</h2>
-              <p className="text-slate-400 text-[13px] font-medium leading-relaxed mb-1">
+              <p className="text-slate-500 text-[13px] font-medium leading-relaxed mb-1">
                 We sent a reset link to
               </p>
               <p className="text-brand-700 font-bold text-[13.5px] mb-6">{email}</p>
@@ -155,7 +155,7 @@ export default function ForgotPasswordPage() {
         </div>
 
         <div className="px-8 py-3 border-t text-center" style={{ borderColor: "#E3ECFC", background: "#F8FBFF" }}>
-          <p className="text-[11px] text-slate-400 font-medium">
+          <p className="text-[11px] text-slate-500 font-medium">
             © 2026 Social DNA Labs ·{" "}
             <span className="text-brand-700 cursor-pointer hover:underline">Privacy</span> ·{" "}
             <span className="text-brand-700 cursor-pointer hover:underline">Terms</span>

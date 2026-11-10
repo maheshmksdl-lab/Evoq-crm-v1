@@ -43,7 +43,7 @@ export default function LeadGridView({ leads }: Props) {
 
   if (leads.length === 0) {
     return (
-      <div className={`flex flex-col items-center justify-center py-20 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
+      <div className={`flex flex-col items-center justify-center py-20 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
         <p className="font-heading text-[15px]/[20px] font-semibold">No leads found</p>
         <p className="text-[13px]/[16px] mt-1">Adjust filters or add a new lead</p>
       </div>
@@ -125,7 +125,7 @@ export default function LeadGridView({ leads }: Props) {
                   </div>
                 ) : null}
                 {!lead.email && !lead.mobile && (
-                  <p className={`text-[12px] italic ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>No contact info</p>
+                  <p className={`text-[12px] italic ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No contact info</p>
                 )}
               </div>
             </div>

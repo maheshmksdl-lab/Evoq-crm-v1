@@ -1,0 +1,1409 @@
+[
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=14"
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "14→1→14"
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:accounts",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/accounts/1"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=13"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "13→0→13"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:contacts",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/contacts/1"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=13"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "13→0→13"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "Kanban view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "stage tabs filter and expose aria-pressed",
+  "ok": true,
+  "note": "tabs=6 rows 13→6"
+ },
+ {
+  "theme": "light",
+  "group": "list:deals",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/deals/1"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=5"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "5→0→5"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "status tabs filter and expose aria-pressed",
+  "ok": true,
+  "note": "tabs=4 rows 5→1"
+ },
+ {
+  "theme": "light",
+  "group": "list:tasks",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/tasks/1"
+ },
+ {
+  "theme": "light",
+  "group": "detail:deal",
+  "name": "renders header and fields",
+  "ok": true,
+  "note": "New"
+ },
+ {
+  "theme": "light",
+  "group": "detail:deal",
+  "name": "Timeline tab (aria-pressed) and back to Overview",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:deal",
+  "name": "related list 'Stage History' scrolls to section below the top bar",
+  "ok": true,
+  "note": "top=450"
+ },
+ {
+  "theme": "light",
+  "group": "detail:deal",
+  "name": "More actions menu opens with items and closes",
+  "ok": true,
+  "note": "items=3"
+ },
+ {
+  "theme": "light",
+  "group": "detail:deal",
+  "name": "add note (Save appears only with text; note is listed)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:deal",
+  "name": "unknown id shows not-found + back link",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:account",
+  "name": "renders header and fields",
+  "ok": true,
+  "note": "XYZ"
+ },
+ {
+  "theme": "light",
+  "group": "detail:account",
+  "name": "Timeline tab (aria-pressed) and back to Overview",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:account",
+  "name": "related list 'Deals' scrolls to section below the top bar",
+  "ok": true,
+  "note": "top=171"
+ },
+ {
+  "theme": "light",
+  "group": "detail:account",
+  "name": "More actions menu opens with items and closes",
+  "ok": true,
+  "note": "existing: toggles highlight only (no menu)"
+ },
+ {
+  "theme": "light",
+  "group": "detail:account",
+  "name": "add note (Save appears only with text; note is listed)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:account",
+  "name": "unknown id shows not-found + back link",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:contact",
+  "name": "renders header and fields",
+  "ok": true,
+  "note": "Cop Mar"
+ },
+ {
+  "theme": "light",
+  "group": "detail:contact",
+  "name": "Timeline tab (aria-pressed) and back to Overview",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:contact",
+  "name": "related list 'Attachments' scrolls to section below the top bar",
+  "ok": true,
+  "note": "top=502"
+ },
+ {
+  "theme": "light",
+  "group": "detail:contact",
+  "name": "More actions menu opens with items and closes",
+  "ok": true,
+  "note": "items=2"
+ },
+ {
+  "theme": "light",
+  "group": "detail:contact",
+  "name": "add note (Save appears only with text; note is listed)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:contact",
+  "name": "unknown id shows not-found + back link",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:task",
+  "name": "renders header and fields",
+  "ok": true,
+  "note": "New"
+ },
+ {
+  "theme": "light",
+  "group": "detail:task",
+  "name": "Timeline tab (aria-pressed) and back to Overview",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:task",
+  "name": "related list 'Attachments' scrolls to section below the top bar",
+  "ok": true,
+  "note": "top=706"
+ },
+ {
+  "theme": "light",
+  "group": "detail:task",
+  "name": "More actions menu opens with items and closes",
+  "ok": true,
+  "note": "items=2"
+ },
+ {
+  "theme": "light",
+  "group": "detail:task",
+  "name": "add note (Save appears only with text; note is listed)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "detail:task",
+  "name": "unknown id shows not-found + back link",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "dashboard",
+  "name": "4 KPI cards, charts and recent deals render",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "dashboard",
+  "name": "banner quick-stat labels are visible (were never rendered)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "dashboard",
+  "name": "dashboard switcher menu opens (aria-expanded) and closes",
+  "ok": true,
+  "note": "items=2"
+ },
+ {
+  "theme": "light",
+  "group": "dashboard",
+  "name": "KPI 'Source Report' link opens the report",
+  "ok": true,
+  "note": "/reports/r3"
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "list renders with records",
+  "ok": true,
+  "note": "rows=5"
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "category toggle exposes aria-expanded and collapses/expands",
+  "ok": true,
+  "note": "false→true"
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "pin toggle (named, aria-pressed) adds/removes Pinned entry",
+  "ok": true,
+  "note": "true→false"
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "row actions menu opens",
+  "ok": true,
+  "note": "items=6"
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "search + Clear search",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "Grid view toggle and back",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "row click opens report detail",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "report detail renders without errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "report builder renders without errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "reports",
+  "name": "reports/create renders without errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Personal Settings' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Users' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Organization' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Roles' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Permissions' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Email' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Modules and Fields' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Dashboard Customization' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Import' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Export' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "section 'Data Backup' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "nav group collapses/expands (aria-expanded)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "settings",
+  "name": "custom switches expose role=switch + aria-checked and toggle",
+  "ok": true,
+  "note": "Permissions: true→false"
+ },
+ {
+  "theme": "light",
+  "group": "shell",
+  "name": "keyboard focus ring on MUI buttons (theme) and native buttons (global rule)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "shell",
+  "name": "mouse click does not show the ring (focus-visible only)",
+  "ok": true,
+  "note": "none"
+ },
+ {
+  "theme": "light",
+  "group": "shell",
+  "name": "Leads list + Lead Detail (Steps 5/6) still render and behave",
+  "ok": true,
+  "note": "rows=12"
+ },
+ {
+  "theme": "light",
+  "group": "console",
+  "name": "no console errors / warnings during functional run",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=14"
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "14→1→14"
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:accounts",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/accounts/1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=13"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "13→0→13"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:contacts",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/contacts/1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=13"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "13→0→13"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "Kanban view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "stage tabs filter and expose aria-pressed",
+  "ok": true,
+  "note": "tabs=6 rows 13→6"
+ },
+ {
+  "theme": "dark",
+  "group": "list:deals",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/deals/1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "renders title, rows and record count",
+  "ok": true,
+  "note": "rows=5"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "search filters; Clear search restores",
+  "ok": true,
+  "note": "5→0→5"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "row kebab: named, hidden at rest, revealed on hover, click doesn't navigate",
+  "ok": true,
+  "note": "opacity 0→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "row checkbox shows bulk toolbar; Clear hides it",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "Grid view toggle (aria-pressed) and back to List",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "Filters / Columns / Sort open and close",
+  "ok": true,
+  "note": "1,1,1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "New button opens the create drawer",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "status tabs filter and expose aria-pressed",
+  "ok": true,
+  "note": "tabs=4 rows 5→1"
+ },
+ {
+  "theme": "dark",
+  "group": "list:tasks",
+  "name": "row click opens detail page",
+  "ok": true,
+  "note": "/tasks/1"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:deal",
+  "name": "renders header and fields",
+  "ok": true,
+  "note": "New"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:deal",
+  "name": "Timeline tab (aria-pressed) and back to Overview",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:deal",
+  "name": "related list 'Stage History' scrolls to section below the top bar",
+  "ok": true,
+  "note": "top=450"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:deal",
+  "name": "More actions menu opens with items and closes",
+  "ok": true,
+  "note": "items=3"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:deal",
+  "name": "add note (Save appears only with text; note is listed)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:deal",
+  "name": "unknown id shows not-found + back link",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:account",
+  "name": "renders header and fields",
+  "ok": true,
+  "note": "XYZ"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:account",
+  "name": "Timeline tab (aria-pressed) and back to Overview",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:account",
+  "name": "related list 'Deals' scrolls to section below the top bar",
+  "ok": true,
+  "note": "top=171"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:account",
+  "name": "More actions menu opens with items and closes",
+  "ok": true,
+  "note": "existing: toggles highlight only (no menu)"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:account",
+  "name": "add note (Save appears only with text; note is listed)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:account",
+  "name": "unknown id shows not-found + back link",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:contact",
+  "name": "renders header and fields",
+  "ok": true,
+  "note": "Cop Mar"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:contact",
+  "name": "Timeline tab (aria-pressed) and back to Overview",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:contact",
+  "name": "related list 'Attachments' scrolls to section below the top bar",
+  "ok": true,
+  "note": "top=502"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:contact",
+  "name": "More actions menu opens with items and closes",
+  "ok": true,
+  "note": "items=2"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:contact",
+  "name": "add note (Save appears only with text; note is listed)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:contact",
+  "name": "unknown id shows not-found + back link",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:task",
+  "name": "renders header and fields",
+  "ok": true,
+  "note": "New"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:task",
+  "name": "Timeline tab (aria-pressed) and back to Overview",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:task",
+  "name": "related list 'Attachments' scrolls to section below the top bar",
+  "ok": true,
+  "note": "top=706"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:task",
+  "name": "More actions menu opens with items and closes",
+  "ok": true,
+  "note": "items=2"
+ },
+ {
+  "theme": "dark",
+  "group": "detail:task",
+  "name": "add note (Save appears only with text; note is listed)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "detail:task",
+  "name": "unknown id shows not-found + back link",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "dashboard",
+  "name": "4 KPI cards, charts and recent deals render",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "dashboard",
+  "name": "banner quick-stat labels are visible (were never rendered)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "dashboard",
+  "name": "dashboard switcher menu opens (aria-expanded) and closes",
+  "ok": true,
+  "note": "items=2"
+ },
+ {
+  "theme": "dark",
+  "group": "dashboard",
+  "name": "KPI 'Source Report' link opens the report",
+  "ok": true,
+  "note": "/reports/r3"
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "list renders with records",
+  "ok": true,
+  "note": "rows=5"
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "category toggle exposes aria-expanded and collapses/expands",
+  "ok": true,
+  "note": "false→true"
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "pin toggle (named, aria-pressed) adds/removes Pinned entry",
+  "ok": true,
+  "note": "true→false"
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "row actions menu opens",
+  "ok": true,
+  "note": "items=6"
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "search + Clear search",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "Grid view toggle and back",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "row click opens report detail",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "report detail renders without errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "report builder renders without errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "reports",
+  "name": "reports/create renders without errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Personal Settings' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Users' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Organization' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Roles' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Permissions' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Email' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Modules and Fields' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Dashboard Customization' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Import' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Export' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "section 'Data Backup' opens (aria-current)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "nav group collapses/expands (aria-expanded)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "settings",
+  "name": "custom switches expose role=switch + aria-checked and toggle",
+  "ok": true,
+  "note": "Permissions: true→false"
+ },
+ {
+  "theme": "dark",
+  "group": "shell",
+  "name": "keyboard focus ring on MUI buttons (theme) and native buttons (global rule)",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "shell",
+  "name": "mouse click does not show the ring (focus-visible only)",
+  "ok": true,
+  "note": "none"
+ },
+ {
+  "theme": "dark",
+  "group": "shell",
+  "name": "Leads list + Lead Detail (Steps 5/6) still render and behave",
+  "ok": true,
+  "note": "rows=12"
+ },
+ {
+  "theme": "dark",
+  "group": "console",
+  "name": "no console errors / warnings during functional run",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "auth",
+  "name": "/login renders form with labelled inputs",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "auth",
+  "name": "/register renders form with labelled inputs",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "auth",
+  "name": "/forgot-password renders form with labelled inputs",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "auth",
+  "name": "protected route redirects to /login when signed out",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "console",
+  "name": "no console errors on auth pages",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "320px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": false,
+  "note": "/accounts: doc=0 content=44 ; /contacts: doc=0 content=44"
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "375px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "414px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "768px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "1024px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "1280px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "1440px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "1920px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "320px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": false,
+  "note": "/accounts: doc=0 content=44 ; /contacts: doc=0 content=44"
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "375px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "414px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "768px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "1024px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "1280px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "1440px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "1920px: no horizontal page overflow on 21 routes; no console errors",
+  "ok": true,
+  "note": ""
+ }
+]

@@ -62,7 +62,7 @@ function UserMenu({
       {/* User info */}
       <div className="px-5 pt-4 pb-3">
         <p className={`text-[15px] font-bold leading-tight ${isDark ? "text-[#F4F4F5]" : "text-[#0C2472]"}`}>PM SDL</p>
-        <p className={`text-[12px] mt-0.5 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Super Admin</p>
+        <p className={`text-[12px] mt-0.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Super Admin</p>
       </div>
 
       <Divider sx={{ borderColor: isDark ? "#27272A" : "#F1F5F9", mx: 0 }} />
@@ -275,10 +275,10 @@ export default function AppHeader() {
           {/*{title ? (
             <div className="flex items-baseline gap-2 whitespace-nowrap">
               <h1 className="text-[18px] font-extrabold text-[#0C2472] leading-none tracking-tight m-0">{title}</h1>
-              <span className="text-[11.5px] text-slate-400 font-medium">· {today}</span>
+              <span className="text-[11.5px] text-slate-500 font-medium">· {today}</span>
             </div>
           ) : (
-            <p className="text-[12px] text-slate-400 font-medium whitespace-nowrap m-0">{today}</p>
+            <p className="text-[12px] text-slate-500 font-medium whitespace-nowrap m-0">{today}</p>
           )} */}
         </div>
 

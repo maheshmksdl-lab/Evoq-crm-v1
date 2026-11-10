@@ -69,6 +69,31 @@ export const getDataGridSx = (isDark: boolean): SxProps<Theme> => ({
   },
 });
 
+// ── List refinements (Step 7) ─────────────────────────────────────────
+// The Leads-list refinements from Step 5, layered on top of getDataGridSx for the
+// other list modules. getDataGridSx itself is unchanged.
+export const getListGridRefinementsSx = (isDark: boolean): SxProps<Theme> => ({
+  // clearer row hover + selected states (the base hover is ~4% alpha, practically invisible)
+  "& .MuiDataGrid-row:hover": { bgcolor: isDark ? "#141417" : "rgba(59,130,246,0.07)" },
+  "& .MuiDataGrid-row.Mui-selected, & .MuiDataGrid-row.Mui-selected:hover": { bgcolor: isDark ? "#1B1B20" : "rgba(59,130,246,0.12)" },
+  // row actions: revealed on row hover / keyboard focus, always visible on touch devices
+  "& .row-actions": { opacity: 0, transition: "opacity 120ms ease" },
+  "& .MuiDataGrid-row:hover .row-actions, & .MuiDataGrid-row:focus-within .row-actions, & .row-actions:focus-within": { opacity: 1 },
+  "@media (hover: none)": { "& .row-actions": { opacity: 1 } },
+  // unchecked checkboxes were #E2E8F0 (1.2 : 1) — barely visible
+  "& .MuiCheckbox-root:not(.Mui-checked):not(.MuiCheckbox-indeterminate)": { color: isDark ? "#71717A" : "#94A3B8" },
+  // keyboard focus ring for checkboxes (inside their bounds so the cell can't clip it)
+  "& .MuiCheckbox-root.Mui-focusVisible": { outline: "2px solid #3B82F6", outlineOffset: "-3px" },
+  // keyboard focus ring for cells / headers (the base styles remove the outline entirely)
+  "&& .MuiDataGrid-cell:focus-visible, && .MuiDataGrid-columnHeader:focus-visible": { outline: "2px solid #3B82F6 !important", outlineOffset: "-2px" },
+  // readable footer meta
+  "& .MuiDataGrid-selectedRowCount": { color: isDark ? "#A1A1AA" : "#64748B" },
+});
+
+/** Base list styling + Step 7 refinements, for list pages other than Leads (which layers its own copy). */
+export const listGridSx = (isDark: boolean): SxProps<Theme> =>
+  [getDataGridSx(isDark), getListGridRefinementsSx(isDark)] as SxProps<Theme>;
+
 export const ROWS_PER_PAGE_OPTIONS = [10, 20, 50, 100];
 
 // ── Header-aware column sizing ───────────────────────────────────────

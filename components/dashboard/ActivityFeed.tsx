@@ -35,7 +35,7 @@ export default function ActivityFeed({ isDark = false }: { isDark?: boolean }) {
       }}>
       <div className="mb-4 sm:mb-5">
         <h3 className={`m-0 text-sm sm:text-[14px] font-bold ${isDark ? "text-[#FFFFFF]" : "text-[#0C2472]"}`}>Recent Activity</h3>
-        <p className="text-[11px] sm:text-[12px] text-slate-400 mt-0.5">Live team updates</p>
+        <p className="text-[11px] sm:text-[12px] text-slate-500 mt-0.5">Live team updates</p>
       </div>
 
       <div className="flex-1 space-y-3 sm:space-y-4">
@@ -63,9 +63,9 @@ export default function ActivityFeed({ isDark = false }: { isDark?: boolean }) {
                   >
                     {item.initials}
                   </Avatar>
-                  <span className="text-[10px] sm:text-[12px] text-slate-400 font-medium">{item.user}</span>
-                  <span className={`text-[10px] sm:text-[12px] ${isDark ? "text-slate-600" : "text-slate-300"}`}>·</span>
-                  <span className="text-[10px] sm:text-[12px] text-slate-400">{item.time}</span>
+                  <span className="text-[10px] sm:text-[12px] text-slate-500 font-medium">{item.user}</span>
+                  <span className={`text-[10px] sm:text-[12px] ${isDark ? "text-slate-600" : "text-slate-400"}`}>·</span>
+                  <span className="text-[10px] sm:text-[12px] text-slate-500">{item.time}</span>
                 </div>
               </div>
             </div>
