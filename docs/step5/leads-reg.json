@@ -1,0 +1,492 @@
+[
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "initial render: 12 rows, 6 status tabs + All, counts",
+  "ok": true,
+  "note": "rows=12, tabs=All 12 | New 4 | Contacted 2 | In Progress 2 | Qualified 2 | Lost 1 | Unqualified 1"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "status tab \"New\" filters to 4",
+  "ok": true,
+  "note": "rows=4, aria-pressed=true"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "status tab \"Contacted\" filters to 2",
+  "ok": true,
+  "note": "rows=2, aria-pressed=true"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "status tab \"In Progress\" filters to 2",
+  "ok": true,
+  "note": "rows=2, aria-pressed=true"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "status tab \"Qualified\" filters to 2",
+  "ok": true,
+  "note": "rows=2, aria-pressed=true"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "status tab \"Lost\" filters to 1",
+  "ok": true,
+  "note": "rows=1, aria-pressed=true"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "status tab \"Unqualified\" filters to 1",
+  "ok": true,
+  "note": "rows=1, aria-pressed=true"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "search 'priya' -> 1 row; clear (x) restores 12",
+  "ok": true,
+  "note": "rows 1 -> 12"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "empty state: contextual message names the query",
+  "ok": true,
+  "note": "No leads match “zzzzqq” |  | Try adjusting your search, filters or tab"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "Filters popover opens; applying a filter changes the list",
+  "ok": true,
+  "note": "opens and closes with Escape"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "Columns drawer opens/closes",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "Sort popover opens/closes",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "view toggle -> Grid",
+  "ok": true,
+  "note": "aria-pressed=true"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "view toggle -> Kanban",
+  "ok": true,
+  "note": "aria-pressed=true"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "view toggle -> List",
+  "ok": true,
+  "note": "aria-pressed=true"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "row click opens the lead detail page",
+  "ok": true,
+  "note": "/leads/2"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "New Lead drawer opens; Escape closes",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "bulk: select 2 -> toolbar; Assign Owner / Update Status / Clear / Delete",
+  "ok": true,
+  "note": "owner=true, status=true, clear=true, rows after delete=10"
+ },
+ {
+  "theme": "light",
+  "group": "existing",
+  "name": "row kebab: View / Delete work",
+  "ok": true,
+  "note": "rows after delete=11"
+ },
+ {
+  "theme": "light",
+  "group": "improved",
+  "name": "row actions kebab is revealed on row hover (was invisible)",
+  "ok": true,
+  "note": "opacity at rest=0, on hover=1"
+ },
+ {
+  "theme": "light",
+  "group": "improved",
+  "name": "row actions kebab is revealed on keyboard focus + has a name",
+  "ok": true,
+  "note": "opacity while focused=1; accessible name present"
+ },
+ {
+  "theme": "light",
+  "group": "improved",
+  "name": "row hover tint is visible (>= 3 RGB levels from resting)",
+  "ok": true,
+  "note": "rgba(0, 0, 0, 0) -> rgba(59, 130, 246, 0.07)"
+ },
+ {
+  "theme": "light",
+  "group": "improved",
+  "name": "search focus does not shift the toolbar (was ~5px)",
+  "ok": true,
+  "note": "Filters x 950 -> 950"
+ },
+ {
+  "theme": "light",
+  "group": "improved",
+  "name": "keyboard focus ring on toolbar/tabs/toggles/New Lead",
+  "ok": true,
+  "note": "Filters:solid 2px | Columns:solid 2px | Sort:solid 2px | :solid 2px | New 4:solid 3px | Grid view:solid 3px | New Lead:solid 2px"
+ },
+ {
+  "theme": "light",
+  "group": "improved",
+  "name": "grid cell keyboard focus ring (shared styles removed it)",
+  "ok": true,
+  "note": "company: outline solid 2px, :focus-visible=true"
+ },
+ {
+  "theme": "light",
+  "group": "improved",
+  "name": "phone icon never squeezed out for long numbers",
+  "ok": true,
+  "note": "icons rendered=11/12, widths=12"
+ },
+ {
+  "theme": "light",
+  "group": "improved",
+  "name": "aria: view toggle + tabs expose pressed state; toolbar labelled",
+  "ok": true,
+  "note": "List pressed=true, All pressed=true, search labelled=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "initial render: 12 rows, 6 status tabs + All, counts",
+  "ok": true,
+  "note": "rows=12, tabs=All 12 | New 4 | Contacted 2 | In Progress 2 | Qualified 2 | Lost 1 | Unqualified 1"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "status tab \"New\" filters to 4",
+  "ok": true,
+  "note": "rows=4, aria-pressed=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "status tab \"Contacted\" filters to 2",
+  "ok": true,
+  "note": "rows=2, aria-pressed=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "status tab \"In Progress\" filters to 2",
+  "ok": true,
+  "note": "rows=2, aria-pressed=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "status tab \"Qualified\" filters to 2",
+  "ok": true,
+  "note": "rows=2, aria-pressed=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "status tab \"Lost\" filters to 1",
+  "ok": true,
+  "note": "rows=1, aria-pressed=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "status tab \"Unqualified\" filters to 1",
+  "ok": true,
+  "note": "rows=1, aria-pressed=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "search 'priya' -> 1 row; clear (x) restores 12",
+  "ok": true,
+  "note": "rows 1 -> 12"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "empty state: contextual message names the query",
+  "ok": true,
+  "note": "No leads match “zzzzqq” |  | Try adjusting your search, filters or tab"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "Filters popover opens; applying a filter changes the list",
+  "ok": true,
+  "note": "opens and closes with Escape"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "Columns drawer opens/closes",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "Sort popover opens/closes",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "view toggle -> Grid",
+  "ok": true,
+  "note": "aria-pressed=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "view toggle -> Kanban",
+  "ok": true,
+  "note": "aria-pressed=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "view toggle -> List",
+  "ok": true,
+  "note": "aria-pressed=true"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "row click opens the lead detail page",
+  "ok": true,
+  "note": "/leads/2"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "New Lead drawer opens; Escape closes",
+  "ok": true,
+  "note": ""
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "bulk: select 2 -> toolbar; Assign Owner / Update Status / Clear / Delete",
+  "ok": true,
+  "note": "owner=true, status=true, clear=true, rows after delete=10"
+ },
+ {
+  "theme": "dark",
+  "group": "existing",
+  "name": "row kebab: View / Delete work",
+  "ok": true,
+  "note": "rows after delete=11"
+ },
+ {
+  "theme": "dark",
+  "group": "improved",
+  "name": "row actions kebab is revealed on row hover (was invisible)",
+  "ok": true,
+  "note": "opacity at rest=0, on hover=1"
+ },
+ {
+  "theme": "dark",
+  "group": "improved",
+  "name": "row actions kebab is revealed on keyboard focus + has a name",
+  "ok": true,
+  "note": "opacity while focused=1; accessible name present"
+ },
+ {
+  "theme": "dark",
+  "group": "improved",
+  "name": "row hover tint is visible (>= 3 RGB levels from resting)",
+  "ok": true,
+  "note": "rgba(0, 0, 0, 0) -> rgb(20, 20, 23)"
+ },
+ {
+  "theme": "dark",
+  "group": "improved",
+  "name": "search focus does not shift the toolbar (was ~5px)",
+  "ok": true,
+  "note": "Filters x 950 -> 950"
+ },
+ {
+  "theme": "dark",
+  "group": "improved",
+  "name": "keyboard focus ring on toolbar/tabs/toggles/New Lead",
+  "ok": true,
+  "note": "Filters:solid 2px | Columns:solid 2px | Sort:solid 2px | :solid 2px | New 4:solid 3px | Grid view:solid 3px | New Lead:solid 2px"
+ },
+ {
+  "theme": "dark",
+  "group": "improved",
+  "name": "grid cell keyboard focus ring (shared styles removed it)",
+  "ok": true,
+  "note": "company: outline solid 2px, :focus-visible=true"
+ },
+ {
+  "theme": "dark",
+  "group": "improved",
+  "name": "phone icon never squeezed out for long numbers",
+  "ok": true,
+  "note": "icons rendered=11/12, widths=12"
+ },
+ {
+  "theme": "dark",
+  "group": "improved",
+  "name": "aria: view toggle + tabs expose pressed state; toolbar labelled",
+  "ok": true,
+  "note": "List pressed=true, All pressed=true, search labelled=true"
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "width 320",
+  "ok": true,
+  "note": "scrollWidth 320/320, grid top y=389, toolbar y=292, tabs=7"
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "width 375",
+  "ok": true,
+  "note": "scrollWidth 375/375, grid top y=389, toolbar y=292, tabs=7"
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "width 414",
+  "ok": true,
+  "note": "scrollWidth 414/414, grid top y=389, toolbar y=292, tabs=7"
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "width 768",
+  "ok": true,
+  "note": "scrollWidth 768/768, grid top y=280, toolbar y=212, tabs=7"
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "width 1024",
+  "ok": true,
+  "note": "scrollWidth 1024/1024, grid top y=318, toolbar y=212, tabs=7"
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "width 1280",
+  "ok": true,
+  "note": "scrollWidth 1280/1280, grid top y=280, toolbar y=212, tabs=7"
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "width 1440",
+  "ok": true,
+  "note": "scrollWidth 1440/1440, grid top y=280, toolbar y=212, tabs=7"
+ },
+ {
+  "theme": "light",
+  "group": "responsive",
+  "name": "width 1920",
+  "ok": true,
+  "note": "scrollWidth 1920/1920, grid top y=280, toolbar y=212, tabs=7"
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "width 320",
+  "ok": true,
+  "note": "scrollWidth 320/320, grid top y=389, toolbar y=292, tabs=7"
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "width 375",
+  "ok": true,
+  "note": "scrollWidth 375/375, grid top y=389, toolbar y=292, tabs=7"
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "width 414",
+  "ok": true,
+  "note": "scrollWidth 414/414, grid top y=389, toolbar y=292, tabs=7"
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "width 768",
+  "ok": true,
+  "note": "scrollWidth 768/768, grid top y=280, toolbar y=212, tabs=7"
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "width 1024",
+  "ok": true,
+  "note": "scrollWidth 1024/1024, grid top y=318, toolbar y=212, tabs=7"
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "width 1280",
+  "ok": true,
+  "note": "scrollWidth 1280/1280, grid top y=280, toolbar y=212, tabs=7"
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "width 1440",
+  "ok": true,
+  "note": "scrollWidth 1440/1440, grid top y=280, toolbar y=212, tabs=7"
+ },
+ {
+  "theme": "dark",
+  "group": "responsive",
+  "name": "width 1920",
+  "ok": true,
+  "note": "scrollWidth 1920/1920, grid top y=280, toolbar y=212, tabs=7"
+ }
+]

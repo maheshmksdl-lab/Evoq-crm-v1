@@ -4110,7 +4110,7 @@ export default function SettingsPage() {
   };
 
   return (
-    <div className={`sidebar-content flex-1 flex min-h-screen overflow-hidden font-sans ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
+    <div className={`sidebar-content app-canvas flex-1 flex min-h-screen overflow-hidden font-sans ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
       <div className="relative flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
         <SettingsSidebar activeItem={activeItem} setActiveItem={setActiveItem} isDark={isDark} />
         {content()}

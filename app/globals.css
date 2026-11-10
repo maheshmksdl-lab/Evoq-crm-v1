@@ -180,42 +180,33 @@ body {
   --bg-card:       #f9fbff;
   --bg-sidebar:    #0C2472;
   --bg-topbar:     #E3ECFC;
+  /* Dashboard canvas gradient (built from existing tokens) */
+  --canvas-from:   var(--bg-page);
+  --canvas-via:    color-mix(in srgb, var(--border) 65%, var(--bg-page));
+  --canvas-to:     color-mix(in srgb, var(--color-brand-100, #dbeafe) 40%, var(--bg-page));
+  --canvas-glow:   color-mix(in srgb, var(--color-brand-500, #3b82f6) 6%, transparent);
   --border:        #E3ECFC;
   --border-soft:   #EFF6FF;
   --text-primary:  #0C2472;
   --text-body:     #334155;
   --text-muted:    #64748B;
   --text-faint:    #94A3B8;
-  --background:
-    oklch(1 0 0);
-  --foreground:
-    oklch(0.145 0 0);
-  --card:
-    oklch(1 0 0);
-  --card-foreground:
-    oklch(0.145 0 0);
-  --popover:
-    oklch(1 0 0);
-  --popover-foreground:
-    oklch(0.145 0 0);
+  --background: #F9FBFF;
+  --foreground: #0C2472;
+  --card: #F9FBFF;
+  --card-foreground: #0C2472;
+  --popover: #F9FBFF;
+  --popover-foreground: #0C2472;
   --primary:        #0C2472;
   --primary-foreground: #FFFFFF;
-  --secondary:
-    oklch(0.97 0 0);
-  --secondary-foreground:
-    oklch(0.205 0 0);
-  --muted:
-    oklch(0.97 0 0);
-  --muted-foreground:
-    oklch(0.556 0 0);
-  --accent:
-    oklch(0.97 0 0);
-  --accent-foreground:
-    oklch(0.205 0 0);
-  --destructive:
-    oklch(0.577 0.245 27.325);
-  --input:
-    oklch(0.922 0 0);
+  --secondary: #E3ECFC;
+  --secondary-foreground: #0C2472;
+  --muted: #EFF6FF;
+  --muted-foreground: #64748B;
+  --accent: #EFF6FF;
+  --accent-foreground: #0C2472;
+  --destructive: #EF4444;
+  --input: #E3ECFC;
   --ring:
     #3B82F6;
   --chart-1:
@@ -267,6 +258,10 @@ html.dark {
   --bg-surface-2:   #0F0F0F;
   --bg-sidebar:     #000000;
   --bg-topbar:      #0A0A0A;
+  --canvas-from:    var(--bg-page);
+  --canvas-via:     var(--bg-surface-2);
+  --canvas-to:      color-mix(in srgb, var(--color-brand-900, #1e3a5f) 22%, var(--bg-page));
+  --canvas-glow:    color-mix(in srgb, var(--color-brand-500, #3b82f6) 10%, transparent);
   --border-soft:    #1A1A1E;
 
   /* Text hierarchy */
@@ -343,6 +338,7 @@ body {
 }
 
 /* ── Heading tags automatically use Figtree ──── */
+@layer base {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), sans-serif;
   color: var(--text-primary);
@@ -352,6 +348,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 2rem;    line-height: 1.3; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
 h2 { font-size: 1.5rem;  line-height: 1.4; letter-spacing: -0.01em; margin-bottom: 1.25rem; }
 h3 { font-size: 1.125rem;line-height: 1.4; margin-bottom: 1rem; font-weight: 600; }
+}
 
 /* p {
   line-height: 1.6;
@@ -366,6 +363,19 @@ h3 { font-size: 1.125rem;line-height: 1.4; margin-bottom: 1rem; font-weight: 600
 .sidebar-content {
   padding-top: 60px;
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Page canvas gradient (approved on the Dashboard in Step 3, rolled out to every CRM
+   screen in Step 4): subtle brand gradient from the theme tokens above.
+   `.dashboard-canvas` and `.app-canvas` share this single rule. Background only —
+   no effect on layout. Apply it to the main content canvas only. */
+.dashboard-canvas,
+.app-canvas {
+  background-color: var(--canvas-from);
+  background-image:
+    radial-gradient(120% 70% at 100% 0%, var(--canvas-glow) 0%, transparent 60%),
+    linear-gradient(165deg, var(--canvas-from) 0%, var(--canvas-via) 55%, var(--canvas-to) 100%);
+  background-repeat: no-repeat;
 }
 
 /* Mobile: adjust header and spacing */
@@ -423,9 +433,15 @@ html.dark .dark-text-muted              { color: var(--text-muted) !important; }
     padding-right: 1rem !important;
   }
 
-  h1 { font-size: 1.25rem; margin-bottom: 1rem; }
-  h2 { font-size: 1rem; margin-bottom: 0.75rem; }
-  h3 { font-size: 0.875rem; margin-bottom: 0.5rem; }
+  @layer base {
+    h1 { font-size: 1.25rem; margin-bottom: 1rem; }
+  }
+  @layer base {
+    h2 { font-size: 1rem; margin-bottom: 0.75rem; }
+  }
+  @layer base {
+    h3 { font-size: 0.875rem; margin-bottom: 0.5rem; }
+  }
 
   .text-h1 { font-size: 1.125rem; }
   .text-h2 { font-size: 0.95rem; }
@@ -441,14 +457,20 @@ html.dark .dark-text-muted              { color: var(--text-muted) !important; }
     padding-right: 1.5rem !important;
   }
 
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.125rem; }
+  @layer base {
+    h1 { font-size: 1.5rem; }
+  }
+  @layer base {
+    h2 { font-size: 1.125rem; }
+  }
 }
 
 /* ── Mobile-friendly tables ─────────────────── */
 @media (max-width: 640px) {
-  table {
+  @layer base {
+    table {
     font-size: 0.8rem;
+  }
   }
 
   th, td {
@@ -458,7 +480,10 @@ html.dark .dark-text-muted              { color: var(--text-muted) !important; }
 
 /* ── Mobile-friendly buttons ───────────────── */
 @media (max-width: 640px) {
-  button, .MuiButton-root {
+  @layer base {
+    button { font-size: 0.8rem; padding: 0.4rem 0.8rem; min-height: 32px; }
+  }
+  .MuiButton-root {
     font-size: 0.8rem;
     padding: 0.4rem 0.8rem;
     min-height: 32px;
@@ -486,8 +511,12 @@ html.dark .dark-text-muted              { color: var(--text-muted) !important; }
 
 /* ── Viewport width adjustments ───────────── */
 @media (max-width: 375px) {
-  h1 { font-size: 1rem; }
-  h2 { font-size: 0.875rem; }
+  @layer base {
+    h1 { font-size: 1rem; }
+  }
+  @layer base {
+    h2 { font-size: 0.875rem; }
+  }
   main { padding: 1rem 0.75rem !important; }
 }
 
@@ -522,12 +551,16 @@ html.dark ::-webkit-scrollbar-thumb:hover { background: #71717A; }
 html.dark .bg-white,
 html.dark .bg-\[\#f9fbff\],
 html.dark .bg-\[\#FAFBFF\],
-html.dark .bg-\[\#fafcff\]          { background-color: #0A0A0A !important; }
+html.dark .bg-\[\#fafcff\],
+html.dark .bg-surface { background-color: #0A0A0A !important; }
 
-html.dark .bg-\[\#EFF6FF\]          { background-color: #000000 !important; }
+html.dark .bg-\[\#EFF6FF\],
+html.dark .bg-brand-50,
+html.dark .bg-surface-light { background-color: #000000 !important; }
 
 html.dark .bg-\[\#E3ECFC\],
-html.dark .bg-\[\#D0DEFA\]          { background-color: #0F0F0F !important; }
+html.dark .bg-\[\#D0DEFA\],
+html.dark .bg-border-light { background-color: #0F0F0F !important; }
 
 html.dark .bg-slate-50              { background-color: #0A0A0A !important; }
 html.dark .bg-slate-100             { background-color: #0F0F0F !important; }
@@ -536,19 +569,24 @@ html.dark .bg-slate-100             { background-color: #0F0F0F !important; }
 html.dark .hover\:bg-white:hover,
 html.dark .hover\:bg-\[\#f9fbff\]:hover,
 html.dark .hover\:bg-\[\#FAFBFF\]:hover,
-html.dark .hover\:bg-\[\#fafcff\]:hover  { background-color: #18181B !important; }
+html.dark .hover\:bg-\[\#fafcff\]:hover,
+html.dark .hover\:bg-surface:hover { background-color: #18181B !important; }
 
-html.dark .hover\:bg-\[\#EFF6FF\]:hover  { background-color: #0F0F0F !important; }
+html.dark .hover\:bg-\[\#EFF6FF\]:hover,
+html.dark .hover\:bg-brand-50:hover,
+html.dark .hover\:bg-surface-light:hover { background-color: #0F0F0F !important; }
 
 html.dark .hover\:bg-\[\#E3ECFC\]:hover,
-html.dark .hover\:bg-\[\#D0DEFA\]:hover  { background-color: #262626 !important; }
+html.dark .hover\:bg-\[\#D0DEFA\]:hover,
+html.dark .hover\:bg-border-light:hover { background-color: #262626 !important; }
 
 html.dark .hover\:bg-slate-50:hover  { background-color: #18181B !important; }
 html.dark .hover\:bg-slate-100:hover { background-color: #262626 !important; }
 
 /* ── Dark mode: text overrides ──────────────── */
 html.dark .text-\[\#0C2472\]         { color: #FFFFFF !important; }
-html.dark .text-\[\#1D4ED8\]         { color: #D4D4D8 !important; }
+html.dark .text-\[\#1D4ED8\],
+html.dark .text-brand-700 { color: #D4D4D8 !important; }
 html.dark .text-slate-900            { color: #FFFFFF !important; }
 html.dark .text-slate-800            { color: #D4D4D8 !important; }
 html.dark .text-slate-700            { color: #D4D4D8 !important; }
@@ -560,30 +598,42 @@ html.dark .text-slate-200            { color: #3F3F46 !important; }
 
 html.dark .text-\[\#4A7AE8\]              { color: #D4D4D8 !important; }
 html.dark .hover\:text-\[\#0C2472\]:hover { color: #FFFFFF !important; }
-html.dark .hover\:text-\[\#1D4ED8\]:hover { color: #FFFFFF !important; }
+html.dark .hover\:text-\[\#1D4ED8\]:hover,
+html.dark .hover\:text-brand-700:hover { color: #FFFFFF !important; }
 html.dark .hover\:text-\[\#4A7AE8\]:hover { color: #FAFAFA !important; }
 html.dark .hover\:text-slate-900:hover    { color: #FFFFFF !important; }
 
 /* ── Dark mode: border overrides ────────────── */
 html.dark .border-\[\#E3ECFC\],
 html.dark .border-\[\#D0DEFA\],
-html.dark .border-\[\#EFF6FF\]       { border-color: #27272A !important; }
+html.dark .border-\[\#EFF6FF\],
+html.dark .border-border-light,
+html.dark .border-brand-50,
+html.dark .border-surface-light { border-color: #27272A !important; }
 html.dark .border-white              { border-color: #27272A !important; }
 html.dark .border-slate-100          { border-color: #27272A !important; }
 html.dark .border-slate-200          { border-color: #27272A !important; }
 html.dark .divide-\[\#E3ECFC\] > * + *,
-html.dark .divide-\[\#EFF6FF\] > * + * { border-color: #27272A !important; }
+html.dark .divide-\[\#EFF6FF\] > * + *,
+html.dark .divide-border-light > * + *,
+html.dark .divide-brand-50 > * + *,
+html.dark .divide-surface-light > * + * { border-color: #27272A !important; }
 html.dark .divide-slate-100 > * + *  { border-color: #27272A !important; }
 
-html.dark .hover\:border-\[\#E3ECFC\]:hover { border-color: #3F3F46 !important; }
+html.dark .hover\:border-\[\#E3ECFC\]:hover,
+html.dark .hover\:border-border-light:hover { border-color: #3F3F46 !important; }
 
 /* ── Dark mode: blue → neutral overrides ─────── */
 html.dark .bg-\[\#0C2472\]              { background-color: #18181B !important; }
-html.dark .bg-\[\#1D4ED8\]              { background-color: #27272A !important; }
-html.dark .bg-\[\#3B82F6\]              { background-color: #3F3F46 !important; }
+html.dark .bg-\[\#1D4ED8\],
+html.dark .bg-brand-700 { background-color: #27272A !important; }
+html.dark .bg-\[\#3B82F6\],
+html.dark .bg-brand-500 { background-color: #3F3F46 !important; }
 html.dark .bg-\[\#172554\]              { background-color: #000000 !important; }
-html.dark .hover\:bg-\[\#1D4ED8\]:hover { background-color: #27272A !important; }
-html.dark .hover\:bg-\[\#3B82F6\]:hover { background-color: #3F3F46 !important; }
+html.dark .hover\:bg-\[\#1D4ED8\]:hover,
+html.dark .hover\:bg-brand-700:hover { background-color: #27272A !important; }
+html.dark .hover\:bg-\[\#3B82F6\]:hover,
+html.dark .hover\:bg-brand-500:hover { background-color: #3F3F46 !important; }
 
 /* ── Dark mode: colored utility overrides ────── */
 html.dark .bg-emerald-50               { background-color: rgba(16,185,129,0.08) !important; }

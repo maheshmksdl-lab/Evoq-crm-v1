@@ -11,6 +11,7 @@ import {
 } from "@phosphor-icons/react";
 import { OWNER_AVATARS } from "@/lib/avatars";
 import { useTheme } from "@/components/ThemeContext";
+import Logo from "@/components/layout/Logo";
 
 const MOBILE_BP = 1024;
 
@@ -93,15 +94,22 @@ export default function Sidebar() {
 
         {/* Drawer */}
         <aside
+          aria-hidden={!drawerOpen}
           style={{
             position: "fixed", top: 0, left: 0,
             width: "min(280px, 85vw)", height: "100vh",
             zIndex: 100,
             backgroundColor: isDark ? "#000000" : "#EFF6FF",
-            boxShadow: isDark ? "4px 0 24px rgba(0,0,0,0.5)" : "4px 0 24px rgba(0,0,0,0.12)",
+            // Shadow only while open: a closed drawer sits at translateX(-100%) and its
+            // 24px blur would otherwise bleed into the left edge of the viewport.
+            boxShadow: !drawerOpen ? "none" : isDark ? "4px 0 24px rgba(0,0,0,0.5)" : "4px 0 24px rgba(0,0,0,0.12)",
+            // Hidden (not just off-screen) when closed so its links leave the tab order.
+            visibility: drawerOpen ? "visible" : "hidden",
             display: "flex", flexDirection: "column",
             transform: drawerOpen ? "translateX(0)" : "translateX(-100%)",
-            transition: "transform 0.28s cubic-bezier(0.4, 0, 0.2, 1)",
+            transition: drawerOpen
+              ? "transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s"
+              : "transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 0.28s",
             overflowY: "auto",
           }}
         >
@@ -121,12 +129,7 @@ export default function Sidebar() {
               {/* <div className="w-8 h-8 rounded-xl bg-brand-700 flex items-center justify-center shrink-0">
                 <span className="text-white text-[11px] font-black tracking-tight">EQ</span>
               </div> */}
-              <img
-                src="/logo.png"
-                alt="EVOQ CRM"
-                style={{ height: "28px", width: "auto" }}
-                onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
-              />
+              <Logo height={28} onError={e => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
             </div>
           </div>
 

@@ -1,0 +1,68 @@
+[
+ {
+  "key": "light-desktop",
+  "bgImage": "none",
+  "bgColor": "rgba(0, 0, 0, 0)",
+  "overflow": false,
+  "sw": 1440,
+  "vw": 1440,
+  "docH": 1453,
+  "dark": false,
+  "errs": []
+ },
+ {
+  "key": "light-tablet",
+  "bgImage": "none",
+  "bgColor": "rgba(0, 0, 0, 0)",
+  "overflow": false,
+  "sw": 768,
+  "vw": 768,
+  "docH": 1732,
+  "dark": false,
+  "errs": []
+ },
+ {
+  "key": "light-mobile",
+  "bgImage": "none",
+  "bgColor": "rgba(0, 0, 0, 0)",
+  "overflow": false,
+  "sw": 375,
+  "vw": 375,
+  "docH": 3038,
+  "dark": false,
+  "errs": []
+ },
+ {
+  "key": "dark-desktop",
+  "bgImage": "none",
+  "bgColor": "rgba(0, 0, 0, 0)",
+  "overflow": false,
+  "sw": 1440,
+  "vw": 1440,
+  "docH": 1453,
+  "dark": true,
+  "errs": []
+ },
+ {
+  "key": "dark-tablet",
+  "bgImage": "none",
+  "bgColor": "rgba(0, 0, 0, 0)",
+  "overflow": false,
+  "sw": 768,
+  "vw": 768,
+  "docH": 1732,
+  "dark": true,
+  "errs": []
+ },
+ {
+  "key": "dark-mobile",
+  "bgImage": "none",
+  "bgColor": "rgba(0, 0, 0, 0)",
+  "overflow": false,
+  "sw": 375,
+  "vw": 375,
+  "docH": 3038,
+  "dark": true,
+  "errs": []
+ }
+]

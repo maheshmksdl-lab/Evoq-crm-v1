@@ -174,7 +174,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
     return (
       <div className="flex h-screen bg-transparent font-sans">
         <Sidebar />
-        <div className="sidebar-content flex-1 flex flex-col">
+        <div className="sidebar-content app-canvas flex-1 flex flex-col">
           {/* <TopBar title="Deals" /> */}
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
@@ -258,7 +258,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
     <div className="flex h-screen bg-transparent font-sans">
       <Sidebar />
 
-      <div className="sidebar-content flex-1 flex flex-col min-h-screen overflow-auto">
+      <div className="sidebar-content app-canvas flex-1 flex flex-col min-h-screen overflow-auto">
         {/* <TopBar title="Deals" /> */}
 
         <main className="flex-1 px-4 sm:px-6 py-4 sm:py-5 space-y-4 animate-fade-in">

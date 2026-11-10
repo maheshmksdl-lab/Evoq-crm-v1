@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cookies, headers } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeRegistry from "@/components/ThemeRegistry";
@@ -20,16 +21,20 @@ export const metadata: Metadata = {
   description: "Customer Relationship Management Platform",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const theme = (await cookies()).get("crm-theme")?.value === "dark" ? "dark" : "light";
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  // Light-only auth pages never get the dark class (mirrors ThemeContext).
+  const forceLight = ["/login", "/register", "/forgot-password"].includes(pathname);
   return (
-    <html lang="en" className={cn("font-sans", inter.variable)} style={{ fontFamily: "var(--font-inter)" }}>
+    <html lang="en" className={cn("font-sans", inter.variable, theme === "dark" && !forceLight && "dark")} style={{ fontFamily: "var(--font-inter)" }}>
       <body suppressHydrationWarning>
         <QueryProvider>
-          <ThemeRegistry>
+          <ThemeRegistry initialTheme={theme}>
           <NavGuard />
           {children}
         </ThemeRegistry>

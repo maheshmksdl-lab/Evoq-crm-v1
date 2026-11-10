@@ -136,7 +136,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
   if (!lead) {
     return (
       <div className="flex h-screen bg-surface"><Sidebar />
-        <div className="sidebar-content flex-1 flex items-center justify-center flex-col gap-4">
+        <div className="sidebar-content app-canvas flex-1 flex items-center justify-center flex-col gap-4">
           <p className="text-slate-500 font-semibold">Lead not found</p>
           <button onClick={() => router.push("/leads")} className="text-brand-700 text-[15px] font-bold hover:underline">← Back to Leads</button>
         </div>
@@ -210,7 +210,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
     <div className="flex h-screen bg-transparent font-sans">
       <Sidebar />
 
-      <div className={`sidebar-content flex-1 flex flex-col min-h-screen overflow-auto transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-transparent"}`}>
+      <div className={`sidebar-content app-canvas flex-1 flex flex-col min-h-screen overflow-auto transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-transparent"}`}>
         {/* <TopBar /> */}
 
         <main className="flex-1 px-4 sm:px-6 py-4 sm:py-5 space-y-4 animate-fade-in">
@@ -356,17 +356,17 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1 overflow-x-auto pb-1">
+                  <div className="flex flex-wrap lg:flex-nowrap items-center gap-1.5 lg:gap-1 pb-1">
                     {PIPELINE.map((stage, i) => {
                       const isDone    = i < pipelineIdx;
                       const isActive  = i === pipelineIdx;
                       const isPending = i > pipelineIdx;
                       return (
-                        <div key={stage} className="flex items-center shrink-0 lg:flex-1 gap-1">
+                        <div key={stage} className="flex items-center flex-1 min-w-[96px] lg:min-w-0 gap-1">
                           <Tooltip title={isDone ? "Completed" : isActive ? "Current stage" : "Click to set stage"}>
                             <button
                               onClick={() => setCurrentStatus(stage)}
-                              className={`flex items-center justify-center gap-1.5 shrink-0 lg:flex-1 min-w-[104px] lg:min-w-0 py-2 px-2 rounded-xl text-[12.5px] font-bold transition-all
+                              className={`flex items-center justify-center gap-1.5 flex-1 min-w-0 py-2 px-2 rounded-xl text-[12.5px] font-bold transition-all
                                 ${isActive  ? "bg-brand-700 text-white shadow-md shadow-[#1D4ED8]/25 scale-[1.02]" : ""}
                                 ${isDone    ? isDark ? "bg-[#27272A] text-[#D4D4D8] hover:bg-[#4B4B52]" : "bg-border-light text-brand-700 hover:bg-[#BFD3F5]" : ""}
                                 ${isPending ? isDark ? "bg-transparent text-[#ABABAD] border border-[#27272A] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-transparent text-slate-400 border border-transparent hover:bg-border-light hover:text-brand-700" : ""}
@@ -377,14 +377,14 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                             </button>
                           </Tooltip>
                           {i < PIPELINE.length - 1 && (
-                            <CaretRight size={16} color={isDone||isActive ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#71717A" : "#CBD5E1")} weight="duotone" style={{ flexShrink:0 }} />
+                            <CaretRight size={16} color={isDone||isActive ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#71717A" : "#CBD5E1")} weight="duotone" className="hidden sm:block" style={{ flexShrink:0 }} />
                           )}
                         </div>
                       );
                     })}
 
                     {/* Won / Lost buttons */}
-                    <div className="flex items-center gap-1 ml-2 shrink-0">
+                    <div className="flex items-center gap-1 ml-auto lg:ml-2 shrink-0">
                       <Tooltip title="Mark as Qualified / Won">
                         <button onClick={() => setCurrentStatus("Qualified")}
                           className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all text-[17px]

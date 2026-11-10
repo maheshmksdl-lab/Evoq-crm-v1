@@ -17,7 +17,8 @@ import Badge from "@mui/material/Badge";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
-import { getDataGridSx } from "@/lib/dataGridStyles";
+import type { SxProps, Theme } from "@mui/material/styles";
+import { getDataGridSx, fitHeaders } from "@/lib/dataGridStyles";
 import {
   Plus, MagnifyingGlass, SlidersHorizontal, SortAscending, Columns,
   DotsThreeVertical, ArrowsDownUp, ListIcon, GridFour, Kanban,
@@ -113,6 +114,36 @@ const OWNERS: { name: string; initials: string }[] = [
   { name: "Admin",     initials: "AD" },
 ];
 const ROWS_PER_PAGE_OPTIONS = [10, 20, 50, 100];
+
+// ── Leads list: tone + focus tokens ──────────────────────────────────
+// Text hierarchy: primary (names) > secondary (company / email / phone) > tertiary (owner, dates, meta).
+// Same neutrals already used across the app; replaces slate-400 (≈2.5:1 on light surfaces) and the
+// inverted #E4E4E7 "muted" text in dark mode (muted text was brighter than the data it described).
+const tone = (isDark: boolean) => ({
+  primary:   isDark ? "#FAFAFA" : "#0F172A",
+  secondary: isDark ? "#D4D4D8" : "#475569",
+  tertiary:  isDark ? "#A1A1AA" : "#64748B",
+  empty:     isDark ? "#71717A" : "#94A3B8",
+});
+// Visible keyboard focus (focus-visible only, so mouse clicks stay clean).
+const FOCUS_RING = "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]";
+const muiFocus = { "&.Mui-focusVisible": { outline: "2px solid #3B82F6", outlineOffset: "2px" } } as const;
+
+// Leads-only DataGrid refinements layered on top of the shared getDataGridSx (other modules untouched).
+const leadsGridSx = (isDark: boolean): SxProps<Theme> => ({
+  // clearer row hover + selected states (the shared hover was ~4% alpha, practically invisible)
+  "& .MuiDataGrid-row:hover": { bgcolor: isDark ? "#141417" : "rgba(59,130,246,0.07)" },
+  "& .MuiDataGrid-row.Mui-selected, & .MuiDataGrid-row.Mui-selected:hover": { bgcolor: isDark ? "#1B1B20" : "rgba(59,130,246,0.12)" },
+  // row actions: revealed on row hover / keyboard focus, always visible on touch devices
+  "& .row-actions": { opacity: 0, transition: "opacity 120ms ease" },
+  "& .MuiDataGrid-row:hover .row-actions, & .MuiDataGrid-row:focus-within .row-actions, & .row-actions:focus-within": { opacity: 1 },
+  "@media (hover: none)": { "& .row-actions": { opacity: 1 } },
+  // keyboard focus ring for the row / select-all checkboxes (browser default was a 1px outline)
+  // drawn inside the checkbox bounds: an outside ring is clipped by the header / row cell
+  "& .MuiCheckbox-root.Mui-focusVisible": { outline: "2px solid #3B82F6", outlineOffset: "-3px" },
+  // keyboard focus ring for cells / headers (shared styles remove the outline entirely)
+  "&& .MuiDataGrid-cell:focus-visible, && .MuiDataGrid-columnHeader:focus-visible": { outline: "2px solid #3B82F6 !important", outlineOffset: "-2px" },
+});
 
 function ColHeader({ label, icon: Icon }: { label: string; icon?: ElementType }) {
   const { theme } = useTheme();
@@ -249,6 +280,10 @@ export default function LeadsPage() {
     setRowMenuAnchor(null);
   };
 
+  const t = tone(isDark);
+  const baseGridSx = getDataGridSx(isDark);
+  const gridSx = [...(Array.isArray(baseGridSx) ? baseGridSx : [baseGridSx]), leadsGridSx(isDark)] as SxProps<Theme>;
+
   // ── DataGrid column builders, keyed by COL_DEFS.key
   const COLUMN_BUILDERS: Record<string, GridColDef<Lead>> = {
     leadName: {
@@ -259,7 +294,7 @@ export default function LeadsPage() {
         return (
           <div className="flex items-center gap-2.5 min-w-0">
             <Avatar src={LEAD_AVATARS[lead.id]} sx={{ width: 28, height: 28, bgcolor: avatarColor(lead.name), fontSize: "0.7rem", fontWeight: 800, flexShrink: 0 }}>{initials(lead.name)}</Avatar>
-            <p className={`m-0 font-heading text-[15px]/[20px] font-medium truncate ${isDark ? "text-[#FFFFFF]" : "text-slate-800"}`}>{lead.name}</p>
+            <p className={`m-0 font-heading text-[15px]/[20px] font-medium truncate ${isDark ? "text-[#FAFAFA]" : "text-slate-900"}`}>{lead.name}</p>
           </div>
         );
       },
@@ -268,8 +303,8 @@ export default function LeadsPage() {
       field: "company", headerName: "Company", flex: 1.3, minWidth: 120, sortable: false,
       renderHeader: () => <ColHeader label="Company" icon={Buildings} />,
       renderCell: (params) => (
-        <div className={`text-[15px]/[20px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
-          {params.row.company || <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+        <div className="text-[15px]/[20px] truncate" style={{ color: t.secondary }}>
+          {params.row.company || <span style={{ color: t.empty }}>—</span>}
         </div>
       ),
     },
@@ -281,7 +316,7 @@ export default function LeadsPage() {
           <div className="text-[15px]/[20px] truncate w-full">
             {params.row.email
               ? <span className={`hover:underline cursor-pointer ${isDark ? "text-[#D4D4D8]" : "text-inherit"}`}>{params.row.email}</span>
-              : <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+              : <span style={{ color: t.empty }}>—</span>}
           </div>
         </Tooltip>
       ),
@@ -290,10 +325,10 @@ export default function LeadsPage() {
       field: "mobile", headerName: "Mobile", flex: 1.2, minWidth: 120, sortable: false,
       renderHeader: () => <ColHeader label="Mobile" icon={Phone} />,
       renderCell: (params) => (
-        <div className={`text-[15px]/[20px] font-mono truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
+        <div className="text-[15px]/[20px] font-mono tabular-nums min-w-0 w-full" style={{ color: t.secondary }}>
           {params.row.mobile
-            ? <span className="flex items-center gap-1"><Phone size={11} color="#94A3B8" weight="duotone" />{params.row.mobile}</span>
-            : <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
+            ? <span className="flex items-center gap-1.5 min-w-0"><Phone size={12} color={t.empty} weight="duotone" className="shrink-0" /><span className="truncate">{params.row.mobile}</span></span>
+            : <span style={{ color: t.empty }}>—</span>}
         </div>
       ),
     },
@@ -329,7 +364,7 @@ export default function LeadsPage() {
     creation: {
       field: "creation", headerName: "Created", flex: 1, minWidth: 100, sortable: false,
       renderHeader: () => <ColHeader label="Created" icon={CalendarBlank} />,
-      renderCell: (params) => <div className={`text-[13px]/[16px] truncate ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{params.row.created}</div>,
+      renderCell: (params) => <div className="text-[13px]/[16px] truncate" style={{ color: t.tertiary }}>{params.row.created}</div>,
     },
   };
 
@@ -338,11 +373,11 @@ export default function LeadsPage() {
     {
       field: "actions", headerName: "", width: 50, sortable: false, disableColumnMenu: true,
       renderCell: (params) => (
-        <div className="flex justify-end w-full opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="row-actions flex justify-end w-full">
           <Tooltip title="Actions">
-            <IconButton size="small" onClick={e => { e.stopPropagation(); setRowMenuAnchor(e.currentTarget); setRowMenuLeadId(params.row.id); }}
-              sx={{ borderRadius: "6px", p: 0.5, "&:hover": { bgcolor: isDark ? "#27272A" : "#E3ECFC" } }}>
-              <DotsThreeVertical size={15} color="#94A3B8" weight="duotone" />
+            <IconButton size="small" aria-label={`Actions for ${params.row.name}`} aria-haspopup="menu" disableFocusRipple onClick={e => { e.stopPropagation(); setRowMenuAnchor(e.currentTarget); setRowMenuLeadId(params.row.id); }}
+              sx={{ borderRadius: "6px", p: 0.5, ...muiFocus, "&:hover": { bgcolor: isDark ? "#27272A" : "#E3ECFC" } }}>
+              <DotsThreeVertical size={16} color={t.tertiary} weight="bold" />
             </IconButton>
           </Tooltip>
         </div>
@@ -351,21 +386,21 @@ export default function LeadsPage() {
   ];
 
   return (
-    <div className="sidebar-content flex-1 flex flex-col min-h-screen overflow-auto">
+    <div className="sidebar-content app-canvas flex-1 flex flex-col min-h-screen overflow-auto">
 
       <main className="flex-1 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-3 sm:space-y-5 animate-fade-in">
 
           {/* ══ Page header ══ */}
           <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
             <div>
-              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
+              <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                 <House size={16} weight="duotone" />
                 <CaretRight size={12} weight="duotone" />
                 <Link href="/leads" className={`transition-colors font-medium ${isDark ? "hover:text-[#D4D4D8]" : "hover:text-brand-700"}`}>Leads</Link>
               </div>
               <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
                 <h1 className="font-heading text-lg sm:text-[22px]/[28px] font-semibold text-slate-900 tracking-tight m-0">Leads</h1>
-                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-xs flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#E4E4E7]" : "bg-surface border-border-light text-slate-400"}`}>
+                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-xs flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#A1A1AA]" : "bg-surface border-border-light text-slate-500"}`}>
                   {leads.length} total
                 </span>
               </div>
@@ -373,17 +408,17 @@ export default function LeadsPage() {
 
             <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
               {/* View toggle - hidden on mobile, show on sm+ */}
-              <div className={`hidden sm:flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-white border-slate-100"}`}>
+              <div className={`hidden sm:flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
                 {[
                   { k:"list",   Icon:ListIcon,     label:"List"   },
                   { k:"grid",   Icon:GridFour,    label:"Grid"   },
                   { k:"kanban", Icon:Kanban,      label:"Kanban" },
                 ].map(({ k, Icon, label }) => (
-                  <button key={k} onClick={() => setView(k as typeof view)}
-                    className={`flex items-center gap-1 px-2 py-[6px] rounded-lg text-[13px]/[16px] font-medium transition-all ${
+                  <button key={k} onClick={() => setView(k as typeof view)} aria-pressed={view === k} aria-label={`${label} view`}
+                    className={`flex items-center gap-1 px-2 py-[6px] rounded-lg text-[13px]/[16px] font-medium transition-all ${FOCUS_RING} ${
                       view === k
-                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-surface text-brand-700"
-                        : isDark ? "text-[#E4E4E7] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-surface text-slate-400 hover:bg-border-light"
+                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-white text-brand-700 shadow-xs"
+                        : isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "text-slate-600 hover:bg-white/70 hover:text-brand-700"
                     }`}>
                     <Icon size={14} weight="duotone" />
                     <span className="hidden sm:inline">{label}</span>
@@ -391,9 +426,9 @@ export default function LeadsPage() {
                 ))}
               </div>
 
-              <Button variant="contained" startIcon={<Plus size={16} weight="bold" />}
+              <Button variant="contained" startIcon={<Plus size={16} weight="bold" />} disableFocusRipple
                 onClick={() => setDrawerOpen(true)}
-                sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius:"9px", textTransform:"none", fontWeight:500, fontSize:{ xs: "13px", sm: "15px" }, px: { xs: 1.5, sm: 2 }, py: 0.75, flex: { xs: 1, sm: "unset" }, boxShadow: isDark ? "none" : "0 1px 8px 0 #1D4ED833", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB", boxShadow: isDark ? "none" : "0 2px 14px 0 #60A5FA55" }, "&:active":{ bgcolor: isDark ? "#52525B" : "#0C2472" } }}>
+                sx={{ ...muiFocus, bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius:"9px", textTransform:"none", fontWeight:500, fontSize:{ xs: "13px", sm: "15px" }, px: { xs: 1.5, sm: 2 }, py: 0.75, flex: { xs: 1, sm: "unset" }, boxShadow: isDark ? "none" : "0 1px 8px 0 #1D4ED833", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB", boxShadow: isDark ? "none" : "0 2px 14px 0 #60A5FA55" }, "&:active":{ bgcolor: isDark ? "#52525B" : "#0C2472" } }}>
                 <span className="hidden sm:inline">New Lead</span>
                 <span className="sm:hidden">New</span>
               </Button>
@@ -401,14 +436,14 @@ export default function LeadsPage() {
           </div>
 
           {/* ══ Status tabs ══ */}
-          <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5 scrollbar-hide">
+          <div className="flex items-center gap-1.5 overflow-x-auto -mx-1 -mt-1 px-1 pt-1 pb-1 scrollbar-hide">
             {TABS.map(({ key, label }) => {
               const cnt = counts[key] ?? 0;
               const active = activeTab === key;
               if (key !== "All" && cnt === 0) return null;
               return (
-                <button key={key} onClick={() => { setActiveTab(key); resetToFirstPage(); }}
-                  className={`flex items-center gap-1.5 px-3 py-[7px] rounded-xl text-[14px]/[18px] font-medium whitespace-nowrap transition-all border ${
+                <button key={key} onClick={() => { setActiveTab(key); resetToFirstPage(); }} aria-pressed={active}
+                  className={`flex items-center gap-1.5 px-3 py-[7px] rounded-xl text-[14px]/[18px] font-medium whitespace-nowrap transition-all border ${FOCUS_RING} ${
                     active ? isDark ? "bg-[#18181B] text-white shadow-xs shadow-[#27272A]/10 border-[#27272A]" : "bg-brand-700 text-white shadow-xs shadow-[#1D4ED8]/25 border-brand-700"
                            : isDark ? "bg-[#0A0A0A] text-[#A1A1AA] border-[#27272A] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "bg-surface text-[#0C2472] border-border-light hover:bg-border-light"
                   }`}>
@@ -422,19 +457,20 @@ export default function LeadsPage() {
           </div>
 
           {/* ══ Toolbar: Search | Filters | Columns | Sort ══ */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+          <div className="flex flex-wrap items-center gap-2.5">
             {/* Search */}
-            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 sm:w-72 focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#60A5FA] transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
+            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 basis-full sm:basis-auto sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
-              <InputBase placeholder="Search by name, company, email…" value={search}
+              <InputBase placeholder="Search by name, company, email…" value={search} inputProps={{ "aria-label": "Search leads by name, company or email" }}
                 onChange={e => { setSearch(e.target.value); resetToFirstPage(); }}
                 sx={{ flex:1, fontSize:"0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder":{ color:"#94A3B8", opacity:1 } }}
               />
-              {search && <button onClick={() => { setSearch(""); resetToFirstPage(); }} className="text-slate-300 hover:text-slate-500 transition-colors text-[15px]/[20px]">✕</button>}
+              {search && <button onClick={() => { setSearch(""); resetToFirstPage(); }} aria-label="Clear search" className={`rounded-md px-1 ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"} transition-colors text-[15px]/[20px] ${FOCUS_RING}`}>✕</button>}
             </div>
 
+            <div className="grid grid-cols-3 gap-2 w-full sm:w-auto sm:flex sm:items-center sm:gap-2.5">
             {/* Filters button */}
-            <Button variant="outlined" size="small"
+            <Button variant="outlined" size="small" disableFocusRipple
               startIcon={
                 activeFilters.length > 0
                   ? <Badge badgeContent={activeFilters.length} color="primary" sx={{ "& .MuiBadge-badge": { fontSize: "0.65rem", height: 14, minWidth: 14 } }}>
@@ -447,7 +483,7 @@ export default function LeadsPage() {
                 borderColor: activeFilters.length > 0 ? "#1D4ED8" : isDark ? "#27272A" : "#E3ECFC",
                 color: activeFilters.length > 0 ? "#fff" : isDark ? "#E4E4E7" : "#0C2472",
                 bgcolor: activeFilters.length > 0 ? "#1D4ED8" : isDark ? "#0F0F0F" : "#E3ECFC",
-                borderRadius:"9px", textTransform:"none", fontWeight:500, fontSize:"14px",
+                borderRadius:"9px", textTransform:"none", fontWeight:500, fontSize:"14px", minWidth:0, ...muiFocus,
                 "&:hover":{
                   borderColor: activeFilters.length > 0 ? "#1640B8" : "#1D4ED8",
                   color: activeFilters.length > 0 ? "#fff" : "#0C2472",
@@ -458,21 +494,21 @@ export default function LeadsPage() {
             </Button>
 
             {/* Columns button */}
-            <Button variant="outlined" size="small"
+            <Button variant="outlined" size="small" disableFocusRipple
               startIcon={<Columns size={14} weight="duotone" />}
               onClick={() => setColumnsOpen(true)}
               sx={{
                 borderColor: isDark ? "#27272A" : "#E3ECFC",
                 color: isDark ? "#E4E4E7" : "#0C2472",
                 bgcolor: isDark ? "#0F0F0F" : "#E3ECFC",
-                borderRadius:"9px", textTransform:"none", fontWeight:500, fontSize:"14px",
+                borderRadius:"9px", textTransform:"none", fontWeight:500, fontSize:"14px", minWidth:0, ...muiFocus,
                 "&:hover":{ borderColor:"#1D4ED8", color:"#0C2472", bgcolor: isDark ? "#0A0A0A" : "#DCE6FB" },
               }}>
               Columns
             </Button>
 
             {/* Sort button */}
-            <Button variant="outlined" size="small"
+            <Button variant="outlined" size="small" disableFocusRipple
               startIcon={<SortAscending size={14} weight="duotone" />}
               endIcon={<CaretDown size={11} weight="duotone" />}
               onClick={e => setSortAnchor(e.currentTarget)}
@@ -480,33 +516,34 @@ export default function LeadsPage() {
                 borderColor: isDark ? "#27272A" : "#E3ECFC",
                 color: isDark ? "#E4E4E7" : "#0C2472",
                 bgcolor: isDark ? "#0F0F0F" : "#E3ECFC",
-                borderRadius:"9px", textTransform:"none", fontWeight:500, fontSize:"14px",
+                borderRadius:"9px", textTransform:"none", fontWeight:500, fontSize:"14px", minWidth:0, ...muiFocus,
                 "&:hover":{ borderColor:"#1D4ED8", color:"#0C2472", bgcolor: isDark ? "#0A0A0A" : "#DCE6FB" },
               }}>
               Sort{activeSorts.length > 0 ? ` (${activeSorts.length})` : ""}
             </Button>
+            </div>
 
-            <span className={`ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#E4E4E7] bg-[#0A0A0A]" : "text-slate-400 bg-surface"}`}>
+            <span aria-live="polite" className={`w-full sm:w-auto text-right sm:ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#A1A1AA] bg-[#0A0A0A]" : "text-slate-500 bg-surface"}`}>
               {sorted.length} of {leads.length} records
             </span>
           </div>
 
           {/* ══ Bulk action bar ══ */}
           {selected.length > 0 && (
-            <div className={`flex items-center gap-3 px-4 py-2.5 rounded-xl border animate-slide-up shadow-xs ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
+            <div role="toolbar" aria-label="Bulk actions" className={`flex flex-wrap items-center gap-x-3 gap-y-2 px-4 py-2.5 rounded-xl border animate-slide-up shadow-xs ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
               <div className="flex items-center gap-2">
                 <span className="w-5 h-5 rounded-md bg-brand-700 text-white flex items-center justify-center text-[13px]/[16px] font-medium">{selected.length}</span>
                 <span className={`text-[14px]/[18px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-[#0C2472]"}`}>selected</span>
               </div>
               <div className={`w-px h-4 ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
-              <button onClick={e => setOwnerMenuAnchor(e.currentTarget)} className={`flex items-center gap-1.5 text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>
+              <button onClick={e => setOwnerMenuAnchor(e.currentTarget)} className={`flex items-center gap-1.5 whitespace-nowrap rounded-md text-[14px]/[18px] font-medium transition-colors ${FOCUS_RING} ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>
                 <UserCheck size={14} weight="duotone" /> Assign Owner
               </button>
-              <button onClick={e => setStatusMenuAnchor(e.currentTarget)} className={`flex items-center gap-1.5 text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>
+              <button onClick={e => setStatusMenuAnchor(e.currentTarget)} className={`flex items-center gap-1.5 whitespace-nowrap rounded-md text-[14px]/[18px] font-medium transition-colors ${FOCUS_RING} ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>
                 <NotePencil size={14} weight="duotone" /> Update Status
               </button>
-              <button onClick={() => setSelected([])} className={`ml-auto text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#E4E4E7] hover:text-[#A1A1AA]" : "text-slate-400 hover:text-slate-600"}`}>Clear</button>
-              <button onClick={deleteSelected} className={`flex items-center gap-1.5 text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-red-400 hover:text-red-300" : "text-red-600 hover:text-red-700"}`}>
+              <button onClick={() => setSelected([])} className={`ml-auto whitespace-nowrap rounded-md text-[14px]/[18px] font-medium transition-colors ${FOCUS_RING} ${isDark ? "text-[#E4E4E7] hover:text-[#A1A1AA]" : "text-slate-400 hover:text-slate-600"}`}>Clear</button>
+              <button onClick={deleteSelected} className={`flex items-center gap-1.5 whitespace-nowrap rounded-md text-[14px]/[18px] font-medium transition-colors ${FOCUS_RING} ${isDark ? "text-red-400 hover:text-red-300" : "text-red-600 hover:text-red-700"}`}>
                 <Trash size={14} weight="duotone" /> Delete
               </button>
             </div>
@@ -540,7 +577,7 @@ export default function LeadsPage() {
             <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "border-[#27272A]" : "border-border-light"}`} style={{ height: 600 }}>
               <DataGrid<Lead>
                 rows={sorted}
-                columns={gridColumns}
+                columns={fitHeaders(gridColumns)}
                 getRowId={row => row.id}
                 checkboxSelection
                 disableRowSelectionOnClick
@@ -555,16 +592,16 @@ export default function LeadsPage() {
                 pageSizeOptions={ROWS_PER_PAGE_OPTIONS}
                 slots={{
                   noRowsOverlay: () => (
-                    <div className="py-16 text-center">
+                    <div className="py-16 px-4 text-center break-words" role="status">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                         <MagnifyingGlass size={22} color={isDark ? "#E4E4E7" : "#94A3B8"} weight="duotone" />
                       </div>
-                      <p className={`font-heading text-[15px]/[20px] font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No leads found</p>
-                      <p className={`text-[13px]/[16px] mt-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-300"}`}>Try adjusting your search, filters or tab</p>
+                      <p className={`font-heading text-[15px]/[20px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{search.trim() ? `No leads match “${search.trim()}”` : "No leads found"}</p>
+                      <p className={`text-[13px]/[16px] mt-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Try adjusting your search, filters or tab</p>
                     </div>
                   ),
                 }}
-                sx={getDataGridSx(isDark)}
+                sx={gridSx}
               />
             </div>
           )}

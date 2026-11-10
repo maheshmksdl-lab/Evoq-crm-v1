@@ -14,7 +14,7 @@ import Button from "@mui/material/Button";
 import InputBase from "@mui/material/InputBase";
 import Badge from "@mui/material/Badge";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
-import { getDataGridSx, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
+import { getDataGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
 import {
   Plus, MagnifyingGlass, SlidersHorizontal, SortAscending, Columns,
   ArrowsDownUp, List, GridFour, Kanban, CaretDown, House, CaretRight,
@@ -249,7 +249,7 @@ export default function DealsPage() {
   ];
 
   return (
-    <div className="sidebar-content flex-1 flex flex-col min-h-screen overflow-auto">
+    <div className="sidebar-content app-canvas flex-1 flex flex-col min-h-screen overflow-auto">
 
       <main className="flex-1 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-3 sm:space-y-5 animate-fade-in">
 
@@ -433,7 +433,7 @@ export default function DealsPage() {
             <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "border-[#27272A]" : "border-border-light"}`} style={{ height: 600 }}>
               <DataGrid<Deal>
                 rows={filtered}
-                columns={gridColumns}
+                columns={fitHeaders(gridColumns)}
                 getRowId={row => row.id}
                 checkboxSelection
                 disableRowSelectionOnClick

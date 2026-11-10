@@ -136,7 +136,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
     return (
       <div className="flex h-screen bg-transparent font-sans">
         <Sidebar />
-        <div className="sidebar-content flex-1 flex flex-col">
+        <div className="sidebar-content app-canvas flex-1 flex flex-col">
           {/* <TopBar title="Accounts" /> */}
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
@@ -217,7 +217,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
     <div className="flex h-screen bg-transparent font-sans">
       <Sidebar />
 
-      <div className="sidebar-content flex-1 flex flex-col min-h-screen overflow-auto">
+      <div className="sidebar-content app-canvas flex-1 flex flex-col min-h-screen overflow-auto">
         {/* <TopBar title="Accounts" /> */}
 
         <main className="flex-1 px-4 sm:px-6 py-4 sm:py-5 space-y-4 animate-fade-in">

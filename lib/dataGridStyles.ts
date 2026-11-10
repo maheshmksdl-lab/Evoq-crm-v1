@@ -70,3 +70,22 @@ export const getDataGridSx = (isDark: boolean): SxProps<Theme> => ({
 });
 
 export const ROWS_PER_PAGE_OPTIONS = [10, 20, 50, 100];
+
+// ── Header-aware column sizing ───────────────────────────────────────
+// Column minWidths were hand-set (100–160px) and are too narrow for the
+// 14px/semibold/uppercase header (icon + label + cell padding), so headers like
+// "AMOUNT" / "PROBABILITY (%)" were truncated once the grid stopped stretching
+// (tablet widths). This raises each column's minWidth to fit its header text;
+// columns that are wider already are left alone.
+const HEADER_CHAR_PX = 9.8;   // 14px semibold uppercase + tracking-wide
+const HEADER_CHROME_PX = 53;  // icon (13) + gap (6) + cell padding (2×10) + safety (14)
+
+export function fitHeaders<T extends { headerName?: string; field: string; minWidth?: number; width?: number; flex?: number }>(cols: T[]): T[] {
+  return cols.map((c) => {
+    if (!c.headerName) return c;
+    const needed = Math.ceil(c.headerName.length * HEADER_CHAR_PX + HEADER_CHROME_PX);
+    if (c.flex != null) return { ...c, minWidth: Math.max(c.minWidth ?? 0, needed) };
+    if (c.width != null) return { ...c, width: Math.max(c.width, needed) };
+    return c;
+  });
+}

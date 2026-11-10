@@ -652,7 +652,7 @@ export default function HomePageEditorPage() {
   return (
     <div className={`flex min-h-screen font-sans transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
       <Sidebar />
-      <div className={`sidebar-content flex-1 flex flex-col overflow-hidden transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-transparent"}`}>
+      <div className={`sidebar-content app-canvas flex-1 flex flex-col overflow-hidden transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-transparent"}`}>
         {/* Header */}
         <div className={`px-4 sm:px-6 lg:px-8 py-3 sm:py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-2 sm:mb-3 text-[10px] sm:text-[12px]">

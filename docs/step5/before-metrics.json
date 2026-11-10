@@ -1,0 +1,286 @@
+{
+ "light-desktop": {
+  "gridBg": "rgb(249, 251, 255)",
+  "rowH": 44,
+  "h1": {
+   "color": "lab(7.78673 1.82346 -15.0537)",
+   "size": "22px",
+   "weight": "600",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "created": {
+   "color": "lab(65.5349 -2.25151 -14.5072)",
+   "size": "13px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "company": {
+   "color": "lab(48.0876 -2.03595 -16.5814)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "owner": {
+   "color": "rgb(12, 36, 114)",
+   "size": "14px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "mobile": {
+   "color": "lab(48.0876 -2.03595 -16.5814)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "email": {
+   "color": "rgb(12, 36, 114)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "kebabOpacity": "1",
+  "kebabCount": 12,
+  "sw": 1440,
+  "vw": 1440,
+  "tabsCount": 7,
+  "hover": {
+   "kebabOpacityWhileHover": "0",
+   "rowBg": "rgba(96, 165, 250, 0.04)",
+   "cursor": "pointer"
+  },
+  "focusRing": {
+   "text": "Filters",
+   "outline": "none 0px",
+   "shadow": "none"
+  },
+  "contrast": {
+   "created": 16.28,
+   "company": 17.74,
+   "owner": 13.42,
+   "mobile": 17.74,
+   "email": 13.42
+  }
+ },
+ "light-tablet": {
+  "gridBg": "rgb(249, 251, 255)",
+  "rowH": 44,
+  "h1": {
+   "color": "lab(7.78673 1.82346 -15.0537)",
+   "size": "22px",
+   "weight": "600",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "created": null,
+  "company": {
+   "color": "lab(48.0876 -2.03595 -16.5814)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "owner": {
+   "color": "rgb(12, 36, 114)",
+   "size": "14px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "mobile": {
+   "color": "lab(48.0876 -2.03595 -16.5814)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "email": {
+   "color": "rgb(12, 36, 114)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "kebabOpacity": "1",
+  "kebabCount": 0,
+  "sw": 768,
+  "vw": 768,
+  "tabsCount": 7,
+  "contrast": {
+   "company": 17.74,
+   "owner": 13.42,
+   "mobile": 17.74,
+   "email": 13.42
+  }
+ },
+ "light-mobile": {
+  "gridBg": "rgb(249, 251, 255)",
+  "rowH": 44,
+  "h1": {
+   "color": "lab(7.78673 1.82346 -15.0537)",
+   "size": "18px",
+   "weight": "600",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "created": null,
+  "company": {
+   "color": "lab(48.0876 -2.03595 -16.5814)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "owner": null,
+  "mobile": null,
+  "email": {
+   "color": "rgb(12, 36, 114)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "kebabOpacity": "1",
+  "kebabCount": 0,
+  "sw": 375,
+  "vw": 375,
+  "tabsCount": 7,
+  "contrast": {
+   "company": 17.74,
+   "email": 13.42
+  }
+ },
+ "dark-desktop": {
+  "gridBg": "rgb(10, 10, 10)",
+  "rowH": 44,
+  "h1": {
+   "color": "rgb(255, 255, 255)",
+   "size": "22px",
+   "weight": "600",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "created": {
+   "color": "rgb(228, 228, 231)",
+   "size": "13px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "company": {
+   "color": "rgb(161, 161, 170)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "owner": {
+   "color": "rgb(255, 255, 255)",
+   "size": "14px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "mobile": {
+   "color": "rgb(161, 161, 170)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "email": {
+   "color": "rgb(255, 255, 255)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "kebabOpacity": "1",
+  "kebabCount": 12,
+  "sw": 1440,
+  "vw": 1440,
+  "tabsCount": 7,
+  "hover": {
+   "kebabOpacityWhileHover": "0",
+   "rowBg": "rgb(15, 15, 15)",
+   "cursor": "pointer"
+  },
+  "focusRing": {
+   "text": "Filters",
+   "outline": "none 0px",
+   "shadow": "none"
+  },
+  "contrast": {
+   "created": 15.6,
+   "company": 7.72,
+   "owner": 19.8,
+   "mobile": 7.72,
+   "email": 19.8
+  }
+ },
+ "dark-tablet": {
+  "gridBg": "rgb(10, 10, 10)",
+  "rowH": 44,
+  "h1": {
+   "color": "rgb(255, 255, 255)",
+   "size": "22px",
+   "weight": "600",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "created": null,
+  "company": {
+   "color": "rgb(161, 161, 170)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "owner": {
+   "color": "rgb(255, 255, 255)",
+   "size": "14px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "mobile": {
+   "color": "rgb(161, 161, 170)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "email": {
+   "color": "rgb(255, 255, 255)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "kebabOpacity": "1",
+  "kebabCount": 0,
+  "sw": 768,
+  "vw": 768,
+  "tabsCount": 7,
+  "contrast": {
+   "company": 7.72,
+   "owner": 19.8,
+   "mobile": 7.72,
+   "email": 19.8
+  }
+ },
+ "dark-mobile": {
+  "gridBg": "rgb(10, 10, 10)",
+  "rowH": 44,
+  "h1": {
+   "color": "rgb(255, 255, 255)",
+   "size": "18px",
+   "weight": "600",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "created": null,
+  "company": {
+   "color": "rgb(161, 161, 170)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "owner": null,
+  "mobile": null,
+  "email": {
+   "color": "rgb(255, 255, 255)",
+   "size": "15px",
+   "weight": "400",
+   "bg": "rgba(0, 0, 0, 0)"
+  },
+  "kebabOpacity": "1",
+  "kebabCount": 0,
+  "sw": 375,
+  "vw": 375,
+  "tabsCount": 7,
+  "contrast": {
+   "company": 7.72,
+   "email": 19.8
+  }
+ }
+}

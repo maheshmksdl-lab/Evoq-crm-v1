@@ -17,7 +17,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
-import { getDataGridSx, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
+import { getDataGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
 import {
   House, CaretRight, MagnifyingGlass, Plus, DotsThreeVertical, Star,
   ChartBar, Rows, X,
@@ -259,7 +259,7 @@ export default function ReportsPage() {
 
   return (
     <>
-    <div className={`sidebar-content flex flex-col md:flex-row min-h-screen font-sans transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
+    <div className={`sidebar-content app-canvas flex flex-col md:flex-row min-h-screen font-sans transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
       {/* Left Sidebar — mirrors SettingsSidebar exactly; collapses into a dropdown on mobile */}
       <div className={`w-full md:w-[240px] shrink-0 border-b md:border-b-0 md:border-r flex flex-col transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <button
@@ -495,7 +495,7 @@ export default function ReportsPage() {
             <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "border-[#27272A]" : "border-border-light"}`} style={{ height: 600 }}>
               <DataGrid<Report>
                 rows={sorted}
-                columns={gridColumns}
+                columns={fitHeaders(gridColumns)}
                 getRowId={row => row.id}
                 checkboxSelection
                 disableRowSelectionOnClick

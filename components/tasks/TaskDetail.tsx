@@ -207,7 +207,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
     return (
       <div className="flex h-screen bg-transparent font-sans">
         <Sidebar />
-        <div className="sidebar-content flex-1 flex flex-col">
+        <div className="sidebar-content app-canvas flex-1 flex flex-col">
           {/* <TopBar title="Tasks" /> */}
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
@@ -278,7 +278,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
     <div className="flex h-screen bg-transparent font-sans">
       <Sidebar />
 
-      <div className="sidebar-content flex-1 flex flex-col min-h-screen overflow-auto">
+      <div className="sidebar-content app-canvas flex-1 flex flex-col min-h-screen overflow-auto">
         {/* <TopBar title="Tasks" /> */}
 
         <main className="flex-1 px-4 sm:px-6 py-4 sm:py-5 space-y-4 animate-fade-in">

@@ -11,7 +11,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import { DataGrid, type GridColDef } from "@mui/x-data-grid";
-import { getDataGridSx, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
+import { getDataGridSx, fitHeaders, ROWS_PER_PAGE_OPTIONS } from "@/lib/dataGridStyles";
 import { useRouter } from "next/navigation";
 import {
   House, CaretRight, Plus, MagnifyingGlass, FunnelSimple,
@@ -293,7 +293,7 @@ export default function TasksPage() {
   ];
 
   return (
-    <div className="sidebar-content flex-1 flex flex-col min-h-screen overflow-auto">
+    <div className="sidebar-content app-canvas flex-1 flex flex-col min-h-screen overflow-auto">
 
       <main className="flex-1 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-3 sm:space-y-5 animate-fade-in">
 
@@ -479,7 +479,7 @@ export default function TasksPage() {
           <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "border-[#27272A]" : "border-border-light"}`} style={{ height: 600 }}>
             <DataGrid<TaskRecord>
               rows={sorted}
-              columns={gridColumns.filter(c => c.field === "actions" || visibleColumns.has(c.field))}
+              columns={fitHeaders(gridColumns.filter(c => c.field === "actions" || visibleColumns.has(c.field)))}
               getRowId={row => row.id}
               checkboxSelection
               disableRowSelectionOnClick

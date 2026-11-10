@@ -330,9 +330,9 @@ function MUIThemeWrapper({ children }: { children: React.ReactNode }) {
   return <ThemeProvider theme={muiTheme}>{children}</ThemeProvider>;
 }
 
-export default function ThemeRegistry({ children }: { children: React.ReactNode }) {
+export default function ThemeRegistry({ children, initialTheme }: { children: React.ReactNode; initialTheme?: "light" | "dark" }) {
   return (
-    <CRMThemeProvider>
+    <CRMThemeProvider initialTheme={initialTheme}>
       <SidebarProvider>
         <MUIThemeWrapper>{children}</MUIThemeWrapper>
       </SidebarProvider>

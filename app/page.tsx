@@ -116,7 +116,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="sidebar-content flex-1 flex flex-col min-h-screen overflow-auto">
+    <div className="sidebar-content dashboard-canvas flex-1 flex flex-col min-h-screen overflow-auto">
       <main className="flex-1 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-4 sm:space-y-6 animate-fade-in">
           {/* ═══════════════════════════════════════
               HEADER — dashboard switcher

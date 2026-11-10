@@ -5,7 +5,7 @@ export default function PageSkeleton() {
   return (
     <div className="flex h-screen font-sans">
       <Sidebar />
-      <div className="sidebar-content flex-1 flex flex-col min-h-screen overflow-auto">
+      <div className="sidebar-content app-canvas flex-1 flex flex-col min-h-screen overflow-auto">
         {/* TopBar skeleton */}
         <div className="h-[60px] flex items-center px-4 md:px-8 border-b border-border-light dark:border-[#27272A] bg-white dark:bg-[#0A0A0A] shrink-0">
           <div className="h-5 w-40 rounded-lg bg-slate-200 dark:bg-[#18181B] animate-pulse" />

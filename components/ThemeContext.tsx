@@ -15,14 +15,16 @@ const ThemeContext = createContext<{
   toggle: () => void;
 }>({ theme: "light", toggle: () => {} });
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const [theme, setTheme] = useState<Theme>("light");
+export const THEME_COOKIE = "crm-theme";
 
-  useEffect(() => {
-    const saved = localStorage.getItem("crm-theme") as Theme | null;
-    if (saved) setTheme(saved);
-  }, []);
+// `initialTheme` comes from the cookie on the server, so the very first render
+// (and the server HTML) already use the right theme. Resolving the theme after
+// mount (localStorage + setState in an effect) re-rendered the whole tree with a
+// new MUI theme while the page's DataGrid was still mounting, which made MUI X
+// DataGrid call setState on not-yet-mounted subscribers (React dev warning).
+export function ThemeProvider({ children, initialTheme = "light" }: { children: React.ReactNode; initialTheme?: Theme }) {
+  const pathname = usePathname();
+  const [theme, setTheme] = useState<Theme>(initialTheme);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -32,10 +34,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       root.classList.remove("dark");
     }
-    localStorage.setItem("crm-theme", theme);
   }, [theme, pathname]);
 
-  const toggle = () => setTheme(t => t === "light" ? "dark" : "light");
+  // Persist only on an explicit user choice (cookie, so the server can read it).
+  const toggle = () => {
+    const next: Theme = theme === "light" ? "dark" : "light";
+    document.cookie = `${THEME_COOKIE}=${next}; path=/; max-age=31536000; SameSite=Lax`;
+    setTheme(next);
+  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggle }}>

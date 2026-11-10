@@ -11,6 +11,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Divider from "@mui/material/Divider";
 import { ListIcon, MagnifyingGlass, Bell, Command, UserCircleIcon, SignOutIcon, Sun, Moon } from "@phosphor-icons/react";
 import { OWNER_AVATARS } from "@/lib/avatars";
+import Logo from "@/components/layout/Logo";
 import { useTheme } from "@/components/ThemeContext";
 
 const EXPANDED_W = "260px";
@@ -201,6 +202,8 @@ export default function AppHeader() {
           <ListIcon size={20} weight="bold" />
         </button>
 
+        <Logo height={26} />
+
         <span className="flex-1" />
 
         {/* Dark / Light toggle */}
@@ -263,11 +266,7 @@ export default function AppHeader() {
         >
           <ListIcon size={18} weight="bold" />
         </button>
-        <img
-          src="/logo.png"
-          alt="Social DNA Labs"
-          style={{ height: "28px", width: "auto", display: "block", flexShrink: 0 }}
-        />
+        <Logo height={28} />
       </div>
 
       {/* Right: title + controls */}

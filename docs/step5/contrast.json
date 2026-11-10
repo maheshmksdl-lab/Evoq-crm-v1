@@ -1,0 +1,164 @@
+[
+ {
+  "theme": "Light",
+  "el": "Lead name (primary)",
+  "bg": "#F9FBFF",
+  "before": "#1E293B",
+  "after": "#0F172A",
+  "cb": 14.12,
+  "ca": 17.23
+ },
+ {
+  "theme": "Light",
+  "el": "Company / email / mobile",
+  "bg": "#F9FBFF",
+  "before": "#64748B",
+  "after": "#475569",
+  "cb": 4.59,
+  "ca": 7.31
+ },
+ {
+  "theme": "Light",
+  "el": "Created date",
+  "bg": "#F9FBFF",
+  "before": "#94A3B8",
+  "after": "#64748B",
+  "cb": 2.48,
+  "ca": 4.59
+ },
+ {
+  "theme": "Light",
+  "el": "Empty-value dash —",
+  "bg": "#F9FBFF",
+  "before": "#E2E8F0",
+  "after": "#94A3B8",
+  "cb": 1.19,
+  "ca": 2.48
+ },
+ {
+  "theme": "Light",
+  "el": "Breadcrumb + 'N total' pill",
+  "bg": "#F9FBFF",
+  "before": "#94A3B8",
+  "after": "#64748B",
+  "cb": 2.48,
+  "ca": 4.59
+ },
+ {
+  "theme": "Light",
+  "el": "'N of M records'",
+  "bg": "#F9FBFF",
+  "before": "#94A3B8",
+  "after": "#64748B",
+  "cb": 2.48,
+  "ca": 4.59
+ },
+ {
+  "theme": "Light",
+  "el": "View toggle (inactive)",
+  "bg": "#EFF6FF",
+  "before": "#94A3B8",
+  "after": "#475569",
+  "cb": 2.36,
+  "ca": 6.96
+ },
+ {
+  "theme": "Light",
+  "el": "Empty state title",
+  "bg": "#F9FBFF",
+  "before": "#64748B",
+  "after": "#334155",
+  "cb": 4.59,
+  "ca": 10
+ },
+ {
+  "theme": "Light",
+  "el": "Empty state hint",
+  "bg": "#F9FBFF",
+  "before": "#CBD5E1",
+  "after": "#64748B",
+  "cb": 1.43,
+  "ca": 4.59
+ },
+ {
+  "theme": "Dark",
+  "el": "Lead name (primary)",
+  "bg": "#0A0A0A",
+  "before": "#FFFFFF",
+  "after": "#FAFAFA",
+  "cb": 19.8,
+  "ca": 18.97
+ },
+ {
+  "theme": "Dark",
+  "el": "Company / email / mobile",
+  "bg": "#0A0A0A",
+  "before": "#A1A1AA",
+  "after": "#D4D4D8",
+  "cb": 7.72,
+  "ca": 13.4
+ },
+ {
+  "theme": "Dark",
+  "el": "Created date",
+  "bg": "#0A0A0A",
+  "before": "#E4E4E7",
+  "after": "#A1A1AA",
+  "cb": 15.6,
+  "ca": 7.72
+ },
+ {
+  "theme": "Dark",
+  "el": "Empty-value dash —",
+  "bg": "#0A0A0A",
+  "before": "#52525B",
+  "after": "#71717A",
+  "cb": 2.56,
+  "ca": 4.1
+ },
+ {
+  "theme": "Dark",
+  "el": "Breadcrumb + 'N total' pill",
+  "bg": "#0A0A0A",
+  "before": "#E4E4E7",
+  "after": "#A1A1AA",
+  "cb": 15.6,
+  "ca": 7.72
+ },
+ {
+  "theme": "Dark",
+  "el": "'N of M records'",
+  "bg": "#0A0A0A",
+  "before": "#E4E4E7",
+  "after": "#A1A1AA",
+  "cb": 15.6,
+  "ca": 7.72
+ },
+ {
+  "theme": "Dark",
+  "el": "View toggle (inactive)",
+  "bg": "#000000",
+  "before": "#E4E4E7",
+  "after": "#A1A1AA",
+  "cb": 16.55,
+  "ca": 8.19
+ },
+ {
+  "theme": "Dark",
+  "el": "Empty state title",
+  "bg": "#0A0A0A",
+  "before": "#A1A1AA",
+  "after": "#D4D4D8",
+  "cb": 7.72,
+  "ca": 13.4
+ },
+ {
+  "theme": "Dark",
+  "el": "Empty state hint",
+  "bg": "#0A0A0A",
+  "before": "#E4E4E7",
+  "after": "#A1A1AA",
+  "cb": 15.6,
+  "ca": 7.72
+ }
+]
