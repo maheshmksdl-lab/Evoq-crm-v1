@@ -43,12 +43,12 @@ export default function ActivityFeed({ isDark = false }: { isDark?: boolean }) {
           const { Icon } = item;
           return (
             <div key={item.id} className="flex items-start gap-3 group">
-              <div className="relative flex flex-col items-center flex-shrink-0">
+              <div className="relative flex flex-col items-center shrink-0">
                 <div className="w-7 h-7 rounded-[9px] flex items-center justify-center" style={{ backgroundColor: isDark ? "#27272A" : item.iconBg }}>
                   <Icon size={14} color={isDark ? item.iconColorDark : item.iconColor} weight="duotone" />
                 </div>
                 {idx < feed.length - 1 && (
-                  <div className={`w-px flex-1 mt-1 mb-0 h-[14px] ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`} />
+                  <div className={`w-px flex-1 mt-1 mb-0 h-[14px] ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
                 )}
               </div>
 
@@ -73,7 +73,7 @@ export default function ActivityFeed({ isDark = false }: { isDark?: boolean }) {
         })}
       </div>
 
-      <button className={`mt-3 sm:mt-4 w-full text-center text-[10px] sm:text-[11.5px] font-bold py-2 rounded-lg sm:rounded-xl transition-all duration-150 ${isDark ? "text-[#60A5FA] hover:text-[#FAFAFA] hover:bg-[#27272A]" : "text-[#1D4ED8] hover:text-[#0C2472] hover:bg-[rgba(96,165,250,0.1)]"}`}>
+      <button className={`mt-3 sm:mt-4 w-full text-center text-[10px] sm:text-[11.5px] font-bold py-2 rounded-lg sm:rounded-xl transition-all duration-150 ${isDark ? "text-[#60A5FA] hover:text-[#FAFAFA] hover:bg-[#27272A]" : "text-brand-700 hover:text-[#0C2472] hover:bg-[rgba(96,165,250,0.1)]"}`}>
         View all activity →
       </button>
     </div>

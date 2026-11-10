@@ -64,7 +64,7 @@ export default function AccountGridView({ accounts }: Props) {
             className={`rounded-xl sm:rounded-2xl border hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group overflow-hidden ${
               isDark
                 ? "border-[#27272A] hover:border-[#3F3F46]"
-                : colored ? "border-white/50" : "border-[#E3ECFC]"
+                : colored ? "border-white/50" : "border-border-light"
             }`}
             style={{
               backgroundColor: cardT.fill,
@@ -74,7 +74,7 @@ export default function AccountGridView({ accounts }: Props) {
             <div className="p-3 sm:p-4">
               {/* Icon + Name + Menu */}
               <div className="flex items-start gap-3 mb-3">
-                <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 text-white font-extrabold text-[13px] shadow-sm"
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 text-white font-extrabold text-[13px] shadow-xs"
                   style={{ backgroundColor: avCol }}>
                   {initials(acc.name)}
                 </div>
@@ -83,13 +83,13 @@ export default function AccountGridView({ accounts }: Props) {
                     {acc.name}
                   </p>
                   {acc.accountType && (
-                    <span className={`inline-flex items-center text-[11px] font-bold px-2 py-0.5 rounded-full mt-1 ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-[#f9fbff]/70 text-[#0C2472]"}`}>
+                    <span className={`inline-flex items-center text-[11px] font-bold px-2 py-0.5 rounded-full mt-1 ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>
                       {acc.accountType}
                     </span>
                   )}
                 </div>
                 <button onClick={e => e.stopPropagation()}
-                  className={`opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-lg ${isDark ? "hover:bg-white/10" : "hover:bg-[#f9fbff]/60"}`}>
+                  className={`opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-lg ${isDark ? "hover:bg-white/10" : "hover:bg-surface/60"}`}>
                   <DotsThreeVertical size={15} color={isDark ? "#71717A" : "#475569"} weight="duotone" />
                 </button>
               </div>
@@ -98,13 +98,13 @@ export default function AccountGridView({ accounts }: Props) {
               <div className="space-y-1.5">
                 {acc.phone && (
                   <div className={`flex items-center gap-2 text-[14px] font-mono ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
-                    <Phone size={11} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <Phone size={11} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span>{acc.phone}</span>
                   </div>
                 )}
                 {acc.website && (
                   <div className={`flex items-center gap-2 text-[14px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
-                    <Globe size={11} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <Globe size={11} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="truncate">{acc.website}</span>
                   </div>
                 )}
@@ -115,7 +115,7 @@ export default function AccountGridView({ accounts }: Props) {
             <div className={`flex items-center justify-between px-4 py-2.5 border-t ${
               isDark
                 ? "border-[#27272A] bg-black/20"
-                : colored ? "border-white/50 bg-[#f9fbff]/30" : "border-[#EFF6FF] bg-[#EFF6FF]"
+                : colored ? "border-white/50 bg-surface/30" : "border-[#EFF6FF] bg-[#EFF6FF]"
             }`}>
               <Tooltip title={acc.ownerName}>
                 <div className="flex items-center gap-1.5">

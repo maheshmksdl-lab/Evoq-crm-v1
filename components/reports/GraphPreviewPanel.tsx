@@ -20,7 +20,7 @@ const GraphPreviewPanel = memo(
       return (
         <div
           className={`w-80 border-l flex flex-col items-center justify-center px-6 text-center overflow-hidden ${
-            isDark ? "border-[#27272A] bg-[#0A0A0A] text-[#71717A]" : "border-[#E3ECFC] bg-white text-slate-400"
+            isDark ? "border-[#27272A] bg-[#0A0A0A] text-[#71717A]" : "border-border-light bg-white text-slate-400"
           }`}
         >
           <p className="text-[12px]">Add modules to see the report structure</p>
@@ -34,11 +34,11 @@ const GraphPreviewPanel = memo(
     return (
       <div
         className={`w-80 border-l flex flex-col overflow-hidden transition-colors ${
-          isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-[#E3ECFC] bg-white"
+          isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-white"
         }`}
       >
         {/* Header */}
-        <div className={`px-4 py-4 border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+        <div className={`px-4 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <h2 className={`m-0 text-[13px] font-bold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
             📊 Preview
           </h2>
@@ -73,10 +73,10 @@ const GraphPreviewPanel = memo(
                             : "border-[#F59E0B]/30 bg-[#FEF3C7]"
                           : isDark
                             ? "border-[#3F3F46] bg-[#18181B]"
-                            : "border-[#E3ECFC] bg-[#F9FBFF]"
+                            : "border-border-light bg-surface"
                       }`}
                     >
-                      <div className="w-6 h-6 rounded flex items-center justify-center flex-shrink-0" style={{ backgroundColor: color + "20" }}>
+                      <div className="w-6 h-6 rounded-sm flex items-center justify-center shrink-0" style={{ backgroundColor: color + "20" }}>
                         <Icon size={12} color={color} weight="duotone" />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -122,7 +122,7 @@ const GraphPreviewPanel = memo(
                     <p className={`text-[11px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>
                       {module}
                     </p>
-                    <ul className={`text-[11px] space-y-0.5 ml-2 pl-2 border-l-2 ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+                    <ul className={`text-[11px] space-y-0.5 ml-2 pl-2 border-l-2 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                       {fields.map((fieldName) => {
                         const field = allModuleFields.find(f => f.name === fieldName);
                         return (
@@ -152,7 +152,7 @@ const GraphPreviewPanel = memo(
                   <div
                     key={filter.id}
                     className={`px-2.5 py-1.5 rounded-lg text-[10px] leading-snug ${
-                      isDark ? "bg-[#1D4ED8]/20 text-[#93C5FD]" : "bg-[#1D4ED8]/10 text-[#1D4ED8]"
+                      isDark ? "bg-brand-700/20 text-[#93C5FD]" : "bg-brand-700/10 text-brand-700"
                     }`}
                   >
                     <b>{filter.module}</b>
@@ -167,7 +167,7 @@ const GraphPreviewPanel = memo(
           {/* Summary Stats */}
           <div
             className={`px-3 py-3 rounded-lg border text-[11px] space-y-1 ${
-              isDark ? "border-[#27272A] bg-[#18181B]" : "border-[#E3ECFC] bg-[#F9FBFF]"
+              isDark ? "border-[#27272A] bg-[#18181B]" : "border-border-light bg-surface"
             }`}
           >
             <div className={isDark ? "text-[#D4D4D8]" : "text-slate-700"}>

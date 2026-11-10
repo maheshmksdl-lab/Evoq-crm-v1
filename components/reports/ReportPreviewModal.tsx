@@ -84,7 +84,7 @@ const ReportPreviewModal = memo(
           },
         }}
       >
-        <div className={`flex items-center justify-between px-4 sm:px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+        <div className={`flex items-center justify-between px-4 sm:px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <DialogTitle sx={{ p: 0, fontWeight: 700, fontSize: "16px" }}>📊 Report Preview</DialogTitle>
           <IconButton
             size="small"
@@ -113,7 +113,7 @@ const ReportPreviewModal = memo(
               {/* Info Bar */}
               <div
                 className={`px-4 py-3 rounded-lg border flex items-center justify-between gap-2 flex-wrap ${
-                  isDark ? "border-[#27272A] bg-[#18181B]" : "border-[#E3ECFC] bg-[#F9FBFF]"
+                  isDark ? "border-[#27272A] bg-[#18181B]" : "border-border-light bg-surface"
                 }`}
               >
                 <div className={`text-[13px] ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>
@@ -135,15 +135,15 @@ const ReportPreviewModal = memo(
               </div>
 
               {/* Table */}
-              <div className={`border rounded-lg overflow-x-auto ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+              <div className={`border rounded-lg overflow-x-auto ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                 <table className="w-full min-w-[600px]">
                   <thead>
-                    <tr className={isDark ? "bg-[#18181B]" : "bg-[#F9FBFF]"}>
+                    <tr className={isDark ? "bg-[#18181B]" : "bg-surface"}>
                       {previewData.columns.map((col) => (
                         <th
                           key={col.name}
                           className={`px-4 py-3 text-left text-[12px] font-semibold uppercase tracking-wide ${
-                            isDark ? "text-[#9CA3AF] border-b border-[#27272A]" : "text-slate-600 border-b border-[#E3ECFC]"
+                            isDark ? "text-[#9CA3AF] border-b border-[#27272A]" : "text-slate-600 border-b border-border-light"
                           }`}
                         >
                           {col.label}
@@ -157,7 +157,7 @@ const ReportPreviewModal = memo(
                   </thead>
                   <tbody>
                     {previewData.rows.map((row: any, idx: number) => (
-                      <tr key={idx} className={`border-b ${isDark ? "hover:bg-[#18181B] border-[#27272A]" : "hover:bg-[#F9FBFF] border-[#E3ECFC]"}`}>
+                      <tr key={idx} className={`border-b ${isDark ? "hover:bg-[#18181B] border-[#27272A]" : "hover:bg-surface border-border-light"}`}>
                         {previewData.columns.map((col) => (
                           <td key={col.name} className={`px-4 py-3 text-[13px] ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>
                             {row[col.name] ?? "—"}
@@ -170,7 +170,7 @@ const ReportPreviewModal = memo(
               </div>
 
               {/* Footer Note */}
-              <div className={`px-4 py-2 rounded-lg text-[12px] ${isDark ? "bg-[#18181B] text-[#9CA3AF]" : "bg-[#F9FBFF] text-slate-500"}`}>
+              <div className={`px-4 py-2 rounded-lg text-[12px] ${isDark ? "bg-[#18181B] text-[#9CA3AF]" : "bg-surface text-slate-500"}`}>
                 💡 This is sample data. Final report will include all data matching your filters and date range.
               </div>
             </div>

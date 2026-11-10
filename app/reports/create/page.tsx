@@ -84,7 +84,7 @@ export default function DashboardPage() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {quickStats.map(({ label, value, icon: Icon, color }) => (
-                  <div key={label} className={`flex items-center gap-2 ${color} backdrop-blur-sm rounded-xl px-3 py-1.5 text-[12px] font-semibold`}>
+                  <div key={label} className={`flex items-center gap-2 ${color} backdrop-blur-xs rounded-xl px-3 py-1.5 text-[12px] font-semibold`}>
                     <Icon size={14} weight="duotone" />
                     <span className="font-bold">{value}</span>
                     <span className="font-medium opacity-80">{label}</span>

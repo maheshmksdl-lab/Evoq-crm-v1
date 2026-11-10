@@ -193,8 +193,8 @@ export default function AppHeader() {
       >
         <button
           onClick={toggle}
-          className={`flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-150 ${
-            isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:text-[#1D4ED8] hover:bg-[#EFF6FF]"
+          className={`shrink-0 w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-150 ${
+            isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:text-brand-700 hover:bg-[#EFF6FF]"
           }`}
           aria-label="Open menu"
         >
@@ -256,8 +256,8 @@ export default function AppHeader() {
       >
         <button
           onClick={toggle}
-          className={`flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-150 ${
-            isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:text-[#1D4ED8] hover:bg-[#EFF6FF]"
+          className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-150 ${
+            isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:text-brand-700 hover:bg-[#EFF6FF]"
           }`}
           title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
@@ -287,7 +287,7 @@ export default function AppHeader() {
         <div className={`flex items-center gap-2 border rounded-xl px-3 py-1.5 w-60 transition-all ${
           isDark
             ? "bg-[#0A0A0A] border-[#27272A] focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_rgba(96,165,250,0.3)]"
-            : "bg-[#f9fbff] border-[#E3ECFC] focus-within:border-[#1D4ED8] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#93C5FD]"
+            : "bg-surface border-border-light focus-within:border-brand-700 focus-within:border-2 focus-within:shadow-[0_0_0_2px_#93C5FD]"
         }`}>
           <MagnifyingGlass size={15} color={isDark ? "#71717A" : "#94A3B8"} weight="duotone" />
           <InputBase

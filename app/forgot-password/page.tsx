@@ -84,7 +84,7 @@ export default function ForgotPasswordPage() {
                     onChange={e => setEmail(e.target.value)}
                     onFocus={() => setFocus(true)}
                     onBlur={() => setFocus(false)}
-                    className="w-full outline-none font-medium text-slate-800 transition-all"
+                    className="w-full outline-hidden font-medium text-slate-800 transition-all"
                     style={{
                       paddingTop: 20, paddingBottom: 7, paddingLeft: 16, paddingRight: 16,
                       borderRadius: 12, fontSize: 13.5,
@@ -130,11 +130,11 @@ export default function ForgotPasswordPage() {
               <p className="text-slate-400 text-[13px] font-medium leading-relaxed mb-1">
                 We sent a reset link to
               </p>
-              <p className="text-[#1D4ED8] font-bold text-[13.5px] mb-6">{email}</p>
+              <p className="text-brand-700 font-bold text-[13.5px] mb-6">{email}</p>
               <div className="px-4 py-3 rounded-xl text-[12px] text-slate-500 font-medium mb-6"
                 style={{ background: "#F8FBFF", border: "1px solid #E3ECFC" }}>
                 Didn&apos;t receive it? Check your spam folder or{" "}
-                <button onClick={() => setSent(false)} className="text-[#1D4ED8] font-bold hover:underline">
+                <button onClick={() => setSent(false)} className="text-brand-700 font-bold hover:underline">
                   try again
                 </button>
               </div>
@@ -157,8 +157,8 @@ export default function ForgotPasswordPage() {
         <div className="px-8 py-3 border-t text-center" style={{ borderColor: "#E3ECFC", background: "#F8FBFF" }}>
           <p className="text-[11px] text-slate-400 font-medium">
             © 2026 Social DNA Labs ·{" "}
-            <span className="text-[#1D4ED8] cursor-pointer hover:underline">Privacy</span> ·{" "}
-            <span className="text-[#1D4ED8] cursor-pointer hover:underline">Terms</span>
+            <span className="text-brand-700 cursor-pointer hover:underline">Privacy</span> ·{" "}
+            <span className="text-brand-700 cursor-pointer hover:underline">Terms</span>
           </p>
         </div>
       </div>

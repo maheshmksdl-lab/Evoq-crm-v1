@@ -44,7 +44,7 @@ export default function RecentDeals({ isDark = false }: { isDark?: boolean }) {
         borderColor: isDark ? "#27272A" : "rgba(255,255,255,0.3)",
         boxShadow: "0 8px 32px rgba(0, 0, 0, 0.08)",
       }}>
-      <div className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 px-4 sm:px-6 py-3 sm:py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}
+      <div className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 px-4 sm:px-6 py-3 sm:py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}
         style={{ backgroundColor: isDark ? "#18181B" : undefined }}>
         <div className="flex items-center gap-2 whitespace-nowrap">
           <h3 className={`text-sm sm:text-[14px] font-bold leading-none m-0 ${isDark ? "text-[#FFFFFF]" : "text-[#0C2472]"}`}>Recent Deals</h3>
@@ -73,7 +73,7 @@ export default function RecentDeals({ isDark = false }: { isDark?: boolean }) {
               <TableRow key={deal.id} hover sx={{ "&:hover td":{ bgcolor: isDark ? "rgba(255,255,255,0.03)" : "rgba(29,78,216,0.04)" }, cursor:"pointer", "& td": cellSx }}>
                 <TableCell>
                   <div className="flex items-center gap-2">
-                    <div className="w-[13px] h-[13px] flex items-center justify-center flex-shrink-0">
+                    <div className="w-[13px] h-[13px] flex items-center justify-center shrink-0">
                       {deal.change === "up" && <TrendUp size={13} color="#10B981" weight="duotone" />}
                       {deal.change === "down" && <TrendDown size={13} color="#EF4444" weight="duotone" />}
                       {deal.change === "same" && <Minus size={11} color="#94A3B8" weight="bold" />}

@@ -125,12 +125,12 @@ function SectionCard({ icon: Icon, title, children, action }: {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   return (
-    <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+    <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
       <div className={`flex items-center gap-2.5 px-5 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
         <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
           <Icon size={13} color={isDark ? "#9CA3AF" : "#1D4ED8"} weight="duotone" />
         </div>
-        <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-[#1D4ED8]"}`}>{title}</p>
+        <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-brand-700"}`}>{title}</p>
         {action}
       </div>
       <div className="px-5 py-4">{children}</div>
@@ -179,7 +179,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
               <p className={`text-xl font-bold mb-2 ${isDark ? "text-[#D4D4D8]" : "text-[#0C2472]"}`}>Deal not found</p>
-              <button onClick={() => router.push("/deals")} className={`text-sm underline ${isDark ? "text-[#A1A1AA]" : "text-[#1D4ED8]"}`}>Back to Deals</button>
+              <button onClick={() => router.push("/deals")} className={`text-sm underline ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>Back to Deals</button>
             </div>
           </div>
         </div>
@@ -212,7 +212,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
 
   const RelatedListPanel = ({ onClickItem }: { onClickItem: (label: string) => void }) => (
     <div className="space-y-4">
-      <div className={`rounded-2xl border shadow-sm overflow-hidden w-full ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`rounded-2xl border shadow-xs overflow-hidden w-full ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <div className={`px-4 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
           <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Related List</p>
         </div>
@@ -220,12 +220,12 @@ export default function DealDetail({ dealId }: { dealId: number }) {
           {relatedItems.map(({ label, icon: Icon, count, color }) => (
             <button key={label} onClick={() => onClickItem(label)}
               className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl group transition-colors ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}>
-              <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: color + "20" }}>
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: color + "20" }}>
                 <Icon size={14} color={color} weight="duotone" />
               </div>
               <span className={`flex-1 min-w-0 truncate text-left text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{label}</span>
               {count > 0 && (
-                <span className="text-[12px] font-bold bg-[#E3ECFC] text-[#1D4ED8] px-1.5 py-0.5 rounded-full">{count}</span>
+                <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>
               )}
               <CaretRight size={14} color="#E2E8F0" weight="duotone" />
             </button>
@@ -234,7 +234,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
       </div>
 
       {/* Ownership panel */}
-      <div className={`rounded-2xl border shadow-sm p-4 space-y-3 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`rounded-2xl border shadow-xs p-4 space-y-3 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Ownership</p>
         <div className="space-y-2">
           <div className="flex justify-between text-[12px]">
@@ -267,19 +267,19 @@ export default function DealDetail({ dealId }: { dealId: number }) {
           <div className={`flex items-center gap-1.5 text-[13.5px] ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>
             <House size={16} weight="duotone" />
             <CaretRight size={12} weight="duotone" />
-            <Link href="/deals" className="hover:text-[#1D4ED8] transition-colors font-medium">Deals</Link>
+            <Link href="/deals" className="hover:text-brand-700 transition-colors font-medium">Deals</Link>
             <CaretRight size={12} weight="duotone" />
-            <span className="text-[#1D4ED8] font-semibold truncate max-w-[240px]">{deal.name}</span>
+            <span className="text-brand-700 font-semibold truncate max-w-[240px]">{deal.name}</span>
           </div>
 
           {/* ── Header card ── */}
-          <div className={`rounded-2xl border shadow-sm px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+          <div className={`rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div className="min-w-0">
                 <h1 className={`m-0 text-[20px] font-extrabold tracking-tight truncate ${isDark ? "text-[#FFFFFF]" : "text-slate-900"}`}>{deal.name}</h1>
                 <p className={`text-[12px] mt-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{deal.refId} · {deal.account}</p>
               </div>
-              <div className="flex items-center gap-2 flex-wrap flex-shrink-0">
+              <div className="flex items-center gap-2 flex-wrap shrink-0">
                 <Button variant="outlined" size="small"
                   sx={{ borderColor: isDark?"#27272A":"#E3ECFC", color: isDark?"#B4B5B6":"#1D4ED8", borderRadius:"9px", textTransform:"none", fontWeight:600, fontSize:"0.84rem", bgcolor: isDark?"#0F0F0F":"transparent", "&:hover":{ borderColor:"#1D4ED8", color:"#1D4ED8", bgcolor: isDark?"#0A0A0A":"#EFF6FF" } }}>
                   Convert
@@ -320,14 +320,14 @@ export default function DealDetail({ dealId }: { dealId: number }) {
           </div>
 
           {/* ── Tabs ── */}
-          <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-sm ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+          <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
             {(["overview", "timeline"] as const).map(tab => (
               <button key={tab} onClick={() => setActiveTab(tab)}
                 className={`px-4 py-1.5 rounded-lg text-[14px] font-semibold capitalize transition-all ${
                   activeTab === tab
-                    ? "bg-[#1D4ED8] text-white shadow-sm"
+                    ? "bg-brand-700 text-white shadow-xs"
                     : isDark ? "text-[#B4B5B6] bg-[#0A0A0A] hover:bg-[#27272A] hover:text-[#D4D4D8]"
-                    : "text-[#0C2472] bg-[#E3ECFC] hover:bg-[#1D4ED8]/10"
+                    : "text-[#0C2472] bg-border-light hover:bg-brand-700/10"
                 }`}>
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </button>
@@ -338,7 +338,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
               <div className="lg:col-span-2 space-y-5 min-w-0">
                 {/* ── Stage Pipeline ── */}
-                <div className={`rounded-2xl border shadow-sm p-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+                <div className={`rounded-2xl border shadow-xs p-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
                   <div className="flex items-center justify-between mb-3">
                     <div>
                       <p className={`text-[12px] font-bold uppercase tracking-widest ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Start</p>
@@ -360,31 +360,31 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                       const isPast = stageIdx > i;
                       const isLast = i === STAGES.length - 1;
                       return (
-                        <div key={stage} className="flex items-center flex-shrink-0">
+                        <div key={stage} className="flex items-center shrink-0">
                           <div className={`
                             relative px-3 py-1.5 text-[12.5px] font-bold flex items-center gap-1.5 transition-all
                             ${i === 0 ? "rounded-l-lg" : ""} ${isLast ? "rounded-r-lg" : ""}
                             ${isActive
-                              ? isDark ? "bg-[#3F3F46] text-[#F4F4F5] z-10 shadow-md" : "bg-[#1D4ED8] text-white z-10 shadow-md shadow-[#1D4ED8]/20"
+                              ? isDark ? "bg-[#3F3F46] text-[#F4F4F5] z-10 shadow-md" : "bg-brand-700 text-white z-10 shadow-md shadow-[#1D4ED8]/20"
                               : isPast
-                                ? isDark ? "bg-[#27272A] text-[#71717A]" : "bg-[#E3ECFC] text-[#1D4ED8]"
-                                : isDark ? "bg-[#1C1C1E] text-[#3F3F46] border border-[#27272A]" : "bg-[#f9fbff] text-slate-400 border border-[#E3ECFC]"}
+                                ? isDark ? "bg-[#27272A] text-[#71717A]" : "bg-border-light text-brand-700"
+                                : isDark ? "bg-[#1C1C1E] text-[#3F3F46] border border-[#27272A]" : "bg-surface text-slate-400 border border-border-light"}
                           `}>
                             {isLast && <Trophy size={12} weight="duotone" />}
                             <span className="whitespace-nowrap">{stage}</span>
                           </div>
                           {!isLast && (
-                            <div className={`w-0 h-0 border-t-[14px] border-b-[14px] border-l-[10px] border-transparent flex-shrink-0 ${
-                              isActive ? (isDark ? "border-l-[#3F3F46]" : "border-l-[#1D4ED8]")
-                                : isPast ? (isDark ? "border-l-[#27272A]" : "border-l-[#E3ECFC]")
-                                : isDark ? "border-l-[#1C1C1E]" : "border-l-[#E3ECFC]"
+                            <div className={`w-0 h-0 border-t-14 border-b-14 border-l-10 border-transparent shrink-0 ${
+                              isActive ? (isDark ? "border-l-[#3F3F46]" : "border-l-brand-700")
+                                : isPast ? (isDark ? "border-l-[#27272A]" : "border-l-border-light")
+                                : isDark ? "border-l-[#1C1C1E]" : "border-l-border-light"
                             }`} />
                           )}
                         </div>
                       );
                     })}
 
-                    <div className="flex items-center gap-1 ml-3 flex-shrink-0">
+                    <div className="flex items-center gap-1 ml-3 shrink-0">
                       <Tooltip title="Won">
                         <IconButton size="small" sx={{ bgcolor: isDark ? "#14532D" : "#DCFCE7", "&:hover":{bgcolor: isDark ? "#166534" : "#BBF7D0"}, borderRadius:"8px", p:0.8 }}>
                           <ThumbsUp size={14} color={isDark ? "#4ADE80" : "#16A34A"} weight="duotone" />
@@ -400,7 +400,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                 </div>
 
                 {/* ── Quick Info ── */}
-                <div className={`rounded-2xl border shadow-sm divide-y ${isDark ? "bg-[#1C1C1E] border-[#27272A] divide-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC] divide-[#EFF6FF]"}`}>
+                <div className={`rounded-2xl border shadow-xs divide-y ${isDark ? "bg-[#1C1C1E] border-[#27272A] divide-[#27272A]" : "bg-surface border-border-light divide-[#EFF6FF]"}`}>
                   {[
                     { label: "Deal Name", value: deal.name },
                     { label: "Stage",     value: deal.stage },
@@ -408,7 +408,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                     { label: "Closing Date", value: deal.closingDate },
                   ].map(({ label, value }) => (
                     <div key={label} className="flex items-center justify-between px-5 py-3">
-                      <span className={`text-[12px] font-medium w-40 flex-shrink-0 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>{label}:</span>
+                      <span className={`text-[12px] font-medium w-40 shrink-0 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>{label}:</span>
                       <span className={`flex-1 text-[14px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{value}</span>
                       <IconButton size="small" sx={{ p:0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&:hover":{color:"#1D4ED8", bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px" }}>
                         <PencilSimple size={14} weight="duotone" />
@@ -453,7 +453,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                 <div id="section-notes">
                   <SectionCard icon={Note} title="Notes">
                     <div className="space-y-3">
-                      <div className={`border rounded-xl overflow-hidden transition-all ${isDark ? "border-[#3F3F46] focus-within:border-[#9CA3AF]" : "border-[#E3ECFC] focus-within:border-[#1D4ED8] focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
+                      <div className={`border rounded-xl overflow-hidden transition-all ${isDark ? "border-[#3F3F46] focus-within:border-[#9CA3AF]" : "border-border-light focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
                         <InputBase
                           fullWidth multiline minRows={2}
                           placeholder="Add a note…"
@@ -471,7 +471,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                         )}
                       </div>
                       {notes.map((n, i) => (
-                        <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+                        <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                           <p className={`text-[14px] ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{n.text}</p>
                           <p className={`text-[12px] mt-1 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{n.at}</p>
                         </div>
@@ -488,7 +488,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                         <div className={`flex items-center rounded-lg p-0.5 gap-0.5 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                           {[{ k:"grid", Icon:GridFour }, { k:"list", Icon:List }].map(({ k, Icon }) => (
                             <button key={k} onClick={() => setAttachView(k as "grid" | "list")}
-                              className={`p-1 rounded-md transition-colors ${attachView===k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-[#f9fbff] text-[#1D4ED8]") : (isDark ? "text-[#E4E4E7]" : "text-slate-400")}`}>
+                              className={`p-1 rounded-md transition-colors ${attachView===k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#E4E4E7]" : "text-slate-400")}`}>
                               <Icon size={13} weight="duotone" />
                             </button>
                           ))}
@@ -516,7 +516,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                     <div className="overflow-x-auto -mx-5 px-5">
                       <table className="w-full min-w-[600px]">
                         <thead>
-                          <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+                          <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                             {["Stage","Amount","Probability (%)","Expected Revenue","Stage Duration (Days)","Moved From","Is Current"].map(h => (
                               <th key={h} className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider whitespace-nowrap ${isDark ? "text-[#ABABAD]" : "text-[#0C2472]"}`}>{h}</th>
                             ))}
@@ -561,7 +561,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                     <div className="overflow-x-auto -mx-5 px-5">
                       <table className="w-full">
                         <thead>
-                          <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+                          <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                             <th className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-[#0C2472]"}`}>Subject</th>
                             <th className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-[#0C2472]"}`}>Status</th>
                           </tr>
@@ -596,12 +596,12 @@ export default function DealDetail({ dealId }: { dealId: number }) {
           {activeTab === "timeline" && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
               <div className="lg:col-span-2">
-                <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+                <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
                   <div className={`flex items-center gap-2.5 px-5 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
                     <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                       <ClockCounterClockwise size={13} color={isDark ? "#9CA3AF" : "#1D4ED8"} weight="duotone" />
                     </div>
-                    <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] ${isDark ? "text-[#D4D4D8]" : "text-[#1D4ED8]"}`}>History</p>
+                    <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] ${isDark ? "text-[#D4D4D8]" : "text-brand-700"}`}>History</p>
                   </div>
 
                   {deal.timeline.length === 0 ? (
@@ -625,7 +625,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                               <span className={`text-[12px] font-semibold ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>
                                 {new Date(date).toLocaleDateString("en-GB", { day:"2-digit", month:"short", year:"numeric" })}
                               </span>
-                              <div className={`flex-1 h-px ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`} />
+                              <div className={`flex-1 h-px ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
                             </div>
 
                             <div className="space-y-0">
@@ -633,26 +633,26 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                                 const isLast = i === grouped[date].length - 1 && date === sortedDates[sortedDates.length - 1];
                                 return (
                                   <div key={i} className="flex gap-4">
-                                    <div className="w-16 flex-shrink-0 text-right">
+                                    <div className="w-16 shrink-0 text-right">
                                       <span className={`text-[12px] font-medium ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{entry.time}</span>
                                     </div>
 
-                                    <div className="flex flex-col items-center flex-shrink-0">
-                                      <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center z-10 flex-shrink-0 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+                                    <div className="flex flex-col items-center shrink-0">
+                                      <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center z-10 shrink-0 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                                         <PencilSimple size={13} color={isDark ? "#A1A1AA" : "#1D4ED8"} weight="duotone" />
                                       </div>
-                                      {!isLast && <div className={`w-px flex-1 my-1 min-h-[24px] ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`} />}
+                                      {!isLast && <div className={`w-px flex-1 my-1 min-h-[24px] ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />}
                                     </div>
 
                                     <div className="pb-5 flex-1 min-w-0 overflow-hidden">
                                       {entry.probability && (
-                                        <p className={`text-[14px] leading-relaxed break-words ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
+                                        <p className={`text-[14px] leading-relaxed wrap-break-word ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
                                           <span className="font-bold">Probability:</span>{" "}
                                           <span className={isDark ? "text-[#71717A]" : "text-slate-500"}>{entry.probability.from}.0 → {entry.probability.to}.0</span>
                                         </p>
                                       )}
                                       {entry.stage && entry.stage.to && (
-                                        <p className={`text-[14px] leading-relaxed break-words ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
+                                        <p className={`text-[14px] leading-relaxed wrap-break-word ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
                                           <span className="font-bold">Stage:</span>{" "}
                                           {entry.stage.from
                                             ? <span className={isDark ? "text-[#71717A]" : "text-slate-500"}>{entry.stage.from} → {entry.stage.to}</span>

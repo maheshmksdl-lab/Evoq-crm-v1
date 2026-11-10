@@ -79,7 +79,7 @@ export default function TaskGridView({ tasks }: Props) {
             key={task.id}
             onClick={() => router.push(`/tasks/${task.id}`)}
             className={`rounded-xl sm:rounded-2xl border hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group overflow-hidden ${
-              isDark ? "border-[#27272A] hover:border-[#3F3F46]" : colored ? "border-white/50" : "border-[#E3ECFC]"
+              isDark ? "border-[#27272A] hover:border-[#3F3F46]" : colored ? "border-white/50" : "border-border-light"
             }`}
             style={{
               backgroundColor: cardT.fill,
@@ -105,14 +105,14 @@ export default function TaskGridView({ tasks }: Props) {
               {/* Status + Priority */}
               <div className="flex items-center gap-1.5 mb-3 flex-wrap">
                 {statusCfg && (
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded-full flex-shrink-0"
+                  <span className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2 py-0.5 rounded-full shrink-0"
                     style={{ backgroundColor: isDark ? statusCfg.bgDark : statusCfg.bg, color: isDark ? statusCfg.textDark : statusCfg.text }}>
                     <span className="w-[5px] h-[5px] rounded-full" style={{ backgroundColor: isDark ? statusCfg.dotDark : statusCfg.dot }} />
                     {task.status}
                   </span>
                 )}
                 {priorityCfg && (
-                  <span className="inline-flex items-center text-[11px] font-bold px-2 py-0.5 rounded-full flex-shrink-0"
+                  <span className="inline-flex items-center text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0"
                     style={{ backgroundColor: isDark ? priorityCfg.bgDark : priorityCfg.bg, color: isDark ? priorityCfg.textDark : priorityCfg.text }}>
                     {task.priority}
                   </span>
@@ -123,19 +123,19 @@ export default function TaskGridView({ tasks }: Props) {
               <div className="space-y-1.5">
                 {task.dueDate && (
                   <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>
-                    <CalendarBlank size={11} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <CalendarBlank size={11} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="truncate">Due {task.dueDate}</span>
                   </div>
                 )}
                 {task.contact && (
                   <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>
-                    <User size={11} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <User size={11} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="truncate">{task.contact}</span>
                   </div>
                 )}
                 {task.relatedTo && (
                   <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>
-                    <LinkSimple size={11} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <LinkSimple size={11} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="truncate">{task.relatedTo}</span>
                   </div>
                 )}
@@ -143,7 +143,7 @@ export default function TaskGridView({ tasks }: Props) {
             </div>
 
             {/* Footer: owner */}
-            <div className={`flex items-center px-3 sm:px-4 py-2.5 border-t ${isDark ? "border-[#27272A] bg-black/20" : "border-white/50 bg-[#f9fbff]/30"}`}>
+            <div className={`flex items-center px-3 sm:px-4 py-2.5 border-t ${isDark ? "border-[#27272A] bg-black/20" : "border-white/50 bg-surface/30"}`}>
               <span className={`text-[12px] truncate ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{task.taskOwner}</span>
             </div>
           </div>

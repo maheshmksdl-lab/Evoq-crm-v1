@@ -66,7 +66,7 @@ function GraphCanvas({
   onPaneClick: () => void;
 }) {
   return (
-    <div className="h-[55vh] md:h-auto flex-shrink-0 md:flex-1 min-h-0 flex flex-col overflow-hidden relative">
+    <div className="h-[55vh] md:h-auto shrink-0 md:flex-1 min-h-0 flex flex-col overflow-hidden relative">
       {/* Empty State */}
       {nodes.length === 0 && (
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
@@ -384,7 +384,7 @@ function GraphBuilderContent({
           },
         }}
       >
-        <div className={`flex items-center justify-between px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+        <div className={`flex items-center justify-between px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <span className={`font-heading text-[16px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
             Add Module
           </span>
@@ -418,15 +418,15 @@ function GraphBuilderContent({
                     isAlreadyAdded
                       ? isDark
                         ? "border-[#27272A] bg-[#0A0A0A]/50 opacity-50 cursor-not-allowed"
-                        : "border-[#E3ECFC] bg-[#f9fbff]/50 opacity-50 cursor-not-allowed"
+                        : "border-border-light bg-surface/50 opacity-50 cursor-not-allowed"
                       : isDark
                         ? "border-[#27272A] hover:border-[#3F3F46] hover:bg-[#111113]"
-                        : "border-[#E3ECFC] hover:border-[#93C5FD] hover:bg-[#F0F9FF]"
+                        : "border-border-light hover:border-[#93C5FD] hover:bg-[#F0F9FF]"
                   }`}
                 >
                   <div className="flex items-center gap-2 mb-1">
                     <div
-                      className="w-6 h-6 rounded flex items-center justify-center flex-shrink-0"
+                      className="w-6 h-6 rounded-sm flex items-center justify-center shrink-0"
                       style={{ backgroundColor: color + "20" }}
                     >
                       <Icon size={12} color={color} weight="duotone" />

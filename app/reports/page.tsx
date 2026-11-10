@@ -194,10 +194,10 @@ export default function ReportsPage() {
         const report = params.row;
         return (
           <div className="flex items-center gap-2.5 min-w-0">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: report.color + "18" }}>
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: report.color + "18" }}>
               <report.icon size={14} color={report.color} weight="duotone" />
             </div>
-            <p className={`m-0 font-heading text-[15px]/[20px] font-medium truncate ${isDark ? "text-[#60A5FA]" : "text-[#1D4ED8]"}`}>{report.name}</p>
+            <p className={`m-0 font-heading text-[15px]/[20px] font-medium truncate ${isDark ? "text-[#60A5FA]" : "text-brand-700"}`}>{report.name}</p>
           </div>
         );
       },
@@ -217,9 +217,9 @@ export default function ReportsPage() {
       renderCell: (params) => (
         <div className="flex items-center gap-1.5 flex-nowrap overflow-hidden w-full leading-none">
           {params.row.tags.slice(0, 2).map((tag: string) => (
-            <span key={tag} className={`inline-flex flex-shrink-0 items-center whitespace-nowrap leading-none px-2 py-1 rounded-full text-[11px] font-semibold ${isDark ? "bg-[#18181B] text-[#71717A]" : "bg-[#E3ECFC] text-[#4A5675]"}`}>{tag}</span>
+            <span key={tag} className={`inline-flex shrink-0 items-center whitespace-nowrap leading-none px-2 py-1 rounded-full text-[11px] font-semibold ${isDark ? "bg-[#18181B] text-[#71717A]" : "bg-border-light text-[#4A5675]"}`}>{tag}</span>
           ))}
-          {params.row.tags.length > 2 && <span className={`flex-shrink-0 whitespace-nowrap leading-none text-[11px] font-semibold ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>+{params.row.tags.length - 2}</span>}
+          {params.row.tags.length > 2 && <span className={`shrink-0 whitespace-nowrap leading-none text-[11px] font-semibold ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>+{params.row.tags.length - 2}</span>}
         </div>
       ),
     },
@@ -261,13 +261,13 @@ export default function ReportsPage() {
     <>
     <div className={`sidebar-content flex flex-col md:flex-row min-h-screen font-sans transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
       {/* Left Sidebar — mirrors SettingsSidebar exactly; collapses into a dropdown on mobile */}
-      <div className={`w-full md:w-[240px] flex-shrink-0 border-b md:border-b-0 md:border-r flex flex-col transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`w-full md:w-[240px] shrink-0 border-b md:border-b-0 md:border-r flex flex-col transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <button
           onClick={() => setMobileNavOpen(o => !o)}
-          className={`w-full flex items-center justify-between px-4 py-4 md:pt-5 md:pb-4 border-b text-left transition-colors duration-300 md:cursor-default ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}
+          className={`w-full flex items-center justify-between px-4 py-4 md:pt-5 md:pb-4 border-b text-left transition-colors duration-300 md:cursor-default ${isDark ? "border-[#27272A]" : "border-border-light"}`}
         >
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-[#1D4ED8] flex items-center justify-center shadow-sm flex-shrink-0">
+            <div className="w-8 h-8 rounded-xl bg-brand-700 flex items-center justify-center shadow-xs shrink-0">
               <ChartBar size={15} color="#fff" weight="duotone" />
             </div>
             <div>
@@ -275,7 +275,7 @@ export default function ReportsPage() {
               <div className="text-[12px] text-slate-400 leading-tight">Browse &amp; organize</div>
             </div>
           </div>
-          <span className="md:hidden flex-shrink-0">
+          <span className="md:hidden shrink-0">
             {mobileNavOpen
               ? <CaretUp size={14} color={isDark ? "#9CA3AF" : "#64748B"} weight="bold" />
               : <CaretDown size={14} color={isDark ? "#9CA3AF" : "#64748B"} weight="bold" />}
@@ -294,14 +294,14 @@ export default function ReportsPage() {
                   <button key={report.id}
                     onClick={(e) => { goToReport(report.id); e.currentTarget.blur(); }}
                     style={{ WebkitTapHighlightColor: "transparent" }}
-                    className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-none focus:outline-none focus:bg-none focus-visible:ring-2 ${
+                    className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 ${
                       isDark ? "focus-visible:ring-[#3B82F6]" : "focus-visible:ring-[#1D4ED8]"
                     } ${
                       isDark ? "text-[#9CA3AF] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "text-slate-500 hover:bg-[#EFF6FF]/60 hover:text-slate-700"
                     }`}>
                     <report.icon size={13} color="#94A3B8" weight="duotone" />
                     <span className="flex-1 truncate text-left">{report.name}</span>
-                    <Star size={13} color="#F59E0B" weight="fill" className="flex-shrink-0 opacity-80" />
+                    <Star size={13} color="#F59E0B" weight="fill" className="shrink-0 opacity-80" />
                   </button>
                 ))}
               </div>
@@ -314,12 +314,12 @@ export default function ReportsPage() {
             return (
               <div key={name}>
                 <button onClick={() => toggleCategory(name)}
-                  className={`flex items-center justify-between w-full px-2 py-1.5 rounded-lg transition-colors group min-h-[32px] outline-none ${isDark ? "hover:bg-[#1D4ED8]/15" : "hover:bg-[#EFF6FF]"}`}>
+                  className={`flex items-center justify-between w-full px-2 py-1.5 rounded-lg transition-colors group min-h-[32px] outline-hidden ${isDark ? "hover:bg-brand-700/15" : "hover:bg-[#EFF6FF]"}`}>
                   <span className={`font-heading text-[13px] font-bold uppercase tracking-widest transition-colors truncate ${isDark ? "text-[#475569] group-hover:text-[#64748B]" : "text-slate-400 group-hover:text-slate-500"}`}>
                     {name}
                   </span>
                   <div className="flex items-center gap-1.5">
-                    <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${isDark ? "bg-[#27272A] text-[#9CA3AF]" : "bg-[#E3ECFC] text-slate-500"}`}>{count}</span>
+                    <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${isDark ? "bg-[#27272A] text-[#9CA3AF]" : "bg-border-light text-slate-500"}`}>{count}</span>
                     {isOpen ? <CaretUp size={10} color={isDark ? "#475569" : "#E2E8F0"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#475569" : "#E2E8F0"} weight="bold" />}
                   </div>
                 </button>
@@ -330,7 +330,7 @@ export default function ReportsPage() {
                       <button key={report.id}
                         onClick={(e) => { goToReport(report.id); e.currentTarget.blur(); }}
                         style={{ WebkitTapHighlightColor: "transparent" }}
-                        className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-none focus:outline-none focus:bg-none focus-visible:ring-2 ${
+                        className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 ${
                           isDark ? "focus-visible:ring-[#3B82F6]" : "focus-visible:ring-[#1D4ED8]"
                         } ${
                           isDark ? "text-[#9CA3AF] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "text-slate-500 hover:bg-[#EFF6FF]/60 hover:text-slate-700"
@@ -357,11 +357,11 @@ export default function ReportsPage() {
               <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
                 <House size={16} weight="duotone" />
                 <CaretRight size={12} weight="duotone" />
-                <Link href="/reports" className={`transition-colors font-medium ${isDark ? "hover:text-[#D4D4D8]" : "hover:text-[#1D4ED8]"}`}>Reports</Link>
+                <Link href="/reports" className={`transition-colors font-medium ${isDark ? "hover:text-[#D4D4D8]" : "hover:text-brand-700"}`}>Reports</Link>
               </div>
               <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
                 <h1 className="font-heading text-lg sm:text-[22px]/[28px] font-semibold text-slate-900 tracking-tight m-0">Reports</h1>
-                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-sm flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#E4E4E7]" : "bg-[#f9fbff] border-[#E3ECFC] text-slate-400"}`}>
+                <span className={`text-[12px] sm:text-[13px]/[16px] font-medium border px-2 sm:px-2.5 py-1 rounded-full shadow-xs flex items-center whitespace-nowrap ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#E4E4E7]" : "bg-surface border-border-light text-slate-400"}`}>
                   {reports.length} total
                 </span>
               </div>
@@ -369,7 +369,7 @@ export default function ReportsPage() {
 
             <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
               {/* View toggle - hidden on mobile */}
-              <div className={`hidden sm:flex items-center rounded-xl p-0.5 gap-0.5 shadow-sm border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-white border-slate-100"}`}>
+              <div className={`hidden sm:flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-white border-slate-100"}`}>
                 {[
                   { k: "list", Icon: ListIcon, label: "List" },
                   { k: "grid", Icon: GridFour, label: "Grid" },
@@ -377,8 +377,8 @@ export default function ReportsPage() {
                   <button key={k} onClick={() => setView(k as typeof view)}
                     className={`flex items-center gap-1 px-2 py-[6px] rounded-lg text-[13px]/[16px] font-medium transition-all ${
                       view === k
-                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-[#f9fbff] text-[#1D4ED8]"
-                        : isDark ? "text-[#E4E4E7] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-[#f9fbff] text-slate-400 hover:bg-[#E3ECFC]"
+                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-surface text-brand-700"
+                        : isDark ? "text-[#E4E4E7] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-surface text-slate-400 hover:bg-border-light"
                     }`}>
                     <Icon size={14} weight="duotone" />
                     <span className="hidden sm:inline">{label}</span>
@@ -397,7 +397,7 @@ export default function ReportsPage() {
 
           {/* Toolbar: Search | Sort | Record count */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
-            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 sm:w-72 focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#60A5FA] transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 sm:w-72 focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#60A5FA] transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
               <InputBase placeholder="Search All Reports" value={search} onChange={e => setSearch(e.target.value)}
                 sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#94A3B8", opacity: 1 } }}
@@ -443,7 +443,7 @@ export default function ReportsPage() {
               ]}
             </Menu>
 
-            <span className={`ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#E4E4E7] bg-[#0A0A0A]" : "text-slate-400 bg-[#f9fbff]"}`}>
+            <span className={`ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#E4E4E7] bg-[#0A0A0A]" : "text-slate-400 bg-surface"}`}>
               {sorted.length} of {reports.length} records
             </span>
           </div>
@@ -453,7 +453,7 @@ export default function ReportsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {sorted.map(report => (
                 <div key={report.id}
-                  className={`rounded-2xl border p-4 cursor-pointer transition-colors ${isDark ? "border-[#27272A] bg-[#0A0A0A] hover:bg-[#111113]" : "border-[#E3ECFC] bg-white hover:bg-[#fafcff]"}`}
+                  className={`rounded-2xl border p-4 cursor-pointer transition-colors ${isDark ? "border-[#27272A] bg-[#0A0A0A] hover:bg-[#111113]" : "border-border-light bg-white hover:bg-[#fafcff]"}`}
                   onClick={() => router.push(`/reports/${report.id}`)}>
                   <div className="flex items-start justify-between mb-3">
                     <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{ backgroundColor: report.color + "18" }}>
@@ -474,11 +474,11 @@ export default function ReportsPage() {
                       </Tooltip>
                     </div>
                   </div>
-                  <div className={`text-[14px] font-semibold mb-1 ${isDark ? "text-[#60A5FA]" : "text-[#1D4ED8]"}`}>{report.name}</div>
+                  <div className={`text-[14px] font-semibold mb-1 ${isDark ? "text-[#60A5FA]" : "text-brand-700"}`}>{report.name}</div>
                   <div className={`text-[12.5px] mb-3 line-clamp-2 ${report.description ? (isDark ? "text-[#D4D4D8]" : "text-slate-600") : (isDark ? "text-[#3F3F46]" : "text-slate-300")}`}>{report.description || "No description"}</div>
                   <div className="flex items-center gap-1.5 flex-wrap mb-3">
                     {report.tags.slice(0, 3).map(tag => (
-                      <span key={tag} className={`inline-flex px-2 py-0.5 rounded-full text-[11px] font-semibold ${isDark ? "bg-[#18181B] text-[#71717A]" : "bg-[#E3ECFC] text-[#4A5675]"}`}>{tag}</span>
+                      <span key={tag} className={`inline-flex px-2 py-0.5 rounded-full text-[11px] font-semibold ${isDark ? "bg-[#18181B] text-[#71717A]" : "bg-border-light text-[#4A5675]"}`}>{tag}</span>
                     ))}
                   </div>
                   <div className={`flex items-center justify-between text-[11px] pt-3 border-t ${isDark ? "border-[#1C1C1E] text-[#71717A]" : "border-[#EFF6FF] text-slate-400"}`}>
@@ -492,7 +492,7 @@ export default function ReportsPage() {
 
           {/* List View (MUI DataGrid) — mirrors the Leads listing page */}
           {view === "list" && (
-            <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`} style={{ height: 600 }}>
+            <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "border-[#27272A]" : "border-border-light"}`} style={{ height: 600 }}>
               <DataGrid<Report>
                 rows={sorted}
                 columns={gridColumns}

@@ -69,7 +69,7 @@ export default function ContactGridView({ contacts }: Props) {
             className={`rounded-xl sm:rounded-2xl border hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group overflow-hidden ${
               isDark
                 ? "border-[#27272A] hover:border-[#3F3F46]"
-                : colored ? "border-white/50" : "border-[#E3ECFC]"
+                : colored ? "border-white/50" : "border-border-light"
             }`}
             style={{
               backgroundColor: cardT.fill,
@@ -94,7 +94,7 @@ export default function ContactGridView({ contacts }: Props) {
                   )}
                 </div>
                 <button onClick={e => e.stopPropagation()}
-                  className={`opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-lg ${isDark ? "hover:bg-white/10" : "hover:bg-[#f9fbff]/60"}`}>
+                  className={`opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-lg ${isDark ? "hover:bg-white/10" : "hover:bg-surface/60"}`}>
                   <DotsThreeVertical size={15} color={isDark ? "#71717A" : "#475569"} weight="duotone" />
                 </button>
               </div>
@@ -103,19 +103,19 @@ export default function ContactGridView({ contacts }: Props) {
               <div className="space-y-1.5">
                 {contact.email ? (
                   <div className={`flex items-center gap-2 text-[14px] ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
-                    <Envelope size={12} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <Envelope size={12} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="truncate font-medium">{contact.email}</span>
                   </div>
                 ) : null}
                 {contact.phone ? (
                   <div className={`flex items-center gap-2 text-[14px] font-mono ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
-                    <Phone size={12} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <Phone size={12} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span>{contact.phone}</span>
                   </div>
                 ) : null}
                 {contact.mobile ? (
                   <div className={`flex items-center gap-2 text-[14px] font-mono ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
-                    <DeviceMobile size={12} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <DeviceMobile size={12} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span>{contact.mobile}</span>
                   </div>
                 ) : null}
@@ -129,7 +129,7 @@ export default function ContactGridView({ contacts }: Props) {
             <div className={`flex items-center gap-2 px-4 py-2.5 border-t ${
               isDark
                 ? "border-[#27272A] bg-black/20"
-                : colored ? "border-white/50 bg-[#f9fbff]/30" : "border-[#EFF6FF] bg-[#EFF6FF]"
+                : colored ? "border-white/50 bg-surface/30" : "border-[#EFF6FF] bg-[#EFF6FF]"
             }`}>
               <Tooltip title={contact.ownerName}>
                 <div className="flex items-center gap-1.5">

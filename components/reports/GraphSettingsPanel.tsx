@@ -28,12 +28,12 @@ const GraphSettingsPanel = memo(
 
     return (
       <div
-        className={`w-full md:w-64 flex-shrink-0 border-b md:border-b-0 md:border-r flex flex-col max-h-[40vh] md:max-h-none overflow-hidden transition-colors ${
-          isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-[#E3ECFC] bg-white"
+        className={`w-full md:w-64 shrink-0 border-b md:border-b-0 md:border-r flex flex-col max-h-[40vh] md:max-h-none overflow-hidden transition-colors ${
+          isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-white"
         }`}
       >
         {/* Header */}
-        <div className={`px-4 py-4 border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+        <div className={`px-4 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <h2 className={`m-0 text-[14px] font-bold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
             Report Builder
           </h2>
@@ -53,7 +53,7 @@ const GraphSettingsPanel = memo(
                 }`}
               >
                 <div
-                  className="w-6 h-6 rounded flex items-center justify-center flex-shrink-0"
+                  className="w-6 h-6 rounded-sm flex items-center justify-center shrink-0"
                   style={{ backgroundColor: primaryColor + "20" }}
                 >
                   <PrimaryIcon size={12} color={primaryColor} weight="duotone" />
@@ -100,8 +100,8 @@ const GraphSettingsPanel = memo(
               className={`px-3 py-2 rounded-lg text-[12px] text-center font-medium ${
                 moduleCount > 0
                   ? isDark
-                    ? "bg-[#1D4ED8]/20 text-[#93C5FD]"
-                    : "bg-[#1D4ED8]/10 text-[#1D4ED8]"
+                    ? "bg-brand-700/20 text-[#93C5FD]"
+                    : "bg-brand-700/10 text-brand-700"
                   : isDark
                     ? "bg-[#27272A] text-[#9CA3AF]"
                     : "bg-[#EFF6FF] text-slate-500"
@@ -158,7 +158,7 @@ const GraphSettingsPanel = memo(
         </div>
 
         {/* Add Module Button */}
-        <div className={`px-4 py-4 border-t ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+        <div className={`px-4 py-4 border-t ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <Button
             fullWidth
             onClick={onAddModule}

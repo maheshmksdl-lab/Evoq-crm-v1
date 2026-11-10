@@ -150,7 +150,7 @@ export default function ContactsPage() {
         <Tooltip title={params.row.email} placement="top">
           <div className="text-[15px]/[20px] truncate w-full">
             {params.row.email
-              ? <span className={`flex items-center gap-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}><Envelope size={11} color="#94A3B8" weight="duotone" className="flex-shrink-0" />{params.row.email}</span>
+              ? <span className={`flex items-center gap-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}><Envelope size={11} color="#94A3B8" weight="duotone" className="shrink-0" />{params.row.email}</span>
               : <span className={isDark ? "text-[#52525B]" : "text-slate-200"}>—</span>}
           </div>
         </Tooltip>
@@ -221,11 +221,11 @@ export default function ContactsPage() {
               <div className={`flex items-center gap-1.5 text-[13.5px]/[18px] mb-1 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
                 <House size={16} weight="duotone" />
                 <CaretRight size={12} weight="duotone" />
-                <Link href="/contacts" className={`transition-colors font-medium ${isDark ? "hover:text-[#D4D4D8]" : "hover:text-[#1D4ED8]"}`}>Contacts</Link>
+                <Link href="/contacts" className={`transition-colors font-medium ${isDark ? "hover:text-[#D4D4D8]" : "hover:text-brand-700"}`}>Contacts</Link>
               </div>
               <div className="flex items-center gap-2.5">
                 <h1 className="font-heading text-[22px]/[28px] font-semibold text-slate-900 tracking-tight m-0">Contacts</h1>
-                <span className={`text-[13px]/[16px] font-medium border px-2.5 py-1 rounded-full shadow-sm flex items-center ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#E4E4E7]" : "bg-[#f9fbff] border-[#E3ECFC] text-slate-400"}`}>
+                <span className={`text-[13px]/[16px] font-medium border px-2.5 py-1 rounded-full shadow-xs flex items-center ${isDark ? "bg-[#0A0A0A] border-[#27272A] text-[#E4E4E7]" : "bg-surface border-border-light text-slate-400"}`}>
                   {ALL_CONTACTS.length} total
                 </span>
               </div>
@@ -233,7 +233,7 @@ export default function ContactsPage() {
 
             <div className="flex items-center gap-2 mt-1">
               {/* View toggle */}
-              <div className={`flex items-center rounded-xl p-0.5 gap-0.5 shadow-sm border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-white border-slate-100"}`}>
+              <div className={`flex items-center rounded-xl p-0.5 gap-0.5 shadow-xs border ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-white border-slate-100"}`}>
                 {[
                   { k: "list", Icon: List,     label: "List" },
                   { k: "grid", Icon: GridFour, label: "Grid" },
@@ -241,8 +241,8 @@ export default function ContactsPage() {
                   <button key={k} onClick={() => setView(k as typeof view)}
                     className={`flex items-center gap-1.5 px-2.5 py-[7px] rounded-lg text-[14px]/[18px] font-medium transition-all ${
                       view === k
-                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-[#f9fbff] text-[#1D4ED8]"
-                        : isDark ? "text-[#E4E4E7] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-[#f9fbff] text-slate-400 hover:bg-[#E3ECFC]"
+                        ? isDark ? "bg-[#18181B] text-[#D4D4D8]" : "bg-surface text-brand-700"
+                        : isDark ? "text-[#E4E4E7] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-surface text-slate-400 hover:bg-border-light"
                     }`}>
                     <Icon size={14} weight="duotone" />{label}
                   </button>
@@ -260,7 +260,7 @@ export default function ContactsPage() {
 
           {/* -- Toolbar -- */}
           <div className="flex items-center gap-2.5">
-            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 w-72 focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#60A5FA] transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+            <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 w-72 focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#60A5FA] transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
               <InputBase placeholder="Search contacts…" value={search}
                 onChange={e => setSearch(e.target.value)}
@@ -318,21 +318,21 @@ export default function ContactsPage() {
               Sort{activeSorts.length > 0 ? ` (${activeSorts.length})` : ""}
             </Button>
 
-            <span className={`ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#E4E4E7] bg-[#0A0A0A]" : "text-slate-400 bg-[#f9fbff]"}`}>
+            <span className={`ml-auto text-[13px]/[16px] px-3 py-1.5 rounded-lg ${isDark ? "text-[#E4E4E7] bg-[#0A0A0A]" : "text-slate-400 bg-surface"}`}>
               {filtered.length} of {ALL_CONTACTS.length} records
             </span>
           </div>
 
           {/* -- Bulk action bar -- */}
           {selected.length > 0 && (
-            <div className={`flex items-center gap-3 px-4 py-2.5 rounded-xl border animate-slide-up shadow-sm ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+            <div className={`flex items-center gap-3 px-4 py-2.5 rounded-xl border animate-slide-up shadow-xs ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
               <div className="flex items-center gap-2">
-                <span className="w-5 h-5 rounded-md bg-[#1D4ED8] text-white flex items-center justify-center text-[13px]/[16px]">{selected.length}</span>
+                <span className="w-5 h-5 rounded-md bg-brand-700 text-white flex items-center justify-center text-[13px]/[16px]">{selected.length}</span>
                 <span className={`text-[14px]/[18px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-[#0C2472]"}`}>selected</span>
               </div>
-              <div className={`w-px h-4 ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`} />
-              <button className={`text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-[#1D4ED8] hover:text-[#0C2472]"}`}>Send Email</button>
-              <button className={`text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-[#1D4ED8] hover:text-[#0C2472]"}`}>Assign Owner</button>
+              <div className={`w-px h-4 ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
+              <button className={`text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>Send Email</button>
+              <button className={`text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA]" : "text-brand-700 hover:text-[#0C2472]"}`}>Assign Owner</button>
               <button onClick={() => setSelected([])} className={`ml-auto text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-[#9CA3AF] hover:text-[#A1A1AA]" : "text-slate-400 hover:text-slate-600"}`}>Clear</button>
               <button className={`flex items-center gap-1.5 text-[14px]/[18px] font-medium transition-colors ${isDark ? "text-red-400 hover:text-red-300" : "text-red-600 hover:text-red-700"}`}>
                 <Trash size={14} weight="duotone" /> Delete
@@ -352,7 +352,7 @@ export default function ContactsPage() {
 
           {/* -- LIST VIEW (MUI DataGrid) -- */}
           {view === "list" && (
-            <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`} style={{ height: 600 }}>
+            <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "border-[#27272A]" : "border-border-light"}`} style={{ height: 600 }}>
               <DataGrid<Contact>
                 rows={filtered}
                 columns={gridColumns}
@@ -370,7 +370,7 @@ export default function ContactsPage() {
                 slots={{
                   noRowsOverlay: () => (
                     <div className="py-16 text-center">
-                      <div className="w-12 h-12 rounded-2xl bg-[#f9fbff] flex items-center justify-center mx-auto mb-3">
+                      <div className="w-12 h-12 rounded-2xl bg-surface flex items-center justify-center mx-auto mb-3">
                         <MagnifyingGlass size={22} color="#94A3B8" weight="duotone" />
                       </div>
                       <p className="font-heading text-slate-500 text-sm font-semibold">No contacts found</p>

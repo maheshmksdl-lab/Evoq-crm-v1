@@ -69,7 +69,7 @@ export default function LeadGridView({ leads }: Props) {
             className={`rounded-xl sm:rounded-2xl border hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group overflow-hidden ${
               isDark
                 ? "border-[#27272A] hover:border-[#3F3F46]"
-                : colored ? "border-white/50" : "border-[#E3ECFC]"
+                : colored ? "border-white/50" : "border-border-light"
             }`}
             style={{
               backgroundColor: cardT.fill,
@@ -96,16 +96,16 @@ export default function LeadGridView({ leads }: Props) {
                     </p>
                   )}
                 </div>
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
                   <button onClick={e => e.stopPropagation()}
-                    className={`p-1 rounded-lg transition-colors ${isDark ? "hover:bg-white/10" : "hover:bg-[#f9fbff]/60"}`}>
+                    className={`p-1 rounded-lg transition-colors ${isDark ? "hover:bg-white/10" : "hover:bg-surface/60"}`}>
                     <DotsThreeVertical size={15} color={isDark ? "#A1A1AA" : "#475569"} weight="duotone" />
                   </button>
                 </div>
               </div>
 
               {/* Status badge */}
-              <span className={`inline-flex items-center gap-1.5 text-[11.5px] font-bold px-2.5 py-0.5 rounded-full mb-3 ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-[#f9fbff]/70 text-[#0C2472]"}`}>
+              <span className={`inline-flex items-center gap-1.5 text-[11.5px] font-bold px-2.5 py-0.5 rounded-full mb-3 ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>
                 <span className="w-[5px] h-[5px] rounded-full" style={{ backgroundColor: cardT.deep }} />
                 {lead.status}
               </span>
@@ -114,13 +114,13 @@ export default function LeadGridView({ leads }: Props) {
               <div className="space-y-1.5">
                 {lead.email ? (
                   <div className={`flex items-center gap-2 text-[12.5px] ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
-                    <Envelope size={12} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <Envelope size={12} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="truncate font-medium">{lead.email}</span>
                   </div>
                 ) : null}
                 {lead.mobile ? (
                   <div className={`flex items-center gap-2 text-[12.5px] ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
-                    <Phone size={12} color={cardT.deep} weight="duotone" className="flex-shrink-0" />
+                    <Phone size={12} color={cardT.deep} weight="duotone" className="shrink-0" />
                     <span className="font-mono">{lead.mobile}</span>
                   </div>
                 ) : null}
@@ -134,24 +134,24 @@ export default function LeadGridView({ leads }: Props) {
             <div className={`flex items-center justify-between px-4 py-2.5 border-t ${
               isDark
                 ? "border-[#27272A] bg-black/20"
-                : colored ? "border-white/50 bg-[#f9fbff]/30" : "border-[#EFF6FF] bg-[#EFF6FF]"
+                : colored ? "border-white/50 bg-surface/30" : "border-[#EFF6FF] bg-[#EFF6FF]"
             }`}>
               <Tooltip title={lead.owner}>
                 <div className="flex items-center gap-1.5">
                   <Avatar src={OWNER_AVATARS[lead.owner]} sx={{ width: 20, height: 20, bgcolor: owCol, fontSize: "0.58rem", fontWeight: 800 }}>
                     {lead.ownerInitials}
                   </Avatar>
-                  <span className={`text-[12px] font-medium truncate max-w-[80px] ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{lead.owner}</span>
+                  <span className={`text-[12px] font-medium truncate max-w-sidebar-collapsed ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{lead.owner}</span>
                 </div>
               </Tooltip>
               <div className="flex items-center gap-1.5">
                 {lead.leadSource && (
-                  <span className={`flex items-center gap-0.5 text-[11px] px-1.5 py-0.5 rounded-full ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-[#f9fbff]/70 text-slate-600"}`}>
+                  <span className={`flex items-center gap-0.5 text-[11px] px-1.5 py-0.5 rounded-full ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-surface/70 text-slate-600"}`}>
                     <TrendUp size={10} color={cardT.deep} weight="duotone" />{lead.leadSource}
                   </span>
                 )}
                 {lead.rating && (
-                  <span className={`flex items-center gap-0.5 text-[11px] px-1.5 py-0.5 rounded-full ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-[#f9fbff]/70 text-slate-600"}`}>
+                  <span className={`flex items-center gap-0.5 text-[11px] px-1.5 py-0.5 rounded-full ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-surface/70 text-slate-600"}`}>
                     <Star size={10} color="#F59E0B" weight="duotone" />{lead.rating}
                   </span>
                 )}

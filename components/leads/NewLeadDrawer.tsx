@@ -28,13 +28,13 @@ function SectionHeader({
 }) {
   return (
     <div className="flex items-center gap-2.5 mb-5">
-      <div className={`w-6 h-6 rounded-lg flex items-center justify-center flex-shrink-0 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
+      <div className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
         <Icon size={13} color={isDark ? "#71717A" : "#1D4ED8"} weight="duotone" />
       </div>
-      <p className={`font-heading text-[10.5px] font-bold uppercase tracking-[0.13em] whitespace-nowrap ${isDark ? "text-[#71717A]" : "text-[#1D4ED8]"}`}>
+      <p className={`font-heading text-[10.5px] font-bold uppercase tracking-[0.13em] whitespace-nowrap ${isDark ? "text-[#71717A]" : "text-brand-700"}`}>
         {title}
       </p>
-      <div className={`flex-1 h-px ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`} />
+      <div className={`flex-1 h-px ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
     </div>
   );
 }
@@ -123,7 +123,7 @@ export default function NewLeadDrawer({
     if (!isEdit) setForm(DEFAULT_FORM);
   };
 
-  const sectionCardCls = `rounded-2xl p-5 border shadow-sm ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#f9fbff] border-[#E3ECFC]"}`;
+  const sectionCardCls = `rounded-2xl p-5 border shadow-xs ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-surface border-border-light"}`;
 
   return (
     <Drawer
@@ -141,9 +141,9 @@ export default function NewLeadDrawer({
       }}
     >
       {/* ══ Sticky Header ══ */}
-      <div className={`flex items-center justify-between px-6 py-4 border-b flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-between px-6 py-4 border-b shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <div className="flex items-center gap-3">
-          <div className={`w-9 h-9 rounded-xl flex items-center justify-center shadow-sm ${isDark ? "bg-[#27272A]" : "bg-[#1D4ED8]"}`}>
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center shadow-xs ${isDark ? "bg-[#27272A]" : "bg-brand-700"}`}>
             {isEdit
               ? <PencilSimple size={17} color={isDark ? "#A1A1AA" : "#fff"} weight="duotone" />
               : <UserPlus    size={18} color={isDark ? "#A1A1AA" : "#fff"} weight="duotone" />
@@ -320,7 +320,7 @@ export default function NewLeadDrawer({
       </div>
 
       {/* ══ Sticky Footer ══ */}
-      <div className={`flex items-center justify-end px-6 py-4 border-t flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-end px-6 py-4 border-t shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <div className="flex items-center gap-2">
           <Button
             variant="outlined"

@@ -88,12 +88,12 @@ function SectionCard({ icon: Icon, title, children }: { icon: React.ElementType;
   const { theme } = useTheme();
   const isDark = theme === "dark";
   return (
-    <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+    <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
       <div className={`flex items-center gap-2.5 px-5 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
         <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
           <Icon size={13} color={isDark ? "#9CA3AF" : "#1D4ED8"} weight="duotone" />
         </div>
-        <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] ${isDark ? "text-[#D4D4D8]" : "text-[#1D4ED8]"}`}>{title}</p>
+        <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] ${isDark ? "text-[#D4D4D8]" : "text-brand-700"}`}>{title}</p>
       </div>
       <div className="px-5 py-4">{children}</div>
     </div>
@@ -135,10 +135,10 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
 
   if (!lead) {
     return (
-      <div className="flex h-screen bg-[#f9fbff]"><Sidebar />
+      <div className="flex h-screen bg-surface"><Sidebar />
         <div className="sidebar-content flex-1 flex items-center justify-center flex-col gap-4">
           <p className="text-slate-500 font-semibold">Lead not found</p>
-          <button onClick={() => router.push("/leads")} className="text-[#1D4ED8] text-[15px] font-bold hover:underline">← Back to Leads</button>
+          <button onClick={() => router.push("/leads")} className="text-brand-700 text-[15px] font-bold hover:underline">← Back to Leads</button>
         </div>
       </div>
     );
@@ -219,15 +219,15 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
           <div className={`flex items-center gap-1.5 text-[13.5px] ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>
             <House size={16} weight="duotone" />
             <CaretRight size={12} weight="duotone" />
-            <Link href="/leads" className="hover:text-[#1D4ED8] transition-colors font-medium">Leads</Link>
+            <Link href="/leads" className="hover:text-brand-700 transition-colors font-medium">Leads</Link>
             <CaretRight size={12} weight="duotone" />
-            <span className="text-[#1D4ED8] font-semibold truncate max-w-[240px]">{fullName}</span>
+            <span className="text-brand-700 font-semibold truncate max-w-[240px]">{fullName}</span>
           </div>
 
           {/* ══ Lead Header Card ══ */}
-          <div className="bg-[#f9fbff] rounded-2xl border border-[#E3ECFC] shadow-sm px-5 py-4">
+          <div className="bg-surface rounded-2xl border border-border-light shadow-xs px-5 py-4">
             <div className="flex items-center gap-4 flex-wrap">
-              <div className="relative flex-shrink-0">
+              <div className="relative shrink-0">
                 <Avatar
                   src={LEAD_AVATARS[leadId]}
                   sx={{ width:56, height:56, bgcolor:avColor, fontSize:"1.2rem", fontWeight:800, boxShadow:"0 4px 14px 0 rgba(12,36,114,0.2)" }}
@@ -240,7 +240,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2.5 mb-0.5 flex-wrap">
                   <h1 className="m-0 text-[20px] font-extrabold text-slate-900 tracking-tight">{fullName}</h1>
-                  <span className="inline-flex items-center gap-1 text-[11.5px] font-bold px-2.5 py-0.5 rounded-full flex-shrink-0" style={{ backgroundColor:cfg.bg, color:cfg.text }}>
+                  <span className="inline-flex items-center gap-1 text-[11.5px] font-bold px-2.5 py-0.5 rounded-full shrink-0" style={{ backgroundColor:cfg.bg, color:cfg.text }}>
                     <span className="w-[5px] h-[5px] rounded-full" style={{ backgroundColor:cfg.dot }} />
                     {currentStatus}
                   </span>
@@ -258,7 +258,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
               </div>
 
               {/* Action buttons */}
-              <div className="flex items-center gap-2 flex-wrap flex-shrink-0">
+              <div className="flex items-center gap-2 flex-wrap shrink-0">
                 {(lead.phone || lead.mobile) && (
                   <Button variant="outlined" size="small" startIcon={<Phone size={14} weight="duotone" />}
                     sx={{ borderColor: isDark?"#27272A":"#E3ECFC", color: isDark?"#B4B5B6":"#1D4ED8", borderRadius:"9px", textTransform:"none", fontWeight:600, fontSize:"0.84rem", bgcolor: isDark?"#0F0F0F":"transparent", "&:hover":{ borderColor:"#1D4ED8", color:"#1D4ED8", bgcolor: isDark?"#0A0A0A":"#EFF6FF" } }}>
@@ -323,13 +323,13 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
           </div>
 
           {/* ══ Tab Bar ══ */}
-          <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-sm ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+          <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
             {([{ key:"overview", label:"Overview" }, { key:"activity", label:"Timeline" }] as const).map(({ key, label }) => (
               <button key={key} onClick={() => setActiveTab(key)}
                 className={`px-4 py-1.5 rounded-lg text-[14px] font-semibold transition-all ${
-                  activeTab===key ? "bg-[#1D4ED8] text-white shadow-sm"
+                  activeTab===key ? "bg-brand-700 text-white shadow-xs"
                     : isDark ? "text-[#B4B5B6] bg-[#0A0A0A] hover:bg-[#27272A] hover:text-[#D4D4D8]"
-                    : "text-[#0C2472] bg-[#E3ECFC] hover:bg-[#1D4ED8]/10"
+                    : "text-[#0C2472] bg-border-light hover:bg-brand-700/10"
                 }`}>
                 {label}
               </button>
@@ -344,7 +344,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
               <div className="lg:col-span-2 space-y-4 min-w-0">
 
                 {/* ── Stage Pipeline (clickable) ── */}
-                <div className={`rounded-2xl border shadow-sm p-5 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+                <div className={`rounded-2xl border shadow-xs p-5 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <p className={`font-heading text-[12px] font-bold uppercase tracking-widest ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>Stage Progress</p>
@@ -362,14 +362,14 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                       const isActive  = i === pipelineIdx;
                       const isPending = i > pipelineIdx;
                       return (
-                        <div key={stage} className="flex items-center flex-shrink-0 lg:flex-1 gap-1">
+                        <div key={stage} className="flex items-center shrink-0 lg:flex-1 gap-1">
                           <Tooltip title={isDone ? "Completed" : isActive ? "Current stage" : "Click to set stage"}>
                             <button
                               onClick={() => setCurrentStatus(stage)}
-                              className={`flex items-center justify-center gap-1.5 flex-shrink-0 lg:flex-1 min-w-[104px] lg:min-w-0 py-2 px-2 rounded-xl text-[12.5px] font-bold transition-all
-                                ${isActive  ? "bg-[#1D4ED8] text-white shadow-md shadow-[#1D4ED8]/25 scale-[1.02]" : ""}
-                                ${isDone    ? isDark ? "bg-[#27272A] text-[#D4D4D8] hover:bg-[#4B4B52]" : "bg-[#E3ECFC] text-[#1D4ED8] hover:bg-[#BFD3F5]" : ""}
-                                ${isPending ? isDark ? "bg-transparent text-[#ABABAD] border border-[#27272A] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-transparent text-slate-400 border border-transparent hover:bg-[#E3ECFC] hover:text-[#1D4ED8]" : ""}
+                              className={`flex items-center justify-center gap-1.5 shrink-0 lg:flex-1 min-w-[104px] lg:min-w-0 py-2 px-2 rounded-xl text-[12.5px] font-bold transition-all
+                                ${isActive  ? "bg-brand-700 text-white shadow-md shadow-[#1D4ED8]/25 scale-[1.02]" : ""}
+                                ${isDone    ? isDark ? "bg-[#27272A] text-[#D4D4D8] hover:bg-[#4B4B52]" : "bg-border-light text-brand-700 hover:bg-[#BFD3F5]" : ""}
+                                ${isPending ? isDark ? "bg-transparent text-[#ABABAD] border border-[#27272A] hover:bg-[#27272A] hover:text-[#D4D4D8]" : "bg-transparent text-slate-400 border border-transparent hover:bg-border-light hover:text-brand-700" : ""}
                               `}
                             >
                               {isDone && <Check size={12} weight="duotone" />}
@@ -384,7 +384,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                     })}
 
                     {/* Won / Lost buttons */}
-                    <div className="flex items-center gap-1 ml-2 flex-shrink-0">
+                    <div className="flex items-center gap-1 ml-2 shrink-0">
                       <Tooltip title="Mark as Qualified / Won">
                         <button onClick={() => setCurrentStatus("Qualified")}
                           className={`w-8 h-8 rounded-lg flex items-center justify-center transition-all text-[17px]
@@ -404,8 +404,8 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
 
                   {/* Status changed banner */}
                   {currentStatus !== lead.status && (
-                    <div className={`mt-3 flex items-center gap-2 rounded-xl px-3 py-2 text-[12.5px] animate-slide-up border ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
-                      <span className="text-[#1D4ED8] font-semibold">Stage updated to "{currentStatus}"</span>
+                    <div className={`mt-3 flex items-center gap-2 rounded-xl px-3 py-2 text-[12.5px] animate-slide-up border ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
+                      <span className="text-brand-700 font-semibold">Stage updated to "{currentStatus}"</span>
                       <span className={isDark ? "text-[#ABABAD]" : "text-slate-400"}>— not saved yet</span>
                       <button onClick={() => setCurrentStatus(lead.status)} className="ml-auto text-inherit font-bold hover:text-[#0C2472] transition-colors">Undo</button>
                     </div>
@@ -471,7 +471,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                 <div id="section-notes">
                   <SectionCard icon={Note} title="Notes">
                     <div className="space-y-3">
-                      <div className={`border rounded-xl overflow-hidden transition-all ${isDark ? "border-[#3F3F46] focus-within:border-[#9CA3AF]" : "border-[#E3ECFC] focus-within:border-[#1D4ED8] focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
+                      <div className={`border rounded-xl overflow-hidden transition-all ${isDark ? "border-[#3F3F46] focus-within:border-[#9CA3AF]" : "border-border-light focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
                         <InputBase
                           fullWidth multiline minRows={2}
                           placeholder="Add a note…"
@@ -489,7 +489,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                         )}
                       </div>
                       {notes.map((n, i) => (
-                        <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+                        <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                           <p className={`text-[14px] ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{n.text}</p>
                           <p className={`text-[12px] mt-1 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{n.at}</p>
                         </div>
@@ -503,12 +503,12 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                   <SectionCard icon={ClipboardText} title="Tasks">
                     <div className="space-y-2">
                       {tasksData.map((t, i) => (
-                        <div key={i} className={`flex items-center justify-between rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+                        <div key={i} className={`flex items-center justify-between rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                           <div>
                             <p className={`text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{t.subject}</p>
                             <p className={`text-[12px] mt-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>Due {t.due}</p>
                           </div>
-                          <span className={`text-[11.5px] font-bold px-2 py-0.5 rounded-full ${isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-[#E3ECFC] text-[#1D4ED8]"}`}>{t.status}</span>
+                          <span className={`text-[11.5px] font-bold px-2 py-0.5 rounded-full ${isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-border-light text-brand-700"}`}>{t.status}</span>
                         </div>
                       ))}
                     </div>
@@ -520,7 +520,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                   <SectionCard icon={Phone} title="Calls">
                     <div className="space-y-2">
                       {callsData.map((c, i) => (
-                        <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+                        <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                           <p className={`text-[14px] ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{c.summary}</p>
                           <p className={`text-[12px] mt-1 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{c.time}</p>
                         </div>
@@ -552,7 +552,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
               <div className="space-y-4 lg:sticky lg:top-[100px] lg:self-start">
 
                 {/* Related List */}
-                <div className={`rounded-2xl border shadow-sm overflow-hidden w-full ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+                <div className={`rounded-2xl border shadow-xs overflow-hidden w-full ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
                   <div className={`px-4 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
                     <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Related List</p>
                   </div>
@@ -562,12 +562,12 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                         onClick={() => handleRelatedClick(label)}
                         className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl group transition-colors ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}
                       >
-                        <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor:color+"20" }}>
+                        <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor:color+"20" }}>
                           <Icon size={14} color={color} weight="duotone" />
                         </div>
                         <span className="flex-1 text-left text-[14px] font-medium text-slate-700 transition-colors min-w-0 truncate">{label}</span>
                         {count > 0 && (
-                          <span className="text-[12px] font-bold bg-[#E3ECFC] text-[#1D4ED8] px-1.5 py-0.5 rounded-full">{count}</span>
+                          <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>
                         )}
                         <CaretRight size={14} color="#E2E8F0" weight="duotone" className="group-hover:text-[#60A5FA] transition-colors" />
                       </button>
@@ -576,7 +576,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                 </div>
 
                 {/* Lead Owner */}
-                <div className={`rounded-2xl border shadow-sm p-4 space-y-3 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+                <div className={`rounded-2xl border shadow-xs p-4 space-y-3 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
                   <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Ownership</p>
                   <div className="flex items-center gap-2.5">
                     <Avatar src={OWNER_AVATARS[lead.owner]} sx={{ width:32, height:32, bgcolor:lead.ownerColor, fontSize:"0.72rem", fontWeight:800 }}>
@@ -606,7 +606,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
           {/* ══════════════════════════ ACTIVITY ══════════════════════════ */}
           {activeTab === "activity" && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-              <div className="lg:col-span-2 bg-[#f9fbff] rounded-2xl border border-[#E3ECFC] shadow-sm">
+              <div className="lg:col-span-2 bg-surface rounded-2xl border border-border-light shadow-xs">
                 <div className="flex items-center justify-between px-5 py-4 border-b border-[#EFF6FF]">
                   <p className="font-heading text-[12px] font-bold text-slate-500 uppercase tracking-wider">Timeline</p>
                   <span className={`text-[12px] font-semibold bg-slate-100 px-2 py-0.5 rounded-full ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{activityFeed.length} events</span>
@@ -617,11 +617,11 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                     return (
                       <div key={i} className="flex gap-4 group">
                         {/* Timeline line + dot */}
-                        <div className="flex flex-col items-center flex-shrink-0">
+                        <div className="flex flex-col items-center shrink-0">
                           <div className="w-8 h-8 rounded-xl flex items-center justify-center z-10" style={{ backgroundColor:item.bg }}>
                             <Icon size={15} color={item.color} weight="duotone" />
                           </div>
-                          {i < activityFeed.length-1 && <div className={`w-px flex-1 my-1 min-h-[20px] ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`} />}
+                          {i < activityFeed.length-1 && <div className={`w-px flex-1 my-1 min-h-[20px] ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />}
                         </div>
                         {/* Content */}
                         <div className="flex-1 pb-4">
@@ -638,7 +638,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
 
               {/* Side: related list still visible */}
               <div className="space-y-4 lg:sticky lg:top-[100px] lg:self-start">
-                <div className={`rounded-2xl border shadow-sm overflow-hidden w-full ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+                <div className={`rounded-2xl border shadow-xs overflow-hidden w-full ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
                   <div className={`px-4 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
                     <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Related List</p>
                   </div>
@@ -650,7 +650,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                           <Icon size={14} color={color} weight="duotone" />
                         </div>
                         <span className="flex-1 text-left text-[14px] font-medium text-slate-700 min-w-0 truncate">{label}</span>
-                        {count>0 && <span className="text-[12px] font-bold bg-[#E3ECFC] text-[#1D4ED8] px-1.5 py-0.5 rounded-full">{count}</span>}
+                        {count>0 && <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>}
                         <CaretRight size={14} color="#E2E8F0" weight="duotone" />
                       </button>
                     ))}

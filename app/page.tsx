@@ -123,7 +123,7 @@ export default function DashboardPage() {
           ═══════════════════════════════════════ */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isDark ? "bg-[#1D4ED8]/15" : "bg-[#EFF6FF]"}`}>
+              <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isDark ? "bg-brand-700/15" : "bg-[#EFF6FF]"}`}>
                 <SquaresFour size={18} weight="duotone" color="#1D4ED8" />
               </div>
               <div>
@@ -178,7 +178,7 @@ export default function DashboardPage() {
               </p>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
                 {quickStats.map(({ label, value, icon: Icon, color }) => (
-                  <div key={label} className={`flex items-center gap-1.5 sm:gap-2 ${color} backdrop-blur-sm rounded-lg sm:rounded-xl px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-[12px] font-semibold`}>
+                  <div key={label} className={`flex items-center gap-1.5 sm:gap-2 ${color} backdrop-blur-xs rounded-lg sm:rounded-xl px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-[12px] font-semibold`}>
                     <Icon size={12} weight="duotone" />
                     <span className="font-bold">{value}</span>
                     <span className="font-medium opacity-80 hidden xs:inline">{label}</span>

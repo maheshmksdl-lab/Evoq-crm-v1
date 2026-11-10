@@ -42,7 +42,7 @@ const EdgeComponent = memo(({ id, sourceX, sourceY, targetX, targetY, data }: Ed
       {data?.label && (
         <EdgeLabelRenderer>
           <div
-            className="absolute text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#1D4ED8] text-white pointer-events-none"
+            className="absolute text-[11px] font-semibold px-2 py-0.5 rounded-full bg-brand-700 text-white pointer-events-none"
             style={{
               transform: `translate(-50%, -50%) translate(${labelX}px, ${labelY}px)`,
               whiteSpace: "nowrap",

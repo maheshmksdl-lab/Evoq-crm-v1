@@ -85,7 +85,7 @@ export default function LoginPage() {
           {error && (
             <div className="mb-5 px-4 py-3 rounded-xl text-[13px] font-medium text-red-700 flex items-center gap-2"
               style={{ background: "#FEF2F2", border: "1px solid #FECACA" }}>
-              <LockSimple size={14} weight="fill" className="flex-shrink-0 text-red-500" />
+              <LockSimple size={14} weight="fill" className="shrink-0 text-red-500" />
               {error}
             </div>
           )}
@@ -114,7 +114,7 @@ export default function LoginPage() {
                 onFocus={() => setEmailFocus(true)}
                 onBlur={() => setEmailFocus(false)}
                 required
-                className="w-full pt-5 pb-2 px-4 rounded-xl text-[14px] font-medium text-slate-800 outline-none transition-all"
+                className="w-full pt-5 pb-2 px-4 rounded-xl text-[14px] font-medium text-slate-800 outline-hidden transition-all"
                 style={{
                   background: emailFocus ? "#F8FBFF" : "#F8FAFC",
                   border: `1.5px solid ${emailFocus ? "#1D4ED8" : "#E2E8F0"}`,
@@ -144,7 +144,7 @@ export default function LoginPage() {
                 onFocus={() => setPassFocus(true)}
                 onBlur={() => setPassFocus(false)}
                 required
-                className="w-full pt-5 pb-2 px-4 pr-12 rounded-xl text-[14px] font-medium text-slate-800 outline-none transition-all"
+                className="w-full pt-5 pb-2 px-4 pr-12 rounded-xl text-[14px] font-medium text-slate-800 outline-hidden transition-all"
                 style={{
                   background: passFocus ? "#F8FBFF" : "#F8FAFC",
                   border: `1.5px solid ${passFocus ? "#1D4ED8" : "#E2E8F0"}`,
@@ -165,7 +165,7 @@ export default function LoginPage() {
               <label className="flex items-center gap-2.5 cursor-pointer group">
                 <div
                   onClick={() => setRemember(r => !r)}
-                  className="w-4 h-4 rounded flex items-center justify-center flex-shrink-0 transition-all"
+                  className="w-4 h-4 rounded-sm flex items-center justify-center shrink-0 transition-all"
                   style={{
                     border: `1.5px solid ${remember ? "#1D4ED8" : "#CBD5E1"}`,
                     background: remember ? "#1D4ED8" : "white",
@@ -307,7 +307,7 @@ export default function LoginPage() {
         {/* Footer */}
         <div className="px-10 py-4 border-t text-center" style={{ borderColor: "#E3ECFC", background: "#F8FBFF" }}>
           <p className="text-[11.5px] text-slate-400 font-medium">
-            © 2026 Social DNA Labs · <span className="text-[#1D4ED8] cursor-pointer hover:underline">Privacy</span> · <span className="text-[#1D4ED8] cursor-pointer hover:underline">Terms</span>
+            © 2026 Social DNA Labs · <span className="text-brand-700 cursor-pointer hover:underline">Privacy</span> · <span className="text-brand-700 cursor-pointer hover:underline">Terms</span>
           </p>
         </div>
       </div>

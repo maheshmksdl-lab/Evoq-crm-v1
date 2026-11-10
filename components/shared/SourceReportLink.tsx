@@ -17,7 +17,7 @@ export default function SourceReportLink({ reportId, reportName, isDark = false,
   const router = useRouter();
   return (
     <button onClick={() => router.push(`/reports/${reportId}`)}
-      className={`w-full flex items-center justify-center gap-1.5 px-4 py-2 border-t text-[11px] font-semibold transition-colors ${isDark ? "border-[#27272A] text-[#71717A] hover:text-[#93C5FD] hover:bg-[#111113]" : "border-[#E3ECFC] text-[#4A5675] hover:text-[#1D4ED8] hover:bg-[#f9fbff]"} ${className}`}>
+      className={`w-full flex items-center justify-center gap-1.5 px-4 py-2 border-t text-[11px] font-semibold transition-colors ${isDark ? "border-[#27272A] text-[#71717A] hover:text-[#93C5FD] hover:bg-[#111113]" : "border-border-light text-[#4A5675] hover:text-brand-700 hover:bg-surface"} ${className}`}>
       <FileText size={12} weight="duotone" />
       <span>Source Report: {reportName}</span>
       <ArrowSquareOut size={11} weight="bold" />

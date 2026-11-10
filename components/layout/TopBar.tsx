@@ -45,12 +45,12 @@ export default function TopBar({ title }: { title?: string }) {
   });
 
   return (
-    <header className={`sticky top-0 z-40 border-b px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3 lg:py-6 h-auto flex items-center gap-2 sm:gap-3 lg:gap-8 transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-[#E3ECFC] border-[#E3ECFC]"}`}>
+    <header className={`sticky top-0 z-40 border-b px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3 lg:py-6 h-auto flex items-center gap-2 sm:gap-3 lg:gap-8 transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-border-light border-border-light"}`}>
 
       {/* Mobile hamburger - hidden on desktop */}
       <button
         onClick={openMobile}
-        className={`lg:hidden flex-shrink-0 w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center rounded-lg transition-all ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:bg-[#EFF6FF]"}`}
+        className={`lg:hidden shrink-0 w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center rounded-lg transition-all ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:bg-[#EFF6FF]"}`}
         aria-label="Open navigation"
       >
         <List size={18} weight="bold" />
@@ -69,7 +69,7 @@ export default function TopBar({ title }: { title?: string }) {
       </div>
 
       {/* Search - hidden on mobile, visible md+ */}
-      <div className={`hidden md:flex items-center gap-2 border rounded-xl px-2.5 sm:px-3 py-1.5 w-56 lg:w-60 group transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A] focus-within:border-[#D4D4D8] focus-within:border-2 focus-within:shadow-[0_0_0_2px_rgba(212,212,216,0.2)]" : "bg-[#f9fbff] border-[#E3ECFC] focus-within:border-[#1D4ED8] focus-within:border-2 focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
+      <div className={`hidden md:flex items-center gap-2 border rounded-xl px-2.5 sm:px-3 py-1.5 w-56 lg:w-60 group transition-all ${isDark ? "bg-[#0A0A0A] border-[#27272A] focus-within:border-[#D4D4D8] focus-within:border-2 focus-within:shadow-[0_0_0_2px_rgba(212,212,216,0.2)]" : "bg-surface border-border-light focus-within:border-brand-700 focus-within:border-2 focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
         <MagnifyingGlass size={14} color={isDark ? "#9CA3AF" : "#737373"} weight="duotone" />
         <InputBase
           placeholder="Search leads, deals..."
@@ -124,7 +124,7 @@ export default function TopBar({ title }: { title?: string }) {
       </Tooltip>
 
       {/* Avatar + dropdown */}
-      <div ref={profileRef} className="relative flex-shrink-0">
+      <div ref={profileRef} className="relative shrink-0">
         <Avatar
           src={OWNER_AVATARS["PM SDL"]}
           onClick={() => setProfileOpen(p => !p)}
@@ -146,7 +146,7 @@ export default function TopBar({ title }: { title?: string }) {
             }}
           >
             {/* Profile info */}
-            <div className={`px-4 py-3 border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+            <div className={`px-4 py-3 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
               <p className={`m-0 text-label ${isDark ? "text-[#F4F4F5]" : "text-slate-800"}`}>PM SDL</p>
               <p className={`m-0 text-caption mt-0.5 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Super Admin</p>
             </div>
@@ -168,7 +168,7 @@ export default function TopBar({ title }: { title?: string }) {
               className={`w-full flex items-center gap-3 px-4 py-2.5 text-button transition-colors border-t ${
                 isDark
                   ? "text-red-400 hover:bg-[#27272A] border-[#27272A]"
-                  : "text-red-500 hover:bg-red-50 border-[#E3ECFC]"
+                  : "text-red-500 hover:bg-red-50 border-border-light"
               }`}
             >
               <SignOut size={15} weight="duotone" />

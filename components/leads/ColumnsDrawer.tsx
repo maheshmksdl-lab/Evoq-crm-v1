@@ -133,7 +133,7 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
       PaperProps={{ sx: { width: 420, display: "flex", flexDirection: "column", bgcolor: isDark ? "#18181B" : "#F8FAFF", boxShadow: isDark ? "-12px 0 48px rgba(0,0,0,0.5)" : "-12px 0 48px rgba(12,36,114,0.12)" } }}>
 
       {/* Header */}
-      <div className={`flex items-center justify-between px-6 py-4 border-b flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-between px-6 py-4 border-b shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <div className="flex items-center gap-3">
           <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
             <Columns size={18} color={isDark ? "#71717A" : "#1D4ED8"} weight="duotone" />
@@ -152,8 +152,8 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
       </div>
 
       {/* Search + Select All / Clear */}
-      <div className={`px-5 pt-4 pb-2 border-b flex-shrink-0 space-y-3 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#EFF6FF]"}`}>
-        <div className={`flex items-center gap-2 border rounded-xl px-3 py-1.5 ${isDark ? "bg-[#1C1C1E] border-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+      <div className={`px-5 pt-4 pb-2 border-b shrink-0 space-y-3 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-[#EFF6FF]"}`}>
+        <div className={`flex items-center gap-2 border rounded-xl px-3 py-1.5 ${isDark ? "bg-[#1C1C1E] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
           <MagnifyingGlass size={14} color={isDark ? "#71717A" : "#94A3B8"} weight="duotone" />
           <InputBase
             placeholder="Search columns…"
@@ -168,7 +168,7 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
 
         <div className="flex items-center gap-2">
           <button onClick={selectAll}
-            className={`text-button-sm px-2.5 py-1 rounded-lg transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#F4F4F5] hover:bg-[#27272A]" : "text-[#1D4ED8] hover:text-[#0C2472] hover:bg-[#EFF6FF]"}`}>
+            className={`text-button-sm px-2.5 py-1 rounded-lg transition-colors ${isDark ? "text-[#A1A1AA] hover:text-[#F4F4F5] hover:bg-[#27272A]" : "text-brand-700 hover:text-[#0C2472] hover:bg-[#EFF6FF]"}`}>
             Select All
           </button>
           <span className={isDark ? "text-[#3F3F46]" : "text-slate-200"}>·</span>
@@ -193,10 +193,10 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
           const someOn    = unlocked.some(k => local.has(k));
 
           return (
-            <div key={group} className={`rounded-2xl border overflow-hidden shadow-sm ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+            <div key={group} className={`rounded-2xl border overflow-hidden shadow-xs ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <button
                 onClick={() => toggleGroup(keys)}
-                className={`flex items-center gap-2 w-full px-4 py-2.5 border-b transition-colors ${isDark ? "bg-[#27272A] border-[#3F3F46] hover:bg-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC] hover:bg-[#E3ECFC]"}`}
+                className={`flex items-center gap-2 w-full px-4 py-2.5 border-b transition-colors ${isDark ? "bg-[#27272A] border-[#3F3F46] hover:bg-[#3F3F46]" : "bg-[#EFF6FF] border-border-light hover:bg-border-light"}`}
               >
                 <Checkbox
                   checked={allOn}
@@ -205,7 +205,7 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
                   onClick={e => { e.stopPropagation(); toggleGroup(keys); }}
                   sx={{ p: 0.25, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked, &.MuiCheckbox-indeterminate": { color: "inherit" } }}
                 />
-                <span className={`font-heading text-nav-group-label uppercase ${isDark ? "text-[#71717A]" : "text-[#1D4ED8]"}`}>{group}</span>
+                <span className={`font-heading text-nav-group-label uppercase ${isDark ? "text-[#71717A]" : "text-brand-700"}`}>{group}</span>
                 <span className={`ml-auto text-caption ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
                   {unlocked.filter(k => local.has(k)).length} / {unlocked.length}
                 </span>
@@ -249,7 +249,7 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
       </div>
 
       {/* Footer */}
-      <div className={`flex items-center justify-between px-6 py-4 border-t flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-between px-6 py-4 border-t shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <button onClick={onClose}
           className={`text-button-sm px-3 py-2 rounded-xl transition-colors ${isDark ? "text-[#71717A] hover:text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-400 hover:text-slate-600 hover:bg-[#EFF6FF]"}`}>
           Cancel

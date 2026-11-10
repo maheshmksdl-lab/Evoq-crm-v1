@@ -85,7 +85,7 @@ export default function SortPopover({ anchor, onClose, sorts, onChange, columns 
     >
       <div className="w-[380px]">
         {/* Popover header */}
-        <div className={`flex items-center gap-2.5 px-4 py-3 border-b ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+        <div className={`flex items-center gap-2.5 px-4 py-3 border-b ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
           <SortAscending size={16} color={isDark ? "#E4E4E7" : "#1D4ED8"} weight="duotone" />
           <p className={`m-0 font-heading text-h2 ${isDark ? "text-[#D4D4D8]" : "text-slate-800"}`}>Sort Records</p>
           <span className={`ml-auto text-caption ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>{local.length} sort{local.length !== 1 ? "s" : ""}</span>
@@ -96,7 +96,7 @@ export default function SortPopover({ anchor, onClose, sorts, onChange, columns 
           {local.map((row, idx) => (
             <div key={row.id} className="flex items-center gap-2">
               {/* Priority label */}
-              <span className={`font-heading text-nav-group-label uppercase w-10 flex-shrink-0 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
+              <span className={`font-heading text-nav-group-label uppercase w-10 shrink-0 ${isDark ? "text-[#E4E4E7]" : "text-slate-400"}`}>
                 {idx === 0 ? "By" : "Then"}
               </span>
 
@@ -110,14 +110,14 @@ export default function SortPopover({ anchor, onClose, sorts, onChange, columns 
               </FormControl>
 
               {/* Direction toggle */}
-              <div className={`flex items-center rounded-lg border p-0.5 gap-0.5 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+              <div className={`flex items-center rounded-lg border p-0.5 gap-0.5 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                 {(["asc", "desc"] as const).map(dir => (
                   <Tooltip key={dir} title={dir === "asc" ? "Ascending A→Z / 0→9" : "Descending Z→A / 9→0"}>
                     <button
                       onClick={() => update(row.id, { dir })}
                       className={`flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-semibold transition-all ${
                         row.dir === dir
-                          ? isDark ? "bg-[#3F3F46] text-[#F4F4F5] shadow-sm" : "bg-[#1D4ED8] text-white shadow-sm"
+                          ? isDark ? "bg-[#3F3F46] text-[#F4F4F5] shadow-xs" : "bg-brand-700 text-white shadow-xs"
                           : isDark ? "text-[#71717A] hover:text-[#A1A1AA]" : "text-slate-400 hover:text-slate-600"
                       }`}>
                       {dir === "asc"
@@ -146,7 +146,7 @@ export default function SortPopover({ anchor, onClose, sorts, onChange, columns 
               className={`flex items-center gap-1.5 text-button-sm py-1.5 px-2 rounded-lg transition-colors w-full ${
                 isDark
                   ? "text-[#A1A1AA] hover:text-[#F4F4F5] hover:bg-[#27272A]"
-                  : "text-[#1D4ED8] hover:text-[#0C2472] hover:bg-[#EFF6FF]"
+                  : "text-brand-700 hover:text-[#0C2472] hover:bg-[#EFF6FF]"
               }`}>
               <Plus size={12} weight="bold" />
               Add sort
@@ -155,7 +155,7 @@ export default function SortPopover({ anchor, onClose, sorts, onChange, columns 
         </div>
 
         {/* Footer */}
-        <div className={`flex items-center justify-between px-4 py-3 border-t ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#EFF6FF]"}`}>
+        <div className={`flex items-center justify-between px-4 py-3 border-t ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-[#EFF6FF]"}`}>
           <button onClick={handleClear}
             className={`text-button-sm px-2 py-1 rounded-lg transition-colors ${isDark ? "text-[#71717A] hover:text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-400 hover:text-slate-600 hover:bg-slate-50"}`}>
             Clear

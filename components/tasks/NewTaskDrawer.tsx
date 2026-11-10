@@ -107,9 +107,9 @@ export default function NewTaskDrawer({ open, onClose }: Props) {
       }}
     >
       {/* ══ Header ══ */}
-      <div className={`flex items-center justify-between px-6 py-4 border-b flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-between px-6 py-4 border-b shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <div className="flex items-center gap-3">
-          <div className={`w-9 h-9 rounded-xl flex items-center justify-center shadow-sm ${isDark ? "bg-[#27272A]" : "bg-[#1D4ED8]"}`}>
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center shadow-xs ${isDark ? "bg-[#27272A]" : "bg-brand-700"}`}>
             <ClipboardText size={18} color={isDark ? "#A1A1AA" : "#fff"} weight="duotone" />
           </div>
           <h2 className={`m-0 font-heading text-[16px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>New Task</h2>
@@ -233,7 +233,7 @@ export default function NewTaskDrawer({ open, onClose }: Props) {
             </div>
 
             {/* Task Owner — fieldset-style */}
-            <fieldset className={`rounded-[10px] border px-3 pb-3 pt-1 ${isDark ? "border-[#3F3F46] bg-[#1C1C1E]" : "border-[#E3ECFC] bg-[#EFF6FF]"}`}>
+            <fieldset className={`rounded-[10px] border px-3 pb-3 pt-1 ${isDark ? "border-[#3F3F46] bg-[#1C1C1E]" : "border-border-light bg-[#EFF6FF]"}`}>
               <legend className={`text-[11.5px] font-semibold uppercase tracking-wider px-1 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>Task Owner</legend>
               <FormControl size="small" fullWidth sx={{
                 "& .MuiOutlinedInput-root": {
@@ -269,7 +269,7 @@ export default function NewTaskDrawer({ open, onClose }: Props) {
       </div>
 
       {/* ══ Footer ══ */}
-      <div className={`flex items-center justify-end gap-3 px-6 py-4 border-t flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-end gap-3 px-6 py-4 border-t shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <Button variant="text" onClick={handleClose}
           sx={{
             color: isDark ? "#A1A1AA" : "#64748B",

@@ -114,12 +114,12 @@ export default function ReportEditPage({ params }: { params: Promise<{ id: strin
   return (
     <div className={`sidebar-content flex h-screen flex-col font-sans transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
       {/* Header */}
-      <div className={`border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+      <div className={`border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
         <div className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2 sm:gap-4 min-w-0">
             <button
               onClick={() => router.back()}
-              className={`p-2 rounded-lg transition-colors flex-shrink-0 ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#F0F9FF]"}`}
+              className={`p-2 rounded-lg transition-colors shrink-0 ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#F0F9FF]"}`}
             >
               <CaretLeft size={18} weight="duotone" color={isDark ? "#9CA3AF" : "#64748B"} />
             </button>
@@ -128,7 +128,7 @@ export default function ReportEditPage({ params }: { params: Promise<{ id: strin
                 value={reportName}
                 onChange={(e) => setReportName(e.target.value)}
                 placeholder="Untitled Report"
-                className={`w-full text-base sm:text-lg md:text-[20px] font-bold bg-transparent outline-none border-b-2 border-transparent focus:border-[#1D4ED8] transition-colors truncate ${
+                className={`w-full text-base sm:text-lg md:text-[20px] font-bold bg-transparent outline-hidden border-b-2 border-transparent focus:border-brand-700 transition-colors truncate ${
                   isDark ? "text-[#F4F4F5] placeholder-[#52525B]" : "text-slate-900 placeholder-slate-300"
                 }`}
               />

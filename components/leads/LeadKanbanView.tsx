@@ -40,7 +40,7 @@ export default function LeadKanbanView({ leads }: Props) {
         const colLeads = byStatus[col.key] || [];
 
         return (
-          <div key={col.key} className="flex-shrink-0 w-[240px] flex flex-col">
+          <div key={col.key} className="shrink-0 w-[240px] flex flex-col">
             {/* Column header — keeps semantic color regardless of theme */}
             <div
               className="flex items-center justify-between px-3 py-2.5 rounded-xl mb-3 text-white"
@@ -48,14 +48,14 @@ export default function LeadKanbanView({ leads }: Props) {
             >
               <div className="flex items-center gap-2">
                 <span className="font-heading text-[14px] font-bold">{col.label}</span>
-                <span className="text-[11px] font-bold bg-[#f9fbff]/20 px-1.5 py-0.5 rounded-full leading-none">
+                <span className="text-[11px] font-bold bg-surface/20 px-1.5 py-0.5 rounded-full leading-none">
                   {colLeads.length}
                 </span>
               </div>
               <Tooltip title={`Add lead to ${col.label}`}>
                 <button
                   onClick={e => e.stopPropagation()}
-                  className="w-6 h-6 rounded-lg bg-[#f9fbff]/15 hover:bg-[#f9fbff]/30 flex items-center justify-center transition-colors"
+                  className="w-6 h-6 rounded-lg bg-surface/15 hover:bg-surface/30 flex items-center justify-center transition-colors"
                 >
                   <Plus size={13} color="white" weight="bold" />
                 </button>
@@ -81,10 +81,10 @@ export default function LeadKanbanView({ leads }: Props) {
                   <div
                     key={lead.id}
                     onClick={() => router.push(`/leads/${lead.id}`)}
-                    className={`rounded-xl border p-3 shadow-sm cursor-pointer group transition-all hover:-translate-y-0.5 ${
+                    className={`rounded-xl border p-3 shadow-xs cursor-pointer group transition-all hover:-translate-y-0.5 ${
                       isDark
                         ? "bg-[#1C1C1E] border-[#27272A] hover:shadow-md hover:border-[#3F3F46]"
-                        : "bg-[#f9fbff] border-[#E3ECFC] hover:shadow-md hover:border-[#60A5FA]"
+                        : "bg-surface border-border-light hover:shadow-md hover:border-[#60A5FA]"
                     }`}
                   >
                     {/* Lead header */}
@@ -108,7 +108,7 @@ export default function LeadKanbanView({ leads }: Props) {
                       </div>
                       <button
                         onClick={e => { e.stopPropagation(); }}
-                        className={`opacity-0 group-hover:opacity-100 transition-opacity p-0.5 rounded ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}
+                        className={`opacity-0 group-hover:opacity-100 transition-opacity p-0.5 rounded-sm ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}
                       >
                         <DotsThreeVertical size={13} color={isDark ? "#E4E4E7" : "#94A3B8"} weight="duotone" />
                       </button>
@@ -118,13 +118,13 @@ export default function LeadKanbanView({ leads }: Props) {
                     <div className="space-y-1 mb-2.5">
                       {lead.email && (
                         <div className={`flex items-center gap-1.5 text-[14px] truncate ${isDark ? "text-[#A1A1AA]" : "text-inherit"}`}>
-                          <Envelope size={10} color={isDark ? "#3F3F46" : "#E3ECFC"} weight="duotone" className="flex-shrink-0" />
+                          <Envelope size={10} color={isDark ? "#3F3F46" : "#E3ECFC"} weight="duotone" className="shrink-0" />
                           <span className="truncate">{lead.email}</span>
                         </div>
                       )}
                       {lead.mobile && (
                         <div className={`flex items-center gap-1.5 text-[14px] font-mono ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
-                          <Phone size={10} color={isDark ? "#3F3F46" : "#E3ECFC"} weight="duotone" className="flex-shrink-0" />
+                          <Phone size={10} color={isDark ? "#3F3F46" : "#E3ECFC"} weight="duotone" className="shrink-0" />
                           <span>{lead.mobile}</span>
                         </div>
                       )}

@@ -41,7 +41,7 @@ function AddressBlock({ title, prefix, form, set, isDark, fx }: {
   const k = (f: string) => prefix + f;
   const clearAll = () => ["Country","Building","Street","City","State","Zip","Lat","Lng"].forEach(f => set(k(f.toLowerCase()), ""));
   return (
-    <div className={`flex-1 min-w-0 rounded-xl border p-4 space-y-2.5 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF]/60 border-[#E3ECFC]"}`}>
+    <div className={`flex-1 min-w-0 rounded-xl border p-4 space-y-2.5 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF]/60 border-border-light"}`}>
       <p className={`font-heading text-[12px] font-bold uppercase tracking-wider mb-3 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>{title}</p>
       <FormControl size="small" fullWidth sx={fx}>
         <InputLabel>Country / Region</InputLabel>
@@ -102,9 +102,9 @@ export default function NewAccountDrawer({ open, onClose, mode = "create", initi
       PaperProps={{ sx: { width: { xs: "100%", sm: 700 }, display: "flex", flexDirection: "column", bgcolor: isDark ? "#18181B" : "#F8FAFF", boxShadow: isDark ? "-12px 0 48px rgba(0,0,0,0.5)" : "-12px 0 48px rgba(12,36,114,0.12)" } }}>
 
       {/* Header */}
-      <div className={`flex items-center justify-between px-6 py-4 border-b flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-between px-6 py-4 border-b shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <div className="flex items-center gap-3">
-          <div className={`w-9 h-9 rounded-xl flex items-center justify-center shadow-sm ${isDark ? "bg-[#27272A]" : "bg-[#1D4ED8]"}`}>
+          <div className={`w-9 h-9 rounded-xl flex items-center justify-center shadow-xs ${isDark ? "bg-[#27272A]" : "bg-brand-700"}`}>
             <Buildings size={18} color={isDark ? "#A1A1AA" : "#fff"} weight="duotone" />
           </div>
           <h2 className={`m-0 font-heading text-[16px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
@@ -197,7 +197,7 @@ export default function NewAccountDrawer({ open, onClose, mode = "create", initi
       </div>
 
       {/* Footer */}
-      <div className={`flex items-center justify-end gap-3 px-6 py-4 border-t flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-end gap-3 px-6 py-4 border-t shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <Button variant="outlined" size="small" onClick={onClose}
           sx={{
             borderColor: isDark ? "#3F3F46" : "#E3ECFC",

@@ -130,12 +130,12 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
       }}
     >
       {/* Header */}
-      <div className={`flex items-center justify-between gap-2.5 px-4 py-3 border-b flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-between gap-2.5 px-4 py-3 border-b shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
         <div className="flex items-center gap-2">
           <FunnelSimple size={16} color={isDark ? "#E4E4E7" : "#1D4ED8"} weight="duotone" />
           <p className={`m-0 font-heading text-h2 ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Filters</p>
           {activeCount > 0 && (
-            <span className={`text-badge-text px-2 py-0.5 rounded-full ${isDark ? "bg-[#27272A] text-[#A1A1AA]" : "bg-white text-[#1D4ED8]"}`}>
+            <span className={`text-badge-text px-2 py-0.5 rounded-full ${isDark ? "bg-[#27272A] text-[#A1A1AA]" : "bg-white text-brand-700"}`}>
               {activeCount} active
             </span>
           )}
@@ -158,7 +158,7 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
                         <button key={l} onClick={() => update(row.id, { logic: l })}
                           className={`text-[11px] font-bold px-2.5 py-1 rounded-md transition-all ${
                             row.logic === l
-                              ? isDark ? "bg-[#3F3F46] text-[#F4F4F5] shadow-sm" : "bg-white text-[#1D4ED8] shadow-sm"
+                              ? isDark ? "bg-[#3F3F46] text-[#F4F4F5] shadow-xs" : "bg-white text-brand-700 shadow-xs"
                               : isDark ? "text-[#71717A] hover:text-[#A1A1AA]" : "text-slate-400 hover:text-slate-600"
                           }`}>
                           {l}
@@ -198,7 +198,7 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
                         <div className={`flex items-center gap-2 border rounded-lg px-3 py-2 transition-all ${
                           isDark
                             ? "bg-[#111113] border-[#3F3F46] focus-within:border-[#71717A]"
-                            : "bg-white border-slate-200 focus-within:border-[#1D4ED8]"
+                            : "bg-white border-slate-200 focus-within:border-brand-700"
                         }`}>
                           <InputBase
                             fullWidth
@@ -238,7 +238,7 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
           className={`flex items-center justify-center gap-2 text-button-sm py-2 px-3 rounded-xl border border-dashed transition-all w-full mt-3 ${
             isDark
               ? "text-[#A1A1AA] border-[#3F3F46] hover:border-[#52525B] hover:bg-[#27272A]"
-              : "text-[#1D4ED8] border-[#CBD5E1] hover:border-[#1D4ED8] hover:bg-[#EFF6FF]"
+              : "text-brand-700 border-[#CBD5E1] hover:border-brand-700 hover:bg-[#EFF6FF]"
           }`}>
           <Plus size={14} weight="bold" />
           Add condition
@@ -246,7 +246,7 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
       </div>
 
       {/* Footer */}
-      <div className={`flex items-center justify-between px-4 py-3 border-t flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-between px-4 py-3 border-t shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <button onClick={handleClear}
           className={`text-button-sm px-3 py-2 rounded-lg transition-colors ${isDark ? "text-[#71717A] hover:text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-500 hover:text-slate-700 hover:bg-slate-50"}`}>
           Clear all

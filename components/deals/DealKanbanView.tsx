@@ -48,24 +48,24 @@ export default function DealKanbanView({ deals }: Props) {
         const total    = colDeals.reduce((s, d) => s + d.amount, 0);
 
         return (
-          <div key={col.key} className="flex-shrink-0 w-[240px] flex flex-col">
+          <div key={col.key} className="shrink-0 w-[240px] flex flex-col">
             {/* Column header — keeps semantic color regardless of theme */}
-            <div className="rounded-xl mb-3 overflow-hidden shadow-sm">
+            <div className="rounded-xl mb-3 overflow-hidden shadow-xs">
               <div className="px-3 py-2.5 flex items-center justify-between" style={{ backgroundColor: col.headerBg }}>
                 <div className="flex items-center gap-2 min-w-0">
                   <span className="font-heading text-[12px] font-bold uppercase tracking-wider text-white truncate">{col.label}</span>
-                  <span className="text-[11px] font-bold bg-[#f9fbff]/20 text-white px-1.5 py-0.5 rounded-full flex-shrink-0">
+                  <span className="text-[11px] font-bold bg-surface/20 text-white px-1.5 py-0.5 rounded-full shrink-0">
                     {colDeals.length}
                   </span>
                 </div>
                 <button onClick={e => e.stopPropagation()}
-                  className="w-6 h-6 rounded-lg bg-[#f9fbff]/15 hover:bg-[#f9fbff]/30 flex items-center justify-center transition-colors flex-shrink-0 ml-1">
+                  className="w-6 h-6 rounded-lg bg-surface/15 hover:bg-surface/30 flex items-center justify-center transition-colors shrink-0 ml-1">
                   <Plus size={13} color="white" weight="bold" />
                 </button>
               </div>
               {/* Total amount */}
               <div
-                className={`px-3 py-1.5 border-x border-b rounded-b-none ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}
+                className={`px-3 py-1.5 border-x border-b rounded-b-none ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}
                 style={{ borderTop: `2px solid ${col.dot}` }}
               >
                 <p className={`text-[12px] font-medium flex items-center gap-1 ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>
@@ -90,10 +90,10 @@ export default function DealKanbanView({ deals }: Props) {
                 return (
                   <div key={deal.id}
                     onClick={() => router.push(`/deals/${deal.id}`)}
-                    className={`rounded-xl border p-3 shadow-sm cursor-pointer group transition-all hover:-translate-y-0.5 ${
+                    className={`rounded-xl border p-3 shadow-xs cursor-pointer group transition-all hover:-translate-y-0.5 ${
                       isDark
                         ? "bg-[#1C1C1E] border-[#27272A] hover:shadow-md hover:border-[#3F3F46]"
-                        : "bg-[#f9fbff] border-[#E3ECFC] hover:shadow-md hover:border-[#60A5FA]"
+                        : "bg-surface border-border-light hover:shadow-md hover:border-[#60A5FA]"
                     }`}
                   >
                     {/* Amount */}
@@ -106,7 +106,7 @@ export default function DealKanbanView({ deals }: Props) {
 
                     {/* Probability mini-bar */}
                     {deal.probability > 0 && (
-                      <div className={`w-full h-0.5 rounded-full mb-2 overflow-hidden ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`}>
+                      <div className={`w-full h-0.5 rounded-full mb-2 overflow-hidden ${isDark ? "bg-[#27272A]" : "bg-border-light"}`}>
                         <div className="h-full rounded-full" style={{ width: `${deal.probability}%`, backgroundColor: col.dot }} />
                       </div>
                     )}
@@ -115,13 +115,13 @@ export default function DealKanbanView({ deals }: Props) {
                     <div className="space-y-1 mb-2.5">
                       {deal.account && (
                         <div className={`flex items-center gap-1 text-[12px] truncate ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>
-                          <Buildings size={10} color={isDark ? "#3F3F46" : "#94A3B8"} weight="duotone" className="flex-shrink-0" />
+                          <Buildings size={10} color={isDark ? "#3F3F46" : "#94A3B8"} weight="duotone" className="shrink-0" />
                           <span className="truncate">{deal.account}</span>
                         </div>
                       )}
                       {deal.contactName && (
                         <div className={`flex items-center gap-1 text-[12px] truncate ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>
-                          <User size={10} color={isDark ? "#3F3F46" : "#94A3B8"} weight="duotone" className="flex-shrink-0" />
+                          <User size={10} color={isDark ? "#3F3F46" : "#94A3B8"} weight="duotone" className="shrink-0" />
                           <span className="truncate">{deal.contactName}</span>
                         </div>
                       )}

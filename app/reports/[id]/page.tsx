@@ -361,7 +361,7 @@ function ReportDataSection({
     return val;
   };
 
-  const textClass = wrapText ? "whitespace-normal break-words" : "truncate";
+  const textClass = wrapText ? "whitespace-normal wrap-break-word" : "truncate";
 
   let groups: { key: string; rows: Record<string, any>[] }[] = [{ key: "__all__", rows }];
   if (splitAggregates && groupCol) {
@@ -395,10 +395,10 @@ function ReportDataSection({
               )}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {g.rows.map((row, idx) => (
-                  <div key={idx} className={`rounded-xl border p-3.5 ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-[#E3ECFC] bg-[#f9fbff]"}`}>
+                  <div key={idx} className={`rounded-xl border p-3.5 ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-surface"}`}>
                     {columns.map((col) => (
                       <div key={col.name} className="flex items-baseline justify-between gap-3 py-1">
-                        <span className={`text-[11px] font-semibold uppercase tracking-wide flex-shrink-0 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{col.label}</span>
+                        <span className={`text-[11px] font-semibold uppercase tracking-wide shrink-0 ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>{col.label}</span>
                         <span className={`text-[13px] font-semibold text-right ${textClass} ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{fmtVal(col, row[col.name])}</span>
                       </div>
                     ))}
@@ -406,14 +406,14 @@ function ReportDataSection({
                 ))}
               </div>
               {grandTotals && splitAggregates && numericCols.length > 0 && (
-                <div className={`mt-2 px-1 text-[12px] font-bold ${isDark ? "text-[#93C5FD]" : "text-[#1D4ED8]"}`}>
+                <div className={`mt-2 px-1 text-[12px] font-bold ${isDark ? "text-[#93C5FD]" : "text-brand-700"}`}>
                   Subtotal — {numericCols.map((c) => `${c.label}: ${fmtVal(c, sumFor(g.rows, c))}`).join(" · ")}
                 </div>
               )}
             </div>
           ))}
           {grandTotals && numericCols.length > 0 && (
-            <div className={`pt-4 border-t text-[13px] font-bold ${isDark ? "border-[#27272A] text-[#F4F4F5]" : "border-[#E3ECFC] text-[#0C2472]"}`}>
+            <div className={`pt-4 border-t text-[13px] font-bold ${isDark ? "border-[#27272A] text-[#F4F4F5]" : "border-border-light text-[#0C2472]"}`}>
               Grand Total — {numericCols.map((c) => `${c.label}: ${fmtVal(c, sumFor(rows, c))}`).join(" · ")}
             </div>
           )}
@@ -456,7 +456,7 @@ function ReportDataSection({
                   <TableRow>
                     {columns.map((col, i) => (
                       <TableCell key={col.name} sx={{ borderBottom: `1px solid ${isDark ? "#27272A" : "#E3ECFC"}`, borderTop: `1.5px solid ${isDark ? "#3F3F46" : "#CBD5E1"}`, bgcolor: isDark ? "#111113" : "#F8FAFF" }}>
-                        <span className={`text-[12.5px] font-bold ${isDark ? "text-[#93C5FD]" : "text-[#1D4ED8]"}`}>
+                        <span className={`text-[12.5px] font-bold ${isDark ? "text-[#93C5FD]" : "text-brand-700"}`}>
                           {i === 0 ? "Subtotal" : numericCols.includes(col) ? fmtVal(col, sumFor(g.rows, col)) : ""}
                         </span>
                       </TableCell>
@@ -547,12 +547,12 @@ function FilterPanel({
   if (!open) return null;
 
   return (
-    <div className={`fixed inset-0 bg-black/40 z-[100] ${open ? "block" : "hidden"}`} onClick={onClose}>
+    <div className={`fixed inset-0 bg-black/40 z-100 ${open ? "block" : "hidden"}`} onClick={onClose}>
       <div
-        className={`fixed left-0 top-0 h-full w-80 max-w-[85vw] ${isDark ? "bg-[#0A0A0A]" : "bg-white"} border-r ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"} shadow-2xl overflow-y-auto z-[110]`}
+        className={`fixed left-0 top-0 h-full w-80 max-w-[85vw] ${isDark ? "bg-[#0A0A0A]" : "bg-white"} border-r ${isDark ? "border-[#27272A]" : "border-border-light"} shadow-2xl overflow-y-auto z-110`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className={`p-6 border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+        <div className={`p-6 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <div className="flex items-center justify-between">
             <h2 className={`text-[16px] font-bold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Filter By</h2>
             <button onClick={onClose} className={isDark ? "text-[#9CA3AF] hover:text-[#F4F4F5]" : "text-slate-500 hover:text-slate-900"}>
@@ -567,7 +567,7 @@ function FilterPanel({
           )}
 
           {filters.map((filter) => (
-            <div key={filter.id} className={`p-3 rounded-lg border ${isDark ? "border-[#27272A] bg-[#111113]" : "border-[#E3ECFC] bg-[#f9fbff]"} space-y-2`}>
+            <div key={filter.id} className={`p-3 rounded-lg border ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-surface"} space-y-2`}>
               <div className="flex items-center justify-between">
                 <span className={`text-[11px] font-bold uppercase ${isDark ? "text-[#71717A]" : "text-slate-400"}`}>Field</span>
                 <button onClick={() => removeFilter(filter.id)} className={`text-[12px] font-semibold ${isDark ? "text-[#EF4444]" : "text-red-600"} hover:underline`}>
@@ -577,7 +577,7 @@ function FilterPanel({
               <select
                 value={filter.fieldName}
                 onChange={(e) => updateFilter(filter.id, "fieldName", e.target.value)}
-                className={`w-full px-2 py-1.5 text-[13px] border rounded-lg outline-none cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"}`}
+                className={`w-full px-2 py-1.5 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"}`}
               >
                 <option value="">Select a field...</option>
                 {availableFields.map((f) => (
@@ -592,7 +592,7 @@ function FilterPanel({
                 <select
                   value={filter.operator}
                   onChange={(e) => updateFilter(filter.id, "operator", e.target.value)}
-                  className={`w-full px-2 py-1.5 text-[13px] border rounded-lg outline-none cursor-pointer mt-1 ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"}`}
+                  className={`w-full px-2 py-1.5 text-[13px] border rounded-lg outline-hidden cursor-pointer mt-1 ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"}`}
                 >
                   {operatorOptions.map((op) => (
                     <option key={op} value={op}>
@@ -610,7 +610,7 @@ function FilterPanel({
                     value={filter.value}
                     onChange={(e) => updateFilter(filter.id, "value", e.target.value)}
                     placeholder="Enter value..."
-                    className={`w-full px-2 py-1.5 text-[13px] border rounded-lg outline-none mt-1 ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8] placeholder-[#52525B]" : "bg-white border-[#E3ECFC] text-slate-700 placeholder-slate-400"}`}
+                    className={`w-full px-2 py-1.5 text-[13px] border rounded-lg outline-hidden mt-1 ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8] placeholder-[#52525B]" : "bg-white border-border-light text-slate-700 placeholder-slate-400"}`}
                   />
                 </div>
               )}
@@ -619,7 +619,7 @@ function FilterPanel({
 
           <button
             onClick={addFilter}
-            className={`w-full py-2 px-3 rounded-lg font-semibold text-[13px] transition-colors ${isDark ? "bg-[#1D4ED8] hover:bg-[#2563EB] text-white" : "bg-[#1D4ED8] hover:bg-[#2563EB] text-white"}`}
+            className={`w-full py-2 px-3 rounded-lg font-semibold text-[13px] transition-colors ${isDark ? "bg-brand-700 hover:bg-brand-600 text-white" : "bg-brand-700 hover:bg-brand-600 text-white"}`}
           >
             + Add Filter
           </button>
@@ -734,12 +734,12 @@ function EditActionsButton({
 
   const closeAll = () => { setOpen(false); setExportOpen(false); };
   const itemClass = `w-full flex items-center gap-2.5 px-3 py-2 rounded-lg text-[13.5px] font-medium text-left transition-colors ${isDark ? "text-[#D4D4D8] hover:bg-[#27272A]" : "text-slate-700 hover:bg-[#EFF6FF]"}`;
-  const panelClass = `absolute rounded-xl border py-1.5 px-1.5 min-w-[190px] ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-white border-[#E3ECFC]"}`;
+  const panelClass = `absolute rounded-xl border py-1.5 px-1.5 min-w-[190px] ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-white border-border-light"}`;
   const panelShadow = { boxShadow: isDark ? "0 8px 24px rgba(0,0,0,0.45)" : "0 8px 24px rgba(15,23,42,0.12)" };
 
   return (
     <div ref={containerRef} className="relative">
-      <div className={`flex items-center rounded-[9px] border overflow-hidden ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+      <div className={`flex items-center rounded-[9px] border overflow-hidden ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
         <Button
           onClick={() => router.push(`/reports/${id}/edit`)}
           size="small"
@@ -747,7 +747,7 @@ function EditActionsButton({
           sx={{ textTransform: "none", fontWeight: 700, fontSize: "13px", borderRadius: 0, color: isDark ? "#D4D4D8" : "#0C2472", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
           Edit
         </Button>
-        <div className={`w-px self-stretch ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`} />
+        <div className={`w-px self-stretch ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
         <IconButton size="small" onClick={() => setOpen((v) => !v)}
           sx={{ borderRadius: 0, color: isDark ? "#D4D4D8" : "#0C2472", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
           <CaretDown size={14} weight="bold" />
@@ -927,7 +927,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               {/* Header */}
               <div className="flex items-center justify-between gap-3 flex-wrap">
                 <div className="flex items-center gap-3 min-w-0">
-                  <button onClick={() => router.push("/reports")} className={`flex-shrink-0 ${isDark ? "text-[#9CA3AF] hover:text-white" : "text-slate-500 hover:text-slate-700"}`}>
+                  <button onClick={() => router.push("/reports")} className={`shrink-0 ${isDark ? "text-[#9CA3AF] hover:text-white" : "text-slate-500 hover:text-slate-700"}`}>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                     </svg>
@@ -1022,7 +1022,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
           PaperProps={{ sx: { borderRadius: "16px", bgcolor: isDark ? "#1C1C1E" : "#fff", boxShadow: isDark ? "0 8px 32px rgba(0,0,0,0.5)" : "0 8px 32px rgba(12,36,114,0.10)" } }}>
 
           {/* Header */}
-          <div className={`flex items-center justify-between px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+          <div className={`flex items-center justify-between px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
             <span className={`font-heading text-[16px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Add Chart</span>
             <IconButton size="small" onClick={() => setAddChartOpen(false)}
               sx={{ borderRadius: "9px", border: `1.5px solid ${isDark ? "#3F3F46" : "#E3ECFC"}`, "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
@@ -1038,11 +1038,11 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                 <button key={ct.key} onClick={() => setChartType(ct.key)}
                   className={`flex flex-col items-center gap-1.5 py-2.5 px-1 rounded-xl border-2 transition-colors ${
                     chartType === ct.key
-                      ? isDark ? "border-[#3B82F6] bg-[#1D4ED8]/10" : "border-[#1D4ED8] bg-[#EFF6FF]"
-                      : isDark ? "border-[#27272A] hover:border-[#3F3F46]" : "border-[#E3ECFC] hover:border-[#93C5FD]"
+                      ? isDark ? "border-brand-500 bg-brand-700/10" : "border-brand-700 bg-[#EFF6FF]"
+                      : isDark ? "border-[#27272A] hover:border-[#3F3F46]" : "border-border-light hover:border-[#93C5FD]"
                   }`}>
                   <ct.icon size={20} weight="duotone" color={chartType === ct.key ? "#1D4ED8" : (isDark ? "#9CA3AF" : "#64748B")} />
-                  <span className={`text-[10px] font-semibold truncate w-full text-center ${chartType === ct.key ? (isDark ? "text-[#93C5FD]" : "text-[#1D4ED8]") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>{ct.label}</span>
+                  <span className={`text-[10px] font-semibold truncate w-full text-center ${chartType === ct.key ? (isDark ? "text-[#93C5FD]" : "text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>{ct.label}</span>
                 </button>
               ))}
             </div>
@@ -1057,13 +1057,13 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                 <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr] items-center gap-1.5 sm:gap-3">
                   <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Chart Name</label>
                   <input value={chartName} onChange={e => setChartName(e.target.value)} placeholder="Untitled chart"
-                    className={`px-3 py-2 text-[13px] border rounded-lg outline-none ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8] placeholder-[#52525B]" : "bg-white border-[#E3ECFC] text-slate-700 placeholder-slate-400"}`} />
+                    className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8] placeholder-[#52525B]" : "bg-white border-border-light text-slate-700 placeholder-slate-400"}`} />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr] items-center gap-1.5 sm:gap-3">
                   <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Measure (Y-Axis)</label>
                   <select value={measure} onChange={e => setMeasure(e.target.value)}
-                    className={`px-3 py-2 text-[13px] border rounded-lg outline-none cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"}`}>
+                    className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"}`}>
                     {customMeasureOptions.map(m => <option key={m} value={m}>{m}</option>)}
                   </select>
                 </div>
@@ -1071,7 +1071,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                 <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr] items-center gap-1.5 sm:gap-3">
                   <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Group By (X-Axis)</label>
                   <select value={groupBy} onChange={e => setGroupBy(e.target.value)}
-                    className={`px-3 py-2 text-[13px] border rounded-lg outline-none cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"}`}>
+                    className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"}`}>
                     {customGroupByOptions.map(g => <option key={g} value={g}>{g}</option>)}
                   </select>
                 </div>
@@ -1079,7 +1079,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                 <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr] items-center gap-1.5 sm:gap-3">
                   <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Sort By</label>
                   <select value={sortBy} onChange={e => setSortBy(e.target.value)}
-                    className={`px-3 py-2 text-[13px] border rounded-lg outline-none cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"}`}>
+                    className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"}`}>
                     <option value="Default">Default</option>
                     <option value="Ascending">Ascending</option>
                     <option value="Descending">Descending</option>
@@ -1088,9 +1088,9 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               </div>
 
               {/* Preview */}
-              <div className={`px-4 sm:px-5 py-5 border-t md:border-t-0 md:border-l ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-[#E3ECFC] bg-[#F8FAFF]"}`}>
+              <div className={`px-4 sm:px-5 py-5 border-t md:border-t-0 md:border-l ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-[#F8FAFF]"}`}>
                 <div className={`text-[12px] font-bold mb-3 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Preview</div>
-                <div className={`w-full rounded-lg border overflow-hidden ${isDark ? "border-[#27272A] bg-[#111113]" : "border-[#E3ECFC] bg-white"}`}>
+                <div className={`w-full rounded-lg border overflow-hidden ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-white"}`}>
                   <ChartTypePreview chartType={chartType} isDark={isDark} />
                   <p className={`text-center text-[11px] pb-3 ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>
                     {chartName ? chartName : "Untitled"}
@@ -1101,7 +1101,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
           </DialogContent>
 
           {/* Actions */}
-          <div className={`flex items-center justify-end gap-2 px-4 sm:px-6 py-3 border-t ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+          <div className={`flex items-center justify-end gap-2 px-4 sm:px-6 py-3 border-t ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
             <Button onClick={() => { setAddChartOpen(false); setChartName(""); setChartType("column"); }}
               sx={{ color: isDark ? "#A1A1AA" : "#64748B", textTransform: "none", fontWeight: 600, fontSize: "13px" }}>
               Cancel
@@ -1145,7 +1145,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
             {/* Header */}
             <div className="flex items-center justify-between gap-3 flex-wrap">
               <div className="flex items-center gap-3 min-w-0">
-                <button onClick={() => router.push("/reports")} className={`flex-shrink-0 ${isDark ? "text-[#9CA3AF] hover:text-white" : "text-slate-500 hover:text-slate-700"}`}>
+                <button onClick={() => router.push("/reports")} className={`shrink-0 ${isDark ? "text-[#9CA3AF] hover:text-white" : "text-slate-500 hover:text-slate-700"}`}>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                   </svg>
@@ -1301,7 +1301,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
         PaperProps={{ sx: { borderRadius: "16px", bgcolor: isDark ? "#1C1C1E" : "#fff", boxShadow: isDark ? "0 8px 32px rgba(0,0,0,0.5)" : "0 8px 32px rgba(12,36,114,0.10)" } }}>
 
         {/* Header */}
-        <div className={`flex items-center justify-between px-4 sm:px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+        <div className={`flex items-center justify-between px-4 sm:px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <span className={`font-heading text-[16px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Add Chart</span>
           <IconButton size="small" onClick={() => setAddChartOpen(false)}
             sx={{ borderRadius: "9px", border: `1.5px solid ${isDark ? "#3F3F46" : "#E3ECFC"}`, "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
@@ -1317,11 +1317,11 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               <button key={ct.key} onClick={() => setChartType(ct.key)}
                 className={`flex flex-col items-center gap-1.5 py-2.5 px-1 rounded-xl border-2 transition-colors ${
                   chartType === ct.key
-                    ? isDark ? "border-[#3B82F6] bg-[#1D4ED8]/10" : "border-[#1D4ED8] bg-[#EFF6FF]"
-                    : isDark ? "border-[#27272A] hover:border-[#3F3F46]" : "border-[#E3ECFC] hover:border-[#93C5FD]"
+                    ? isDark ? "border-brand-500 bg-brand-700/10" : "border-brand-700 bg-[#EFF6FF]"
+                    : isDark ? "border-[#27272A] hover:border-[#3F3F46]" : "border-border-light hover:border-[#93C5FD]"
                 }`}>
                 <ct.icon size={20} weight="duotone" color={chartType === ct.key ? "#1D4ED8" : (isDark ? "#9CA3AF" : "#64748B")} />
-                <span className={`text-[10px] font-semibold truncate w-full text-center ${chartType === ct.key ? (isDark ? "text-[#93C5FD]" : "text-[#1D4ED8]") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>{ct.label}</span>
+                <span className={`text-[10px] font-semibold truncate w-full text-center ${chartType === ct.key ? (isDark ? "text-[#93C5FD]" : "text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>{ct.label}</span>
               </button>
             ))}
           </div>
@@ -1336,13 +1336,13 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr] items-center gap-1.5 sm:gap-3">
                 <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Chart Name</label>
                 <input value={chartName} onChange={e => setChartName(e.target.value)} placeholder="Untitled chart"
-                  className={`px-3 py-2 text-[13px] border rounded-lg outline-none ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8] placeholder-[#52525B]" : "bg-white border-[#E3ECFC] text-slate-700 placeholder-slate-400"}`} />
+                  className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8] placeholder-[#52525B]" : "bg-white border-border-light text-slate-700 placeholder-slate-400"}`} />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr] items-center gap-1.5 sm:gap-3">
                 <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Measure (Y-Axis)</label>
                 <select value={measure} onChange={e => setMeasure(e.target.value)}
-                  className={`px-3 py-2 text-[13px] border rounded-lg outline-none cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"}`}>
+                  className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"}`}>
                   {MEASURE_OPTIONS.map(m => <option key={m} value={m}>{m}</option>)}
                 </select>
               </div>
@@ -1350,7 +1350,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr] items-center gap-1.5 sm:gap-3">
                 <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Group By (X-Axis)</label>
                 <select value={groupBy} onChange={e => setGroupBy(e.target.value)}
-                  className={`px-3 py-2 text-[13px] border rounded-lg outline-none cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"}`}>
+                  className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"}`}>
                   {GROUP_BY_OPTIONS.map(g => <option key={g} value={g}>{g}</option>)}
                 </select>
               </div>
@@ -1358,7 +1358,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr] items-center gap-1.5 sm:gap-3">
                 <label className={`text-[13px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Sort By</label>
                 <select value={sortBy} onChange={e => setSortBy(e.target.value)}
-                  className={`px-3 py-2 text-[13px] border rounded-lg outline-none cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"}`}>
+                  className={`px-3 py-2 text-[13px] border rounded-lg outline-hidden cursor-pointer ${isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"}`}>
                   <option value="Default">Default</option>
                   <option value="Ascending">Ascending</option>
                   <option value="Descending">Descending</option>
@@ -1367,9 +1367,9 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
             </div>
 
             {/* Preview */}
-            <div className={`px-4 sm:px-5 py-5 border-t md:border-t-0 md:border-l ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-[#E3ECFC] bg-[#F8FAFF]"}`}>
+            <div className={`px-4 sm:px-5 py-5 border-t md:border-t-0 md:border-l ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-[#F8FAFF]"}`}>
               <div className={`text-[12px] font-bold mb-3 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Preview</div>
-              <div className={`w-full rounded-lg border overflow-hidden ${isDark ? "border-[#27272A] bg-[#111113]" : "border-[#E3ECFC] bg-white"}`}>
+              <div className={`w-full rounded-lg border overflow-hidden ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-white"}`}>
                 <ChartTypePreview chartType={chartType} isDark={isDark} />
                 <p className={`text-center text-[11px] pb-3 ${isDark ? "text-[#52525B]" : "text-slate-400"}`}>
                   {chartName ? chartName : "Untitled"}
@@ -1380,7 +1380,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
         </DialogContent>
 
         {/* Actions */}
-        <div className={`flex items-center justify-end gap-2 px-4 sm:px-6 py-3 border-t ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+        <div className={`flex items-center justify-end gap-2 px-4 sm:px-6 py-3 border-t ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <Button onClick={() => { setAddChartOpen(false); setChartName(""); setChartType("column"); }}
             sx={{ color: isDark ? "#A1A1AA" : "#64748B", textTransform: "none", fontWeight: 600, fontSize: "13px" }}>
             Cancel

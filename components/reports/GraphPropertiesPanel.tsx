@@ -32,8 +32,8 @@ const GraphPropertiesPanel = memo(
     if (!module) {
       return (
         <div
-          className={`w-full md:w-72 flex-shrink-0 border-t md:border-t-0 md:border-l flex flex-col items-center justify-center py-6 px-6 text-center ${
-            isDark ? "border-[#27272A] bg-[#0A0A0A] text-[#71717A]" : "border-[#E3ECFC] bg-white text-slate-400"
+          className={`w-full md:w-72 shrink-0 border-t md:border-t-0 md:border-l flex flex-col items-center justify-center py-6 px-6 text-center ${
+            isDark ? "border-[#27272A] bg-[#0A0A0A] text-[#71717A]" : "border-border-light bg-white text-slate-400"
           }`}
         >
           <p className="text-[12px]">Select a module on the canvas to configure its fields and filters</p>
@@ -58,13 +58,13 @@ const GraphPropertiesPanel = memo(
 
     return (
       <div
-        className={`w-full md:w-72 flex-shrink-0 border-t md:border-t-0 md:border-l flex flex-col max-h-[45vh] md:max-h-none overflow-hidden transition-colors ${
-          isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-[#E3ECFC] bg-white"
+        className={`w-full md:w-72 shrink-0 border-t md:border-t-0 md:border-l flex flex-col max-h-[45vh] md:max-h-none overflow-hidden transition-colors ${
+          isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-white"
         }`}
       >
         {/* Header */}
-        <div className={`px-4 py-4 border-b flex items-center gap-2 ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
-          <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: color + "20" }}>
+        <div className={`px-4 py-4 border-b flex items-center gap-2 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
+          <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: color + "20" }}>
             <Icon size={14} color={color} weight="duotone" />
           </div>
           <div>
@@ -74,7 +74,7 @@ const GraphPropertiesPanel = memo(
         </div>
 
         {/* Tabs */}
-        <div className={`flex border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+        <div className={`flex border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           {(["fields", "filters"] as const).map((tab) => (
             <button
               key={tab}
@@ -83,7 +83,7 @@ const GraphPropertiesPanel = memo(
                 activeTab === tab
                   ? isDark
                     ? "text-[#93C5FD] border-b-2 border-[#93C5FD]"
-                    : "text-[#1D4ED8] border-b-2 border-[#1D4ED8]"
+                    : "text-brand-700 border-b-2 border-brand-700"
                   : isDark
                     ? "text-[#71717A]"
                     : "text-slate-400"
@@ -106,13 +106,13 @@ const GraphPropertiesPanel = memo(
                     key={field.name}
                     onClick={() => onToggleField(field.name)}
                     className={`w-full flex items-center gap-2.5 px-2.5 py-2 rounded-lg text-left transition-colors ${
-                      isDark ? "hover:bg-[#18181B]" : "hover:bg-[#f9fbff]"
+                      isDark ? "hover:bg-[#18181B]" : "hover:bg-surface"
                     }`}
                   >
                     <div
-                      className={`w-4 h-4 rounded flex items-center justify-center flex-shrink-0 border-2 ${
+                      className={`w-4 h-4 rounded flex items-center justify-center shrink-0 border-2 ${
                         isSelected
-                          ? "bg-[#1D4ED8] border-[#1D4ED8]"
+                          ? "bg-brand-700 border-brand-700"
                           : isDark
                             ? "border-[#3F3F46]"
                             : "border-[#CBD5E1]"
@@ -146,7 +146,7 @@ const GraphPropertiesPanel = memo(
                         <b>{fields.find((f) => f.name === filter.fieldName)?.label ?? filter.fieldName}</b>{" "}
                         {filter.operator} {filter.value && `"${filter.value}"`}
                       </span>
-                      <button onClick={() => onRemoveFilter(filter.id)} className="flex-shrink-0">
+                      <button onClick={() => onRemoveFilter(filter.id)} className="shrink-0">
                         <Trash size={13} color="#EF4444" weight="fill" />
                       </button>
                     </div>
@@ -165,8 +165,8 @@ const GraphPropertiesPanel = memo(
                     setFilterField(e.target.value);
                     setFilterOperator("");
                   }}
-                  className={`w-full px-3 py-2 text-[12px] border rounded-lg outline-none cursor-pointer ${
-                    isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"
+                  className={`w-full px-3 py-2 text-[12px] border rounded-lg outline-hidden cursor-pointer ${
+                    isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"
                   }`}
                 >
                   <option value="">Select field</option>
@@ -181,8 +181,8 @@ const GraphPropertiesPanel = memo(
                   value={filterOperator}
                   onChange={(e) => setFilterOperator(e.target.value)}
                   disabled={!filterField}
-                  className={`w-full px-3 py-2 text-[12px] border rounded-lg outline-none cursor-pointer disabled:opacity-50 ${
-                    isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-[#E3ECFC] text-slate-700"
+                  className={`w-full px-3 py-2 text-[12px] border rounded-lg outline-hidden cursor-pointer disabled:opacity-50 ${
+                    isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8]" : "bg-white border-border-light text-slate-700"
                   }`}
                 >
                   <option value="">Select condition</option>
@@ -198,8 +198,8 @@ const GraphPropertiesPanel = memo(
                   onChange={(e) => setFilterValue(e.target.value)}
                   disabled={!filterOperator}
                   placeholder="Value"
-                  className={`w-full px-3 py-2 text-[12px] border rounded-lg outline-none disabled:opacity-50 ${
-                    isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8] placeholder-[#52525B]" : "bg-white border-[#E3ECFC] text-slate-700 placeholder-slate-400"
+                  className={`w-full px-3 py-2 text-[12px] border rounded-lg outline-hidden disabled:opacity-50 ${
+                    isDark ? "bg-[#0A0A0A] border-[#3F3F46] text-[#D4D4D8] placeholder-[#52525B]" : "bg-white border-border-light text-slate-700 placeholder-slate-400"
                   }`}
                 />
 
@@ -207,7 +207,7 @@ const GraphPropertiesPanel = memo(
                   onClick={handleAddFilter}
                   disabled={!filterField || !filterOperator}
                   className={`w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-[12px] font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed ${
-                    isDark ? "bg-[#1D4ED8]/20 text-[#93C5FD] hover:bg-[#1D4ED8]/30" : "bg-[#1D4ED8]/10 text-[#1D4ED8] hover:bg-[#1D4ED8]/20"
+                    isDark ? "bg-brand-700/20 text-[#93C5FD] hover:bg-brand-700/30" : "bg-brand-700/10 text-brand-700 hover:bg-brand-700/20"
                   }`}
                 >
                   <Plus size={13} weight="bold" />

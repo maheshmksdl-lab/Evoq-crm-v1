@@ -101,7 +101,7 @@ export default function RegisterPage() {
   if (success) return (
     <div className="min-h-screen flex items-center justify-center"
       style={{ background: "linear-gradient(135deg, #EFF6FF 0%, #E3ECFC 50%, #DBEAFE 100%)" }}>
-      <div className="flex flex-col items-center gap-3 bg-white rounded-3xl px-10 py-8 shadow-xl border border-[#E3ECFC]">
+      <div className="flex flex-col items-center gap-3 bg-white rounded-3xl px-10 py-8 shadow-xl border border-border-light">
         <CheckCircle size={48} color="#10B981" weight="fill" />
         <p className="text-[17px] font-bold text-slate-800">Account created!</p>
         <p className="text-[13px] text-slate-400 font-medium">Redirecting to sign in…</p>
@@ -316,8 +316,8 @@ export default function RegisterPage() {
         <div className="px-8 py-3 border-t text-center" style={{ borderColor: "#E3ECFC", background: "#F8FBFF" }}>
           <p className="text-[11px] text-slate-400 font-medium">
             © 2026 Social DNA Labs ·{" "}
-            <span className="text-[#1D4ED8] cursor-pointer hover:underline">Privacy</span> ·{" "}
-            <span className="text-[#1D4ED8] cursor-pointer hover:underline">Terms</span>
+            <span className="text-brand-700 cursor-pointer hover:underline">Privacy</span> ·{" "}
+            <span className="text-brand-700 cursor-pointer hover:underline">Terms</span>
           </p>
         </div>
       </div>

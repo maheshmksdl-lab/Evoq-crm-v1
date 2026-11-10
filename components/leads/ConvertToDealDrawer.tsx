@@ -60,7 +60,7 @@ function SectionToggle({
   isDark: boolean;
 }) {
   return (
-    <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+    <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
       <label className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors select-none ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]/60"}`}>
         <Checkbox
           checked={checked}
@@ -69,7 +69,7 @@ function SectionToggle({
           sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "inherit" }, flexShrink: 0 }}
         />
         <div className="flex items-center gap-2.5 flex-1 min-w-0">
-          <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
+          <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
             style={{ backgroundColor: iconColor + "18" }}>
             <Icon size={15} color={iconColor} weight="duotone" />
           </div>
@@ -162,7 +162,7 @@ export default function ConvertToDealDrawer({
       }}
     >
       {/* ══ Header ══ */}
-      <div className={`flex items-center justify-between px-6 py-4 border-b flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`flex items-center justify-between px-6 py-4 border-b shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <div className="flex items-center gap-3">
           <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
             <ArrowsLeftRight size={18} color={isDark ? "#71717A" : "#1D4ED8"} weight="duotone" />
@@ -193,7 +193,7 @@ export default function ConvertToDealDrawer({
         {!converted ? (
           <>
             {/* ── Create New Account ── */}
-            <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+            <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <div className={`flex items-center gap-2.5 px-4 py-3 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
                 <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                   <Buildings size={15} color={isDark ? "#71717A" : "#1D4ED8"} weight="duotone" />
@@ -207,7 +207,7 @@ export default function ConvertToDealDrawer({
             </div>
 
             {/* ── Create New Contact ── */}
-            <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+            <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <div className={`flex items-center gap-2.5 px-4 py-3 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
                 <div className={`w-7 h-7 rounded-lg flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                   <User size={15} color={isDark ? "#71717A" : "#1D4ED8"} weight="duotone" />
@@ -255,7 +255,7 @@ export default function ConvertToDealDrawer({
             </SectionToggle>
 
             {/* ── Owner of the New Records ── */}
-            <div className={`rounded-2xl border shadow-sm p-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+            <div className={`rounded-2xl border shadow-xs p-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <p className={`font-heading text-[10.5px] font-bold uppercase tracking-widest mb-3 ${isDark ? "text-[#71717A]" : "text-[#0C2472]"}`}>
                 Owner of the New Records
               </p>
@@ -272,7 +272,7 @@ export default function ConvertToDealDrawer({
             </div>
 
             {/* ── Notify record owner ── */}
-            <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+            <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
               <label className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors select-none ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]/60"}`}>
                 <Checkbox
                   checked={notifyOwner}
@@ -280,7 +280,7 @@ export default function ConvertToDealDrawer({
                   size="small"
                   sx={{ p: 0.5, color: isDark ? "#3F3F46" : "#E2E8F0", "&.Mui-checked": { color: "inherit" }, flexShrink: 0 }}
                 />
-                <Bell size={15} color={isDark ? "#E4E4E7" : "#64748B"} weight="duotone" className="flex-shrink-0" />
+                <Bell size={15} color={isDark ? "#E4E4E7" : "#64748B"} weight="duotone" className="shrink-0" />
                 <span className={`text-[13px] font-medium ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
                   Notify record owner (Account and Contact).
                 </span>
@@ -290,7 +290,7 @@ export default function ConvertToDealDrawer({
         ) : (
           /* ── Success state ── */
           <div className="flex flex-col items-center justify-center py-16 text-center px-8">
-            <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-sm ${isDark ? "bg-emerald-900/30" : "bg-emerald-50"}`}>
+            <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 shadow-xs ${isDark ? "bg-emerald-900/30" : "bg-emerald-50"}`}>
               <CheckCircle size={38} color="#10B981" weight="duotone" />
             </div>
             <h3 className={`font-heading text-[18px] font-extrabold mb-2 tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
@@ -300,10 +300,10 @@ export default function ConvertToDealDrawer({
               <span className={`font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{shortName}</span> has been successfully converted.
             </p>
             <div className="flex flex-wrap gap-2 justify-center">
-              <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${isDark ? "bg-[#27272A] text-[#A1A1AA] border-[#3F3F46]" : "bg-[#EFF6FF] text-[#475569] border-[#E3ECFC]"}`}>
+              <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${isDark ? "bg-[#27272A] text-[#A1A1AA] border-[#3F3F46]" : "bg-[#EFF6FF] text-[#475569] border-border-light"}`}>
                 ✓ Account created
               </span>
-              <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${isDark ? "bg-[#27272A] text-[#A1A1AA] border-[#3F3F46]" : "bg-[#EFF6FF] text-[#475569] border-[#E3ECFC]"}`}>
+              <span className={`text-[11px] font-semibold px-3 py-1 rounded-full border ${isDark ? "bg-[#27272A] text-[#A1A1AA] border-[#3F3F46]" : "bg-[#EFF6FF] text-[#475569] border-border-light"}`}>
                 ✓ Contact created
               </span>
               {createDeal && (
@@ -334,7 +334,7 @@ export default function ConvertToDealDrawer({
 
       {/* ══ Footer ══ */}
       {!converted && (
-        <div className={`flex items-center justify-between px-6 py-4 border-t flex-shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+        <div className={`flex items-center justify-between px-6 py-4 border-t shrink-0 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
           <Button
             variant="outlined"
             size="small"

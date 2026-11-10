@@ -27,10 +27,10 @@ const ModuleNode = memo(({ data, id, selected }: ModuleNodeProps) => {
     : selected
       ? isDark
         ? "border-[#93C5FD] shadow-lg shadow-blue-500/20"
-        : "border-[#1D4ED8] shadow-lg shadow-blue-500/20"
+        : "border-brand-700 shadow-lg shadow-blue-500/20"
       : isDark
         ? `border-[#27272A] ${isPrimary ? "border-[#F59E0B]" : ""}`
-        : `border-[#E3ECFC] ${isPrimary ? "border-[#F59E0B]" : ""}`;
+        : `border-border-light ${isPrimary ? "border-[#F59E0B]" : ""}`;
 
   return (
     <div
@@ -42,7 +42,7 @@ const ModuleNode = memo(({ data, id, selected }: ModuleNodeProps) => {
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2 flex-1 min-w-0">
           <div
-            className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
+            className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0"
             style={{ backgroundColor: color + "20" }}
           >
             <Icon size={14} color={color} weight="duotone" />

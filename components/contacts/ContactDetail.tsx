@@ -325,12 +325,12 @@ function SectionCard({ icon: Icon, title, children, action, id }: {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   return (
-    <div id={id} className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+    <div id={id} className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
       <div className={`flex items-center gap-2.5 px-5 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
         <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
           <Icon size={13} color={isDark ? "#9CA3AF" : "#1D4ED8"} weight="duotone" />
         </div>
-        <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-[#1D4ED8]"}`}>{title}</p>
+        <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-brand-700"}`}>{title}</p>
         {action}
       </div>
       <div className="px-5 py-4">{children}</div>
@@ -377,7 +377,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
           <div className="flex-1 flex items-center justify-center">
             <div className="text-center">
               <p className={`text-xl font-bold mb-2 ${isDark ? "text-[#D4D4D8]" : "text-[#0C2472]"}`}>Contact not found</p>
-              <button onClick={() => router.push("/contacts")} className={`text-sm underline ${isDark ? "text-[#A1A1AA]" : "text-[#1D4ED8]"}`}>
+              <button onClick={() => router.push("/contacts")} className={`text-sm underline ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>
                 Back to Contacts
               </button>
             </div>
@@ -409,7 +409,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
 
   const RelatedListPanel = ({ onClickItem }: { onClickItem: (label: string) => void }) => (
     <div className="space-y-4">
-      <div className={`rounded-2xl border shadow-sm overflow-hidden w-full ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`rounded-2xl border shadow-xs overflow-hidden w-full ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <div className={`px-4 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
           <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Related List</p>
         </div>
@@ -417,12 +417,12 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
           {relatedItems.map(({ label, icon: Icon, count, color }) => (
             <button key={label} onClick={() => onClickItem(label)}
               className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl group transition-colors ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}>
-              <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: color + "20" }}>
+              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: color + "20" }}>
                 <Icon size={14} color={color} weight="duotone" />
               </div>
               <span className={`flex-1 min-w-0 truncate text-left text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{label}</span>
               {count > 0 && (
-                <span className="text-[12px] font-bold bg-[#E3ECFC] text-[#1D4ED8] px-1.5 py-0.5 rounded-full">{count}</span>
+                <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>
               )}
               <CaretRight size={14} color="#E2E8F0" weight="duotone" />
             </button>
@@ -431,7 +431,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
       </div>
 
       {/* Ownership panel */}
-      <div className={`rounded-2xl border shadow-sm p-4 space-y-3 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+      <div className={`rounded-2xl border shadow-xs p-4 space-y-3 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Ownership</p>
         <div className="flex items-center gap-2.5">
           <Avatar sx={{ width: 28, height: 28, bgcolor: avatarColor(contact.contactOwner), fontSize: "0.6rem", fontWeight: 800 }}>
@@ -468,13 +468,13 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
           <div className={`flex items-center gap-1.5 text-[13.5px] ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>
             <House size={16} weight="duotone" />
             <CaretRight size={12} weight="duotone" />
-            <Link href="/contacts" className="hover:text-[#1D4ED8] transition-colors font-medium">Contacts</Link>
+            <Link href="/contacts" className="hover:text-brand-700 transition-colors font-medium">Contacts</Link>
             <CaretRight size={12} weight="duotone" />
-            <span className="text-[#1D4ED8] font-semibold truncate max-w-[240px]">{fullName}</span>
+            <span className="text-brand-700 font-semibold truncate max-w-[240px]">{fullName}</span>
           </div>
 
           {/* ── Header card ── */}
-          <div className={`rounded-2xl border shadow-sm px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+          <div className={`rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
             <div className="flex items-start gap-4 flex-wrap">
               <Avatar sx={{ width: 56, height: 56, bgcolor: avColor, fontSize: "1.2rem", fontWeight: 800, boxShadow: "0 4px 14px 0 rgba(12,36,114,0.2)", flexShrink: 0 }}>
                 {initials}
@@ -508,7 +508,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                 </div>
               </div>
               {/* Action buttons */}
-              <div className="flex items-center gap-2 flex-wrap flex-shrink-0">
+              <div className="flex items-center gap-2 flex-wrap shrink-0">
                 <Button variant="outlined" size="small"
                   sx={{ borderColor: isDark ? "#27272A" : "#E3ECFC", color: isDark ? "#B4B5B6" : "#1D4ED8", borderRadius: "9px", textTransform: "none", fontWeight: 600, fontSize: "0.84rem", bgcolor: isDark ? "#0F0F0F" : "transparent", "&:hover": { borderColor: "#1D4ED8", color: "#1D4ED8", bgcolor: isDark ? "#0A0A0A" : "#EFF6FF" } }}>
                   Send Email
@@ -534,14 +534,14 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
           </div>
 
           {/* ── Tab bar ── */}
-          <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-sm ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+          <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
             {(["overview", "timeline"] as const).map(tab => (
               <button key={tab} onClick={() => setActiveTab(tab)}
                 className={`px-4 py-1.5 rounded-lg text-[14px] font-semibold capitalize transition-all ${
                   activeTab === tab
-                    ? "bg-[#1D4ED8] text-white shadow-sm"
+                    ? "bg-brand-700 text-white shadow-xs"
                     : isDark ? "text-[#B4B5B6] bg-[#0A0A0A] hover:bg-[#27272A] hover:text-[#D4D4D8]"
-                    : "text-[#0C2472] bg-[#E3ECFC] hover:bg-[#1D4ED8]/10"
+                    : "text-[#0C2472] bg-border-light hover:bg-brand-700/10"
                 }`}>
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
               </button>
@@ -554,7 +554,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
               <div className="lg:col-span-2 space-y-5 min-w-0">
 
                 {/* ── Quick info card ── */}
-                <div className={`rounded-2xl border shadow-sm divide-y ${isDark ? "bg-[#1C1C1E] border-[#27272A] divide-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC] divide-[#EFF6FF]"}`}>
+                <div className={`rounded-2xl border shadow-xs divide-y ${isDark ? "bg-[#1C1C1E] border-[#27272A] divide-[#27272A]" : "bg-surface border-border-light divide-[#EFF6FF]"}`}>
                   {[
                     { label: "Contact Owner", value: contact.contactOwner },
                     { label: "Email",         value: contact.email },
@@ -563,7 +563,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                     { label: "Department",    value: contact.department },
                   ].map(({ label, value }) => (
                     <div key={label} className="flex items-center px-5 py-3">
-                      <span className={`text-[12px] font-medium w-40 flex-shrink-0 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>{label}:</span>
+                      <span className={`text-[12px] font-medium w-40 shrink-0 ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>{label}:</span>
                       <span className={`flex-1 text-[14px] font-semibold ${value ? (isDark ? "text-[#D4D4D8]" : "text-slate-700") : (isDark ? "text-[#3F3F46]" : "text-slate-300")}`}>
                         {value || "—"}
                       </span>
@@ -633,7 +633,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                     <div className="overflow-x-auto -mx-5 px-5">
                       <table className="w-full text-[14px]">
                         <thead>
-                          <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+                          <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                             <th className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-[#0C2472]"}`}>Subject</th>
                             <th className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-[#0C2472]"}`}>Status</th>
                           </tr>
@@ -652,7 +652,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                 <div id="section-notes">
                   <SectionCard icon={Note} title="Notes">
                     <div className="space-y-3">
-                      <div className={`border rounded-xl overflow-hidden transition-all ${isDark ? "border-[#3F3F46] focus-within:border-[#9CA3AF]" : "border-[#E3ECFC] focus-within:border-[#1D4ED8] focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
+                      <div className={`border rounded-xl overflow-hidden transition-all ${isDark ? "border-[#3F3F46] focus-within:border-[#9CA3AF]" : "border-border-light focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8]"}`}>
                         <InputBase
                           fullWidth multiline minRows={2}
                           placeholder="Add a note…"
@@ -670,7 +670,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                         )}
                       </div>
                       {notes.map((n, i) => (
-                        <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+                        <div key={i} className={`rounded-xl px-4 py-3 border ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                           <p className={`text-[14px] ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{n.text}</p>
                           <p className={`text-[12px] mt-1 ${isDark ? "text-[#ABABAD]" : "text-slate-400"}`}>{n.at}</p>
                         </div>
@@ -687,7 +687,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                         <div className={`flex items-center rounded-lg p-0.5 gap-0.5 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                           {[{ k: "grid", Icon: GridFour }, { k: "list", Icon: List }].map(({ k, Icon }) => (
                             <button key={k} onClick={() => setAttachView(k as "grid" | "list")}
-                              className={`p-1 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-[#f9fbff] text-[#1D4ED8]") : (isDark ? "text-[#9CA3AF]" : "text-slate-400")}`}>
+                              className={`p-1 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-400")}`}>
                               <Icon size={13} weight="duotone" />
                             </button>
                           ))}
@@ -723,7 +723,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                     <div className="overflow-x-auto -mx-5 px-5">
                       <table className="w-full text-[14px] min-w-[500px]">
                         <thead>
-                          <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-[#E3ECFC]"}`}>
+                          <tr className={`border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                             {["Deal Name", "Amount", "Stage", "Probability (%)", "Closing Date"].map(h => (
                               <th key={h} className={`text-left py-2 pr-4 text-[11.5px] font-bold uppercase tracking-wider whitespace-nowrap ${isDark ? "text-[#ABABAD]" : "text-[#0C2472]"}`}>{h}</th>
                             ))}
@@ -736,7 +736,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                             </tr>
                           ) : contact.relatedDeals.map((d, i) => (
                             <tr key={i} className={`border-b transition-colors ${isDark ? "border-[#27272A] hover:bg-[#27272A]" : "border-[#EFF6FF] hover:bg-[rgba(29,78,216,0.03)]"}`}>
-                              <td className={`py-3 pr-4 font-medium cursor-pointer hover:underline ${isDark ? "text-[#A1A1AA]" : "text-[#1D4ED8]"}`}>{d.name}</td>
+                              <td className={`py-3 pr-4 font-medium cursor-pointer hover:underline ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>{d.name}</td>
                               <td className={`py-3 pr-4 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>₹{d.amount.toLocaleString()}</td>
                               <td className={`py-3 pr-4 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{d.stage}</td>
                               <td className={`py-3 pr-4 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{d.probability}</td>
@@ -763,12 +763,12 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
           {activeTab === "timeline" && (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
               <div className="lg:col-span-2">
-                <div className={`rounded-2xl border shadow-sm overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-[#f9fbff] border-[#E3ECFC]"}`}>
+                <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
                   <div className={`flex items-center gap-2.5 px-5 py-3.5 border-b ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
                     <div className={`w-6 h-6 rounded-lg flex items-center justify-center ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                       <ClockCounterClockwise size={13} color={isDark ? "#9CA3AF" : "#1D4ED8"} weight="duotone" />
                     </div>
-                    <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] ${isDark ? "text-[#D4D4D8]" : "text-[#1D4ED8]"}`}>History</p>
+                    <p className={`font-heading text-[12px] font-bold uppercase tracking-[0.12em] ${isDark ? "text-[#D4D4D8]" : "text-brand-700"}`}>History</p>
                   </div>
 
                   {contact.timeline.length === 0 ? (
@@ -792,7 +792,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                               <span className={`text-[12px] font-semibold whitespace-nowrap ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>
                                 {new Date(date).toLocaleDateString("en-GB", { day: "2-digit", month: "short", year: "numeric" })}
                               </span>
-                              <div className={`flex-1 h-px ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`} />
+                              <div className={`flex-1 h-px ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
                             </div>
 
                             <div className="space-y-0">
@@ -800,18 +800,18 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                                 const isLast = i === grouped[date].length - 1 && date === sortedDates[sortedDates.length - 1];
                                 return (
                                   <div key={i} className="flex gap-4">
-                                    <div className="w-16 flex-shrink-0 text-right">
+                                    <div className="w-16 shrink-0 text-right">
                                       <span className={`text-[12px] font-medium ${isDark ? "text-[#9CA3AF]" : "text-slate-400"}`}>{entry.time}</span>
                                     </div>
-                                    <div className="flex flex-col items-center flex-shrink-0">
-                                      <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center z-10 flex-shrink-0 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-[#E3ECFC]"}`}>
+                                    <div className="flex flex-col items-center shrink-0">
+                                      <div className={`w-8 h-8 rounded-full border-2 flex items-center justify-center z-10 shrink-0 ${isDark ? "bg-[#27272A] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
                                         <PencilSimple size={13} color={isDark ? "#9CA3AF" : "#1D4ED8"} weight="duotone" />
                                       </div>
-                                      {!isLast && <div className={`w-px flex-1 my-1 min-h-[20px] ${isDark ? "bg-[#27272A]" : "bg-[#E3ECFC]"}`} />}
+                                      {!isLast && <div className={`w-px flex-1 my-1 min-h-[20px] ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />}
                                     </div>
                                     <div className="pb-5 flex-1 min-w-0 overflow-hidden">
                                       {entry.field && (
-                                        <p className={`text-[14px] leading-relaxed break-words ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
+                                        <p className={`text-[14px] leading-relaxed wrap-break-word ${isDark ? "text-[#A1A1AA]" : "text-slate-700"}`}>
                                           <span className="font-bold">{entry.field}:</span>{" "}
                                           {entry.from
                                             ? <span className={isDark ? "text-[#71717A]" : "text-slate-500"}>{entry.from} → {entry.to}</span>

@@ -75,7 +75,7 @@ export default function DealGridView({ deals }: Props) {
                   {deal.name}
                 </h3>
                 <button onClick={e => e.stopPropagation()}
-                  className={`opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-lg ${isDark ? "hover:bg-white/10" : "hover:bg-[#f9fbff]/60"}`}>
+                  className={`opacity-0 group-hover:opacity-100 transition-opacity p-1 rounded-lg ${isDark ? "hover:bg-white/10" : "hover:bg-surface/60"}`}>
                   <DotsThreeVertical size={15} color={isDark ? "#71717A" : "#475569"} weight="duotone" />
                 </button>
               </div>
@@ -87,7 +87,7 @@ export default function DealGridView({ deals }: Props) {
 
               {/* Stage + Probability */}
               <div className="flex items-center gap-2 mb-3 flex-wrap">
-                <span className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-2 py-0.5 rounded-full flex-shrink-0 ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-[#f9fbff]/70 text-[#0C2472]"}`}>
+                <span className={`inline-flex items-center gap-1.5 text-[11px] font-bold px-2 py-0.5 rounded-full shrink-0 ${isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>
                   <span className="w-[5px] h-[5px] rounded-full" style={{ backgroundColor: deep }} />
                   {deal.stage}
                 </span>
@@ -97,7 +97,7 @@ export default function DealGridView({ deals }: Props) {
               </div>
 
               {/* Probability bar */}
-              <div className={`w-full h-1 rounded-full mb-4 overflow-hidden ${isDark ? "bg-white/10" : "bg-[#f9fbff]/60"}`}>
+              <div className={`w-full h-1 rounded-full mb-4 overflow-hidden ${isDark ? "bg-white/10" : "bg-surface/60"}`}>
                 <div className="h-full rounded-full transition-all" style={{ width: `${deal.probability}%`, backgroundColor: deep }} />
               </div>
 
@@ -105,13 +105,13 @@ export default function DealGridView({ deals }: Props) {
               <div className="space-y-1.5">
                 {deal.account && (
                   <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>
-                    <Buildings size={11} color={deep} weight="duotone" className="flex-shrink-0" />
+                    <Buildings size={11} color={deep} weight="duotone" className="shrink-0" />
                     <span className="truncate">{deal.account}</span>
                   </div>
                 )}
                 {deal.contactName && (
                   <div className={`flex items-center gap-1.5 text-[12px] ${isDark ? "text-[#71717A]" : "text-slate-600"}`}>
-                    <User size={11} color={deep} weight="duotone" className="flex-shrink-0" />
+                    <User size={11} color={deep} weight="duotone" className="shrink-0" />
                     <span className="truncate">{deal.contactName}</span>
                   </div>
                 )}
@@ -119,7 +119,7 @@ export default function DealGridView({ deals }: Props) {
             </div>
 
             {/* Footer */}
-            <div className={`flex items-center justify-between px-4 py-2.5 border-t ${isDark ? "border-[#27272A] bg-black/20" : "border-white/50 bg-[#f9fbff]/30"}`}>
+            <div className={`flex items-center justify-between px-4 py-2.5 border-t ${isDark ? "border-[#27272A] bg-black/20" : "border-white/50 bg-surface/30"}`}>
               <Tooltip title={deal.owner}>
                 <div className="flex items-center gap-1.5">
                   <Avatar sx={{ width: 20, height: 20, bgcolor: owCol, fontSize: "0.48rem", fontWeight: 800 }}>{owInit}</Avatar>
