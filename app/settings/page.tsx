@@ -249,7 +249,7 @@ function ProfileHero({ initials, name, role, subtitle, contacts, avatarBg, avata
   const isDark = theme === "dark";
   return (
     <div className={`rounded-2xl border shadow-xs overflow-hidden mb-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
-      <div className={`relative h-[64px] ${isDark ? "bg-linear-to-r from-[#18181B] to-[#27272A]" : "bg-linear-to-r from-[#1D4ED8] to-[#3B82F6]"}`}>
+      <div className={`relative h-[64px] ${isDark ? "bg-linear-to-r from-[#18181B] to-[#27272A]" : "bg-linear-to-r from-brand-700 to-brand-500"}`}>
         <div className="absolute inset-0" style={{ background:"radial-gradient(ellipse at 80% 50%, rgba(255,255,255,0.07) 0%, transparent 70%)" }} />
       </div>
       <div className="relative px-6 pb-5">
@@ -305,7 +305,7 @@ function PersonalSettingsPanel() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   return (
-    <div className={`flex-1 overflow-y-auto px-8 pt-0 pb-8 space-y-5 ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
+    <div className={`flex-1 overflow-y-auto px-0 pt-0 pb-0 space-y-5 ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <ProfileHero
         initials="PM" name="PM SDL" role="Super Admin"
         avatarBg="#FEF3C7" avatarText="#B45309"
@@ -646,7 +646,7 @@ function UserDetailPanel({ user, onUpdate }: { user: UserRecord; onUpdate: (upda
   const { theme: uTheme } = useTheme();
   const isDarkUD = uTheme === "dark";
   return (
-    <div className={`flex-1 overflow-y-auto px-8 pt-0 pb-8 space-y-5 ${isDarkUD ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
+    <div className={`flex-none md:flex-1 overflow-y-auto px-4 sm:px-8 pt-0 pb-8 space-y-5 ${isDarkUD ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <ProfileHero
         initials={user.initials} name={user.name} role={user.role}
         avatarBg={user.avatarColor} avatarText={user.textColor}
@@ -725,9 +725,9 @@ function UsersPanel() {
   };
 
   return (
-    <div className="flex-1 flex overflow-hidden">
+    <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
       {/* User list */}
-      <div className={`w-[340px] shrink-0 flex flex-col border-r ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-surface"}`}>
+      <div className={`w-full md:w-[340px] shrink-0 flex flex-col border-b md:border-b-0 md:border-r max-h-[300px] md:max-h-none ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-surface"}`}>
         {/* Toolbar */}
         <div className={`px-4 py-3 border-b flex items-center gap-2 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <div className={`flex-1 flex items-center gap-1.5 border rounded-xl px-3 py-1.5 focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8] transition-all ${isDark ? "bg-[#18181B] border-[#3F3F46]" : "bg-white border-border-light"}`}>
@@ -737,7 +737,7 @@ function UsersPanel() {
           </div>
           <Button variant="contained" size="small" startIcon={<Plus size={12} weight="bold" />}
             onClick={() => setShowNewUserModal(true)}
-            sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius:"9px", textTransform:"none", fontWeight:700, fontSize:"0.73rem", px:1.5, py:0.7, whiteSpace:"nowrap", boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
+            sx={{ bgcolor: isDark ? "#27272A" : "var(--color-brand-700)", color: isDark ? "#F4F4F5" : "white", borderRadius:"9px", textTransform:"none", fontWeight:700, fontSize:"0.73rem", px:1.5, py:0.7, whiteSpace:"nowrap", boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
             New User
           </Button>
         </div>
@@ -754,7 +754,7 @@ function UsersPanel() {
                 }`}>
                 <div onClick={e => toggleCheck(user.id, e)}>
                   <Checkbox size="small" checked={isChecked}
-                    sx={{ p:0.3, color:"#E2E8F0", "&.Mui-checked":{color:"#1D4ED8"} }} />
+                    sx={{ p:0.3, color:"#E2E8F0", "&.Mui-checked":{color:"var(--color-brand-700)"} }} />
                 </div>
                 <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 text-[13px] font-bold"
                   style={{ backgroundColor: user.avatarColor, color: user.textColor }}>
@@ -826,7 +826,7 @@ function OrganizationPanel() {
   const { theme: orgTheme } = useTheme();
   const isDarkOrg = orgTheme === "dark";
   return (
-    <div className={`flex-1 overflow-y-auto px-8 pt-0 pb-8 space-y-5 ${isDarkOrg ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
+    <div className={`flex-1 overflow-y-auto px-4 sm:px-8 pt-0 pb-8 space-y-5 ${isDarkOrg ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <ProfileHero
         initials="S" name="Social DNA Labs" role="Super Admin"
         subtitle="India · INR"
@@ -1026,7 +1026,7 @@ function RoleTreeNode({ node, depth, selectedId, expandedIds, onSelect, onToggle
         }`}>
           {node.name}
         </div>
-        {isSelected && <CheckCircle size={14} color={isDark ? "#9CA3AF" : "#1D4ED8"} weight="duotone" />}
+        {isSelected && <CheckCircle size={14} color={isDark ? "#9CA3AF" : "var(--color-brand-700)"} weight="duotone" />}
       </div>
 
       {hasChildren && isExpanded && node.children!.map(child => (
@@ -1089,9 +1089,9 @@ function RolesPanel() {
   );
 
   return (
-    <div className="flex-1 flex overflow-hidden">
+    <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
       {/* Role sidebar */}
-      <div className={`w-[340px] shrink-0 flex flex-col border-r ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-surface"}`}>
+      <div className={`w-full md:w-[340px] shrink-0 flex flex-col border-b md:border-b-0 md:border-r max-h-[300px] md:max-h-none ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-surface"}`}>
         {/* Toolbar */}
         <div className={`px-4 py-3 border-b ${isDark ? "border-[#27272A]" : "border-border-light"} flex items-center gap-2`}>
           <div className={`flex items-center rounded-xl p-1 gap-1 ${isDark ? "bg-[#1C1C1E] border border-[#27272A]" : "bg-[#EFF6FF] border border-border-light"}`}>
@@ -1116,7 +1116,7 @@ function RolesPanel() {
           </div>
           <div className="flex-1" />
           <Button variant="contained" size="small" onClick={() => setNewRoleOpen(true)}
-            sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#D4D4D8" : "white", borderRadius:"9px", textTransform:"none", fontWeight:700, fontSize:"0.73rem", px:1.5, py:0.7, boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB", color: isDark ? "#F4F4F5" : "white" } }}>
+            sx={{ bgcolor: isDark ? "#27272A" : "var(--color-brand-700)", color: isDark ? "#D4D4D8" : "white", borderRadius:"9px", textTransform:"none", fontWeight:700, fontSize:"0.73rem", px:1.5, py:0.7, boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB", color: isDark ? "#F4F4F5" : "white" } }}>
             New Role
           </Button>
         </div>
@@ -1136,7 +1136,7 @@ function RolesPanel() {
       </div>
 
       {/* Role detail */}
-      <div className={`flex-1 overflow-y-auto px-8 pt-0 pb-8 ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
+      <div className={`flex-none md:flex-1 overflow-y-auto px-4 sm:px-8 pt-0 pb-8 ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
         {/* Tabs */}
         <div className="flex items-center gap-2 mb-5">
           {(["overview","timeline"] as const).map(tab => (
@@ -1170,11 +1170,11 @@ function RolesPanel() {
             };
           };
           const getIcon = (action: string) => {
-            if (action.toLowerCase().includes("created")) return { icon: Plus,          color:"#1D4ED8", bg:"#EFF6FF" };
-            if (action.toLowerCase().includes("updated")) return { icon: PencilSimple,  color:"#1D4ED8", bg:"#EFF6FF" };
-            if (action.toLowerCase().includes("modified"))return { icon: PencilSimple,  color:"#1D4ED8", bg:"#EFF6FF" };
-            if (action.toLowerCase().includes("changed")) return { icon: PencilSimple,  color:"#1D4ED8", bg:"#EFF6FF" };
-            return                                               { icon: PencilSimple,  color:"#1D4ED8", bg:"#EFF6FF" };
+            if (action.toLowerCase().includes("created")) return { icon: Plus,          color:"var(--color-brand-700)", bg:"#EFF6FF" };
+            if (action.toLowerCase().includes("updated")) return { icon: PencilSimple,  color:"var(--color-brand-700)", bg:"#EFF6FF" };
+            if (action.toLowerCase().includes("modified"))return { icon: PencilSimple,  color:"var(--color-brand-700)", bg:"#EFF6FF" };
+            if (action.toLowerCase().includes("changed")) return { icon: PencilSimple,  color:"var(--color-brand-700)", bg:"#EFF6FF" };
+            return                                               { icon: PencilSimple,  color:"var(--color-brand-700)", bg:"#EFF6FF" };
           };
           // group by date
           const grouped: { date: string; items: typeof roleActivities }[] = [];
@@ -1190,7 +1190,7 @@ function RolesPanel() {
               {/* Header */}
               <div className="flex items-center gap-2 px-5 py-3.5 border-b border-[#EFF6FF]">
                 <div className="w-6 h-6 rounded-lg bg-[#EFF6FF] flex items-center justify-center">
-                  <ClockCounterClockwise size={13} color="#1D4ED8" weight="duotone" />
+                  <ClockCounterClockwise size={13} color="var(--color-brand-700)" weight="duotone" />
                 </div>
                 <span className="font-heading text-[12px] font-bold uppercase tracking-wider text-slate-500">History</span>
               </div>
@@ -1368,7 +1368,7 @@ function PermissionPanel() {
         <div className={`text-[16px] sm:text-[18px] font-extrabold tracking-tight ${isDark ? "text-[#D4D4D8]" : "text-slate-900"}`}>Permissions</div>
         <Button variant="contained" size="small"
           onClick={() => setSaved(true)}
-          sx={{ bgcolor: saved ? "#10B981" : (isDark ? "#27272A" : "#1D4ED8"), color: saved ? "#fff" : (isDark ? "#D4D4D8" : "white"), borderRadius:"9px", textTransform:"none", fontWeight:700, fontSize:"0.75rem", px:2, py:0.8, boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", flexShrink: 0, "&:hover":{ bgcolor: saved ? "#059669" : (isDark ? "#3F3F46" : "#2563EB") } }}>
+          sx={{ bgcolor: saved ? "#10B981" : (isDark ? "#27272A" : "var(--color-brand-700)"), color: saved ? "#fff" : (isDark ? "#D4D4D8" : "white"), borderRadius:"9px", textTransform:"none", fontWeight:700, fontSize:"0.75rem", px:2, py:0.8, boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", flexShrink: 0, "&:hover":{ bgcolor: saved ? "#059669" : (isDark ? "#3F3F46" : "#2563EB") } }}>
           {saved ? "Saved!" : "Save Changes"}
         </Button>
       </div>
@@ -1695,7 +1695,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
         <button className={`flex items-center gap-1.5 px-2.5 py-1 border rounded-lg text-[13px] sm:text-[15px] font-semibold transition-colors ${isDark ? "border-[#3F3F46] text-[#D4D4D8] hover:border-[#60A5FA] bg-[#18181B]" : "border-border-light text-slate-700 hover:border-brand-700 bg-white"}`}>
           {layoutName} <CaretDown size={11} weight="bold" />
         </button>
-        <IconButton size="small" sx={{ p:0.5, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "#1D4ED8"}, borderRadius:"6px", display: { xs: "none", sm: "inline-flex" } }}>
+        <IconButton size="small" sx={{ p:0.5, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "var(--color-brand-700)"}, borderRadius:"6px", display: { xs: "none", sm: "inline-flex" } }}>
           <Gear size={14} weight="duotone" />
         </IconButton>
         <div className="flex-1 hidden sm:block" />
@@ -1748,7 +1748,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
             <div>
               <div className={`flex items-center justify-between px-4 py-3 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
                 <span className={`text-[15px] font-bold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>Available Fields</span>
-                <IconButton size="small" sx={{ p:0.4, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "#1D4ED8"}, borderRadius:"6px" }}>
+                <IconButton size="small" sx={{ p:0.4, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "var(--color-brand-700)"}, borderRadius:"6px" }}>
                   <MagnifyingGlass size={13} weight="duotone"/>
                 </IconButton>
               </div>
@@ -1809,7 +1809,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                   <div className={`flex items-center gap-2 px-4 py-2.5 border-b ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-[#fafcff]"}`}>
                     <DotsSixVertical size={14} color={isDark ? "#8A8A94" : "#64748B"}/>
                     <span className={`text-[13px] font-bold flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{section.title}</span>
-                    <IconButton size="small" sx={{ p:0.3, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "#1D4ED8"}, borderRadius:"6px" }}>
+                    <IconButton size="small" sx={{ p:0.3, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "var(--color-brand-700)"}, borderRadius:"6px" }}>
                       <Gear size={13} weight="duotone"/>
                     </IconButton>
                   </div>
@@ -1981,7 +1981,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                         ? isDark ? "border-[#60A5FA] bg-[#18181B] shadow-xs" : "border-brand-700 bg-[#EFF6FF] shadow-xs"
                         : isDark ? "border-[#27272A] bg-[#111113] hover:border-[#60A5FA] hover:bg-[#18181B]" : "border-border-light bg-surface hover:border-[#A5B4FC] hover:bg-[#EFF6FF]"}`}
                 >
-                  <DotsSixVertical size={16} color={bcDropIdx === idx ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#8A8A94" : "#64748B")} weight="bold" />
+                  <DotsSixVertical size={16} color={bcDropIdx === idx ? (isDark ? "#60A5FA" : "var(--color-brand-700)") : (isDark ? "#8A8A94" : "#64748B")} weight="bold" />
                   <div className="flex-1 min-w-0">
                     <div className={`text-[15px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-800"}`}>{field.label}</div>
                     <div className={`text-[12px] capitalize ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{field.type}</div>
@@ -2014,7 +2014,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
               <span className={`text-[15.5px] font-extrabold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
                 {layoutName.trim() || "Untitled Layout"} &middot; Preview
               </span>
-              <IconButton size="small" onClick={() => setPreviewOpen(false)} sx={{ p:0.4, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "#1D4ED8"}, borderRadius:"6px" }}>
+              <IconButton size="small" onClick={() => setPreviewOpen(false)} sx={{ p:0.4, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "var(--color-brand-700)"}, borderRadius:"6px" }}>
                 <X size={14} weight="bold"/>
               </IconButton>
             </div>
@@ -2125,7 +2125,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
             <div className="absolute left-0 top-full mt-0.5 text-[12px] text-red-500 font-medium whitespace-nowrap">Layout Name is required</div>
           )}
         </div>
-        <IconButton size="small" sx={{ p:0.5, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "#1D4ED8"}, borderRadius:"6px", display: { xs: "none", sm: "inline-flex" } }}>
+        <IconButton size="small" sx={{ p:0.5, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "var(--color-brand-700)"}, borderRadius:"6px", display: { xs: "none", sm: "inline-flex" } }}>
           <Gear size={14} weight="duotone" />
         </IconButton>
         <div className="flex-1 hidden sm:block" />
@@ -2182,7 +2182,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                                 : "border-[#EFF6FF] bg-slate-50 text-slate-500 cursor-not-allowed"
                           }`}
                           style={canDragFields ? { color: isDark ? "#93C5FD" : "#0C2472" } : {}}>
-                          <Icon size={11} color={canDragFields ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#71717A" : "#6B7A92")} weight="duotone" className="shrink-0" />
+                          <Icon size={11} color={canDragFields ? (isDark ? "#60A5FA" : "var(--color-brand-700)") : (isDark ? "#71717A" : "#6B7A92")} weight="duotone" className="shrink-0" />
                           <span className="truncate" title={ft.label}>{ft.label}</span>
                         </div>
                       );
@@ -2367,7 +2367,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
               <span className={`text-[15.5px] font-extrabold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>
                 {layoutName.trim() || "Untitled Layout"} &middot; Preview
               </span>
-              <IconButton size="small" onClick={() => setPreviewOpen(false)} sx={{ p:0.4, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "#1D4ED8"}, borderRadius:"6px" }}>
+              <IconButton size="small" onClick={() => setPreviewOpen(false)} sx={{ p:0.4, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "var(--color-brand-700)"}, borderRadius:"6px" }}>
                 <X size={14} weight="bold"/>
               </IconButton>
             </div>
@@ -2442,7 +2442,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                         ? isDark ? "border-[#60A5FA] bg-[#18181B] shadow-xs" : "border-brand-700 bg-[#EFF6FF] shadow-xs"
                         : isDark ? "border-[#27272A] bg-[#111113] hover:border-[#60A5FA] hover:bg-[#18181B]" : "border-border-light bg-surface hover:border-[#A5B4FC] hover:bg-[#EFF6FF]"}`}
                 >
-                  <DotsSixVertical size={16} color={dvBcDropIdx === idx ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#8A8A94" : "#64748B")} weight="bold" />
+                  <DotsSixVertical size={16} color={dvBcDropIdx === idx ? (isDark ? "#60A5FA" : "var(--color-brand-700)") : (isDark ? "#8A8A94" : "#64748B")} weight="bold" />
                   <div className="flex-1 min-w-0">
                     <div className={`text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-800"}`}>{field.label}</div>
                     {'type' in field && <div className={`text-[11px] capitalize ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{(field as any).type}</div>}
@@ -2659,11 +2659,11 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
             Modules
           </button>
           <div className="flex items-center gap-1">
-            <IconButton size="small" sx={{ p:0.4, color:"#6B7A92", "&:hover":{color:"#1D4ED8",bgcolor:"#EFF6FF"}, borderRadius:"6px", display: { xs: "none", md: "inline-flex" } }}>
+            <IconButton size="small" sx={{ p:0.4, color:"#6B7A92", "&:hover":{color:"var(--color-brand-700)",bgcolor:"#EFF6FF"}, borderRadius:"6px", display: { xs: "none", md: "inline-flex" } }}>
               <MagnifyingGlass size={13} weight="duotone" />
             </IconButton>
             <IconButton size="small" onClick={() => setSubNavOpen(o => !o)}
-              sx={{ p:0.4, color:"#6B7A92", "&:hover":{color:"#1D4ED8",bgcolor:"#EFF6FF"}, borderRadius:"6px", display: { xs: "inline-flex", md: "none" } }}>
+              sx={{ p:0.4, color:"#6B7A92", "&:hover":{color:"var(--color-brand-700)",bgcolor:"#EFF6FF"}, borderRadius:"6px", display: { xs: "inline-flex", md: "none" } }}>
               {subNavOpen ? <CaretUp size={13} weight="bold" /> : <CaretDown size={13} weight="bold" />}
             </IconButton>
           </div>
@@ -2728,7 +2728,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
               </div>
               <div className="flex justify-end mb-4">
                 <Button variant="contained" size="small" onClick={() => setShowCreateLayoutModal(true)}
-                  sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius:"8px", textTransform:"none", fontWeight:700, fontSize:"0.75rem", px:2, py:0.8, boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
+                  sx={{ bgcolor: isDark ? "#27272A" : "var(--color-brand-700)", color: isDark ? "#F4F4F5" : "white", borderRadius:"8px", textTransform:"none", fontWeight:700, fontSize:"0.75rem", px:2, py:0.8, boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
                   Create New Layout
                 </Button>
               </div>
@@ -2747,7 +2747,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                       <tr><td colSpan={4} className="px-4 py-8 text-center text-[15px] text-slate-500">No records found.</td></tr>
                     ) : layouts.map((l, i) => (
                       <tr key={i} className="border-b border-[#EFF6FF] last:border-0 hover:bg-[#fafcff] transition-colors">
-                        <td className="px-4 py-3 text-[15px] font-semibold cursor-pointer hover:underline" style={{ color: isDark ? "#60A5FA" : "#1D4ED8" }} onClick={() => onOpenLayout(l.name)}>{l.name}</td>
+                        <td className="px-4 py-3 text-[15px] font-semibold cursor-pointer hover:underline" style={{ color: isDark ? "#60A5FA" : "var(--color-brand-700)" }} onClick={() => onOpenLayout(l.name)}>{l.name}</td>
                         <td className="px-4 py-3 text-[13px] text-slate-500">{l.sharedTo}</td>
                         <td className="px-4 py-3">
                           <div className="flex items-center gap-1.5 text-[13px] text-slate-500">
@@ -2759,7 +2759,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                           <div className="flex items-center justify-end gap-2">
                             <Tooltip title="More actions">
                               <IconButton size="small" onClick={e => setLayoutMenu({ el: e.currentTarget, name: l.name })}
-                                sx={{ p:0.3, color: isDark ? "#9CA3AF" : "#94A3B8", "&:hover":{color:"#1D4ED8",bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px" }}>
+                                sx={{ p:0.3, color: isDark ? "#9CA3AF" : "#94A3B8", "&:hover":{color:"var(--color-brand-700)",bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px" }}>
                                 <DotsThreeVertical size={15} weight="bold" />
                               </IconButton>
                             </Tooltip>
@@ -2784,7 +2784,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                   "& .MuiMenuItem-root": {
                     fontSize: "14px", py: 1.2, px: 2.5, gap: 1.25,
                     color: isDark ? "#D4D4D8" : "#334155",
-                    "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF", color: isDark ? "#F4F4F5" : "#1D4ED8" },
+                    "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF", color: isDark ? "#F4F4F5" : "var(--color-brand-700)" },
                   },
                 } }}>
                 <MenuItem onClick={() => { const name = layoutMenu!.name; closeLayoutMenu(); setRenameLayout(name); setRenameLayoutValue(name); }}>
@@ -2824,7 +2824,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                     Cancel
                   </Button>
                   <Button onClick={handleRenameLayoutSubmit} variant="contained"
-                    sx={{ bgcolor: "#1D4ED8", color: "white", textTransform: "none", fontWeight: 600, borderRadius: "9px", "&:hover": { bgcolor: "#2563EB" } }}>
+                    sx={{ bgcolor: "var(--color-brand-700)", color: "white", textTransform: "none", fontWeight: 600, borderRadius: "9px", "&:hover": { bgcolor: "var(--color-brand-600)" } }}>
                     Save
                   </Button>
                 </DialogActions>
@@ -2873,7 +2873,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                     </div>
                     <Button variant="contained" size="small"
                       onClick={() => { setCreateEditLayout(layouts[0]?.name ?? ""); setShowCreateEditModal(true); }}
-                      sx={{ bgcolor:"#1D4ED8", color:"white", borderRadius:"8px", textTransform:"none", fontWeight:700, fontSize:"0.75rem", px:2, py:0.9, whiteSpace:"nowrap", boxShadow:"0 1px 6px #1D4ED833", "&:hover":{ bgcolor:"#2563EB" } }}>
+                      sx={{ bgcolor:"var(--color-brand-700)", color:"white", borderRadius:"8px", textTransform:"none", fontWeight:700, fontSize:"0.75rem", px:2, py:0.9, whiteSpace:"nowrap", boxShadow:"0 1px 6px #1D4ED833", "&:hover":{ bgcolor:"#2563EB" } }}>
                       Create and Edit Fields
                     </Button>
                   </div>
@@ -2964,8 +2964,8 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                                       onClick={() => setPerm(f.name, val)}
                                       className="w-5 h-5 rounded-full border-2 flex items-center justify-center mx-auto transition-colors"
                                       style={{
-                                        borderColor: perm === val ? "#1D4ED8" : "#CBD5E1",
-                                        backgroundColor: perm === val ? "#1D4ED8" : "transparent",
+                                        borderColor: perm === val ? "var(--color-brand-700)" : "#CBD5E1",
+                                        backgroundColor: perm === val ? "var(--color-brand-700)" : "transparent",
                                       }}
                                     >
                                       {perm === val && <span className="w-2 h-2 rounded-full bg-white block" />}
@@ -3001,16 +3001,16 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
               Create and Edit Fields in Layout Editor
             </div>
             <FormControl fullWidth size="small" sx={{ mb: 5 }}>
-              <InputLabel sx={{ fontSize: "0.8rem", color: "#1D4ED8" }}>Select Layout</InputLabel>
+              <InputLabel sx={{ fontSize: "0.8rem", color: "var(--color-brand-700)" }}>Select Layout</InputLabel>
               <Select
                 value={createEditLayout}
                 label="Select Layout"
                 onChange={e => setCreateEditLayout(e.target.value)}
                 sx={{
                   borderRadius: "10px", fontSize: "0.8rem",
-                  "& .MuiOutlinedInput-notchedOutline": { borderColor: "#1D4ED8" },
-                  "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "#1D4ED8" },
-                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": { borderColor: "#1D4ED8" },
+                  "& .MuiOutlinedInput-notchedOutline": { borderColor: "var(--color-brand-700)" },
+                  "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "var(--color-brand-700)" },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": { borderColor: "var(--color-brand-700)" },
                 }}>
                 {layouts.map(l => (
                   <MenuItem key={l.name} value={l.name} sx={{ fontSize: "0.8rem" }}>{l.name}</MenuItem>
@@ -3046,11 +3046,11 @@ function CreateLayoutModal({ existingLayouts, onClose, onContinue }: {
       <div className="w-[92vw] max-w-[460px] bg-white rounded-2xl shadow-2xl p-4 sm:p-6">
         <div className="text-[17px] font-extrabold text-slate-900 mb-5">Create New Layout</div>
         <FormControl fullWidth size="small" sx={{ mb: 5 }}>
-          <InputLabel sx={{ fontSize: "0.8rem", color: "#1D4ED8" }}>Clone Layout from</InputLabel>
+          <InputLabel sx={{ fontSize: "0.8rem", color: "var(--color-brand-700)" }}>Clone Layout from</InputLabel>
           <Select value={cloneFrom} label="Clone Layout from" onChange={e => setCloneFrom(e.target.value)}
             sx={{ borderRadius: "10px", fontSize: "0.8rem",
-              "& .MuiOutlinedInput-notchedOutline": { borderColor: "#1D4ED8" },
-              "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "#1D4ED8" } }}>
+              "& .MuiOutlinedInput-notchedOutline": { borderColor: "var(--color-brand-700)" },
+              "&:hover .MuiOutlinedInput-notchedOutline": { borderColor: "var(--color-brand-700)" } }}>
             {existingLayouts.map(l => (<MenuItem key={l} value={l} sx={{ fontSize: "0.8rem" }}>{l}</MenuItem>))}
             <MenuItem value="__scratch__" sx={{ fontSize: "0.8rem" }}>Create from scratch (empty)</MenuItem>
           </Select>
@@ -3110,7 +3110,7 @@ function LeadConversionMappingModal({ open, onClose, isDark }: { open: boolean; 
       </DialogContent>
       <DialogActions sx={{ px: 3, pb: 2.5 }}>
         <Button onClick={onClose} variant="contained"
-          sx={{ bgcolor: "#1D4ED8", color: "white", textTransform: "none", fontWeight: 600, borderRadius: "9px", "&:hover": { bgcolor: "#2563EB" } }}>
+          sx={{ bgcolor: "var(--color-brand-700)", color: "white", textTransform: "none", fontWeight: 600, borderRadius: "9px", "&:hover": { bgcolor: "var(--color-brand-600)" } }}>
           Done
         </Button>
       </DialogActions>
@@ -3191,7 +3191,7 @@ function ModulesAndFieldsPanel() {
         <div className="flex-1 hidden sm:block" />
         <Button variant="contained" size="small"
           onClick={() => { setSelectedMod("new"); setView("detail"); }}
-          sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius:"9px", textTransform:"none", fontWeight:700, fontSize:"0.75rem", px:2, py:0.8, boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", whiteSpace:"nowrap", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
+          sx={{ bgcolor: isDark ? "#27272A" : "var(--color-brand-700)", color: isDark ? "#F4F4F5" : "white", borderRadius:"9px", textTransform:"none", fontWeight:700, fontSize:"0.75rem", px:2, py:0.8, boxShadow: isDark ? "none" : "0 1px 6px #1D4ED833", whiteSpace:"nowrap", "&:hover":{ bgcolor: isDark ? "#3F3F46" : "#2563EB" } }}>
           Create New Module
         </Button>
       </div>
@@ -3235,13 +3235,13 @@ function ModulesAndFieldsPanel() {
                   <div className="flex items-center justify-center gap-2">
                     <Tooltip title="More actions">
                       <IconButton size="small" onClick={e => setRowMenu({ el: e.currentTarget, key: mod.key })}
-                        sx={{ p:0.3, color: isDark ? "#9CA3AF" : "#94A3B8", "&:hover":{color:"#1D4ED8",bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px" }}>
+                        sx={{ p:0.3, color: isDark ? "#9CA3AF" : "#94A3B8", "&:hover":{color:"var(--color-brand-700)",bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px" }}>
                         <DotsThreeVertical size={15} weight="bold" />
                       </IconButton>
                     </Tooltip>
                     <GreenSwitch checked={isOn} onChange={() => setModStatuses(p => ({ ...p, [mod.key]: !p[mod.key] }))} />
                     <Tooltip title="Module info">
-                      <IconButton size="small" sx={{ p:0.3, color: isDark ? "#9CA3AF" : "#94A3B8", "&:hover":{color:"#1D4ED8",bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px" }}>
+                      <IconButton size="small" sx={{ p:0.3, color: isDark ? "#9CA3AF" : "#94A3B8", "&:hover":{color:"var(--color-brand-700)",bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px" }}>
                         <Info size={13} weight="duotone" />
                       </IconButton>
                     </Tooltip>
@@ -3266,7 +3266,7 @@ function ModulesAndFieldsPanel() {
           "& .MuiMenuItem-root": {
             fontSize: "14px", py: 1.2, px: 2.5, gap: 1.25,
             color: isDark ? "#D4D4D8" : "#334155",
-            "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF", color: isDark ? "#F4F4F5" : "#1D4ED8" },
+            "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF", color: isDark ? "#F4F4F5" : "var(--color-brand-700)" },
           },
         } }}>
         <MenuItem onClick={() => { const k = rowMenu!.key; closeRowMenu(); openDetail(k, "layouts"); }}>
@@ -3306,7 +3306,7 @@ function ModulesAndFieldsPanel() {
             Cancel
           </Button>
           <Button onClick={handleRenameSubmit} variant="contained"
-            sx={{ bgcolor: "#1D4ED8", color: "white", textTransform: "none", fontWeight: 600, borderRadius: "9px", "&:hover": { bgcolor: "#2563EB" } }}>
+            sx={{ bgcolor: "var(--color-brand-700)", color: "white", textTransform: "none", fontWeight: 600, borderRadius: "9px", "&:hover": { bgcolor: "var(--color-brand-600)" } }}>
             Save
           </Button>
         </DialogActions>
@@ -3445,7 +3445,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                   i < step
                     ? "bg-brand-700 text-white"
                     : i === step
-                      ? isDark ? "bg-brand-700/20 text-[#93C5FD] ring-2 ring-[#1D4ED8]" : "bg-brand-700/10 text-brand-700 ring-2 ring-[#1D4ED8]"
+                      ? isDark ? "bg-brand-700/20 text-[#93C5FD] ring-2 ring-brand-700" : "bg-brand-700/10 text-brand-700 ring-2 ring-brand-700"
                       : isDark ? "bg-[#27272A] text-[#A1A1AA]" : "bg-border-light text-slate-500"
                 }`}>
                   {i < step ? <CheckCircle size={15} weight="bold" /> : i + 1}
@@ -3467,7 +3467,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-8 pt-0 pb-8 space-y-6">
+      <div className="flex-1 overflow-y-auto px-4 sm:px-8 pt-0 pb-8 space-y-6">
         {/* Step 1 — Name Dashboard */}
         {step === 0 && (
           <div>
@@ -3500,7 +3500,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                       <div className={`text-[14px] font-semibold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>{mode.label}</div>
                       <div className={`text-[12px] mt-0.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{mode.desc}</div>
                     </div>
-                    {shareMode === mode.key && <CheckCircle size={18} weight="fill" color="#1D4ED8" className="shrink-0 mt-0.5" />}
+                    {shareMode === mode.key && <CheckCircle size={18} weight="fill" color="var(--color-brand-700)" className="shrink-0 mt-0.5" />}
                   </button>
                 ))}
               </div>
@@ -3513,7 +3513,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                   {ALL_ROLES.map(role => (
                     <label key={role} className={`flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer transition-colors ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}>
                       <Checkbox size="small" checked={sharedWith.includes(role)} onChange={() => toggleRole(role)}
-                        sx={{ p: 0.3, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "#1D4ED8" } }} />
+                        sx={{ p: 0.3, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "var(--color-brand-700)" } }} />
                       <span className={`text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{role}</span>
                     </label>
                   ))}
@@ -3540,7 +3540,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                   {filteredUsers.map(u => (
                     <label key={u.id} className={`flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer transition-colors ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}>
                       <Checkbox size="small" checked={sharedUserIds.includes(u.id)} onChange={() => toggleUser(u.id)}
-                        sx={{ p: 0.3, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "#1D4ED8" } }} />
+                        sx={{ p: 0.3, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "var(--color-brand-700)" } }} />
                       <div className="w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0"
                         style={{ backgroundColor: u.avatarColor, color: u.textColor }}>{u.initials}</div>
                       <div className="flex-1 min-w-0">
@@ -3661,12 +3661,12 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
         )}
         {step < STEPPER_STEPS.length - 1 ? (
           <Button variant="contained" endIcon={<CaretRight size={15} weight="bold" />} onClick={() => setStep(s => s + 1)} disabled={!canAdvance}
-            sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius: "9px", textTransform: "none", fontWeight: 700, fontSize: "0.82rem", px: 3, boxShadow: isDark ? "none" : "0 1px 8px #1D4ED833", "&:hover": { bgcolor: isDark ? "#3F3F46" : "#2563EB" }, "&:disabled": { bgcolor: isDark ? "#1C1C1E" : "#E2E8F0", color: isDark ? "#52525B" : "#CBD5E1" } }}>
+            sx={{ bgcolor: isDark ? "#27272A" : "var(--color-brand-700)", color: isDark ? "#F4F4F5" : "white", borderRadius: "9px", textTransform: "none", fontWeight: 700, fontSize: "0.82rem", px: 3, boxShadow: isDark ? "none" : "0 1px 8px #1D4ED833", "&:hover": { bgcolor: isDark ? "#3F3F46" : "#2563EB" }, "&:disabled": { bgcolor: isDark ? "#1C1C1E" : "#E2E8F0", color: isDark ? "#52525B" : "#CBD5E1" } }}>
             Next
           </Button>
         ) : (
           <Button variant="contained" onClick={handleSubmit} disabled={!name.trim()}
-            sx={{ bgcolor: isDark ? "#27272A" : "#1D4ED8", color: isDark ? "#F4F4F5" : "white", borderRadius: "9px", textTransform: "none", fontWeight: 700, fontSize: "0.82rem", px: 3, boxShadow: isDark ? "none" : "0 1px 8px #1D4ED833", "&:hover": { bgcolor: isDark ? "#3F3F46" : "#2563EB" }, "&:disabled": { bgcolor: isDark ? "#1C1C1E" : "#E2E8F0", color: isDark ? "#52525B" : "#CBD5E1" } }}>
+            sx={{ bgcolor: isDark ? "#27272A" : "var(--color-brand-700)", color: isDark ? "#F4F4F5" : "white", borderRadius: "9px", textTransform: "none", fontWeight: 700, fontSize: "0.82rem", px: 3, boxShadow: isDark ? "none" : "0 1px 8px #1D4ED833", "&:hover": { bgcolor: isDark ? "#3F3F46" : "#2563EB" }, "&:disabled": { bgcolor: isDark ? "#1C1C1E" : "#E2E8F0", color: isDark ? "#52525B" : "#CBD5E1" } }}>
             Save & Preview
           </Button>
         )}
@@ -3757,7 +3757,7 @@ function CustomizeHomepagePanel() {
     "& .MuiMenuItem-root": {
       fontSize: "14px", py: 1.2, px: 2.5,
       color: isDark ? "#D4D4D8" : "#334155",
-      "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF", color: isDark ? "#F4F4F5" : "#1D4ED8" },
+      "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF", color: isDark ? "#F4F4F5" : "var(--color-brand-700)" },
     },
   };
 
@@ -3772,7 +3772,7 @@ function CustomizeHomepagePanel() {
           </div>
         </div>
         <Button variant="contained" onClick={() => setCreateOpen(true)}
-          sx={{ bgcolor: "#1D4ED8", color: "white", borderRadius: "9px", textTransform: "none", fontWeight: 600, fontSize: "14px", px: 2.5, py: 1, boxShadow: "0 1px 8px #1D4ED833", "&:hover": { bgcolor: "#2563EB" }, "&:active": { bgcolor: "#0C2472" }, whiteSpace: "nowrap", flexShrink: 0 }}>
+          sx={{ bgcolor: "var(--color-brand-700)", color: "white", borderRadius: "9px", textTransform: "none", fontWeight: 600, fontSize: "14px", px: 2.5, py: 1, boxShadow: "0 1px 8px #1D4ED833", "&:hover": { bgcolor: "var(--color-brand-600)" }, "&:active": { bgcolor: "#0C2472" }, whiteSpace: "nowrap", flexShrink: 0 }}>
           Create Dashboard
         </Button>
       </div>
@@ -3927,7 +3927,7 @@ function ImportPanel() {
             : "border-border-light bg-white hover:bg-surface"
         }`}>
           <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
-            <Upload size={32} color={isDark ? "#64748B" : "#1D4ED8"} weight="duotone" />
+            <Upload size={32} color={isDark ? "#64748B" : "var(--color-brand-700)"} weight="duotone" />
           </div>
 
           <h3 className={`text-[15px] font-bold mb-2 ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Upload file</h3>
@@ -4020,7 +4020,20 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
   const toggle = (key: string) => setCollapsed(p => ({ ...p, [key]: !p[key] }));
 
   return (
-    <div className={`w-full md:w-[240px] shrink-0 border-b md:border md:rounded-2xl md:shadow-xs flex flex-col overflow-y-auto max-h-sidebar-expanded md:max-h-none transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-(--bg-aside) border-border-light"}`}>
+    <>
+    {/* Mobile: the menu becomes a swipeable row of chips so the content gets the full screen. */}
+    <div role="tablist" aria-label="Settings sections" className={`md:hidden shrink-0 flex gap-2 overflow-x-auto scroll-thin px-3 py-3 border-b ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-(--bg-aside) border-border-light"}`}>
+      {SECTIONS.flatMap(s => s.items).map(item => {
+        const IIcon = item.icon; const isActive = activeItem === item.key;
+        return (
+          <button key={item.key} role="tab" aria-selected={isActive} onClick={(e) => { setActiveItem(item.key); e.currentTarget.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" }); }}
+            className={`shrink-0 inline-flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-[13px] font-semibold whitespace-nowrap transition-colors ${isActive ? "bg-brand-700 border-brand-700 text-white" : isDark ? "border-[#3F3F46] text-[#A1A1AA]" : "border-border-light bg-white text-slate-600"}`}>
+            <IIcon size={14} weight="duotone" />{item.label}
+          </button>
+        );
+      })}
+    </div>
+    <div className={`w-full md:w-[240px] shrink-0 border-b md:border md:rounded-2xl md:shadow-xs hidden md:flex flex-col overflow-y-auto transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-(--bg-aside) border-border-light"}`}>
       <div className={`px-5 pt-7 pb-5 border-b transition-colors duration-300 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-xl bg-brand-700 flex items-center justify-center shadow-xs shrink-0">
@@ -4039,8 +4052,8 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
           return (
             <div key={section.key}>
               <button onClick={() => toggle(section.key)} aria-expanded={isOpen}
-                className={`flex items-center justify-between w-full px-2 py-1.5 rounded-lg transition-colors group min-h-[32px] outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6] ${isDark ? "hover:bg-brand-700/15" : "hover:bg-[#EFF6FF]"}`}>
-                <span className={`font-heading text-[13px] font-bold uppercase tracking-widest transition-colors truncate ${isDark ? "text-[#A1A1AA] group-hover:text-[#D4D4D8]" : "text-slate-500 group-hover:text-slate-700"}`}>
+                className={`flex items-center justify-between w-full px-2 py-1.5 rounded-lg transition-colors group min-h-[40px] outline-hidden focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6] ${isDark ? "hover:bg-brand-700/15" : "hover:bg-[#EFF6FF]"}`}>
+                <span className={`font-heading text-[13px] font-bold uppercase transition-colors truncate ${isDark ? "text-[#A1A1AA] group-hover:text-[#D4D4D8]" : "text-slate-500 group-hover:text-slate-700"}`}>
                   {section.label}
                 </span>
                 {isOpen ? <CaretUp size={10} color={isDark ? "#8A8A94" : "#64748B"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#8A8A94" : "#64748B"} weight="bold" />}
@@ -4055,15 +4068,15 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
                       <button key={item.key} aria-current={isActive ? "page" : undefined}
                         onClick={(e) => { setActiveItem(item.key); e.currentTarget.blur(); }}
                         style={{ WebkitTapHighlightColor: "transparent" }}
-                        className={`relative flex items-center gap-2 w-full px-3 py-2.5 rounded-xl text-[15px] font-medium transition-all min-h-[36px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#3B82F6] ${
-                          isDark ? "focus-visible:ring-[#3B82F6]" : "focus-visible:ring-[#1D4ED8]"
+                        className={`relative flex items-center gap-2 w-full px-3 py-1 rounded-xl text-[14px] font-medium transition-all min-h-[30px] outline-hidden focus:outline-hidden focus:bg-none focus-visible:ring-2 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#3B82F6] ${
+                          isDark ? "focus-visible:ring-[#3B82F6]" : "focus-visible:ring-brand-700"
                         } ${
                           isActive
                             ? isDark ? "bg-[#27272A] text-[#F4F4F5] font-semibold" : "bg-[#EFF6FF] text-brand-700 font-semibold"
                             : isDark ? "text-[#9CA3AF] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "text-slate-500 hover:bg-[#EFF6FF]/60 hover:text-slate-700"
                         }`}>
                         {isActive && <span className={`absolute left-0 top-1.5 bottom-1.5 w-[3px] rounded-r-full ${isDark ? "bg-[#9CA3AF]" : "bg-brand-700"}`} />}
-                        <IIcon size={13} color={isActive ? (isDark ? "#6B8BA3" : "#1D4ED8") : "#94A3B8"} weight="duotone" />
+                        <IIcon size={13} color={isActive ? (isDark ? "#6B8BA3" : "var(--color-brand-700)") : "#94A3B8"} weight="duotone" />
                         <span className="truncate">{item.label}</span>
                       </button>
                     );
@@ -4075,6 +4088,7 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
         })}
       </nav>
     </div>
+    </>
   );
 }
 

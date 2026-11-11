@@ -193,7 +193,7 @@ body {
   --bg-sidebar:    #0C2472;
   --bg-topbar:     #E3ECFC;
   --bg-aside:      rgb(245, 249, 255);
-  --bg-header:     #f8fbff;
+  --bg-header:     #eff6ff;
   /* Dashboard canvas gradient (built from existing tokens) */
   --canvas-from:   var(--bg-page);
   --canvas-via:    color-mix(in srgb, var(--color-brand-100, #dbeafe) 28%, var(--bg-page));

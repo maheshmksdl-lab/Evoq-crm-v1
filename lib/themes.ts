@@ -15,12 +15,12 @@ export interface Theme {
 
 export const THEMES: Theme[] = [
   { id: "evoq",     name: "EVOQ Classic",  audience: "Default",    description: "The original EVOQ blue.",                              primary: "#1d4ed8", accent: "#3b82f6", secondary: "#dbeafe" },
-  { id: "sky",      name: "Sky Mist",      audience: "Blue variant", description: "Light blue sidebar and header over a deeper blue canvas.", primary: "#1d4ed8", accent: "#3b82f6", secondary: "#dbeafe",
-    layout: { aside: "#EEF5FE", header: "#F3F8FE", canvas: ["#F8FAFE", "#EDF4FC", "#EAF1FB"] } },
-  { id: "ocean",    name: "Ocean Breeze",  audience: "Blue variant", description: "Fresh sky-cyan blues, light navigation, soft ocean canvas.", primary: "#0369A1", accent: "#0EA5E9", secondary: "#bae6fd",
-    layout: { aside: "#ECF6FC", header: "#F2F9FD", canvas: ["#F7FBFD", "#EBF5FB", "#E8F2F9"] } },
-  { id: "periwinkle", name: "Periwinkle",  audience: "Blue variant", description: "Soft blue-violet navigation with a gentle periwinkle canvas.", primary: "#3949AB", accent: "#5C7CFA", secondary: "#dbe4ff",
-    layout: { aside: "#F0F2FD", header: "#F5F6FE", canvas: ["#F8F9FE", "#EFF1FC", "#EBEEFA"] } },
+  { id: "sky",      name: "Sky Mist",      audience: "Airy",       description: "Brighter CRM blue with light, airy navigation.",       primary: "#2563eb", accent: "#60a5fa", secondary: "#dbeafe",
+    layout: { aside: "#F0F6FF", header: "#F3F8FF", canvas: ["#F8FAFF", "#EEF4FE", "#E9F1FD"] } },
+  { id: "navy",     name: "Navy Slate",    audience: "Deep",       description: "Deeper CRM navy with cool slate-blue surfaces.",       primary: "#1e40af", accent: "#3b82f6", secondary: "#bfdbfe",
+    layout: { aside: "#E9EFFA", header: "#EEF3FB", canvas: ["#F6F8FC", "#EAEFF8", "#E3EAF6"] } },
+  { id: "frost",    name: "Azure Frost",   audience: "Crisp",      description: "Classic CRM blue with frosted, pale-blue navigation.", primary: "#1d4ed8", accent: "#93c5fd", secondary: "#dbeafe",
+    layout: { aside: "#E3ECFC", header: "#EFF6FF", canvas: ["#F9FBFF", "#F0F6FF", "#EAF2FE"] } },
   { id: "clinic",   name: "Clinic Blue",  audience: "Calm",       description: "Calm, professional blues for everyday work.",          primary: "#2563A8", accent: "#2BA6C9", secondary: "#7CCFC4" },
   { id: "mint",     name: "Fresh Mint",    audience: "Fresh",      description: "Clean teal and mint, bright and reassuring.",          primary: "#0E7C80", accent: "#2EB5BC", secondary: "#79D6CB" },
   { id: "rose",     name: "Rose Quartz",   audience: "Refined",    description: "Soft rose and blush with a refined feel.",             primary: "#A23B64", accent: "#C46C94", secondary: "#9ED6C7" },

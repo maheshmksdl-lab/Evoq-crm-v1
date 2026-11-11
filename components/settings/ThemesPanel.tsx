@@ -156,7 +156,7 @@ export default function ThemesPanel() {
   const [msg, setMsg] = useState("");
   const choose = (id: string, name: string) => { saveThemeSettings({ theme: id }); applyTheme(id, null); setMsg(`${name} theme applied`); };
   return (
-    <div className={`flex-1 overflow-y-auto px-8 pt-0 pb-8 ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
+    <div className={`flex-1 overflow-y-auto px-4 sm:px-8 pt-0 pb-8 ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <BrandEditor isDark={isDark} />
       <Panel isDark={isDark} title="Ready-made themes" sub="Choose a look that suits your company. These change colours only.">
         <ul className="m-0 grid list-none gap-4 p-4 sm:grid-cols-2 xl:grid-cols-3">
