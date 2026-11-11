@@ -315,7 +315,7 @@ export default function DealsPage() {
                   className={`flex items-center gap-1.5 px-3 py-[7px] rounded-xl text-[14px]/[18px] font-medium whitespace-nowrap transition-all border ${
                     active
                       ? isDark ? "bg-[#18181B] text-white shadow-xs shadow-[#27272A]/10 border-[#27272A]" : "bg-brand-700 text-white shadow-xs shadow-[#1D4ED8]/25 border-brand-700"
-                      : isDark ? "bg-[#0A0A0A] text-[#A1A1AA] border-[#27272A] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "bg-surface text-[#0C2472] border-border-light hover:bg-border-light"
+                      : isDark ? "bg-[#0A0A0A] text-[#A1A1AA] border-[#27272A] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "bg-[rgb(227,236,252)] text-[#0C2472] border-border-light hover:bg-border-light"
                   }`}>
                   {stage}
                   {cnt > 0 && <span className={`text-[13px]/[16px] font-medium px-1.5 py-0.5 rounded-full leading-none ${

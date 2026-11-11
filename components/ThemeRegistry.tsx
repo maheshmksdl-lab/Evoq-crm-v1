@@ -77,9 +77,24 @@ function buildTheme(isDark: boolean) {
             fontWeight: 600,
             borderRadius: "8px",
             fontFamily: BODY,
-            transition: "background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease",
-            padding: "10px 16px",
+            transition: "background-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease, border-color 0.2s ease",
             fontSize: "0.875rem",
+          },
+          sizeSmall: {
+            padding: "8px 14px",
+            fontSize: "0.8125rem",
+            height: "36px",
+            minWidth: "auto",
+          },
+          sizeMedium: {
+            padding: "10px 16px",
+            height: "40px",
+            minWidth: "auto",
+          },
+          sizeLarge: {
+            padding: "12px 20px",
+            height: "48px",
+            minWidth: "auto",
           },
           containedPrimary: {
             backgroundColor: C.primary,
@@ -93,14 +108,46 @@ function buildTheme(isDark: boolean) {
             borderColor: border,
             color: C.primary,
             backgroundColor: "transparent",
-            "&:hover": { borderColor: C.primary, backgroundColor: `${C.primary}08` },
-            "&:active": { borderColor: C.primary, backgroundColor: `${C.primary}12` },
+            border: `1px solid ${border}`,
+            "&:hover": { borderColor: C.primary, backgroundColor: `${C.primary}08`, border: `1px solid ${C.primary}` },
+            "&:active": { borderColor: C.primary, backgroundColor: `${C.primary}12`, border: `1px solid ${C.primary}` },
             "&.Mui-disabled": { borderColor: border, color: "#9CA3AF", backgroundColor: "transparent" },
           },
           textPrimary: {
             color: C.primary,
-            "&:hover": { backgroundColor: isDark ? "#27272A" : "#EFF6FF", color: C.depth },
-            "&:active": { color: C.depth },
+            padding: "8px 12px",
+            "&:hover": { backgroundColor: isDark ? "rgba(255,255,255,0.08)" : "rgba(96, 165, 250, 0.1)", color: C.depth },
+            "&:active": { backgroundColor: isDark ? "rgba(255,255,255,0.12)" : "rgba(96, 165, 250, 0.15)", color: C.depth },
+          },
+        },
+      },
+
+      // ── Icon Button ────────────────────────────────────
+      MuiIconButton: {
+        styleOverrides: {
+          root: {
+            width: "40px",
+            height: "40px",
+            borderRadius: "8px",
+            color: textBod,
+            transition: "background-color 0.2s ease, color 0.2s ease",
+            "&:hover": { backgroundColor: isDark ? "rgba(255,255,255,0.08)" : "rgba(96, 165, 250, 0.1)" },
+            "&.Mui-disabled": { color: "#9CA3AF", backgroundColor: "transparent" },
+          },
+          sizeSmall: {
+            width: "36px",
+            height: "36px",
+            fontSize: "1.25rem",
+          },
+          sizeMedium: {
+            width: "40px",
+            height: "40px",
+            fontSize: "1.5rem",
+          },
+          sizeLarge: {
+            width: "48px",
+            height: "48px",
+            fontSize: "1.75rem",
           },
         },
       },

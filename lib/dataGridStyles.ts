@@ -1,93 +1,152 @@
 import type { SxProps, Theme } from "@mui/material/styles";
 
-// Shared MUI X DataGrid theming so every list page (Leads, Deals, Contacts,
-// Accounts, Tasks, Reports) looks consistent with the app's existing
-// light/dark palette instead of DataGrid's generic defaults.
+// Shared MUI X DataGrid theming - matched exactly to RecentDeals table styling
+// Reference: components/dashboard/RecentDeals.tsx
+// Every list page (Leads, Deals, Contacts, Accounts) uses this consistently.
 export const getDataGridSx = (isDark: boolean): SxProps<Theme> => ({
   border: "none",
   bgcolor: isDark ? "#0A0A0A" : "#f9fbff",
   fontFamily: "inherit",
 
+  // ──────────────────────────────────────────────────────────────────
+  // COLUMN HEADERS - Matching RecentDeals exactly
+  // ──────────────────────────────────────────────────────────────────
   "& .MuiDataGrid-columnHeaders": {
-    bgcolor: isDark ? "#18181B" : "#E3ECFC",
-    borderBottom: `1px solid ${isDark ? "#27272A" : "#E3ECFC"}`,
+    backgroundColor: `${isDark ? "#111111" : "#EFF6FF"} !important`,
+    borderBottom: `1px solid ${isDark ? "#27272A" : "#E3ECFC"} !important`,
   },
+
   "& .MuiDataGrid-columnHeader": {
     outline: "none !important",
+    // Horizontal inset only — columnHeaderHeight is a fixed pixel box (see
+    // columnHeaderHeight={40} on each page); vertical padding here would eat
+    // into that fixed height and clip the header content instead of centering it.
+    padding: "0 16px !important",
   },
-  "& .MuiDataGrid-columnHeaderTitleContainer": {
-    fontSize: "13px",
-    fontWeight: 600,
-    lineHeight: "18px",
-  },
-  "& .MuiDataGrid-columnSeparator": { display: "none" },
 
+  // Typography fallback for columns that render a plain headerName (no custom
+  // renderHeader). Every current column uses a local <ColHeader> component with
+  // its own Tailwind classes, which take precedence over these inherited values
+  // since they're set explicitly on that element — so this never fights it.
+  "& .MuiDataGrid-columnHeaderTitle": {
+    fontSize: "11.5px !important",
+    fontWeight: "700 !important",
+    textTransform: "uppercase !important",
+    letterSpacing: "0.05em !important",
+    color: `${isDark ? "#9CA3AF" : "#0C2472"} !important`,
+  },
+
+  "& .MuiDataGrid-columnSeparator": {
+    display: "none !important",
+  },
+
+  // ──────────────────────────────────────────────────────────────────
+  // CELLS - Matching RecentDeals typography/colors within the fixed
+  // rowHeight={44} box (vertical padding would clip content the same way).
+  // ──────────────────────────────────────────────────────────────────
   "& .MuiDataGrid-cell": {
-    borderBottom: `1px solid ${isDark ? "#18181B" : "#EFF6FF"}`,
-    outline: "none !important",
-    display: "flex",
-    alignItems: "center",
-  },
-  "& .MuiDataGrid-cell:focus, & .MuiDataGrid-cell:focus-within": {
+    borderBottom: `1px solid ${isDark ? "#27272A" : "#E3ECFC"} !important`,
+    padding: "0 16px !important",
+    backgroundColor: `${isDark ? "#18181B" : "#f9fbff"} !important`,
+    color: `${isDark ? "#D4D4D8" : "#334155"} !important`,
+    display: "flex !important",
+    alignItems: "center !important",
+    fontSize: "14px !important",
     outline: "none !important",
   },
 
+  "& .MuiDataGrid-cell:focus": {
+    outline: "none !important",
+  },
+
+  "& .MuiDataGrid-cell:focus-within": {
+    outline: "none !important",
+  },
+
+  // ──────────────────────────────────────────────────────────────────
+  // ROWS - Matching RecentDeals hover/selection
+  // ──────────────────────────────────────────────────────────────────
   "& .MuiDataGrid-row": {
-    cursor: "pointer",
-    "&:hover": {
-      bgcolor: isDark ? "#0F0F0F" : "rgba(96, 165, 250, 0.04)",
-    },
-    "&.Mui-selected": {
-      bgcolor: isDark ? "#18181B" : "#EFF6FF",
-      "&:hover": { bgcolor: isDark ? "#18181B" : "#EFF6FF" },
-    },
+    cursor: "pointer !important",
   },
 
+  "& .MuiDataGrid-row:hover": {
+    backgroundColor: `${isDark ? "rgba(255,255,255,0.03)" : "rgba(29,78,216,0.04)"} !important`,
+  },
+
+  "& .MuiDataGrid-row.Mui-selected": {
+    backgroundColor: `${isDark ? "#1B1B20" : "rgba(59,130,246,0.12)"} !important`,
+  },
+
+  "& .MuiDataGrid-row.Mui-selected:hover": {
+    backgroundColor: `${isDark ? "#1B1B20" : "rgba(59,130,246,0.12)"} !important`,
+  },
+
+  "& .MuiDataGrid-row.Mui-selected .MuiDataGrid-cell": {
+    backgroundColor: `${isDark ? "#1B1B20" : "rgba(59,130,246,0.12)"} !important`,
+  },
+
+  // ──────────────────────────────────────────────────────────────────
+  // FOOTER & PAGINATION
+  // ──────────────────────────────────────────────────────────────────
   "& .MuiDataGrid-footerContainer": {
-    borderTop: `1px solid ${isDark ? "#18181B" : "#EFF6FF"}`,
-    bgcolor: isDark ? "#0A0A0A" : "#f9fbff",
+    borderTop: `1px solid ${isDark ? "#27272A" : "#E3ECFC"} !important`,
+    backgroundColor: `${isDark ? "#0A0A0A" : "#f9fbff"} !important`,
+    fontSize: "11px !important",
   },
+
   "& .MuiDataGrid-selectedRowCount": {
-    fontSize: "11px",
-    color: isDark ? "#737373" : "#94A3B8",
+    fontSize: "11px !important",
+    color: `${isDark ? "#A1A1AA" : "#64748B"} !important`,
   },
+
   "& .MuiTablePagination-root": {
-    fontSize: "11px",
-    color: isDark ? "#A1A1AA" : "#334155",
+    fontSize: "11px !important",
+    color: `${isDark ? "#A1A1AA" : "#334155"} !important`,
   },
+
+  // ──────────────────────────────────────────────────────────────────
+  // CHECKBOXES
+  // ──────────────────────────────────────────────────────────────────
   "& .MuiCheckbox-root": {
-    color: "#E2E8F0",
+    color: `${isDark ? "#8A8A94" : "#64748B"} !important`,
   },
-  "& .MuiCheckbox-root.Mui-checked, & .MuiCheckbox-root.MuiCheckbox-indeterminate": {
-    color: "#1D4ED8",
+
+  "& .MuiCheckbox-root.Mui-checked": {
+    color: "#1D4ED8 !important",
   },
+
+  "& .MuiCheckbox-root.MuiCheckbox-indeterminate": {
+    color: "#1D4ED8 !important",
+  },
+
+  "& .MuiCheckbox-root.Mui-focusVisible": {
+    outline: "2px solid #3B82F6 !important",
+    outlineOffset: "-3px !important",
+  },
+
+  // ──────────────────────────────────────────────────────────────────
+  // BACKGROUND
+  // ──────────────────────────────────────────────────────────────────
   "& .MuiDataGrid-virtualScroller": {
-    bgcolor: isDark ? "#0A0A0A" : "#f9fbff",
+    backgroundColor: `${isDark ? "#0A0A0A" : "#f9fbff"} !important`,
   },
+
   "& .MuiDataGrid-overlay": {
-    bgcolor: "transparent",
+    backgroundColor: "transparent !important",
   },
 });
 
-// ── List refinements (Step 7) ─────────────────────────────────────────
-// The Leads-list refinements from Step 5, layered on top of getDataGridSx for the
-// other list modules. getDataGridSx itself is unchanged.
+// ── List refinements ─────────────────────────────────────────────────
+// Enhanced row actions visibility and keyboard focus styling for better UX.
+// Applied to all DataGrid list pages (Leads, Deals, Contacts, Accounts).
 export const getListGridRefinementsSx = (isDark: boolean): SxProps<Theme> => ({
-  // clearer row hover + selected states (the base hover is ~4% alpha, practically invisible)
-  "& .MuiDataGrid-row:hover": { bgcolor: isDark ? "#141417" : "rgba(59,130,246,0.07)" },
-  "& .MuiDataGrid-row.Mui-selected, & .MuiDataGrid-row.Mui-selected:hover": { bgcolor: isDark ? "#1B1B20" : "rgba(59,130,246,0.12)" },
   // row actions: revealed on row hover / keyboard focus, always visible on touch devices
   "& .row-actions": { opacity: 0, transition: "opacity 120ms ease" },
   "& .MuiDataGrid-row:hover .row-actions, & .MuiDataGrid-row:focus-within .row-actions, & .row-actions:focus-within": { opacity: 1 },
   "@media (hover: none)": { "& .row-actions": { opacity: 1 } },
-  // unchecked checkboxes were #E2E8F0 (1.2 : 1) — barely visible
-  "& .MuiCheckbox-root:not(.Mui-checked):not(.MuiCheckbox-indeterminate)": { color: isDark ? "#8A8A94" : "#64748B" },
-  // keyboard focus ring for checkboxes (inside their bounds so the cell can't clip it)
-  "& .MuiCheckbox-root.Mui-focusVisible": { outline: "2px solid #3B82F6", outlineOffset: "-3px" },
-  // keyboard focus ring for cells / headers (the base styles remove the outline entirely)
+  // keyboard focus ring for cells / headers
   "&& .MuiDataGrid-cell:focus-visible, && .MuiDataGrid-columnHeader:focus-visible": { outline: "2px solid #3B82F6 !important", outlineOffset: "-2px" },
-  // readable footer meta
-  "& .MuiDataGrid-selectedRowCount": { color: isDark ? "#A1A1AA" : "#64748B" },
 });
 
 /** Base list styling + Step 7 refinements, for list pages other than Leads (which layers its own copy). */
@@ -103,7 +162,7 @@ export const ROWS_PER_PAGE_OPTIONS = [10, 20, 50, 100];
 // (tablet widths). This raises each column's minWidth to fit its header text;
 // columns that are wider already are left alone.
 const HEADER_CHAR_PX = 9.8;   // 14px semibold uppercase + tracking-wide
-const HEADER_CHROME_PX = 53;  // icon (13) + gap (6) + cell padding (2×10) + safety (14)
+const HEADER_CHROME_PX = 65;  // icon (13) + gap (6) + header padding (2×16) + safety (14)
 
 export function fitHeaders<T extends { headerName?: string; field: string; minWidth?: number; width?: number; flex?: number }>(cols: T[]): T[] {
   return cols.map((c) => {
