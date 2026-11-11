@@ -70,7 +70,7 @@ export default function DashboardPage() {
         <main className="flex-1 px-4 md:px-8 py-4 md:py-6 space-y-4 md:space-y-6 animate-fade-in">
 
           {/* ── WELCOME BANNER ── */}
-          <div className={`relative rounded-2xl overflow-hidden ${isDark ? "bg-[#18181B]" : "bg-[#0C2472]"}`}>
+          <div className={`relative rounded-2xl overflow-hidden ${isDark ? "bg-[#18181B]" : "bg-(--accent-solid)"}`}>
             <div className="absolute -right-10 -top-10 w-52 h-52 rounded-full bg-white/5 pointer-events-none" />
             <div className="absolute right-16 top-6 w-28 h-28 rounded-full bg-white/5 pointer-events-none" />
             <div className="absolute right-48 -bottom-8 w-36 h-36 rounded-full bg-white/5 pointer-events-none" />

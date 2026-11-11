@@ -55,12 +55,12 @@ export function colorsFrom(primary: string, accent: string, secondary: string): 
     // Brand colour tokens that Tailwind utilities (bg-brand-700, text-brand-700 ...) read.
     accent: {
       "--color-brand-50": mix(p, W, 0.95), "--color-brand-100": mix(secondary, W, 0.8), "--color-brand-500": accent,
-      "--color-brand-600": mix(p, W, 0.12), "--color-brand-700": p, "--color-brand-900": mix(p, K, 0.55),
+      "--color-brand-600": mix(p, W, 0.12), "--color-brand-700": p, "--accent-solid": p, "--color-brand-900": mix(p, K, 0.55),
     },
     // Page, card, border and sidebar surfaces. Light mode only; dark mode keeps its own surfaces.
     surface: {
       "--color-border-light": border, "--color-surface-light": mix(p, W, 0.95), "--color-surface": mix(p, W, 0.985),
-      "--bg-page": mix(p, W, 0.95), "--bg-card": mix(p, W, 0.985), "--bg-topbar": border, "--bg-aside": border, "--bg-header": border, "--border": border, "--bg-sidebar": mix(p, K, 0.6),
+      "--bg-page": mix(p, W, 0.95), "--bg-card": mix(p, W, 0.985), "--bg-topbar": border, "--bg-aside": border, "--bg-header": border, "--border-chrome": mix(p, W, 0.8), "--bg-canvas": mix(p, W, 0.955), "--border": border, "--bg-sidebar": mix(p, K, 0.6),
     },
   };
 }
@@ -86,7 +86,7 @@ export function applyTheme(id?: string, custom?: CustomTheme | null) {
     if (t.layout) {
       const { aside, header, canvas } = t.layout;
       root.style.setProperty("--bg-aside", aside); root.style.setProperty("--bg-header", header); root.style.setProperty("--bg-topbar", header);
-      root.style.setProperty("--canvas-from", canvas[0]); root.style.setProperty("--canvas-via", canvas[1]); root.style.setProperty("--canvas-to", canvas[2]);
+      root.style.setProperty("--bg-canvas", canvas[1]);
       root.style.setProperty("--canvas-glow", `color-mix(in srgb, ${t.accent} 4%, transparent)`);
     }
   }

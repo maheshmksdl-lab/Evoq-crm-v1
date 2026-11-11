@@ -192,8 +192,11 @@ body {
   --bg-card:       #f9fbff;
   --bg-sidebar:    #0C2472;
   --bg-topbar:     #E3ECFC;
-  --bg-aside:      rgb(245, 249, 255);
-  --bg-header:     #eff6ff;
+  --bg-aside:      #F0F5FB;
+  --border-chrome: #D5E0F6;
+  --bg-canvas:     #F0F4FD;
+  --accent-solid:  #1F51D8;
+  --bg-header:     #F0F5FB;
   /* Dashboard canvas gradient (built from existing tokens) */
   --canvas-from:   var(--bg-page);
   --canvas-via:    color-mix(in srgb, var(--color-brand-100, #dbeafe) 28%, var(--bg-page));
@@ -375,7 +378,7 @@ h3 { font-size: 1.125rem;line-height: 1.4; margin-bottom: 1rem; font-weight: 600
 
 /* ── Sidebar layout ─────────────────────────── */
 .sidebar-content {
-  padding-top: 60px;
+  padding-top: 82px;
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -385,15 +388,9 @@ h3 { font-size: 1.125rem;line-height: 1.4; margin-bottom: 1rem; font-weight: 600
    no effect on layout. Apply it to the main content canvas only. */
 .dashboard-canvas,
 .app-canvas {
-  background-color: var(--canvas-from);
-  /* Even, low-contrast wash: a gentle top-to-bottom tint plus two soft corner glows,
-     so no side of the canvas reads as "white" vs "dark". Follows the active theme. */
-  background-image:
-    radial-gradient(60% 50% at 0% 0%, var(--canvas-glow) 0%, transparent 70%),
-    radial-gradient(60% 50% at 100% 100%, var(--canvas-glow) 0%, transparent 70%),
-    linear-gradient(180deg, var(--canvas-via) 0%, var(--canvas-from) 40%, var(--canvas-to) 100%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-color: var(--bg-canvas);
+  /* Solid canvas colour (no gradient). Themes override --bg-canvas; dark mode uses its own page colour. */
+  background-image: none;
 }
 
 /* Mobile: adjust header and spacing */
@@ -904,3 +901,6 @@ html[data-corners="sharp"] { --radius-lg: .25rem; --radius-xl: .375rem; --radius
 html[data-corners="round"] { --radius-lg: .75rem; --radius-xl: 1rem; --radius-2xl: 1.5rem; --radius-3xl: 2rem; }
 html[data-buttons="square"] .MuiButton-root { border-radius: .375rem !important; }
 html[data-buttons="pill"] .MuiButton-root { border-radius: 9999px !important; }
+
+html.dark .dashboard-canvas,
+html.dark .app-canvas { background-color: var(--bg-page); }

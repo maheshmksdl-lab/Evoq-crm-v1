@@ -244,7 +244,7 @@ export default function AppHeader() {
         position: "fixed", top: 0, left: 0, right: 0,
         height: "72px", zIndex: 60,
         backgroundColor: isDark ? "#0A0A0A" : "var(--bg-header)",
-        borderBottom: `1px solid ${isDark ? "#27272A" : "rgba(0,0,0,0.04)"}`,
+        borderBottom: `1px solid ${isDark ? "#27272A" : "var(--border-chrome)"}`,
         display: "flex", alignItems: "center",
         transition: "background-color 0.2s ease, border-color 0.2s ease",
       }}

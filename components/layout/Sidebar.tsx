@@ -99,7 +99,7 @@ export default function Sidebar() {
             position: "fixed", top: 0, left: 0,
             width: "min(280px, 85vw)", height: "100vh",
             zIndex: 100,
-            backgroundColor: isDark ? "#000000" : "var(--color-surface-light)",
+            backgroundColor: isDark ? "#000000" : "var(--bg-aside)",
             // Shadow only while open: a closed drawer sits at translateX(-100%) and its
             // 24px blur would otherwise bleed into the left edge of the viewport.
             boxShadow: !drawerOpen ? "none" : isDark ? "4px 0 24px rgba(0,0,0,0.5)" : "4px 0 24px rgba(0,0,0,0.12)",
@@ -143,33 +143,33 @@ export default function Sidebar() {
                   href={href}
                   onClick={closeDrawer}
                   className={`
-                    flex items-center gap-3 px-3 py-2.5 rounded-xl text-[16px] font-medium
+                    flex items-center gap-3 px-3 py-2.5 rounded-lg text-[15px] font-medium
                     transition-all duration-150 group
                     ${isDark
                       ? (active ? "bg-[#18181B] text-[#60A5FA]" : "text-[#A1A1AA] hover:bg-[#18181B] hover:text-[#60A5FA]")
-                      : (active ? "bg-white text-brand-700" : "text-slate-600 hover:bg-white hover:text-brand-700")
+                      : (active ? "bg-(--accent-solid) text-white shadow-sm" : "text-slate-600 hover:bg-white/70 hover:text-slate-900")
                     }
                   `}
                 >
                   <Icon
-                    size={19}
-                    weight="duotone"
+                    size={20}
+                    weight={isDark ? "duotone" : "regular"}
                     className={`shrink-0 transition-colors ${
                       isDark
                         ? (active ? "text-[#60A5FA]" : "text-[#A1A1AA] group-hover:text-[#60A5FA]")
-                        : (active ? "text-brand-700" : "text-slate-500 group-hover:text-brand-700")
+                        : (active ? "text-white" : "text-slate-500 group-hover:text-slate-800")
                     }`}
                   />
                   <span className="flex-1 truncate">{label}</span>
                   {badge && !active && (
                     <span className={`text-[11px] font-bold px-1.5 py-0.5 rounded-full leading-none ${
-                      isDark ? "bg-[#60A5FA]/15 text-[#60A5FA]" : "bg-brand-700/10 text-brand-700"
+                      isDark ? "bg-[#60A5FA]/15 text-[#60A5FA]" : "bg-(--accent-solid) text-white"
                     }`}>
                       {badge}
                     </span>
                   )}
-                  {active && (
-                    <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${isDark ? "bg-[#60A5FA]" : "bg-brand-700"}`} />
+                  {active && isDark && (
+                    <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-[#60A5FA]" />
                   )}
                 </Link>
               );
@@ -212,7 +212,7 @@ export default function Sidebar() {
   ═══════════════════════════════════════════ */
   return (
     <aside
-      className={`fixed left-0 flex flex-col z-50 select-none border-r overflow-hidden ${isDark ? "border-[#27272A]" : "border-border-light"}`}
+      className={`fixed left-0 flex flex-col z-50 select-none border-r overflow-hidden ${isDark ? "border-[#27272A]" : "border-(--border-chrome)"}`}
       style={{
         top: "72px",
         height: "calc(100vh - 72px)",
@@ -231,7 +231,7 @@ export default function Sidebar() {
               key={href}
               href={href}
               className={`
-                flex items-center rounded-lg text-[16px] font-medium
+                flex items-center rounded-lg text-[15px] font-medium
                 transition-all duration-150 group relative
                 ${collapsed
                   ? "justify-center w-10 h-10 mx-auto"
@@ -239,17 +239,17 @@ export default function Sidebar() {
                 }
                 ${isDark
                   ? (active ? "bg-[#18181B] text-[#60A5FA]" : "text-[#A1A1AA] hover:bg-[#18181B] hover:text-[#60A5FA]")
-                  : (active ? "bg-surface-light text-brand-700" : "text-slate-600 hover:bg-surface-light hover:text-brand-700")
+                  : (active ? "bg-(--accent-solid) text-white shadow-sm" : "text-slate-600 hover:bg-white/70 hover:text-slate-900")
                 }
               `}
             >
               <Icon
-                size={18}
-                weight="duotone"
+                size={20}
+                weight={isDark ? "duotone" : "regular"}
                 className={`shrink-0 transition-colors ${
                   isDark
                     ? (active ? "text-[#60A5FA]" : "text-[#A1A1AA] group-hover:text-[#60A5FA]")
-                    : (active ? "text-brand-700" : "text-slate-500 group-hover:text-brand-700")
+                    : (active ? "text-white" : "text-slate-500 group-hover:text-slate-800")
                 }`}
               />
               {!collapsed && (
@@ -257,13 +257,13 @@ export default function Sidebar() {
                   <span className="flex-1 truncate">{label}</span>
                   {badge && !active && (
                     <span className={`text-[11px] font-bold px-1.5 py-0.5 rounded-full leading-none ${
-                      isDark ? "bg-[#60A5FA]/15 text-[#60A5FA]" : "bg-brand-700/10 text-brand-700"
+                      isDark ? "bg-[#60A5FA]/15 text-[#60A5FA]" : "bg-(--accent-solid) text-white"
                     }`}>
                       {badge}
                     </span>
                   )}
-                  {active && (
-                    <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${isDark ? "bg-[#60A5FA]" : "bg-brand-700"}`} />
+                  {active && isDark && (
+                    <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-[#60A5FA]" />
                   )}
                 </>
               )}
@@ -284,7 +284,7 @@ export default function Sidebar() {
       </nav>
 
       {/* Bottom: Settings + Profile */}
-      <div className={`px-2 pb-3 border-t pt-2 space-y-0.5 shrink-0 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
+      <div className={`px-2 pb-3 border-t pt-2 space-y-0.5 shrink-0 ${isDark ? "border-[#27272A]" : "border-(--border-chrome)"}`}>
         {collapsed ? (
           <Tooltip title="Settings" placement="right" arrow>
             <span className="flex justify-center">

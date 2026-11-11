@@ -123,7 +123,7 @@ export default function DashboardPage() {
           ═══════════════════════════════════════ */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isDark ? "bg-brand-700/15" : "bg-[#EFF6FF]"}`}>
+              <div className={`w-9 h-9 rounded-xl flex items-center justify-center ${isDark ? "bg-brand-700/15" : "bg-white"}`}>
                 <SquaresFour size={18} weight="duotone" color="#1D4ED8" />
               </div>
               <div>
@@ -164,7 +164,7 @@ export default function DashboardPage() {
           {/* ═══════════════════════════════════════
               WELCOME BANNER
           ═══════════════════════════════════════ */}
-          <div className="relative bg-[#0C2472] rounded-xl sm:rounded-2xl overflow-hidden">
+          <div className="relative bg-(--accent-solid) rounded-xl sm:rounded-2xl overflow-hidden">
             {/* Decorative blobs - hidden on mobile */}
             <div className="absolute -right-10 -top-10 w-52 h-52 rounded-full bg-white/5 pointer-events-none hidden sm:block" />
             <div className="absolute right-16 top-6 w-28 h-28 rounded-full bg-white/5 pointer-events-none hidden md:block" />

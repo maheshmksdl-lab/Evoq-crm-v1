@@ -259,12 +259,13 @@ export default function ReportsPage() {
 
   return (
     <>
-    <div className={`sidebar-content app-canvas flex flex-col md:flex-row min-h-screen font-sans transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
+    <div className={`sidebar-content app-canvas flex min-h-screen font-sans transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
+      <div className="relative flex-1 flex flex-col md:flex-row md:gap-6 md:p-6 min-w-0">
       {/* Left Sidebar — mirrors SettingsSidebar exactly; collapses into a dropdown on mobile */}
-      <div className={`w-full md:w-[240px] shrink-0 border-b md:border-b-0 md:border-r flex flex-col transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
+      <div className={`w-full md:w-[240px] shrink-0 border-b md:border md:rounded-2xl md:shadow-xs flex flex-col overflow-hidden transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-(--bg-aside) border-border-light"}`}>
         <button
           onClick={() => setMobileNavOpen(o => !o)}
-          className={`w-full flex items-center justify-between px-4 py-4 md:pt-5 md:pb-4 border-b text-left transition-colors duration-300 md:cursor-default ${isDark ? "border-[#27272A]" : "border-border-light"}`}
+          className={`w-full flex items-center justify-between px-4 py-4 md:px-5 md:pt-7 md:pb-5 border-b text-left transition-colors duration-300 md:cursor-default ${isDark ? "border-[#27272A]" : "border-border-light"}`}
         >
           <div className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-xl bg-brand-700 flex items-center justify-center shadow-xs shrink-0">
@@ -282,7 +283,7 @@ export default function ReportsPage() {
           </span>
         </button>
 
-        <nav className={`${mobileNavOpen ? "flex" : "hidden"} md:flex flex-col flex-1 py-3 px-2 space-y-1 overflow-y-auto max-h-[50vh] md:max-h-none`}>
+        <nav className={`${mobileNavOpen ? "flex" : "hidden"} md:flex flex-col flex-1 py-3 md:py-4 px-2 md:px-3 space-y-1 md:space-y-2 overflow-y-auto max-h-[50vh] md:max-h-none`}>
           {/* Pinned Reports Section */}
           {pinnedReports.length > 0 && (
             <div>
@@ -349,7 +350,7 @@ export default function ReportsPage() {
 
       {/* Right Content — mirrors the Leads listing page */}
       <div className={`flex-1 flex flex-col overflow-hidden transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-transparent"}`}>
-        <main className="flex-1 px-4 sm:px-6 lg:px-8 py-4 sm:py-6 space-y-3 sm:space-y-5 overflow-y-auto animate-fade-in">
+        <main className="flex-1 px-0 sm:px-0 pt-4 md:pt-0 pb-8 space-y-5 overflow-y-auto animate-fade-in">
 
           {/* Page header */}
           <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
@@ -524,6 +525,7 @@ export default function ReportsPage() {
             </div>
           )}
         </main>
+      </div>
       </div>
     </div>
 
