@@ -85,7 +85,7 @@ const GraphSettingsPanel = memo(
               </div>
             )}
             {availableModules.length > 1 && (
-              <p className={`text-[10px] mt-1.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
+              <p className={`text-[11px] mt-1.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                 Click to switch which module is primary
               </p>
             )}

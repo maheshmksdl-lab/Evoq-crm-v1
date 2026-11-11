@@ -156,9 +156,9 @@ const SAMPLE_CHART_COLORS = ["#F59E0B", "#F59E0B", "#3B82F6"];
 
 const KPI_FILL: Record<string, { fill: string; accent: string }> = {
   "kpi-accounts": { fill: "#D6E4F9", accent: "#2F6FED" },
-  "kpi-contacts": { fill: "#D0E5E0", accent: "#2E9E7B" },
-  "kpi-leads": { fill: "#FAE3D0", accent: "#E0883F" },
-  "kpi-deals": { fill: "#F5D9E1", accent: "#DB5E8C" },
+  "kpi-contacts": { fill: "#D0E5E0", accent: "#238264" },
+  "kpi-leads": { fill: "#FAE3D0", accent: "#B45F1B" },
+  "kpi-deals": { fill: "#F5D9E1", accent: "#C74C78" },
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -226,7 +226,7 @@ function LeadSourceBarChart({ isDark }: { isDark: boolean }) {
           <YAxis type="category" dataKey="source" tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#6B7280", fontWeight: 500 }} axisLine={false} tickLine={false} width={64} />
           <RechartsTooltip content={<ChartTooltip />} cursor={{ fill: isDark ? "#18181B" : "#EFF6FF" }} />
           <Bar dataKey="count" radius={[0, 6, 6, 0]}>
-            <LabelList dataKey="count" position="right" style={{ fontSize: 10, fill: "#94A3B8", fontWeight: 600 }} />
+            <LabelList dataKey="count" position="right" style={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B", fontWeight: 600 }} />
             {data.map((entry, i) => <Cell key={i} fill={entry.color} />)}
           </Bar>
         </BarChart>
@@ -266,7 +266,7 @@ function RevenueTrendChart({ isDark }: { isDark: boolean }) {
       <ResponsiveContainer width="100%" height={160}>
         <AreaChart data={SAMPLE_DATA.revenueTrend} margin={{ top: 6, right: 8, left: -20, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#27272A" : "#F0F2F5"} vertical={false} />
-          <XAxis dataKey="month" tick={{ fontSize: 10, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
+          <XAxis dataKey="month" tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} />
           <YAxis hide />
           <RechartsTooltip content={<ChartTooltip />} />
           <Area type="monotone" dataKey="revenue" stroke={stroke} strokeWidth={2} fill={stroke} fillOpacity={isDark ? 0.15 : 0.08} dot={false} />
@@ -289,7 +289,7 @@ function DealsTable({ isDark }: { isDark: boolean }) {
         <thead>
           <tr>
             {["Deal", "Amount", "Stage"].map(h => (
-              <th key={h} className="px-5 py-2 text-left font-bold uppercase tracking-wider text-[10.5px]"
+              <th key={h} className="px-5 py-2 text-left font-bold uppercase tracking-wider text-[11px]"
                 style={{ backgroundColor: isDark ? "#111111" : "#EFF6FF", color: isDark ? "#9CA3AF" : "#0C2472" }}>{h}</th>
             ))}
           </tr>
@@ -302,7 +302,7 @@ function DealsTable({ isDark }: { isDark: boolean }) {
                 <td className={`px-5 py-2.5 font-semibold ${isDark ? "text-[#E2E8F0]" : "text-slate-800"}`}>{deal.name}</td>
                 <td className={`px-5 py-2.5 font-bold ${isDark ? "text-white" : "text-slate-800"}`}>${deal.amount.toLocaleString('en-US')}</td>
                 <td className="px-5 py-2.5">
-                  <span className="px-2 py-0.5 rounded-full text-[10.5px] font-bold" style={{ backgroundColor: s.bg, color: s.fg }}>{deal.stage}</span>
+                  <span className="px-2 py-0.5 rounded-full text-[11px] font-bold" style={{ backgroundColor: s.bg, color: s.fg }}>{deal.stage}</span>
                 </td>
               </tr>
             );
@@ -379,7 +379,7 @@ function CustomChartPreview({ chartType, isDark }: { chartType: string; isDark: 
         <ResponsiveContainer width="100%" height={160}>
           <AreaChart data={SAMPLE_CHART_DATA} margin={{ top: 6, right: 8, left: -20, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#27272A" : "#F0F2F5"} vertical={false} />
-            <XAxis dataKey="name" tick={{ fontSize: 10, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
+            <XAxis dataKey="name" tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} />
             <YAxis hide />
             <RechartsTooltip content={<ChartTooltip />} />
             <Area type="monotone" dataKey="value" stroke={stroke} strokeWidth={2} fill={stroke} fillOpacity={isDark ? 0.15 : 0.08} dot={false} />
@@ -394,7 +394,7 @@ function CustomChartPreview({ chartType, isDark }: { chartType: string; isDark: 
         <ResponsiveContainer width="100%" height={160}>
           <LineChart data={SAMPLE_CHART_DATA} margin={{ top: 6, right: 8, left: -20, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#27272A" : "#F0F2F5"} vertical={false} />
-            <XAxis dataKey="name" tick={{ fontSize: 10, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
+            <XAxis dataKey="name" tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} />
             <YAxis hide />
             <RechartsTooltip content={<ChartTooltip />} />
             <Line type="monotone" dataKey="value" stroke={stroke} strokeWidth={2} dot={{ r: 3, fill: stroke }} />
@@ -412,7 +412,7 @@ function CustomChartPreview({ chartType, isDark }: { chartType: string; isDark: 
             <YAxis type="category" dataKey="name" tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#6B7280", fontWeight: 500 }} axisLine={false} tickLine={false} width={60} />
             <RechartsTooltip content={<ChartTooltip />} cursor={{ fill: isDark ? "#18181B" : "#EFF6FF" }} />
             <Bar dataKey="value" radius={[0, 6, 6, 0]}>
-              <LabelList dataKey="value" position="right" style={{ fontSize: 10, fill: "#94A3B8", fontWeight: 600 }} />
+              <LabelList dataKey="value" position="right" style={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B", fontWeight: 600 }} />
               {SAMPLE_CHART_DATA.map((_, i) => <Cell key={i} fill={SAMPLE_CHART_COLORS[i]} />)}
             </Bar>
           </BarChart>
@@ -426,8 +426,8 @@ function CustomChartPreview({ chartType, isDark }: { chartType: string; isDark: 
       <ResponsiveContainer width="100%" height={160}>
         <BarChart data={SAMPLE_CHART_DATA} margin={{ top: 6, right: 8, left: -20, bottom: 0 }} barSize={36}>
           <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#27272A" : "#F0F2F5"} vertical={false} />
-          <XAxis dataKey="name" tick={{ fontSize: 10, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
-          <YAxis tick={{ fontSize: 10, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
+          <XAxis dataKey="name" tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} />
+          <YAxis tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} />
           <RechartsTooltip content={<ChartTooltip />} cursor={{ fill: isDark ? "#18181B" : "#EFF6FF" }} />
           <Bar dataKey="value" radius={[4, 4, 0, 0]}>
             {SAMPLE_CHART_DATA.map((_, i) => <Cell key={i} fill={SAMPLE_CHART_COLORS[i]} />)}
@@ -655,7 +655,7 @@ export default function HomePageEditorPage() {
       <div className={`sidebar-content app-canvas flex-1 flex flex-col overflow-hidden transition-colors duration-300 ${isDark ? "bg-[#000000]" : "bg-transparent"}`}>
         {/* Header */}
         <div className={`px-4 sm:px-6 lg:px-8 py-3 sm:py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
-          <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-2 sm:mb-3 text-[10px] sm:text-[12px]">
+          <div className="flex flex-wrap items-center gap-1 sm:gap-2 mb-2 sm:mb-3 text-[11px] sm:text-[12px]">
             <House size={14} weight="duotone" />
             <button onClick={() => router.push("/")} className={`font-medium ${isDark ? "text-[#9CA3AF] hover:text-[#D4D4D8]" : "text-slate-500 hover:text-slate-700"} hover:underline`}>Home</button>
             <CaretRight size={10} weight="duotone" />
@@ -694,7 +694,7 @@ export default function HomePageEditorPage() {
           <div className={`hidden md:flex md:w-72 shrink-0 border-r flex flex-col ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-white"}`}>
             <div className={`px-4 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
               <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
-                <MagnifyingGlass size={13} color="#94A3B8" weight="duotone" />
+                <MagnifyingGlass size={13} color="#6B7A92" weight="duotone" />
                 <input placeholder="Search components" value={search} onChange={e => setSearch(e.target.value)}
                   className={`flex-1 text-[13px] outline-hidden bg-transparent ${isDark ? "text-[#D4D4D8] placeholder-[#52525B]" : "text-slate-700 placeholder-slate-400"}`} />
               </div>
@@ -705,8 +705,8 @@ export default function HomePageEditorPage() {
                 <div className="flex items-center justify-between px-2 mb-2">
                   <div className={`text-[11px] font-bold uppercase tracking-widest ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Dashboard Components</div>
                   <Tooltip title="Add custom component">
-                    <IconButton size="small" onClick={() => setAddComponentOpen(true)}
-                      sx={{ p: 0.3, borderRadius: "999px", bgcolor: "#1D4ED8", color: "white", "&:hover": { bgcolor: "#2563EB" } }}>
+                    <IconButton size="small" aria-label="Add custom component" onClick={() => setAddComponentOpen(true)}
+                      sx={{ p: 0.75, borderRadius: "999px", bgcolor: "#1D4ED8", color: "white", "&:hover": { bgcolor: "#2563EB" } }}>
                       <Plus size={13} weight="bold" />
                     </IconButton>
                   </Tooltip>
@@ -793,35 +793,35 @@ export default function HomePageEditorPage() {
                           <p className={`text-[13px] font-bold truncate ${isDark ? "text-white" : "text-[#0C2472]"}`}>{item.title}</p>
                         </Tooltip>
                         <Tooltip title={AVAILABLE_COMPONENTS.find(c => c.id === item.componentId)?.description || REPORT_COMPONENTS.find(c => c.id === item.componentId)?.description || "Custom chart component"}>
-                          <Info size={13} weight="bold" color={isDark ? "#52525B" : "#94A3B8"} className="shrink-0 cursor-help" />
+                          <Info size={13} weight="bold" color={isDark ? "#8A8A94" : "#64748B"} className="shrink-0 cursor-help" />
                         </Tooltip>
                       </div>
                       <div className="flex items-center gap-0.5 shrink-0">
                         <Tooltip title="Move up">
                           <span>
-                            <IconButton size="small" disabled={idx === 0} onClick={() => moveItem(item.id, "up")}
-                              sx={{ p: 0.4, borderRadius: "7px", color: isDark ? "#9CA3AF" : "#64748B", bgcolor: isDark ? "#18181B" : "#F1F5F9", "&:hover": { color: isDark ? "#D4D4D8" : "#334155", bgcolor: isDark ? "#27272A" : "#E2E8F0" }, "&.Mui-disabled": { color: isDark ? "#3F3F46" : "#CBD5E1", bgcolor: isDark ? "#111113" : "#F8FAFC" } }}>
+                            <IconButton size="small" aria-label="Move up" disabled={idx === 0} onClick={() => moveItem(item.id, "up")}
+                              sx={{ p: 0.75, minWidth: 24, minHeight: 24, borderRadius: "7px", color: isDark ? "#9CA3AF" : "#64748B", bgcolor: isDark ? "#18181B" : "#F1F5F9", "&:hover": { color: isDark ? "#D4D4D8" : "#334155", bgcolor: isDark ? "#27272A" : "#E2E8F0" }, "&.Mui-disabled": { color: isDark ? "#3F3F46" : "#CBD5E1", bgcolor: isDark ? "#111113" : "#F8FAFC" } }}>
                               <CaretUp size={11} weight="bold" />
                             </IconButton>
                           </span>
                         </Tooltip>
                         <Tooltip title="Move down">
                           <span>
-                            <IconButton size="small" disabled={idx === canvasItems.length - 1} onClick={() => moveItem(item.id, "down")}
-                              sx={{ p: 0.4, borderRadius: "7px", color: isDark ? "#9CA3AF" : "#64748B", bgcolor: isDark ? "#18181B" : "#F1F5F9", "&:hover": { color: isDark ? "#D4D4D8" : "#334155", bgcolor: isDark ? "#27272A" : "#E2E8F0" }, "&.Mui-disabled": { color: isDark ? "#3F3F46" : "#CBD5E1", bgcolor: isDark ? "#111113" : "#F8FAFC" } }}>
+                            <IconButton size="small" aria-label="Move down" disabled={idx === canvasItems.length - 1} onClick={() => moveItem(item.id, "down")}
+                              sx={{ p: 0.75, minWidth: 24, minHeight: 24, borderRadius: "7px", color: isDark ? "#9CA3AF" : "#64748B", bgcolor: isDark ? "#18181B" : "#F1F5F9", "&:hover": { color: isDark ? "#D4D4D8" : "#334155", bgcolor: isDark ? "#27272A" : "#E2E8F0" }, "&.Mui-disabled": { color: isDark ? "#3F3F46" : "#CBD5E1", bgcolor: isDark ? "#111113" : "#F8FAFC" } }}>
                               <CaretDown size={11} weight="bold" />
                             </IconButton>
                           </span>
                         </Tooltip>
                         <Tooltip title="Edit">
-                          <IconButton size="small" onClick={() => handleEditStart(item)}
-                            sx={{ p: 0.4, borderRadius: "7px", color: isDark ? "#9CA3AF" : "#64748B", bgcolor: isDark ? "#18181B" : "#F1F5F9", "&:hover": { color: isDark ? "#D4D4D8" : "#334155", bgcolor: isDark ? "#27272A" : "#E2E8F0" } }}>
+                          <IconButton size="small" aria-label="Edit component" onClick={() => handleEditStart(item)}
+                            sx={{ p: 0.75, minWidth: 24, minHeight: 24, borderRadius: "7px", color: isDark ? "#9CA3AF" : "#64748B", bgcolor: isDark ? "#18181B" : "#F1F5F9", "&:hover": { color: isDark ? "#D4D4D8" : "#334155", bgcolor: isDark ? "#27272A" : "#E2E8F0" } }}>
                             <PencilSimple size={11} weight="bold" />
                           </IconButton>
                         </Tooltip>
                         <Tooltip title="Delete">
-                          <IconButton size="small" onClick={() => handleDeleteItem(item.id)}
-                            sx={{ p: 0.4, borderRadius: "7px", color: isDark ? "#9CA3AF" : "#64748B", bgcolor: isDark ? "#18181B" : "#F1F5F9", "&:hover": { color: "#EF4444", bgcolor: isDark ? "#27272A" : "#FEE2E2" } }}>
+                          <IconButton size="small" aria-label="Delete component" onClick={() => handleDeleteItem(item.id)}
+                            sx={{ p: 0.75, minWidth: 24, minHeight: 24, borderRadius: "7px", color: isDark ? "#9CA3AF" : "#64748B", bgcolor: isDark ? "#18181B" : "#F1F5F9", "&:hover": { color: "#EF4444", bgcolor: isDark ? "#27272A" : "#FEE2E2" } }}>
                             <Trash size={11} weight="bold" />
                           </IconButton>
                         </Tooltip>
@@ -860,13 +860,13 @@ export default function HomePageEditorPage() {
         PaperProps={{ sx: { borderRadius: "16px", bgcolor: isDark ? "#1C1C1E" : "#fff", boxShadow: isDark ? "0 8px 32px rgba(0,0,0,0.5)" : "0 8px 32px rgba(12,36,114,0.10)", maxHeight: "80vh" } }}>
         <div className={`flex items-center justify-between px-4 py-3.5 border-b shrink-0 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <span className={`text-[15px] font-bold ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Add Widget</span>
-          <IconButton size="small" onClick={() => setMobilePickerOpen(false)}>
+          <IconButton size="small" aria-label="Close" onClick={() => setMobilePickerOpen(false)}>
             <X size={16} color={isDark ? "#71717A" : "#64748B"} weight="duotone" />
           </IconButton>
         </div>
         <div className={`px-4 py-3 border-b shrink-0 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
-            <MagnifyingGlass size={13} color="#94A3B8" weight="duotone" />
+            <MagnifyingGlass size={13} color="#6B7A92" weight="duotone" />
             <input placeholder="Search components" value={search} onChange={e => setSearch(e.target.value)}
               className={`flex-1 text-[13px] outline-hidden bg-transparent ${isDark ? "text-[#D4D4D8] placeholder-[#52525B]" : "text-slate-700 placeholder-slate-400"}`} />
           </div>
@@ -877,8 +877,8 @@ export default function HomePageEditorPage() {
               <div className="flex items-center justify-between px-1 mb-2">
                 <div className={`text-[11px] font-bold uppercase tracking-widest ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Dashboard Components</div>
                 <Tooltip title="Add custom component">
-                  <IconButton size="small" onClick={() => { setMobilePickerOpen(false); setAddComponentOpen(true); }}
-                    sx={{ p: 0.3, borderRadius: "999px", bgcolor: "#1D4ED8", color: "white", "&:hover": { bgcolor: "#2563EB" } }}>
+                  <IconButton size="small" aria-label="Add custom component" onClick={() => { setMobilePickerOpen(false); setAddComponentOpen(true); }}
+                    sx={{ p: 0.75, borderRadius: "999px", bgcolor: "#1D4ED8", color: "white", "&:hover": { bgcolor: "#2563EB" } }}>
                     <Plus size={13} weight="bold" />
                   </IconButton>
                 </Tooltip>
@@ -978,7 +978,7 @@ export default function HomePageEditorPage() {
         PaperProps={{ sx: { borderRadius: "16px", bgcolor: isDark ? "#1C1C1E" : "#fff", boxShadow: isDark ? "0 8px 32px rgba(0,0,0,0.5)" : "0 8px 32px rgba(12,36,114,0.10)" } }}>
         <div className={`flex items-center justify-between px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <span className={`font-heading text-[16px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Add Component</span>
-          <IconButton size="small" onClick={() => { setAddComponentOpen(false); resetAddComponentForm(); }}
+          <IconButton size="small" aria-label="Close" onClick={() => { setAddComponentOpen(false); resetAddComponentForm(); }}
             sx={{ borderRadius: "9px", border: `1.5px solid ${isDark ? "#3F3F46" : "#E3ECFC"}`, "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
             <X size={16} color={isDark ? "#71717A" : "#64748B"} weight="duotone" />
           </IconButton>

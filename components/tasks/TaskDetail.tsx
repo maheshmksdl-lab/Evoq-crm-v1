@@ -252,7 +252,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
               {count > 0 && (
                 <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>
               )}
-              <CaretRight size={14} color="#94A3B8" weight="duotone" />
+              <CaretRight size={14} color="#6B7A92" weight="duotone" />
             </button>
           ))}
         </div>
@@ -450,7 +450,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
                         <div className={`flex items-center rounded-lg p-0.5 gap-0.5 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                           {[{ k: "grid", Icon: GridFour }, { k: "list", Icon: List }].map(({ k, Icon }) => (
                             <button key={k} onClick={() => setAttachView(k as "grid" | "list")} aria-label={`${k === "grid" ? "Grid" : "List"} view`} aria-pressed={attachView === k}
-                              className={`p-1 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>
+                              className={`p-1.5 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>
                               <Icon size={13} weight="duotone" />
                             </button>
                           ))}

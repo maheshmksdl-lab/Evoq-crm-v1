@@ -34,9 +34,9 @@ const PRIORITY_CFG: Record<string, { bg: string; text: string; bgDark: string; t
 
 const PASTELS = [
   { fill: "#D6E4F9", deep: "#2F6FED" },
-  { fill: "#D0E5E0", deep: "#2E9E7B" },
-  { fill: "#FAE3D0", deep: "#E0883F" },
-  { fill: "#F5D9E1", deep: "#DB5E8C" },
+  { fill: "#D0E5E0", deep: "#238264" },
+  { fill: "#FAE3D0", deep: "#B45F1B" },
+  { fill: "#F5D9E1", deep: "#C74C78" },
   { fill: "#D2DFF0", deep: "#5B6CB5" },
 ];
 
@@ -91,7 +91,7 @@ export default function TaskGridView({ tasks }: Props) {
               <div className="flex items-start justify-between gap-2 mb-2">
                 <div className="min-w-0 flex-1">
                   {task.type && (
-                    <span className={`inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide mb-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
+                    <span className={`inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wide mb-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>
                       <Tag size={10} weight="duotone" />
                       {task.type}
                     </span>

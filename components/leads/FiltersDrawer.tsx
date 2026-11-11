@@ -205,7 +205,7 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
                             placeholder="Enter value…"
                             value={row.value}
                             onChange={e => update(row.id, { value: e.target.value })}
-                            sx={{ fontSize: "14px", color: isDark ? "#D4D4D8" : "#1E293B", "& input::placeholder": { color: isDark ? "#52525B" : "#94A3B8", opacity: 1 } }}
+                            sx={{ fontSize: "14px", color: isDark ? "#D4D4D8" : "#1E293B", "& input::placeholder": { color: isDark ? "#8A8A94" : "#64748B", opacity: 1 } }}
                           />
                         </div>
                       )}
@@ -222,7 +222,7 @@ export default function FiltersDrawer({ anchor, onClose, filters, onChange, colu
                       <Tooltip title="Remove condition">
                         <IconButton size="small" onClick={() => removeRow(row.id)}
                           sx={{ borderRadius: "8px", flexShrink: 0, "&:hover": { bgcolor: isDark ? "#27272A" : "#FEF2F2" } }}>
-                          <Trash size={15} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" />
+                          <Trash size={15} color={isDark ? "#8A8A94" : "#64748B"} weight="bold" />
                         </IconButton>
                       </Tooltip>
                     )}

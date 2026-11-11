@@ -78,7 +78,7 @@ const ACCOUNTS_DETAIL: Record<number, AccountRecord> = {
   14: { id:14, name:"dd", accountOwner:"Admin", accountOwnerEmail:"admin@mailinator.com", phone:"", accountType:"", rating:"", accountSite:"", fax:"", parentAccount:"", website:"", tickerSymbol:"", ownership:"", industry:"", employees:"", sicCode:"", billingAddress:"", shippingAddress:"", description:"", createdBy:"admin@mailinator.com", createdAt:"Mon, Jul 28, 2025 10:14 AM", modifiedBy:"pm@socialdnalabs.com", modifiedAt:"Mon, Mar 16, 2026 07:45 PM", relatedDeals:[], relatedContacts:[], memberAccounts:[], timeline:[{ date:"2025-07-28", time:"10:14 am", field:"Created", to:"dd", by:"admin@mailinator.com" }] },
 };
 
-const AVATAR_PAL = ["#7C3AED", "#10B981", "#F59E0B", "#DB2777"];
+const AVATAR_PAL = ["#7C3AED", "#047857", "#B45309", "#DB2777"];
 const avatarColor = (n: string) => AVATAR_PAL[n.split("").reduce((a, c) => a + c.charCodeAt(0), 0) % AVATAR_PAL.length];
 
 // ─────────────────────────────────────────────
@@ -189,7 +189,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
               {count > 0 && (
                 <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>
               )}
-              <CaretRight size={14} color="#94A3B8" weight="duotone" />
+              <CaretRight size={14} color="#6B7A92" weight="duotone" />
             </button>
           ))}
         </div>
@@ -250,7 +250,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                 <div className="flex items-center gap-3 mt-2 flex-wrap">
                   {account.phone && (
                     <span className={`flex items-center gap-1 text-[13px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
-                      <Phone size={13} weight="duotone" color="#94A3B8" />
+                      <Phone size={13} weight="duotone" color="#6B7A92" />
                       {account.phone}
                     </span>
                   )}
@@ -387,7 +387,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                           placeholder="Add a note…"
                           value={note}
                           onChange={e => setNote(e.target.value)}
-                          sx={{ px: 2, py: 1.5, fontSize: "0.8rem", color: isDark ? "#D4D4D8" : "#334155", "& textarea::placeholder": { color: isDark ? "#3F3F46" : "#94A3B8", opacity: 1 } }}
+                          sx={{ px: 2, py: 1.5, fontSize: "0.8rem", color: isDark ? "#D4D4D8" : "#334155", "& textarea::placeholder": { color: isDark ? "#8A8A94" : "#64748B", opacity: 1 } }}
                         />
                         {note.trim() && (
                           <div className="flex justify-end px-3 pb-2">
@@ -416,7 +416,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
                         <div className={`flex items-center rounded-lg p-0.5 gap-0.5 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                           {[{ k: "grid", Icon: GridFour }, { k: "list", Icon: List }].map(({ k, Icon }) => (
                             <button key={k} onClick={() => setAttachView(k as "grid" | "list")} aria-label={`${k === "grid" ? "Grid" : "List"} view`} aria-pressed={attachView === k}
-                              className={`p-1 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>
+                              className={`p-1.5 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>
                               <Icon size={13} weight="duotone" />
                             </button>
                           ))}
@@ -591,7 +591,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
 
                   {account.timeline.length === 0 ? (
                     <div className="py-12 flex flex-col items-center justify-center gap-2">
-                      <ClockCounterClockwise size={28} color={isDark ? "#52525B" : "#CBD5E1"} weight="duotone" />
+                      <ClockCounterClockwise size={28} color={isDark ? "#71717A" : "#6B7A92"} weight="duotone" />
                       <p className={`text-[14px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>No history yet</p>
                     </div>
                   ) : (() => {

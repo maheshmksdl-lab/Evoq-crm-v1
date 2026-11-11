@@ -70,7 +70,7 @@ const DEFAULT_VISIBLE = new Set(["firstName", "lastName", "contactOwner", "email
 // ---------------------------------------------
 //  Helpers
 // ---------------------------------------------
-const AVATAR_PAL = ["#7C3AED", "#10B981", "#F59E0B", "#DB2777"];
+const AVATAR_PAL = ["#7C3AED", "#047857", "#B45309", "#DB2777"];
 const avatarColor = (n: string) => AVATAR_PAL[n.split("").reduce((a, c) => a + c.charCodeAt(0), 0) % AVATAR_PAL.length];
 
 function ColHeader({ label, icon: Icon }: { label: string; icon?: ElementType }) {
@@ -150,7 +150,7 @@ export default function ContactsPage() {
         <Tooltip title={params.row.email} placement="top">
           <div className="text-[15px]/[20px] truncate w-full">
             {params.row.email
-              ? <span className={`flex items-center gap-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}><Envelope size={11} color="#94A3B8" weight="duotone" className="shrink-0" />{params.row.email}</span>
+              ? <span className={`flex items-center gap-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}><Envelope size={11} color="#6B7A92" weight="duotone" className="shrink-0" />{params.row.email}</span>
               : <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
           </div>
         </Tooltip>
@@ -162,7 +162,7 @@ export default function ContactsPage() {
       renderCell: (params) => (
         <div className={`text-[15px]/[20px] font-mono truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
           {params.row.phone
-            ? <span className="flex items-center gap-1"><Phone size={11} color="#94A3B8" weight="duotone" />{params.row.phone}</span>
+            ? <span className="flex items-center gap-1"><Phone size={11} color="#6B7A92" weight="duotone" />{params.row.phone}</span>
             : <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </div>
       ),
@@ -173,7 +173,7 @@ export default function ContactsPage() {
       renderCell: (params) => (
         <div className={`text-[15px]/[20px] font-mono truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
           {params.row.mobile
-            ? <span className="flex items-center gap-1"><DeviceMobile size={11} color="#94A3B8" weight="duotone" />{params.row.mobile}</span>
+            ? <span className="flex items-center gap-1"><DeviceMobile size={11} color="#6B7A92" weight="duotone" />{params.row.mobile}</span>
             : <span className={isDark ? "text-[#71717A]" : "text-slate-400"}>—</span>}
         </div>
       ),
@@ -261,10 +261,10 @@ export default function ContactsPage() {
           {/* -- Toolbar -- */}
           <div className="flex flex-wrap items-center gap-2.5">
             <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 basis-full sm:basis-auto sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
-              <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
+              <MagnifyingGlass size={15} color="#6B7A92" weight="duotone" />
               <InputBase placeholder="Search contacts…" value={search} inputProps={{ "aria-label": "Search contacts" }}
                 onChange={e => setSearch(e.target.value)}
-                sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#94A3B8", opacity: 1 } }}
+                sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#6B7A92", opacity: 1 } }}
               />
               {search && <button onClick={() => setSearch("")} aria-label="Clear search" className={`rounded-md px-1 text-[15px]/[20px] transition-colors ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}`}>✕</button>}
             </div>
@@ -272,7 +272,7 @@ export default function ContactsPage() {
             <div className="grid grid-cols-3 gap-2 w-full sm:w-auto sm:flex sm:items-center sm:gap-2.5">
             <Button variant="outlined" size="small"
               startIcon={activeFilters.length > 0
-                ? <Badge badgeContent={activeFilters.length} color="primary" sx={{ "& .MuiBadge-badge": { fontSize: "0.55rem", height: 14, minWidth: 14 } }}>
+                ? <Badge badgeContent={activeFilters.length} color="primary" sx={{ "& .MuiBadge-badge": { fontSize: "0.6875rem", height: 14, minWidth: 14 } }}>
                     <FunnelSimple size={14} weight="duotone" />
                   </Badge>
                 : <FunnelSimple size={14} weight="duotone" />
@@ -373,7 +373,7 @@ export default function ContactsPage() {
                   noRowsOverlay: () => (
                     <div className="py-16 px-4 text-center break-words" role="status">
                       <div className="w-12 h-12 rounded-2xl bg-surface flex items-center justify-center mx-auto mb-3">
-                        <MagnifyingGlass size={22} color="#94A3B8" weight="duotone" />
+                        <MagnifyingGlass size={22} color="#6B7A92" weight="duotone" />
                       </div>
                       <p className="font-heading text-slate-500 text-sm font-semibold">No contacts found</p>
                       <p className="text-slate-500 text-xs mt-1">Try adjusting your search or filters</p>

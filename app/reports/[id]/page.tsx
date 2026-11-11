@@ -175,8 +175,8 @@ function ChartTypePreview({ chartType, isDark }: { chartType: string; isDark: bo
     <ResponsiveContainer width="100%" height={160}>
       <BarChart data={PREVIEW_CHART_DATA} margin={{ top: 6, right: 8, left: -20, bottom: 0 }} barSize={36}>
         <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#27272A" : "#F0F2F5"} vertical={false} />
-        <XAxis dataKey="name" tick={{ fontSize: 10, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
-        <YAxis tick={{ fontSize: 10, fill: "#9CA3AF" }} axisLine={false} tickLine={false} />
+        <XAxis dataKey="name" tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} />
+        <YAxis tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} />
         <RechartsTooltip content={<ChartTooltip />} cursor={{ fill: isDark ? "#18181B" : "#EFF6FF" }} />
         <Bar dataKey="value" radius={[4, 4, 0, 0]}>
           {PREVIEW_CHART_DATA.map((_, i) => <Cell key={i} fill={PREVIEW_CHART_COLORS[i]} />)}
@@ -246,7 +246,7 @@ function CreatedChartCard({
     <WidgetCard title={chart.name} subtitle={`${chart.measure} by ${chart.groupBy}`} isDark={isDark}>
       <div className="relative">
         <IconButton
-          size="small"
+          size="small" aria-label="Remove chart"
           onClick={onDelete}
           sx={{ position: "absolute", top: -4, right: -4, zIndex: 1, borderRadius: "8px", border: `1.5px solid ${isDark ? "#3F3F46" : "#E3ECFC"}`, "&:hover": { bgcolor: isDark ? "#27272A" : "#FEE2E2" } }}
         >
@@ -279,8 +279,8 @@ function CreatedChartCard({
           <ResponsiveContainer width="100%" height={230}>
             <BarChart data={data} margin={{ top: 10, right: 8, left: -8, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#27272A" : "#F0F2F5"} vertical={false} />
-              <XAxis dataKey="name" tick={{ fontSize: 10, fill: isDark ? "#9CA3AF" : "#9CA3AF" }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#9CA3AF" }} axisLine={false} tickLine={false} width={30} />
+              <XAxis dataKey="name" tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} width={30} />
               <RechartsTooltip content={<ChartTooltip />} cursor={{ fill: isDark ? "#18181B" : "#EFF6FF" }} />
               <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                 {data.map((_, i) => <Cell key={i} fill={colors[i % colors.length]} />)}
@@ -748,7 +748,7 @@ function EditActionsButton({
           Edit
         </Button>
         <div className={`w-px self-stretch ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
-        <IconButton size="small" onClick={() => setOpen((v) => !v)}
+        <IconButton size="small" aria-label="More report actions" aria-haspopup="menu" aria-expanded={open} onClick={() => setOpen((v) => !v)}
           sx={{ borderRadius: 0, color: isDark ? "#D4D4D8" : "#0C2472", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
           <CaretDown size={14} weight="bold" />
         </IconButton>
@@ -942,7 +942,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className={`hidden sm:inline text-[12px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Updated {(lastRefreshed ?? new Date(savedConfig.updatedAt)).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
                   <Tooltip title="Refresh">
-                    <IconButton size="small" onClick={handleRefresh} sx={{ color: isDark ? "#71717A" : "#64748B", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
+                    <IconButton size="small" aria-label="Refresh report" onClick={handleRefresh} sx={{ color: isDark ? "#71717A" : "#64748B", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
                       <ArrowsClockwise size={16} weight="bold" className={refreshing ? "animate-spin" : ""} />
                     </IconButton>
                   </Tooltip>
@@ -973,7 +973,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               <div className="flex items-center justify-between gap-3 flex-wrap">
                 <div className="flex items-center gap-3">
                   <Tooltip title="Filter">
-                    <IconButton size="small" onClick={() => setFilterPanelOpen(true)} sx={{ color: isDark ? "#71717A" : "#64748B", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
+                    <IconButton size="small" aria-label="Open filters" onClick={() => setFilterPanelOpen(true)} sx={{ color: isDark ? "#71717A" : "#64748B", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
                       <Funnel size={18} weight="duotone" />
                     </IconButton>
                   </Tooltip>
@@ -1024,7 +1024,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
           {/* Header */}
           <div className={`flex items-center justify-between px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
             <span className={`font-heading text-[16px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Add Chart</span>
-            <IconButton size="small" onClick={() => setAddChartOpen(false)}
+            <IconButton size="small" aria-label="Close" onClick={() => setAddChartOpen(false)}
               sx={{ borderRadius: "9px", border: `1.5px solid ${isDark ? "#3F3F46" : "#E3ECFC"}`, "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
               <X size={16} color={isDark ? "#71717A" : "#64748B"} weight="duotone" />
             </IconButton>
@@ -1042,7 +1042,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                       : isDark ? "border-[#27272A] hover:border-[#3F3F46]" : "border-border-light hover:border-[#93C5FD]"
                   }`}>
                   <ct.icon size={20} weight="duotone" color={chartType === ct.key ? "#1D4ED8" : (isDark ? "#9CA3AF" : "#64748B")} />
-                  <span className={`text-[10px] font-semibold truncate w-full text-center ${chartType === ct.key ? (isDark ? "text-[#93C5FD]" : "text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>{ct.label}</span>
+                  <span className={`text-[11px] font-semibold truncate w-full text-center ${chartType === ct.key ? (isDark ? "text-[#93C5FD]" : "text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>{ct.label}</span>
                 </button>
               ))}
             </div>
@@ -1160,7 +1160,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               <div className="flex items-center gap-2 flex-wrap">
                 <span className={`hidden sm:inline text-[12px] ${isDark ? "text-[#9CA3AF]" : "text-slate-600"}`}>{lastRefreshed ? `Updated ${lastRefreshed.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : "Updated 26 days ago"}</span>
                 <Tooltip title="Refresh">
-                  <IconButton size="small" onClick={handleRefresh} sx={{ color: isDark ? "#71717A" : "#64748B", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
+                  <IconButton size="small" aria-label="Refresh report" onClick={handleRefresh} sx={{ color: isDark ? "#71717A" : "#64748B", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
                     <ArrowsClockwise size={16} weight="bold" className={refreshing ? "animate-spin" : ""} />
                   </IconButton>
                 </Tooltip>
@@ -1191,7 +1191,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
             <div className="flex items-center justify-between gap-3 flex-wrap">
               <div className="flex items-center gap-3">
                 <Tooltip title="Filter">
-                  <IconButton size="small" onClick={() => setFilterPanelOpen(true)} sx={{ color: isDark ? "#71717A" : "#64748B", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
+                  <IconButton size="small" aria-label="Open filters" onClick={() => setFilterPanelOpen(true)} sx={{ color: isDark ? "#71717A" : "#64748B", "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
                     <Funnel size={18} weight="duotone" />
                   </IconButton>
                 </Tooltip>
@@ -1209,9 +1209,9 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
             {/* Summary metric cards — matches Dashboard KPI row */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
               <MetricCard title="Total Records" value={totalRecords} icon={<Rows size={18} weight="duotone" />} fill="#D6E4F9" accent="#2F6FED" isDark={isDark} />
-              <MetricCard title="Total Deal Amount" value={`₹${(totalAmount / 1000).toFixed(0)}k`} icon={<Handshake size={18} weight="duotone" />} fill="#FAE3D0" accent="#E0883F" isDark={isDark} />
-              <MetricCard title="Avg. Probability" value={`${avgProbability}%`} icon={<TrendUp size={18} weight="duotone" />} fill="#D0E5E0" accent="#2E9E7B" isDark={isDark} />
-              <MetricCard title="Contacts Involved" value={new Set(TABLE_DATA.map(r => r.contactName).filter(Boolean)).size} icon={<Users size={18} weight="duotone" />} fill="#F5D9E1" accent="#DB5E8C" isDark={isDark} />
+              <MetricCard title="Total Deal Amount" value={`₹${(totalAmount / 1000).toFixed(0)}k`} icon={<Handshake size={18} weight="duotone" />} fill="#FAE3D0" accent="#B45F1B" isDark={isDark} />
+              <MetricCard title="Avg. Probability" value={`${avgProbability}%`} icon={<TrendUp size={18} weight="duotone" />} fill="#D0E5E0" accent="#238264" isDark={isDark} />
+              <MetricCard title="Contacts Involved" value={new Set(TABLE_DATA.map(r => r.contactName).filter(Boolean)).size} icon={<Users size={18} weight="duotone" />} fill="#F5D9E1" accent="#C74C78" isDark={isDark} />
             </div>
 
             {/* Charts Grid */}
@@ -1246,8 +1246,8 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
               <ResponsiveContainer width="100%" height={230}>
                 <BarChart data={CHART_DATA_BAR} margin={{ top: 10, right: 8, left: -8, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#27272A" : "#F0F2F5"} vertical={false} />
-                  <XAxis dataKey="name" tick={{ fontSize: 10, fill: isDark ? "#9CA3AF" : "#9CA3AF" }} axisLine={false} tickLine={false} />
-                  <YAxis tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#9CA3AF" }} axisLine={false} tickLine={false} width={30} />
+                  <XAxis dataKey="name" tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} />
+                  <YAxis tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }} axisLine={false} tickLine={false} width={30} />
                   <RechartsTooltip content={<ChartTooltip />} cursor={{ fill: isDark ? "#18181B" : "#EFF6FF" }} />
                   <Legend wrapperStyle={{ fontSize: 11, color: isDark ? "#9CA3AF" : "#6B7280" }} iconSize={8} />
                   <Bar dataKey="John Smith" fill={isDark ? "#60A5FA" : "#0C2472"} radius={[4, 4, 0, 0]} />
@@ -1303,7 +1303,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
         {/* Header */}
         <div className={`flex items-center justify-between px-4 sm:px-6 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <span className={`font-heading text-[16px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Add Chart</span>
-          <IconButton size="small" onClick={() => setAddChartOpen(false)}
+          <IconButton size="small" aria-label="Close" onClick={() => setAddChartOpen(false)}
             sx={{ borderRadius: "9px", border: `1.5px solid ${isDark ? "#3F3F46" : "#E3ECFC"}`, "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
             <X size={16} color={isDark ? "#71717A" : "#64748B"} weight="duotone" />
           </IconButton>
@@ -1321,7 +1321,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                     : isDark ? "border-[#27272A] hover:border-[#3F3F46]" : "border-border-light hover:border-[#93C5FD]"
                 }`}>
                 <ct.icon size={20} weight="duotone" color={chartType === ct.key ? "#1D4ED8" : (isDark ? "#9CA3AF" : "#64748B")} />
-                <span className={`text-[10px] font-semibold truncate w-full text-center ${chartType === ct.key ? (isDark ? "text-[#93C5FD]" : "text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>{ct.label}</span>
+                <span className={`text-[11px] font-semibold truncate w-full text-center ${chartType === ct.key ? (isDark ? "text-[#93C5FD]" : "text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>{ct.label}</span>
               </button>
             ))}
           </div>

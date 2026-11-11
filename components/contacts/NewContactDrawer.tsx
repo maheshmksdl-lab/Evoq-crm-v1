@@ -158,7 +158,7 @@ export default function NewContactDrawer({ open, onClose, mode = "create", initi
       "&.Mui-focused":          { boxShadow: "none" },
       "& input":                { padding: "9px 12px" },
     },
-    "& .MuiInputLabel-root":             { fontSize: "0.78rem", ...(isDark ? {} : { color: "#94A3B8" }) },
+    "& .MuiInputLabel-root":             { fontSize: "0.78rem", ...(isDark ? {} : { color: "#64748B" }) },
     "& .MuiInputLabel-root.Mui-focused": { color: isDark ? "#A1A1AA" : "#64748B" },
     "& .MuiSelect-select":               { fontSize: "0.82rem", padding: "9px 12px", ...(isDark ? {} : { backgroundColor: "#EFF6FF" }) },
   };

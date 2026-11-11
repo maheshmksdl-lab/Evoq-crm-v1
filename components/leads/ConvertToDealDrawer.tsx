@@ -141,7 +141,7 @@ export default function ConvertToDealDrawer({
       "&.Mui-focused": { boxShadow: "none" },
       "& input": { padding: "10px 14px" },
     },
-    "& .MuiInputLabel-root":             { fontSize: "0.79rem", ...(isDark ? {} : { color: "#94A3B8" }) },
+    "& .MuiInputLabel-root":             { fontSize: "0.79rem", ...(isDark ? {} : { color: "#64748B" }) },
     "& .MuiInputLabel-root.Mui-focused": { color: isDark ? "#A1A1AA" : "#64748B" },
     "& .MuiSelect-select":               { fontSize: "0.82rem", padding: "10px 14px", ...(isDark ? {} : { backgroundColor: "#EFF6FF" }) },
   };
@@ -256,12 +256,12 @@ export default function ConvertToDealDrawer({
 
             {/* ── Owner of the New Records ── */}
             <div className={`rounded-2xl border shadow-xs p-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
-              <p className={`font-heading text-[10.5px] font-bold uppercase tracking-widest mb-3 ${isDark ? "text-[#A1A1AA]" : "text-[#0C2472]"}`}>
+              <p className={`font-heading text-[11px] font-bold uppercase tracking-widest mb-3 ${isDark ? "text-[#A1A1AA]" : "text-[#0C2472]"}`}>
                 Owner of the New Records
               </p>
               <div className="flex items-center gap-3">
                 <Avatar src={OWNER_AVATARS[leadOwner]}
-                  sx={{ width: 36, height: 36, bgcolor: leadOwnerColor, fontSize: "0.65rem", fontWeight: 800 }}>
+                  sx={{ width: 36, height: 36, bgcolor: leadOwnerColor, fontSize: "0.6875rem", fontWeight: 800 }}>
                   {leadOwnerInitials}
                 </Avatar>
                 <div>

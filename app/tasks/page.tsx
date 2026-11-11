@@ -208,7 +208,7 @@ export default function TasksPage() {
       renderCell: (params) => (
         <Link href={`/tasks/${params.row.id}`}
           className={`font-heading text-[15px]/[20px] font-medium truncate hover:underline ${isDark ? "text-[#FFFFFF]" : "text-slate-800"}`}
-          onClick={e => e.stopPropagation()}>
+          onClick={e => e.stopPropagation()} title={params.row.subject}>
           {params.row.subject}
         </Link>
       ),
@@ -363,7 +363,7 @@ export default function TasksPage() {
                   {tab !== "All" && cnt > 0 && (
                     <span className={`text-[12px] px-1.5 py-0.5 rounded-full leading-none ${
                       active
-                        ? isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-white/20 text-white"
+                        ? isDark ? "bg-white/10 text-[#A1A1AA]" : "bg-white/15 text-white"
                         : isDark ? "bg-[#27272A] text-[#9CA3AF]" : "bg-slate-100 text-slate-600"
                     }`}>{cnt}</span>
                   )}
@@ -375,10 +375,10 @@ export default function TasksPage() {
           {/* -- Toolbar -- */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
             <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 basis-full sm:basis-auto sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
-              <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
+              <MagnifyingGlass size={15} color="#6B7A92" weight="duotone" />
               <InputBase placeholder="Search tasks…" value={search} inputProps={{ "aria-label": "Search tasks" }}
                 onChange={e => setSearch(e.target.value)}
-                sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#94A3B8", opacity: 1 } }}
+                sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#6B7A92", opacity: 1 } }}
               />
               {search && <button onClick={() => setSearch("")} aria-label="Clear search" className={`rounded-md px-1 text-[15px]/[20px] transition-colors ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}`}>✕</button>}
             </div>
@@ -442,7 +442,7 @@ export default function TasksPage() {
               <MenuItem key={col.key} onClick={() => toggleColumn(col.key as string)}
                 sx={{ mx: 0.5, borderRadius: "8px", py: 0.5, "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF" } }}>
                 <Checkbox size="small" checked={visibleColumns.has(col.key as string)}
-                  sx={{ p: 0.5, color: isDark ? "#71717A" : "#94A3B8", "&.Mui-checked": { color: "#1D4ED8" } }} />
+                  sx={{ p: 0.5, color: isDark ? "#8A8A94" : "#64748B", "&.Mui-checked": { color: "#1D4ED8" } }} />
                 <ListItemText primary={col.label} primaryTypographyProps={{ fontSize: "13.5px", color: isDark ? "#D4D4D8" : "#334155" }} />
               </MenuItem>
             ))}
@@ -495,7 +495,7 @@ export default function TasksPage() {
                 noRowsOverlay: () => (
                   <div className="py-16 px-4 text-center break-words" role="status">
                     <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${isDark ? "bg-[#27272A]" : "bg-surface"}`}>
-                      <CheckCircle size={22} color={isDark ? "#3F3F46" : "#94A3B8"} weight="duotone" />
+                      <CheckCircle size={22} color={isDark ? "#8A8A94" : "#64748B"} weight="duotone" />
                     </div>
                     <p className={`font-heading text-sm font-semibold ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>No tasks found</p>
                     <p className={`text-xs mt-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Try adjusting your search or filter</p>

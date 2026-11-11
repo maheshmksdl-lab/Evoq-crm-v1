@@ -228,7 +228,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
               {count > 0 && (
                 <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>
               )}
-              <CaretRight size={14} color="#94A3B8" weight="duotone" />
+              <CaretRight size={14} color="#6B7A92" weight="duotone" />
             </button>
           ))}
         </div>
@@ -411,7 +411,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                     <div key={label} className="flex items-center justify-between px-5 py-3">
                       <span className={`text-[12px] font-medium w-28 sm:w-40 shrink-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{label}:</span>
                       <span className={`flex-1 min-w-0 [overflow-wrap:anywhere] text-[14px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{value}</span>
-                      <IconButton size="small" aria-label={`Edit ${label}`} sx={{ p:0.5, color: isDark ? "#A1A1AA" : "#64748B", "&:hover":{color:"#1D4ED8", bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px" }}>
+                      <IconButton size="small" aria-label={`Edit ${label}`} sx={{ p:0.75, color: isDark ? "#A1A1AA" : "#64748B", "&:hover":{color:"#1D4ED8", bgcolor: isDark ? "#27272A" : "#EFF6FF"}, borderRadius:"6px" }}>
                         <PencilSimple size={14} weight="duotone" />
                       </IconButton>
                     </div>
@@ -489,7 +489,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
                         <div className={`flex items-center rounded-lg p-0.5 gap-0.5 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                           {[{ k:"grid", Icon:GridFour }, { k:"list", Icon:List }].map(({ k, Icon }) => (
                             <button key={k} onClick={() => setAttachView(k as "grid" | "list")} aria-label={`${k === "grid" ? "Grid" : "List"} view`} aria-pressed={attachView === k}
-                              className={`p-1 rounded-md transition-colors ${attachView===k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#A1A1AA]" : "text-slate-500")}`}>
+                              className={`p-1.5 rounded-md transition-colors ${attachView===k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#A1A1AA]" : "text-slate-500")}`}>
                               <Icon size={13} weight="duotone" />
                             </button>
                           ))}
@@ -607,7 +607,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
 
                   {deal.timeline.length === 0 ? (
                     <div className="py-12 flex flex-col items-center justify-center gap-2">
-                      <ClockCounterClockwise size={28} color={isDark ? "#52525B" : "#CBD5E1"} weight="duotone" />
+                      <ClockCounterClockwise size={28} color={isDark ? "#71717A" : "#6B7A92"} weight="duotone" />
                       <p className={`text-[14px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No history yet</p>
                     </div>
                   ) : (() => {

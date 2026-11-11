@@ -25,7 +25,7 @@ const kpis = [
     value: "12,983",
     trend: 4.7,
     fill: "#D0E5E0",
-    spark: "#2E9E7B",
+    spark: "#238264",
     icon: <Lightning size={18} weight="duotone" />,
     sparkData: [98, 105, 115, 108, 125, 130, 120, 138, 142, 155, 148, 160],
   },
@@ -34,7 +34,7 @@ const kpis = [
     value: "1,283",
     trend: 12.1,
     fill: "#FAE3D0",
-    spark: "#E0883F",
+    spark: "#B45F1B",
     icon: <Handshake size={18} weight="duotone" />,
     sparkData: [88, 92, 85, 98, 102, 95, 108, 115, 112, 118, 125, 130],
   },
@@ -43,7 +43,7 @@ const kpis = [
     value: "₹234.8k",
     trend: 6.3,
     fill: "#F5D9E1",
-    spark: "#DB5E8C",
+    spark: "#C74C78",
     icon: <Wallet size={18} weight="duotone" />,
     sparkData: [180, 195, 188, 210, 205, 218, 222, 225, 228, 230, 232, 235],
   },
@@ -51,10 +51,10 @@ const kpis = [
 
 /* ─────────── Quick-stat pills for the banner ─────────── */
 const quickStats = [
-  { label: "Tasks due today",      value: "7",   icon: ClipboardText,  color: "bg-white/20 text-white"          },
-  { label: "Deals to follow up",  value: "3",   icon: Handshake,      color: "bg-white/20 text-white"          },
-  { label: "Meetings today",      value: "2",   icon: CalendarBlank,  color: "bg-white/20 text-white"          },
-  { label: "New leads this week", value: "+84", icon: TrendUp,        color: "bg-white/20 text-white"          },
+  { label: "Tasks due today",      value: "7",   icon: ClipboardText,  color: "bg-white/15 text-white"          },
+  { label: "Deals to follow up",  value: "3",   icon: Handshake,      color: "bg-white/15 text-white"          },
+  { label: "Meetings today",      value: "2",   icon: CalendarBlank,  color: "bg-white/15 text-white"          },
+  { label: "New leads this week", value: "+84", icon: TrendUp,        color: "bg-white/15 text-white"          },
 ];
 
 export default function DashboardPage() {

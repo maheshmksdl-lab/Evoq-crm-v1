@@ -21,8 +21,8 @@ const feed: FeedItem[] = [
   { id:1, Icon:TrendUp,       iconColor:"#0C2472", iconColorDark:"#60A5FA", iconBg:"#E3ECFC", title:"Matrix Corp moved to Negotiation",   user:"PM SDL",  initials:"PM", avatarBg:"#1D4ED8", ownerKey:"PM SDL",  time:"5m ago"  },
   { id:2, Icon:UserPlus,      iconColor:"#2F6FED", iconColorDark:"#60A5FA", iconBg:"#EFF6FF", title:"New lead added: James Wilson",        user:"Sarah K", initials:"SK", avatarBg:"#3B82F6", ownerKey:"Sarah K", time:"23m ago" },
   { id:3, Icon:PencilSimple,  iconColor:"#3B82F6", iconColorDark:"#60A5FA", iconBg:"#EFF6FF", title:"Sweany Inc contact updated",          user:"PM SDL",  initials:"PM", avatarBg:"#1D4ED8", ownerKey:"PM SDL",  time:"1h ago"  },
-  { id:4, Icon:CheckCircle,   iconColor:"#2E9E7B", iconColorDark:"#34D399", iconBg:"#EFF6FF", title:"Task: Follow up with Apex done",      user:"John D",  initials:"JD", avatarBg:"#2E9E7B", ownerKey:"John D",  time:"2h ago"  },
-  { id:5, Icon:CurrencyDollar,iconColor:"#E0883F", iconColorDark:"#FB923C", iconBg:"#EFF6FF", title:"New deal created: Pixel Studios",     user:"Ria M",   initials:"RM", avatarBg:"#0C2472", ownerKey:"Ria M",   time:"3h ago"  },
+  { id:4, Icon:CheckCircle,   iconColor:"#238264", iconColorDark:"#34D399", iconBg:"#EFF6FF", title:"Task: Follow up with Apex done",      user:"John D",  initials:"JD", avatarBg:"#238264", ownerKey:"John D",  time:"2h ago"  },
+  { id:5, Icon:CurrencyDollar,iconColor:"#B45F1B", iconColorDark:"#FB923C", iconBg:"#EFF6FF", title:"New deal created: Pixel Studios",     user:"Ria M",   initials:"RM", avatarBg:"#0C2472", ownerKey:"Ria M",   time:"3h ago"  },
 ];
 
 export default function ActivityFeed({ isDark = false }: { isDark?: boolean }) {
@@ -63,9 +63,9 @@ export default function ActivityFeed({ isDark = false }: { isDark?: boolean }) {
                   >
                     {item.initials}
                   </Avatar>
-                  <span className="text-[10px] sm:text-[12px] text-slate-500 font-medium">{item.user}</span>
-                  <span className={`text-[10px] sm:text-[12px] ${isDark ? "text-slate-600" : "text-slate-400"}`}>·</span>
-                  <span className="text-[10px] sm:text-[12px] text-slate-500">{item.time}</span>
+                  <span className="text-[11px] sm:text-[12px] text-slate-500 font-medium">{item.user}</span>
+                  <span className={`text-[11px] sm:text-[12px] ${isDark ? "text-slate-600" : "text-slate-400"}`}>·</span>
+                  <span className="text-[11px] sm:text-[12px] text-slate-500">{item.time}</span>
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function ActivityFeed({ isDark = false }: { isDark?: boolean }) {
         })}
       </div>
 
-      <button className={`mt-3 sm:mt-4 w-full text-center text-[10px] sm:text-[11.5px] font-bold py-2 rounded-lg sm:rounded-xl transition-all duration-150 ${isDark ? "text-[#60A5FA] hover:text-[#FAFAFA] hover:bg-[#27272A]" : "text-brand-700 hover:text-[#0C2472] hover:bg-[rgba(96,165,250,0.1)]"}`}>
+      <button className={`mt-3 sm:mt-4 w-full text-center text-[11px] sm:text-[11.5px] font-bold py-2 rounded-lg sm:rounded-xl transition-all duration-150 ${isDark ? "text-[#60A5FA] hover:text-[#FAFAFA] hover:bg-[#27272A]" : "text-brand-700 hover:text-[#0C2472] hover:bg-[rgba(96,165,250,0.1)]"}`}>
         View all activity →
       </button>
     </div>

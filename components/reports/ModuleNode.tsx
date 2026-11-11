@@ -67,7 +67,7 @@ const ModuleNode = memo(({ data, id, selected }: ModuleNodeProps) => {
 
       {/* Primary Badge */}
       {isPrimary && (
-        <div className={`text-[10px] font-bold uppercase tracking-widest mb-2 ${isDark ? "text-[#F59E0B]" : "text-[#D97706]"}`}>
+        <div className={`text-[11px] font-bold uppercase tracking-widest mb-2 ${isDark ? "text-[#F59E0B]" : "text-[#D97706]"}`}>
           Primary
         </div>
       )}

@@ -9,7 +9,7 @@ export const tone = (isDark: boolean) => ({
   primary:   isDark ? "#FAFAFA" : "#0F172A",
   secondary: isDark ? "#D4D4D8" : "#475569",
   tertiary:  isDark ? "#A1A1AA" : "#64748B",
-  empty:     isDark ? "#71717A" : "#94A3B8",
+  empty:     isDark ? "#8A8A94" : "#64748B",
 });
 
 /** Keyboard-only focus ring (Tailwind classes). Matches the global :focus-visible rule. */

@@ -64,16 +64,16 @@ export default function RevenueChart({ isDark = false }: { isDark?: boolean }) {
       <ResponsiveContainer width="100%" height={210}>
         <AreaChart data={data} margin={{ top: 10, right: 8, left: -8, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke={isDark ? "#27272A" : "#F0F2F5"} vertical={false} />
-          <ReferenceLine y={avg} stroke={isDark ? "#27272A" : "#E3ECFC"} strokeDasharray="4 3" label={{ value: "avg", fontSize: 9, fill: isDark ? "#9CA3AF" : "#94A3B8" }} />
+          <ReferenceLine y={avg} stroke={isDark ? "#27272A" : "#E3ECFC"} strokeDasharray="4 3" label={{ value: "avg", fontSize: 11, fill: isDark ? "#9CA3AF" : "#94A3B8" }} />
           <XAxis
             dataKey="month"
-            tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#9CA3AF", fontWeight: 500 }}
+            tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B", fontWeight: 500 }}
             axisLine={false}
             tickLine={false}
           />
           <YAxis
             tickFormatter={fmt}
-            tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#9CA3AF" }}
+            tick={{ fontSize: 11, fill: isDark ? "#9CA3AF" : "#64748B" }}
             axisLine={false}
             tickLine={false}
             width={46}

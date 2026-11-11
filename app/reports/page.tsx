@@ -241,7 +241,7 @@ export default function ReportsPage() {
           <div className="flex items-center justify-end gap-0.5 w-full" onClick={e => e.stopPropagation()}>
             <Tooltip title={report.isPinned ? "Unpin" : "Pin"}>
               <IconButton size="small" onClick={() => togglePin(report.id)}
-                aria-label={report.isPinned ? `Unpin ${report.name}` : `Pin ${report.name}`} aria-pressed={!!report.isPinned} sx={{ color: report.isPinned ? "#F59E0B" : (isDark ? "#71717A" : "#94A3B8") }}>
+                aria-label={report.isPinned ? `Unpin ${report.name}` : `Pin ${report.name}`} aria-pressed={!!report.isPinned} sx={{ color: report.isPinned ? "#F59E0B" : (isDark ? "#8A8A94" : "#64748B") }}>
                 <Star size={15} weight={report.isPinned ? "fill" : "duotone"} />
               </IconButton>
             </Tooltip>
@@ -299,8 +299,8 @@ export default function ReportsPage() {
                     } ${
                       isDark ? "text-[#9CA3AF] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "text-slate-500 hover:bg-[#EFF6FF]/60 hover:text-slate-700"
                     }`}>
-                    <report.icon size={13} color="#94A3B8" weight="duotone" />
-                    <span className="flex-1 truncate text-left">{report.name}</span>
+                    <report.icon size={13} color="#6B7A92" weight="duotone" />
+                    <span className="flex-1 truncate text-left" title={report.name}>{report.name}</span>
                     <Star size={13} color="#F59E0B" weight="fill" className="shrink-0 opacity-80" />
                   </button>
                 ))}
@@ -320,7 +320,7 @@ export default function ReportsPage() {
                   </span>
                   <div className="flex items-center gap-1.5">
                     <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full ${isDark ? "bg-[#27272A] text-[#9CA3AF]" : "bg-border-light text-slate-500"}`}>{count}</span>
-                    {isOpen ? <CaretUp size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" />}
+                    {isOpen ? <CaretUp size={10} color={isDark ? "#8A8A94" : "#64748B"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#8A8A94" : "#64748B"} weight="bold" />}
                   </div>
                 </button>
 
@@ -335,8 +335,8 @@ export default function ReportsPage() {
                         } ${
                           isDark ? "text-[#9CA3AF] hover:bg-[#27272A] hover:text-[#FFFFFF]" : "text-slate-500 hover:bg-[#EFF6FF]/60 hover:text-slate-700"
                         }`}>
-                        <report.icon size={13} color="#94A3B8" weight="duotone" />
-                        <span className="flex-1 truncate text-left">{report.name}</span>
+                        <report.icon size={13} color="#6B7A92" weight="duotone" />
+                        <span className="flex-1 truncate text-left" title={report.name}>{report.name}</span>
                       </button>
                     ))}
                   </div>
@@ -398,9 +398,9 @@ export default function ReportsPage() {
           {/* Toolbar: Search | Sort | Record count */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
             <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
-              <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
+              <MagnifyingGlass size={15} color="#6B7A92" weight="duotone" />
               <InputBase placeholder="Search All Reports" value={search} inputProps={{ "aria-label": "Search all reports" }} onChange={e => setSearch(e.target.value)}
-                sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#94A3B8", opacity: 1 } }}
+                sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#6B7A92", opacity: 1 } }}
               />
               {search && <button onClick={() => setSearch("")} aria-label="Clear search" className={`rounded-md px-1 transition-colors text-[15px]/[20px] ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}`}>✕</button>}
             </div>
@@ -462,7 +462,7 @@ export default function ReportsPage() {
                     <div className="flex items-center gap-1" onClick={e => e.stopPropagation()}>
                       <Tooltip title={report.isPinned ? "Unpin" : "Pin"}>
                         <IconButton size="small" onClick={() => togglePin(report.id)}
-                          aria-label={report.isPinned ? `Unpin ${report.name}` : `Pin ${report.name}`} aria-pressed={!!report.isPinned} sx={{ color: report.isPinned ? "#F59E0B" : (isDark ? "#71717A" : "#94A3B8") }}>
+                          aria-label={report.isPinned ? `Unpin ${report.name}` : `Pin ${report.name}`} aria-pressed={!!report.isPinned} sx={{ color: report.isPinned ? "#F59E0B" : (isDark ? "#8A8A94" : "#64748B") }}>
                           <Star size={15} weight={report.isPinned ? "fill" : "duotone"} />
                         </IconButton>
                       </Tooltip>
@@ -512,7 +512,7 @@ export default function ReportsPage() {
                   noRowsOverlay: () => (
                     <div className="py-16 text-center">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
-                        <MagnifyingGlass size={22} color={isDark ? "#E4E4E7" : "#94A3B8"} weight="duotone" />
+                        <MagnifyingGlass size={22} color={isDark ? "#A1A1AA" : "#64748B"} weight="duotone" />
                       </div>
                       <p className={`font-heading text-[15px]/[20px] font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No reports found</p>
                       <p className={`text-[13px]/[16px] mt-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Try adjusting your search</p>

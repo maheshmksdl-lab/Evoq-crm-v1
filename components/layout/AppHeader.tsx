@@ -51,7 +51,7 @@ function UserMenu({
           sx: {
             mt: 1.5, minWidth: 220,
             borderRadius: "16px",
-            border: `1px solid ${isDark ? "#27272A" : "#E8EEFB"}`,
+            border: `1px solid ${isDark ? "#27272A" : "var(--color-border-light)"}`,
             bgcolor: isDark ? "#18181B" : "#ffffff",
             boxShadow: isDark ? "0 12px 40px rgba(0,0,0,0.5)" : "0 12px 40px rgba(0,0,0,0.12)",
             overflow: "hidden",
@@ -61,7 +61,7 @@ function UserMenu({
     >
       {/* User info */}
       <div className="px-5 pt-4 pb-3">
-        <p className={`text-[15px] font-bold leading-tight ${isDark ? "text-[#F4F4F5]" : "text-[#0C2472]"}`}>PM SDL</p>
+        <p className={`text-[15px] font-bold leading-tight ${isDark ? "text-[#F4F4F5]" : "text-(--bg-sidebar)"}`}>PM SDL</p>
         <p className={`text-[12px] mt-0.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Super Admin</p>
       </div>
 
@@ -73,7 +73,7 @@ function UserMenu({
           sx={{
             gap: 2, px: "14px", py: "10px", fontSize: "0.875rem", fontWeight: 500,
             color: isDark ? "#D4D4D8" : "#334155", borderRadius: "10px",
-            "&:hover": { bgcolor: isDark ? "#27272A" : "#EFF6FF", color: isDark ? "#60A5FA" : "#1D4ED8" },
+            "&:hover": { bgcolor: isDark ? "#27272A" : "var(--color-surface-light)", color: isDark ? "#60A5FA" : "var(--color-brand-700)" },
           }}
         >
           <UserCircleIcon size={18} weight="duotone" />
@@ -105,9 +105,9 @@ function ThemeToggleButton({ isDark, onToggle }: { isDark: boolean; onToggle: ()
         aria-label="Toggle dark mode"
         sx={{
           borderRadius: "9px",
-          border: `1.5px solid ${isDark ? "#27272A" : "#E3ECFC"}`,
-          bgcolor: isDark ? "#0A0A0A" : "#f9fbff",
-          "&:hover": { bgcolor: isDark ? "#18181B" : "#EFF6FF" },
+          border: `1.5px solid ${isDark ? "#27272A" : "var(--color-border-light)"}`,
+          bgcolor: isDark ? "#0A0A0A" : "var(--color-surface)",
+          "&:hover": { bgcolor: isDark ? "#18181B" : "var(--color-surface-light)" },
           transition: "all 0.2s ease",
         }}
       >
@@ -195,7 +195,7 @@ export default function AppHeader() {
         <button
           onClick={toggle}
           className={`shrink-0 w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-150 ${
-            isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:text-brand-700 hover:bg-[#EFF6FF]"
+            isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:text-brand-700 hover:bg-surface-light"
           }`}
           aria-label="Open menu"
         >
@@ -215,7 +215,7 @@ export default function AppHeader() {
             <Badge
               badgeContent={3}
               color="error"
-              sx={{ "& .MuiBadge-badge": { fontSize: "0.55rem", height: 16, minWidth: 16, padding: "0 4px" } }}
+              sx={{ "& .MuiBadge-badge": { fontSize: "0.6875rem", height: 18, minWidth: 18, padding: "0 5px" } }}
             >
               <Bell size={20} color={isDark ? "#9CA3AF" : "#64748B"} weight="duotone" />
             </Badge>
@@ -227,8 +227,8 @@ export default function AppHeader() {
           onClick={e => setAvatarAnchor(e.currentTarget)}
           sx={{
             width: 34, height: 34,
-            bgcolor: "#1D4ED8", fontSize: "0.6rem", fontWeight: 800,
-            cursor: "pointer", border: `2px solid ${isDark ? "#27272A" : "#E3ECFC"}`,
+            bgcolor: "var(--color-brand-700)", fontSize: "0.6875rem", fontWeight: 800,
+            cursor: "pointer", border: `2px solid ${isDark ? "#27272A" : "var(--color-border-light)"}`,
           }}
         >PM</Avatar>
 
@@ -243,7 +243,7 @@ export default function AppHeader() {
       style={{
         position: "fixed", top: 0, left: 0, right: 0,
         height: "72px", zIndex: 60,
-        backgroundColor: isDark ? "#0A0A0A" : "#E3ECFC",
+        backgroundColor: isDark ? "#0A0A0A" : "var(--bg-header)",
         borderBottom: `1px solid ${isDark ? "#27272A" : "rgba(0,0,0,0.04)"}`,
         display: "flex", alignItems: "center",
         transition: "background-color 0.2s ease, border-color 0.2s ease",
@@ -260,7 +260,7 @@ export default function AppHeader() {
         <button
           onClick={toggle}
           className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-150 ${
-            isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:text-brand-700 hover:bg-[#EFF6FF]"
+            isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:text-brand-700 hover:bg-surface-light"
           }`}
           title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
@@ -274,7 +274,7 @@ export default function AppHeader() {
         <div className="flex-1 min-w-0">
           {/*{title ? (
             <div className="flex items-baseline gap-2 whitespace-nowrap">
-              <h1 className="text-[18px] font-extrabold text-[#0C2472] leading-none tracking-tight m-0">{title}</h1>
+              <h1 className="text-[18px] font-extrabold text-(--bg-sidebar) leading-none tracking-tight m-0">{title}</h1>
               <span className="text-[11.5px] text-slate-500 font-medium">· {today}</span>
             </div>
           ) : (
@@ -286,20 +286,20 @@ export default function AppHeader() {
         <div className={`flex items-center gap-2 border rounded-xl px-3 py-1.5 w-60 transition-all ${
           isDark
             ? "bg-[#0A0A0A] border-[#27272A] focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_rgba(96,165,250,0.3)]"
-            : "bg-surface border-border-light focus-within:border-brand-700 focus-within:border-2 focus-within:shadow-[0_0_0_2px_#93C5FD]"
+            : "bg-surface border-border-light focus-within:border-brand-700 focus-within:border-2 focus-within:shadow-[0_0_0_2px_var(--color-brand-500)]"
         }`}>
-          <MagnifyingGlass size={15} color={isDark ? "#71717A" : "#94A3B8"} weight="duotone" />
+          <MagnifyingGlass size={15} color={isDark ? "#8A8A94" : "#64748B"} weight="duotone" />
           <InputBase
             placeholder="Search leads, deals..."
             value={search}
             onChange={e => setSearch(e.target.value)}
             sx={{
               flex: 1, fontSize: "0.78rem", color: isDark ? "#D4D4D8" : "#334155",
-              "& input::placeholder": { color: isDark ? "#71717A" : "#94A3B8", opacity: 1 },
+              "& input::placeholder": { color: isDark ? "#8A8A94" : "#64748B", opacity: 1 },
             }}
           />
           <Tooltip title="⌘K">
-            <Command size={13} color={isDark ? "#52525B" : "#CBD5E1"} weight="duotone" />
+            <Command size={13} color={isDark ? "#71717A" : "#6B7A92"} weight="duotone" />
           </Tooltip>
         </div>
 
@@ -308,11 +308,11 @@ export default function AppHeader() {
 
         {/* Notifications */}
         <Tooltip title="3 unread notifications">
-          <IconButton size="small" sx={{ borderRadius: "8px", "&:hover": { bgcolor: isDark ? "#262626" : "#EFF6FF" } }}>
+          <IconButton size="small" sx={{ borderRadius: "8px", "&:hover": { bgcolor: isDark ? "#262626" : "var(--color-surface-light)" } }}>
             <Badge
               badgeContent={3}
               color="error"
-              sx={{ "& .MuiBadge-badge": { fontSize: "0.58rem", height: 15, minWidth: 15, padding: "0 3px" } }}
+              sx={{ "& .MuiBadge-badge": { fontSize: "0.6875rem", height: 18, minWidth: 18, padding: "0 5px" } }}
             >
               <Bell size={20} color={isDark ? "#9CA3AF" : "#64748B"} weight="duotone" />
             </Badge>
@@ -323,8 +323,8 @@ export default function AppHeader() {
         <Avatar
           src={OWNER_AVATARS["PM SDL"]}
           onClick={e => setAvatarAnchor(e.currentTarget)}
-          sx={{ width: 32, height: 32, bgcolor: "#1D4ED8", fontSize: "0.6rem", fontWeight: 800, cursor: "pointer" }}
-          className={`ring-2 ring-transparent transition-all ${isDark ? "hover:ring-[#3F3F46]" : "hover:ring-[#93C5FD]"}`}
+          sx={{ width: 32, height: 32, bgcolor: "var(--color-brand-700)", fontSize: "0.6875rem", fontWeight: 800, cursor: "pointer" }}
+          className={`ring-2 ring-transparent transition-all ${isDark ? "hover:ring-[#3F3F46]" : "hover:ring-brand-500"}`}
         >PM</Avatar>
 
         <UserMenu anchor={avatarAnchor} onClose={() => setAvatarAnchor(null)} router={router} isDark={isDark} />

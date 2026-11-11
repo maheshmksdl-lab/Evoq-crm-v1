@@ -79,7 +79,7 @@ export default function DealStageChart({ isDark = false }: { isDark?: boolean })
             <LabelList
               dataKey="deals"
               position="right"
-              style={{ fontSize: 10.5, fill: "#94A3B8", fontWeight: 600 }}
+              style={{ fontSize: 10.5, fill: isDark ? "#9CA3AF" : "#64748B", fontWeight: 600 }}
             />
             {stages.map((entry, i) => (
               <Cell key={i} fill={entry.color} />

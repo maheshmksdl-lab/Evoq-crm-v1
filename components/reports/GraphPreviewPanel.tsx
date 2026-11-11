@@ -83,12 +83,12 @@ const GraphPreviewPanel = memo(
                         <div className={`text-[12px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-900"}`}>
                           {module}
                           {node.data.isPrimary && (
-                            <span className={`ml-1.5 text-[10px] font-bold uppercase tracking-widest ${isDark ? "text-[#F59E0B]" : "text-[#D97706]"}`}>
+                            <span className={`ml-1.5 text-[11px] font-bold uppercase tracking-widest ${isDark ? "text-[#F59E0B]" : "text-[#D97706]"}`}>
                               Primary
                             </span>
                           )}
                         </div>
-                        <p className={`text-[10px] mt-0.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>
+                        <p className={`text-[11px] mt-0.5 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>
                           {selectedFields[module]?.length ?? 0} of {getModuleFields(module).length} fields
                         </p>
                       </div>
@@ -97,7 +97,7 @@ const GraphPreviewPanel = memo(
                     {/* Connection Arrow */}
                     {idx < nodes.length - 1 && edges.some(e => e.source === node.id) && (
                       <div className="flex justify-center">
-                        <ArrowRight size={14} color={isDark ? "#52525B" : "#CBD5E1"} weight="bold" />
+                        <ArrowRight size={14} color={isDark ? "#71717A" : "#6B7A92"} weight="bold" />
                       </div>
                     )}
                   </div>
@@ -128,7 +128,7 @@ const GraphPreviewPanel = memo(
                         return (
                           <li key={fieldName} className={isDark ? "text-[#A1A1AA]" : "text-slate-600"}>
                             {field?.label ?? fieldName}{" "}
-                            <span className={`text-[10px] uppercase font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
+                            <span className={`text-[11px] uppercase font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                               [{field?.type ?? "unknown"}]
                             </span>
                           </li>
@@ -151,7 +151,7 @@ const GraphPreviewPanel = memo(
                 {allFilters.map((filter) => (
                   <div
                     key={filter.id}
-                    className={`px-2.5 py-1.5 rounded-lg text-[10px] leading-snug ${
+                    className={`px-2.5 py-1.5 rounded-lg text-[11px] leading-snug ${
                       isDark ? "bg-brand-700/20 text-[#93C5FD]" : "bg-brand-700/10 text-brand-700"
                     }`}
                   >

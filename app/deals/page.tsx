@@ -319,7 +319,7 @@ export default function DealsPage() {
                   }`}>
                   {stage}
                   {cnt > 0 && <span className={`text-[13px]/[16px] font-medium px-1.5 py-0.5 rounded-full leading-none ${
-                    active ? "bg-white/20 text-white" : "bg-brand-700/10 text-[#0C2472]"
+                    active ? "bg-white/15 text-white" : "bg-brand-700/10 text-[#0C2472]"
                   }`}>{cnt}</span>}
                 </button>
               );
@@ -330,10 +330,10 @@ export default function DealsPage() {
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
             {/* Search */}
             <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 basis-full sm:basis-auto sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
-              <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
+              <MagnifyingGlass size={15} color="#6B7A92" weight="duotone" />
               <InputBase placeholder="Search deals…" value={search} inputProps={{ "aria-label": "Search deals" }}
                 onChange={e => setSearch(e.target.value)}
-                sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#94A3B8", opacity: 1 } }}
+                sx={{ flex: 1, fontSize: "0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder": { color: "#6B7A92", opacity: 1 } }}
               />
               {search && <button onClick={() => setSearch("")} aria-label="Clear search" className={`rounded-md px-1 text-[15px]/[20px] transition-colors ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"}`}>✕</button>}
             </div>
@@ -342,7 +342,7 @@ export default function DealsPage() {
             {/* Filters */}
             <Button variant="outlined" size="small"
               startIcon={activeFilters.length > 0
-                ? <Badge badgeContent={activeFilters.length} color="primary" sx={{ "& .MuiBadge-badge": { fontSize: "0.65rem", height: 14, minWidth: 14 } }}>
+                ? <Badge badgeContent={activeFilters.length} color="primary" sx={{ "& .MuiBadge-badge": { fontSize: "0.6875rem", height: 14, minWidth: 14 } }}>
                     <FunnelSimple size={14} weight="duotone" />
                   </Badge>
                 : <FunnelSimple size={14} weight="duotone" />
@@ -449,7 +449,7 @@ export default function DealsPage() {
                   noRowsOverlay: () => (
                     <div className="py-16 px-4 text-center break-words" role="status">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
-                        <MagnifyingGlass size={22} color={isDark ? "#E4E4E7" : "#94A3B8"} weight="duotone" />
+                        <MagnifyingGlass size={22} color={isDark ? "#A1A1AA" : "#64748B"} weight="duotone" />
                       </div>
                       <p className={`font-heading text-sm font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No deals found</p>
                       <p className={`text-xs mt-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Try adjusting your search or stage filter</p>

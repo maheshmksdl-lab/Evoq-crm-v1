@@ -77,7 +77,7 @@ const STATUS_CFG_DARK: Record<LeadStatus, { bg: string; text: string; dot: strin
 
 const PIPELINE: LeadStatus[] = ["New", "Contacted", "In Progress", "Qualified"];
 
-const AVATAR_PAL = ["#7C3AED", "#10B981", "#F59E0B", "#DB2777"];
+const AVATAR_PAL = ["#7C3AED", "#047857", "#B45309", "#DB2777"];
 const avatarColor = (n: string) => AVATAR_PAL[n.split("").reduce((a,c)=>a+c.charCodeAt(0),0)%AVATAR_PAL.length];
 const initials = (n: string) => { const p = n.trim().split(/\s+/); return p.length>=2?(p[0][0]+p[1][0]).toUpperCase():n.substring(0,2).toUpperCase(); };
 
@@ -91,7 +91,7 @@ const tone = (isDark: boolean) => ({
   primary:   isDark ? "#FAFAFA" : "#0F172A",
   secondary: isDark ? "#D4D4D8" : "#475569",
   tertiary:  isDark ? "#A1A1AA" : "#64748B",
-  empty:     isDark ? "#71717A" : "#94A3B8",
+  empty:     isDark ? "#8A8A94" : "#64748B",
 });
 // Visible keyboard focus (focus-visible only, so mouse clicks stay clean) — same ring as the Leads list.
 const FOCUS_RING = "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]";
@@ -165,7 +165,7 @@ function RelatedList({ items, onSelect, isDark }: { items: RelatedItem[]; onSele
                 <span className="text-[12px]/[16px] font-bold bg-border-light text-brand-700 min-w-[22px] text-center px-1.5 py-0.5 rounded-full tabular-nums">{count}</span>
               )}
               <CaretRight size={14} weight="bold" aria-hidden
-                className={`shrink-0 transition-all group-hover:translate-x-0.5 ${isDark ? "text-[#71717A] group-hover:text-[#D4D4D8]" : "text-[#94A3B8] group-hover:text-[#1D4ED8]"}`} />
+                className={`shrink-0 transition-all group-hover:translate-x-0.5 ${isDark ? "text-[#71717A] group-hover:text-[#D4D4D8]" : "text-[#64748B] group-hover:text-[#1D4ED8]"}`} />
             </button>
           </li>
         ))}
@@ -221,16 +221,16 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
     { icon: UserPlus,            color:"#2F6FED", bg:actBg, text:`Lead created by ${lead.owner}`,          time:lead.created  },
     { icon: TrendUp,             color:"#3B82F6", bg:actBg, text:`Status set to "${lead.status}"`,         time:lead.created  },
     { icon: Note,                color:"#7C3AED", bg:actBg, text:"Note added: Initial contact made…",      time:lead.modified },
-    { icon: Envelope,            color:"#E0883F", bg:actBg, text:"Email sent to lead",                     time:lead.modified },
-    { icon: Phone,               color:"#DB5E8C", bg:actBg, text:"Call logged — 5 min, no answer",         time:lead.modified },
+    { icon: Envelope,            color:"#B45F1B", bg:actBg, text:"Email sent to lead",                     time:lead.modified },
+    { icon: Phone,               color:"#C74C78", bg:actBg, text:"Call logged — 5 min, no answer",         time:lead.modified },
   ];
 
   // More menu options
   const moreOptions = [
     { icon: Envelope,       label:"Send Email",      color:"#3B82F6" },
-    { icon: Users,          label:"Assign to Team",  color:"#2E9E7B" },
+    { icon: Users,          label:"Assign to Team",  color:"#238264" },
     { icon: Copy,           label:"Duplicate Lead",  color:"#5B6CB5" },
-    { icon: DownloadSimple, label:"Export as PDF",   color:"#94A3B8" },
+    { icon: DownloadSimple, label:"Export as PDF",   color:"#6B7A92" },
     { type:"divider" as const },
     { icon: Trash,          label:"Delete Lead",     color:"#EF4444" },
   ];
@@ -248,9 +248,9 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
   const relatedItems: RelatedItem[] = [
     { icon: Note,                label:"Notes",         count:notes.length,        color:"#7C3AED" },
     { icon: ClipboardText,       label:"Tasks",         count:tasksData.length,    color:"#3B82F6" },
-    { icon: Phone,               label:"Calls",         count:callsData.length,    color:"#DB5E8C" },
-    { icon: Envelope,            label:"Emails",        count:0,                   color:"#E0883F" },
-    { icon: Paperclip,           label:"Attachments",   count:0,                   color:"#94A3B8" },
+    { icon: Phone,               label:"Calls",         count:callsData.length,    color:"#C74C78" },
+    { icon: Envelope,            label:"Emails",        count:0,                   color:"#B45F1B" },
+    { icon: Paperclip,           label:"Attachments",   count:0,                   color:"#6B7A92" },
     { icon: ClockCounterClockwise,label:"Stage History", count:activityFeed.length, color: isDark?"#38BDF8":"#0C2472" },
   ];
 
@@ -465,7 +465,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                               </button>
                             </Tooltip>
                             {i < PIPELINE.length - 1 && (
-                              <CaretRight size={14} weight="bold" aria-hidden color={isDone||isActive ? (isDark ? "#A1A1AA" : "#1D4ED8") : (isDark ? "#52525B" : "#CBD5E1")} className="hidden @min-[34rem]:block shrink-0" />
+                              <CaretRight size={14} weight="bold" aria-hidden color={isDone||isActive ? (isDark ? "#A1A1AA" : "#1D4ED8") : (isDark ? "#71717A" : "#6B7A92")} className="hidden @min-[34rem]:block shrink-0" />
                             )}
                           </div>
                         );
@@ -508,9 +508,9 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                 <dl className="grid grid-cols-2 @min-[36rem]:grid-cols-4 gap-3">
                   {[
                     { label:"Lead Source", value:lead.leadSource||"—",    icon:TrendUp,   fill: isDark?"#1A2D4A":"#D6E4F9", deep: isDark?"#60A5FA":"#2F6FED" },
-                    { label:"Rating",      value:lead.rating||"—",        icon:Star,      fill: isDark?"#1A2D3A":"#D0E5E0", deep: isDark?"#34D399":"#2E9E7B" },
-                    { label:"Industry",    value:lead.industry||"—",      icon:Buildings, fill: isDark?"#2A1E10":"#FAE3D0", deep: isDark?"#FB923C":"#E0883F" },
-                    { label:"Employees",   value:lead.noOfEmployees||"—", icon:User,      fill: isDark?"#2A1828":"#F5D9E1", deep: isDark?"#F472B6":"#DB5E8C" },
+                    { label:"Rating",      value:lead.rating||"—",        icon:Star,      fill: isDark?"#1A2D3A":"#D0E5E0", deep: isDark?"#34D399":"#238264" },
+                    { label:"Industry",    value:lead.industry||"—",      icon:Buildings, fill: isDark?"#2A1E10":"#FAE3D0", deep: isDark?"#FB923C":"#B45F1B" },
+                    { label:"Employees",   value:lead.noOfEmployees||"—", icon:User,      fill: isDark?"#2A1828":"#F5D9E1", deep: isDark?"#F472B6":"#C74C78" },
                   ].map(({ label, value, icon: Icon, fill, deep }) => (
                     <div key={label} className={`rounded-xl border p-3.5 min-w-0 ${isDark ? "border-white/10" : "border-white/60"}`}
                       style={{ backgroundColor:fill, boxShadow: isDark ? "none" : "0 6px 24px rgba(15,23,42,0.06)" }}>

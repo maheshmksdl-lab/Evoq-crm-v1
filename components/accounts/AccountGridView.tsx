@@ -11,15 +11,15 @@ interface Account {
   phone: string; accountType: string; website?: string; creation: string;
 }
 
-const AVATAR_PAL = ["#7C3AED", "#10B981", "#F59E0B", "#DB2777"];
+const AVATAR_PAL = ["#7C3AED", "#047857", "#B45309", "#DB2777"];
 const avatarColor = (n: string) => AVATAR_PAL[n.split("").reduce((a, c) => a + c.charCodeAt(0), 0) % AVATAR_PAL.length];
 const initials    = (n: string) => n.substring(0, 2).toUpperCase();
 
 const PASTELS = [
   { fill: "#D6E4F9", deep: "#2F6FED" },
-  { fill: "#D0E5E0", deep: "#2E9E7B" },
-  { fill: "#FAE3D0", deep: "#E0883F" },
-  { fill: "#F5D9E1", deep: "#DB5E8C" },
+  { fill: "#D0E5E0", deep: "#238264" },
+  { fill: "#FAE3D0", deep: "#B45F1B" },
+  { fill: "#F5D9E1", deep: "#C74C78" },
   { fill: "#D2DFF0", deep: "#5B6CB5" },
 ];
 

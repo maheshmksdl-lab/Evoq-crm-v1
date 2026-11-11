@@ -66,7 +66,7 @@ export default function NewTaskDrawer({ open, onClose }: Props) {
       "&.Mui-focused":          { boxShadow: "none" },
       "& input":                { padding: "10px 14px" },
     },
-    "& .MuiInputLabel-root":             { fontSize: "0.79rem", ...(isDark ? {} : { color: "#94A3B8" }) },
+    "& .MuiInputLabel-root":             { fontSize: "0.79rem", ...(isDark ? {} : { color: "#64748B" }) },
     "& .MuiInputLabel-root.Mui-focused": { color: isDark ? "#A1A1AA" : "#64748B" },
     "& .MuiSelect-select":               { fontSize: "0.82rem", padding: "10px 14px", ...(isDark ? {} : { backgroundColor: "#EFF6FF" }) },
   };
@@ -188,7 +188,7 @@ export default function NewTaskDrawer({ open, onClose }: Props) {
                 <InputLabel>Name</InputLabel>
                 <Select label="Name" value={form.contactName} onChange={e => set("contactName", e.target.value)}
                   displayEmpty renderValue={v => v || ""}>
-                  <MenuItem value="" sx={{ fontSize: "0.82rem", color: "#94A3B8" }}><em>None</em></MenuItem>
+                  <MenuItem value="" sx={{ fontSize: "0.82rem", color: "#6B7A92" }}><em>None</em></MenuItem>
                   {CONTACTS.map(c => (
                     <MenuItem key={c} value={c} sx={{ fontSize: "0.82rem" }}>{c}</MenuItem>
                   ))}
@@ -210,7 +210,7 @@ export default function NewTaskDrawer({ open, onClose }: Props) {
                 <InputLabel>Related to</InputLabel>
                 <Select label="Related to" value={form.relatedTo} onChange={e => set("relatedTo", e.target.value)}
                   displayEmpty renderValue={v => v || ""}>
-                  <MenuItem value="" sx={{ fontSize: "0.82rem", color: "#94A3B8" }}><em>None</em></MenuItem>
+                  <MenuItem value="" sx={{ fontSize: "0.82rem", color: "#6B7A92" }}><em>None</em></MenuItem>
                   {RELATED_TO.map(r => (
                     <MenuItem key={r} value={r} sx={{ fontSize: "0.82rem" }}>{r}</MenuItem>
                   ))}

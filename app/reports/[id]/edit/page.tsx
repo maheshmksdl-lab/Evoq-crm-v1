@@ -118,7 +118,7 @@ export default function ReportEditPage({ params }: { params: Promise<{ id: strin
         <div className="px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2 sm:gap-4 min-w-0">
             <button
-              onClick={() => router.back()}
+              onClick={() => router.back()} aria-label="Go back"
               className={`p-2 rounded-lg transition-colors shrink-0 ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#F0F9FF]"}`}
             >
               <CaretLeft size={18} weight="duotone" color={isDark ? "#9CA3AF" : "#64748B"} />

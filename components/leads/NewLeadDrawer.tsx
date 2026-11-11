@@ -31,7 +31,7 @@ function SectionHeader({
       <div className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
         <Icon size={13} color={isDark ? "#71717A" : "#1D4ED8"} weight="duotone" />
       </div>
-      <p className={`font-heading text-[10.5px] font-bold uppercase tracking-[0.13em] whitespace-nowrap ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>
+      <p className={`font-heading text-[11px] font-bold uppercase tracking-[0.13em] whitespace-nowrap ${isDark ? "text-[#A1A1AA]" : "text-brand-700"}`}>
         {title}
       </p>
       <div className={`flex-1 h-px ${isDark ? "bg-[#27272A]" : "bg-border-light"}`} />
@@ -104,7 +104,7 @@ export default function NewLeadDrawer({
       "&.Mui-focused": { boxShadow: "none" },
       "& input": { padding: "10px 14px" },
     },
-    "& .MuiInputLabel-root": { fontSize: "0.79rem", ...(isDark ? {} : { color: "#94A3B8" }) },
+    "& .MuiInputLabel-root": { fontSize: "0.79rem", ...(isDark ? {} : { color: "#64748B" }) },
     "& .MuiInputLabel-root.Mui-focused": { color: isDark ? "#A1A1AA" : "#64748B" },
     "& .MuiSelect-select": { fontSize: "0.82rem", padding: "10px 14px", ...(isDark ? {} : { backgroundColor: "#EFF6FF" }) },
   };

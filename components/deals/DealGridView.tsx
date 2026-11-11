@@ -17,16 +17,16 @@ interface Deal {
 
 const STAGE_CFG: Record<DealStage, { fill: string; deep: string; darkFill: string; darkDeep: string }> = {
   "Qualification":            { fill: "#D6E4F9", deep: "#2F6FED", darkFill: "#1E2235", darkDeep: "#4F8EF7" },
-  "Needs Analysis":           { fill: "#D0E5E0", deep: "#2E9E7B", darkFill: "#1A2820", darkDeep: "#34D399" },
-  "Value Proposition":        { fill: "#FAE3D0", deep: "#E0883F", darkFill: "#2A1F18", darkDeep: "#F59E0B" },
-  "Identify Decision Makers": { fill: "#F5D9E1", deep: "#DB5E8C", darkFill: "#28181F", darkDeep: "#F472B6" },
+  "Needs Analysis":           { fill: "#D0E5E0", deep: "#238264", darkFill: "#1A2820", darkDeep: "#34D399" },
+  "Value Proposition":        { fill: "#FAE3D0", deep: "#B45F1B", darkFill: "#2A1F18", darkDeep: "#F59E0B" },
+  "Identify Decision Makers": { fill: "#F5D9E1", deep: "#C74C78", darkFill: "#28181F", darkDeep: "#F472B6" },
   "Proposal/Price Quote":     { fill: "#D2DFF0", deep: "#5B6CB5", darkFill: "#1B1E2D", darkDeep: "#818CF8" },
-  "Negotiation/Review":       { fill: "#FAE3D0", deep: "#E0883F", darkFill: "#2A1F18", darkDeep: "#F59E0B" },
-  "Closed Won":               { fill: "#D0E5E0", deep: "#2E9E7B", darkFill: "#1A2820", darkDeep: "#34D399" },
-  "Closed Lost":              { fill: "#F5D9E1", deep: "#DB5E8C", darkFill: "#28181F", darkDeep: "#F472B6" },
+  "Negotiation/Review":       { fill: "#FAE3D0", deep: "#B45F1B", darkFill: "#2A1F18", darkDeep: "#F59E0B" },
+  "Closed Won":               { fill: "#D0E5E0", deep: "#238264", darkFill: "#1A2820", darkDeep: "#34D399" },
+  "Closed Lost":              { fill: "#F5D9E1", deep: "#C74C78", darkFill: "#28181F", darkDeep: "#F472B6" },
 };
 
-const AVATAR_PAL = ["#7C3AED", "#10B981", "#F59E0B", "#DB2777"];
+const AVATAR_PAL = ["#7C3AED", "#047857", "#B45309", "#DB2777"];
 const avatarColor = (n: string) => AVATAR_PAL[n.split("").reduce((a, c) => a + c.charCodeAt(0), 0) % AVATAR_PAL.length];
 const initials    = (n: string) => { const p = n.trim().split(/\s+/); return p.length >= 2 ? (p[0][0] + p[1][0]).toUpperCase() : n.substring(0, 2).toUpperCase(); };
 const fmt         = (n: number) => n === 0 ? "₹0" : `₹${n.toLocaleString("en-IN")}`;

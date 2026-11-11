@@ -14,15 +14,15 @@ interface Lead {
   leadSource: string; rating: string; created: string;
 }
 
-const AVATAR_PAL = ["#7C3AED", "#10B981", "#F59E0B", "#DB2777"];
+const AVATAR_PAL = ["#7C3AED", "#047857", "#B45309", "#DB2777"];
 const avatarColor = (n: string) => AVATAR_PAL[n.split("").reduce((a, c) => a + c.charCodeAt(0), 0) % AVATAR_PAL.length];
 const initials    = (n: string) => { const p = n.trim().split(/\s+/); return p.length >= 2 ? (p[0][0] + p[1][0]).toUpperCase() : n.substring(0, 2).toUpperCase(); };
 
 const PASTELS = [
   { fill: "#D6E4F9", deep: "#2F6FED" },
-  { fill: "#D0E5E0", deep: "#2E9E7B" },
-  { fill: "#FAE3D0", deep: "#E0883F" },
-  { fill: "#F5D9E1", deep: "#DB5E8C" },
+  { fill: "#D0E5E0", deep: "#238264" },
+  { fill: "#FAE3D0", deep: "#B45F1B" },
+  { fill: "#F5D9E1", deep: "#C74C78" },
   { fill: "#D2DFF0", deep: "#5B6CB5" },
 ];
 
@@ -138,7 +138,7 @@ export default function LeadGridView({ leads }: Props) {
             }`}>
               <Tooltip title={lead.owner}>
                 <div className="flex items-center gap-1.5">
-                  <Avatar src={OWNER_AVATARS[lead.owner]} sx={{ width: 20, height: 20, bgcolor: owCol, fontSize: "0.58rem", fontWeight: 800 }}>
+                  <Avatar src={OWNER_AVATARS[lead.owner]} sx={{ width: 20, height: 20, bgcolor: owCol, fontSize: "0.6875rem", fontWeight: 800 }}>
                     {lead.ownerInitials}
                   </Avatar>
                   <span className={`text-[12px] font-medium truncate max-w-sidebar-collapsed ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{lead.owner}</span>

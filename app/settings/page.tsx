@@ -25,8 +25,9 @@ import {
   Lightning, AddressBook, SquaresFour, UserPlus, ArrowLeft, Info,
   DotsSixVertical, DotsThreeVertical, TextT, TextAlignLeft, ListBullets, CalendarBlank,
   Hash, CurrencyDollar, CheckSquare, LinkSimple, ChartBar, X,
-  ClockCounterClockwise, ArrowsLeftRight, Rows, CopySimple,
+  ClockCounterClockwise, ArrowsLeftRight, Rows, CopySimple, Palette,
 } from "@phosphor-icons/react";
+import ThemesPanel from "@/components/settings/ThemesPanel";
 import { useTheme } from "@/components/ThemeContext";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -58,6 +59,7 @@ const SECTIONS = [
     items: [
       { key: "modules",  label: "Modules and Fields",  icon: Cube  },
       { key: "homepage", label: "Dashboard Customization", icon: House },
+      { key: "themes",   label: "Themes",              icon: Palette },
     ],
   },
   {
@@ -256,8 +258,8 @@ function ProfileHero({ initials, name, role, subtitle, contacts, avatarBg, avata
             <div className={`w-[64px] h-[64px] rounded-full border-[3px] shadow-md flex items-center justify-center ${isDark ? "border-[#1C1C1E]" : "border-surface"}`} style={{ backgroundColor:avatarBg }}>
               <span className="text-[20px] font-extrabold leading-none select-none" style={{ color:avatarText }}>{initials}</span>
             </div>
-            <button className={`absolute bottom-0 right-0 w-5 h-5 rounded-full border shadow-xs flex items-center justify-center transition-colors ${isDark ? "bg-[#27272A] border-[#3F3F46] hover:bg-[#3F3F46]" : "bg-white border-border-light hover:bg-[#EFF6FF]"}`}>
-              <Camera size={10} color={isDark ? "#71717A" : "#64748B"} weight="duotone" />
+            <button aria-label="Change profile photo" className={`absolute bottom-0 right-0 w-6 h-6 rounded-full border shadow-xs flex items-center justify-center transition-colors ${isDark ? "bg-[#27272A] border-[#3F3F46] hover:bg-[#3F3F46]" : "bg-white border-border-light hover:bg-[#EFF6FF]"}`}>
+              <Camera size={12} color={isDark ? "#71717A" : "#64748B"} weight="duotone" />
             </button>
           </div>
         </div>
@@ -303,7 +305,7 @@ function PersonalSettingsPanel() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   return (
-    <div className={`flex-1 overflow-y-auto px-6 py-6 space-y-4 ${isDark ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+    <div className={`flex-1 overflow-y-auto px-8 py-8 space-y-5 ${isDark ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
       <ProfileHero
         initials="PM" name="PM SDL" role="Super Admin"
         avatarBg="#FEF3C7" avatarText="#B45309"
@@ -511,7 +513,7 @@ function NewUserDrawer({ open, onClose, onSubmit }: {
             <FormControl size="small" fullWidth sx={FX}>
               <InputLabel shrink>Gender</InputLabel>
               <Select label="Gender" value={formData.gender} onChange={e => handleChange("gender", e.target.value)} displayEmpty>
-                <MenuItem value="" sx={{ fontSize: "0.82rem", color: "#94A3B8" }}><em>Select gender</em></MenuItem>
+                <MenuItem value="" sx={{ fontSize: "0.82rem", color: "#6B7A92" }}><em>Select gender</em></MenuItem>
                 <MenuItem value="Male" sx={{ fontSize: "0.82rem" }}>Male</MenuItem>
                 <MenuItem value="Female" sx={{ fontSize: "0.82rem" }}>Female</MenuItem>
                 <MenuItem value="Other" sx={{ fontSize: "0.82rem" }}>Other</MenuItem>
@@ -644,7 +646,7 @@ function UserDetailPanel({ user, onUpdate }: { user: UserRecord; onUpdate: (upda
   const { theme: uTheme } = useTheme();
   const isDarkUD = uTheme === "dark";
   return (
-    <div className={`flex-1 overflow-y-auto px-5 py-5 space-y-4 ${isDarkUD ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+    <div className={`flex-1 overflow-y-auto px-8 py-8 space-y-5 ${isDarkUD ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
       <ProfileHero
         initials={user.initials} name={user.name} role={user.role}
         avatarBg={user.avatarColor} avatarText={user.textColor}
@@ -729,9 +731,9 @@ function UsersPanel() {
         {/* Toolbar */}
         <div className={`px-4 py-3 border-b flex items-center gap-2 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <div className={`flex-1 flex items-center gap-1.5 border rounded-xl px-3 py-1.5 focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8] transition-all ${isDark ? "bg-[#18181B] border-[#3F3F46]" : "bg-white border-border-light"}`}>
-            <MagnifyingGlass size={13} color="#94A3B8" weight="duotone" />
+            <MagnifyingGlass size={13} color="#6B7A92" weight="duotone" />
             <InputBase placeholder="Search" value={search} onChange={e => setSearch(e.target.value)}
-              sx={{ flex:1, fontSize:"0.75rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder":{color:"#94A3B8",opacity:1} }} />
+              sx={{ flex:1, fontSize:"0.75rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder":{color:"#6B7A92",opacity:1} }} />
           </div>
           <Button variant="contained" size="small" startIcon={<Plus size={12} weight="bold" />}
             onClick={() => setShowNewUserModal(true)}
@@ -824,7 +826,7 @@ function OrganizationPanel() {
   const { theme: orgTheme } = useTheme();
   const isDarkOrg = orgTheme === "dark";
   return (
-    <div className={`flex-1 overflow-y-auto px-6 py-6 space-y-4 ${isDarkOrg ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+    <div className={`flex-1 overflow-y-auto px-8 py-8 space-y-5 ${isDarkOrg ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
       <ProfileHero
         initials="S" name="Social DNA Labs" role="Super Admin"
         subtitle="India · INR"
@@ -945,7 +947,7 @@ function NewRoleDrawer({ open, onClose }: { open: boolean; onClose: () => void }
             <FormControl size="small" fullWidth sx={FX}>
               <InputLabel>Reports To</InputLabel>
               <Select label="Reports To" value={formData.reportsTo} onChange={e => handleChange("reportsTo", e.target.value)} displayEmpty>
-                <MenuItem value="" sx={{ fontSize: "0.82rem", color: "#94A3B8" }}><em>Select a role</em></MenuItem>
+                <MenuItem value="" sx={{ fontSize: "0.82rem", color: "#6B7A92" }}><em>Select a role</em></MenuItem>
                 <MenuItem value="Administrator" sx={{ fontSize: "0.82rem" }}>Administrator</MenuItem>
                 <MenuItem value="VP of Operations" sx={{ fontSize: "0.82rem" }}>VP of Operations</MenuItem>
                 <MenuItem value="Operations Manager" sx={{ fontSize: "0.82rem" }}>Operations Manager</MenuItem>
@@ -1012,8 +1014,8 @@ function RoleTreeNode({ node, depth, selectedId, expandedIds, onSelect, onToggle
           className={`w-5 h-5 flex items-center justify-center shrink-0 rounded-md transition-colors ${isDark ? "hover:bg-[#3F3F46]" : "hover:bg-border-light"}`}>
           {hasChildren
             ? isExpanded
-              ? <CaretDown size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" />
-              : <CaretRight size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" />
+              ? <CaretDown size={10} color={isDark ? "#8A8A94" : "#64748B"} weight="bold" />
+              : <CaretRight size={10} color={isDark ? "#8A8A94" : "#64748B"} weight="bold" />
             : <span className={`w-1.5 h-1.5 rounded-full inline-block ${isDark ? "bg-[#3F3F46]" : "bg-[#CBD5E1]"}`} />
           }
         </button>
@@ -1134,7 +1136,7 @@ function RolesPanel() {
       </div>
 
       {/* Role detail */}
-      <div className={`flex-1 overflow-y-auto px-6 py-6 ${isDark ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+      <div className={`flex-1 overflow-y-auto px-8 py-8 ${isDark ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
         {/* Tabs */}
         <div className="flex items-center gap-2 mb-5">
           {(["overview","timeline"] as const).map(tab => (
@@ -1421,7 +1423,7 @@ function PermissionPanel() {
                             : isDark ? "border-[#1C1C1E] bg-transparent opacity-50" : "border-transparent bg-transparent opacity-50"
                         }`}>
                         <Icon size={12} color={checked ? meta.color : "#94A3B8"} weight={perm === "fullAccess" || perm === "delete" ? "fill" : "duotone"} className="shrink-0" />
-                        <span className={`text-[11.5px] font-medium truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{meta.label}</span>
+                        <span className={`text-[11.5px] font-medium truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`} title={meta.label}>{meta.label}</span>
                       </button>
                     );
                   })}
@@ -1467,7 +1469,7 @@ function PermissionPanel() {
       )}
 
       {tab === "summary" && (
-        <div className="flex-1 overflow-auto px-4 sm:px-6 py-5 space-y-5">
+        <div className="flex-1 overflow-auto px-4 sm:px-8 py-7 space-y-5">
           {/* Role cards grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {PERM_ROLES.map(role => {
@@ -1722,7 +1724,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                       className={`flex items-center gap-1.5 px-2 py-1.5 border rounded-lg cursor-grab transition-colors text-[15px] font-medium whitespace-nowrap overflow-hidden ${isDark ? "border-[#3F3F46] bg-[#18181B] hover:border-[#60A5FA] hover:bg-[#1E293B]" : "border-border-light bg-white hover:border-brand-700 hover:bg-[#EFF6FF]"}`}
                       style={{ color: isDark ? "#93C5FD" : "#0C2472" }}>
                       <Icon size={11} color={isDark ? "#93C5FD" : "#0C2472"} weight="duotone" className="shrink-0" />
-                      <span className="truncate">{ft.label}</span>
+                      <span className="truncate" title={ft.label}>{ft.label}</span>
                     </div>
                   );
                 })}
@@ -1755,7 +1757,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                   <div className="text-[13px] font-bold uppercase tracking-wider mb-1.5 px-1" style={{ color: isDark ? "#93C5FD" : "#0C2472" }}>{sec}</div>
                   {flds.map(f => (
                     <div key={f} className={`flex items-center gap-2 px-2 py-1.5 mb-0.5 border rounded-lg text-[13px] cursor-grab transition-colors ${isDark ? "border-[#3F3F46] bg-[#18181B] hover:border-[#60A5FA] hover:bg-[#1E293B]" : "border-border-light bg-white hover:border-brand-700 hover:bg-[#EFF6FF]"}`} style={{ color: isDark ? "#93C5FD" : "#0C2472" }}>
-                      <DotsSixVertical size={11} color={isDark ? "#71717A" : "#94A3B8"}/>
+                      <DotsSixVertical size={11} color={isDark ? "#8A8A94" : "#64748B"}/>
                       {f}
                     </div>
                   ))}
@@ -1805,7 +1807,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
               {LEADS_CREATE_SECTIONS.map(section => (
                 <div key={section.title} className={`rounded-xl border overflow-hidden ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-white border-border-light"}`}>
                   <div className={`flex items-center gap-2 px-4 py-2.5 border-b ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-[#fafcff]"}`}>
-                    <DotsSixVertical size={14} color={isDark ? "#71717A" : "#94A3B8"}/>
+                    <DotsSixVertical size={14} color={isDark ? "#8A8A94" : "#64748B"}/>
                     <span className={`text-[13px] font-bold flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{section.title}</span>
                     <IconButton size="small" sx={{ p:0.3, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color: isDark ? "#60A5FA" : "#1D4ED8"}, borderRadius:"6px" }}>
                       <Gear size={13} weight="duotone"/>
@@ -1854,8 +1856,8 @@ function LayoutEditor({ module, layoutName, onClose }: {
                     <span className={`text-[15px] w-36 shrink-0 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
                     <span className="flex-1 text-[15px] text-inherit">{f.type}</span>
                     {f.removable && (
-                      <button className={`w-5 h-5 flex items-center justify-center rounded-full transition-colors opacity-60 hover:opacity-100 ${isDark ? "hover:bg-[#27272A]" : "hover:bg-slate-100"}`}>
-                        <X size={11} color={isDark ? "#71717A" : "#94A3B8"} weight="bold"/>
+                      <button aria-label={`Remove field ${f.type}`} className={`w-6 h-6 flex items-center justify-center rounded-full transition-colors opacity-90 hover:opacity-100 ${isDark ? "hover:bg-[#27272A]" : "hover:bg-slate-100"}`}>
+                        <X size={11} color={isDark ? "#8A8A94" : "#64748B"} weight="bold"/>
                       </button>
                     )}
                   </div>
@@ -1879,7 +1881,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                 <div className={`divide-y ${isDark ? "divide-[#27272A]" : "divide-[#EFF6FF]"}`}>
                   {DV_BC_FIELDS.map((f,i) => (
                     <div key={i} className="flex items-center gap-3 px-4 py-2.5">
-                      <DotsSixVertical size={13} color={isDark ? "#71717A" : "#94A3B8"}/>
+                      <DotsSixVertical size={13} color={isDark ? "#8A8A94" : "#64748B"}/>
                       <span className={`text-[15px] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
                       <span className="text-[13px] text-inherit">{f.type}</span>
                     </div>
@@ -1979,7 +1981,7 @@ function LayoutEditor({ module, layoutName, onClose }: {
                         ? isDark ? "border-[#60A5FA] bg-[#18181B] shadow-xs" : "border-brand-700 bg-[#EFF6FF] shadow-xs"
                         : isDark ? "border-[#27272A] bg-[#111113] hover:border-[#60A5FA] hover:bg-[#18181B]" : "border-border-light bg-surface hover:border-[#A5B4FC] hover:bg-[#EFF6FF]"}`}
                 >
-                  <DotsSixVertical size={16} color={bcDropIdx === idx ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#71717A" : "#94A3B8")} weight="bold" />
+                  <DotsSixVertical size={16} color={bcDropIdx === idx ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#8A8A94" : "#64748B")} weight="bold" />
                   <div className="flex-1 min-w-0">
                     <div className={`text-[15px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-800"}`}>{field.label}</div>
                     <div className={`text-[12px] capitalize ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{field.type}</div>
@@ -2180,8 +2182,8 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                                 : "border-[#EFF6FF] bg-slate-50 text-slate-500 cursor-not-allowed"
                           }`}
                           style={canDragFields ? { color: isDark ? "#93C5FD" : "#0C2472" } : {}}>
-                          <Icon size={11} color={canDragFields ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#3F3F46" : "#CBD5E1")} weight="duotone" className="shrink-0" />
-                          <span className="truncate">{ft.label}</span>
+                          <Icon size={11} color={canDragFields ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#71717A" : "#6B7A92")} weight="duotone" className="shrink-0" />
+                          <span className="truncate" title={ft.label}>{ft.label}</span>
                         </div>
                       );
                     })}
@@ -2229,7 +2231,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
               ) : sections.map(section => (
                 <div key={section.id} className={`rounded-xl border overflow-hidden ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-white border-border-light"}`}>
                   <div className={`flex items-center gap-2 px-4 py-2.5 border-b ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-[#fafcff]"}`}>
-                    <DotsSixVertical size={14} color={isDark ? "#71717A" : "#94A3B8"}/>
+                    <DotsSixVertical size={14} color={isDark ? "#8A8A94" : "#64748B"}/>
                     <span className={`text-[14px] font-bold flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{section.title}</span>
                     <IconButton size="small" onClick={() => removeSection(section.id)} sx={{ p:0.3, color: isDark ? "#71717A" : "#94A3B8", "&:hover":{color:"#EF4444"}, borderRadius:"6px" }}>
                       <Trash size={13} weight="duotone"/>
@@ -2248,7 +2250,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                       <div key={f.id} className={`flex items-center justify-between px-3 py-2 border rounded-lg transition-colors group ${isDark ? "border-[#27272A] bg-[#111113] hover:border-[#60A5FA]" : "border-border-light bg-[#fafcff] hover:border-[#4A7AE8]"}`}>
                         <span className={`text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
                         <button onClick={() => removeField(section.id, f.id)} aria-label={`Remove ${f.label}`} className="rounded-sm opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100 transition-opacity">
-                          <X size={11} color={isDark ? "#71717A" : "#94A3B8"} weight="bold"/>
+                          <X size={11} color={isDark ? "#8A8A94" : "#64748B"} weight="bold"/>
                         </button>
                       </div>
                     ))}
@@ -2277,7 +2279,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                         <div key={f.id} className="flex items-center px-4 py-2.5 group">
                           <span className={`text-[14px] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
                           <button onClick={() => removeQcField(f.id)} aria-label={`Remove ${f.label}`} className="rounded-sm opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(hover:none)]:opacity-100 transition-opacity">
-                            <X size={11} color={isDark ? "#71717A" : "#94A3B8"} weight="bold"/>
+                            <X size={11} color={isDark ? "#8A8A94" : "#64748B"} weight="bold"/>
                           </button>
                         </div>
                       ))}
@@ -2305,7 +2307,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                     <div className={`divide-y ${isDark ? "divide-[#27272A]" : "divide-[#EFF6FF]"}`}>
                       {dvBcFields.map(f => (
                         <div key={f.id} className="flex items-center gap-3 px-4 py-2.5">
-                          <DotsSixVertical size={13} color={isDark ? "#71717A" : "#94A3B8"}/>
+                          <DotsSixVertical size={13} color={isDark ? "#8A8A94" : "#64748B"}/>
                           <span className={`text-[14px] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
                           <span className={`text-[12px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{f.type}</span>
                         </div>
@@ -2338,7 +2340,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                   <div className={`divide-y ${isDark ? "divide-[#27272A]" : "divide-[#EFF6FF]"}`}>
                     {allFields.map(f => (
                       <div key={f.id} className="flex items-center gap-3 px-4 py-2.5">
-                        <DotsSixVertical size={13} color={isDark ? "#71717A" : "#94A3B8"}/>
+                        <DotsSixVertical size={13} color={isDark ? "#8A8A94" : "#64748B"}/>
                         <span className={`text-[14px] flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.label}</span>
                       </div>
                     ))}
@@ -2440,7 +2442,7 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
                         ? isDark ? "border-[#60A5FA] bg-[#18181B] shadow-xs" : "border-brand-700 bg-[#EFF6FF] shadow-xs"
                         : isDark ? "border-[#27272A] bg-[#111113] hover:border-[#60A5FA] hover:bg-[#18181B]" : "border-border-light bg-surface hover:border-[#A5B4FC] hover:bg-[#EFF6FF]"}`}
                 >
-                  <DotsSixVertical size={16} color={dvBcDropIdx === idx ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#71717A" : "#94A3B8")} weight="bold" />
+                  <DotsSixVertical size={16} color={dvBcDropIdx === idx ? (isDark ? "#60A5FA" : "#1D4ED8") : (isDark ? "#8A8A94" : "#64748B")} weight="bold" />
                   <div className="flex-1 min-w-0">
                     <div className={`text-[14px] font-medium ${isDark ? "text-[#D4D4D8]" : "text-slate-800"}`}>{field.label}</div>
                     {'type' in field && <div className={`text-[11px] capitalize ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{(field as any).type}</div>}
@@ -2657,11 +2659,11 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
             Modules
           </button>
           <div className="flex items-center gap-1">
-            <IconButton size="small" sx={{ p:0.4, color:"#94A3B8", "&:hover":{color:"#1D4ED8",bgcolor:"#EFF6FF"}, borderRadius:"6px", display: { xs: "none", md: "inline-flex" } }}>
+            <IconButton size="small" sx={{ p:0.4, color:"#6B7A92", "&:hover":{color:"#1D4ED8",bgcolor:"#EFF6FF"}, borderRadius:"6px", display: { xs: "none", md: "inline-flex" } }}>
               <MagnifyingGlass size={13} weight="duotone" />
             </IconButton>
             <IconButton size="small" onClick={() => setSubNavOpen(o => !o)}
-              sx={{ p:0.4, color:"#94A3B8", "&:hover":{color:"#1D4ED8",bgcolor:"#EFF6FF"}, borderRadius:"6px", display: { xs: "inline-flex", md: "none" } }}>
+              sx={{ p:0.4, color:"#6B7A92", "&:hover":{color:"#1D4ED8",bgcolor:"#EFF6FF"}, borderRadius:"6px", display: { xs: "inline-flex", md: "none" } }}>
               {subNavOpen ? <CaretUp size={13} weight="bold" /> : <CaretDown size={13} weight="bold" />}
             </IconButton>
           </div>
@@ -2676,7 +2678,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                   isActive ? "bg-brand-700 text-white" : "text-slate-600 hover:bg-[#EFF6FF]"
                 }`}>
                 <Icon size={13} color={isActive ? "#fff" : m.color} weight="duotone" />
-                <span className="truncate">{m.label}</span>
+                <span className="truncate" title={m.label}>{m.label}</span>
               </button>
             );
           })}
@@ -2850,7 +2852,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                   {/* Toolbar */}
                   <div className="flex items-center gap-3 mb-4 flex-wrap">
                     <div className="flex-1 relative min-w-[160px] w-full sm:w-auto">
-                      <MagnifyingGlass size={13} weight="duotone" color="#94A3B8" className="absolute left-3 top-1/2 -translate-y-1/2" />
+                      <MagnifyingGlass size={13} weight="duotone" color="#6B7A92" className="absolute left-3 top-1/2 -translate-y-1/2" />
                       <input
                         value={fieldSearch}
                         onChange={e => setFieldSearch(e.target.value)}
@@ -2867,7 +2869,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                         <option value="all">All Layouts</option>
                         {layouts.map(l => <option key={l.name} value={l.name}>{l.name}</option>)}
                       </select>
-                      <CaretDown size={10} weight="bold" color="#94A3B8" className="absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      <CaretDown size={10} weight="bold" color="#6B7A92" className="absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                     </div>
                     <Button variant="contained" size="small"
                       onClick={() => { setCreateEditLayout(layouts[0]?.name ?? ""); setShowCreateEditModal(true); }}
@@ -2918,10 +2920,10 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
                           <option key={r} value={r}>{r}</option>
                         ))}
                       </select>
-                      <CaretDown size={10} weight="bold" color="#94A3B8" className="absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+                      <CaretDown size={10} weight="bold" color="#6B7A92" className="absolute right-2.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                     </div>
                     <div className="flex-1 relative min-w-[160px]">
-                      <MagnifyingGlass size={13} weight="duotone" color="#94A3B8" className="absolute left-3 top-1/2 -translate-y-1/2" />
+                      <MagnifyingGlass size={13} weight="duotone" color="#6B7A92" className="absolute left-3 top-1/2 -translate-y-1/2" />
                       <input
                         value={permSearch}
                         onChange={e => setPermSearch(e.target.value)}
@@ -3097,7 +3099,7 @@ function LeadConversionMappingModal({ open, onClose, isDark }: { open: boolean; 
                 {group.fields.map((f, i) => (
                   <div key={f.lead} className={`flex items-center gap-3 px-3 py-2 text-[13px] ${i !== 0 ? `border-t ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}` : ""}`}>
                     <span className={`flex-1 ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{f.lead}</span>
-                    <ArrowsLeftRight size={13} color="#94A3B8" weight="bold" />
+                    <ArrowsLeftRight size={13} color="#6B7A92" weight="bold" />
                     <span className={`flex-1 text-right ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{f.target}</span>
                   </div>
                 ))}
@@ -3178,9 +3180,9 @@ function ModulesAndFieldsPanel() {
       {/* Toolbar */}
       <div className={`flex items-center gap-3 px-4 sm:px-6 py-4 border-b flex-wrap ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
         <div className={`flex items-center gap-1.5 border rounded-xl px-3 py-1.5 w-full sm:w-56 focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8] transition-all ${isDark ? "bg-[#18181B] border-[#3F3F46]" : "bg-surface border-border-light"}`}>
-          <MagnifyingGlass size={13} color="#94A3B8" weight="duotone" />
+          <MagnifyingGlass size={13} color="#6B7A92" weight="duotone" />
           <InputBase placeholder="Search" value={search} onChange={e => setSearch(e.target.value)}
-            sx={{ flex:1, fontSize:"0.75rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder":{color:"#94A3B8",opacity:1} }} />
+            sx={{ flex:1, fontSize:"0.75rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder":{color:"#6B7A92",opacity:1} }} />
         </div>
         <button className={`flex items-center gap-1.5 px-3 py-1.5 text-[14px] font-semibold rounded-xl hover:border-brand-700 transition-colors ${isDark ? "text-[#D4D4D8] bg-[#18181B] border border-[#3F3F46]" : "text-slate-600 bg-surface border border-border-light"}`}>
           <Gear size={13} weight="duotone" />
@@ -3448,7 +3450,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                 }`}>
                   {i < step ? <CheckCircle size={15} weight="bold" /> : i + 1}
                 </div>
-                <span className={`hidden sm:block text-[10px] font-semibold text-center max-w-[70px] leading-tight ${
+                <span className={`hidden sm:block text-[11px] font-semibold text-center max-w-[70px] leading-tight ${
                   i === step ? (isDark ? "text-[#F4F4F5]" : "text-slate-900") : (isDark ? "text-[#A1A1AA]" : "text-slate-500")
                 }`}>{s.label}</span>
               </div>
@@ -3465,7 +3467,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+      <div className="flex-1 overflow-y-auto px-8 py-8 space-y-6">
         {/* Step 1 — Name Dashboard */}
         {step === 0 && (
           <div>
@@ -3530,7 +3532,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                   )}
                 </div>
                 <div className={`flex items-center gap-2 border rounded-lg px-3 py-2 mb-3 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
-                  <MagnifyingGlass size={14} color="#94A3B8" weight="duotone" />
+                  <MagnifyingGlass size={14} color="#6B7A92" weight="duotone" />
                   <input placeholder="Search by name or email" value={userSearch} onChange={e => setUserSearch(e.target.value)}
                     className={`flex-1 text-[13px] outline-hidden bg-transparent ${isDark ? "text-[#D4D4D8] placeholder-[#52525B]" : "text-slate-700 placeholder-slate-400"}`} />
                 </div>
@@ -3539,13 +3541,13 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
                     <label key={u.id} className={`flex items-center gap-3 px-3 py-2 rounded-xl cursor-pointer transition-colors ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}>
                       <Checkbox size="small" checked={sharedUserIds.includes(u.id)} onChange={() => toggleUser(u.id)}
                         sx={{ p: 0.3, color: isDark ? "#A1A1AA" : "#64748B", "&.Mui-checked": { color: "#1D4ED8" } }} />
-                      <div className="w-7 h-7 rounded-full flex items-center justify-center text-[10.5px] font-bold shrink-0"
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center text-[11px] font-bold shrink-0"
                         style={{ backgroundColor: u.avatarColor, color: u.textColor }}>{u.initials}</div>
                       <div className="flex-1 min-w-0">
                         <div className={`text-[13.5px] font-semibold truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{u.name}</div>
                         <div className={`text-[11.5px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{u.email}</div>
                       </div>
-                      <span className={`text-[10.5px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${isDark ? "bg-[#27272A] text-[#9CA3AF]" : "bg-border-light text-slate-500"}`}>{u.role}</span>
+                      <span className={`text-[11px] font-semibold px-2 py-0.5 rounded-full shrink-0 ${isDark ? "bg-[#27272A] text-[#9CA3AF]" : "bg-border-light text-slate-500"}`}>{u.role}</span>
                     </label>
                   ))}
                   {filteredUsers.length === 0 && (
@@ -3828,25 +3830,25 @@ function CustomizeHomepagePanel() {
                 {/* Shared with chips */}
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {hp.shareMode === "private" && (
-                    <span className={`text-[10.5px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>Private</span>
+                    <span className={`text-[11px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>Private</span>
                   )}
                   {hp.shareMode === "all" && (
-                    <span className={`text-[10.5px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>All Users</span>
+                    <span className={`text-[11px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>All Users</span>
                   )}
                   {hp.shareMode === "roles" && hp.sharedWith.slice(0, 3).map(role => (
-                    <span key={role} className={`text-[10.5px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>{role}</span>
+                    <span key={role} className={`text-[11px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>{role}</span>
                   ))}
                   {hp.shareMode === "roles" && hp.sharedWith.length > 3 && (
-                    <span className={`text-[10.5px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>+{hp.sharedWith.length - 3}</span>
+                    <span className={`text-[11px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>+{hp.sharedWith.length - 3}</span>
                   )}
                   {hp.shareMode === "users" && (hp.sharedUserIds || []).slice(0, 3).map(id => {
                     const u = USERS.find(usr => usr.id === id);
                     return u ? (
-                      <span key={id} className={`text-[10.5px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>{u.name}</span>
+                      <span key={id} className={`text-[11px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>{u.name}</span>
                     ) : null;
                   })}
                   {hp.shareMode === "users" && (hp.sharedUserIds || []).length > 3 && (
-                    <span className={`text-[10.5px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>+{(hp.sharedUserIds || []).length - 3}</span>
+                    <span className={`text-[11px] font-bold px-2 py-1 rounded-full ${isDark ? "bg-black/40 text-[#A1A1AA]" : "bg-surface/70 text-[#0C2472]"}`}>+{(hp.sharedUserIds || []).length - 3}</span>
                   )}
                 </div>
 
@@ -3979,7 +3981,7 @@ function ImportPanel() {
                 : "bg-brand-700 text-white hover:bg-[#1640B8]"
               : isDark
                 ? "bg-[#27272A] text-[#A1A1AA] cursor-not-allowed"
-                : "bg-border-light text-[#94A3B8] cursor-not-allowed"
+                : "bg-border-light text-[#64748B] cursor-not-allowed"
           }`}
         >
           Import Records
@@ -4019,7 +4021,7 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
 
   return (
     <div className={`w-full md:w-[240px] shrink-0 border-b md:border-b-0 md:border-r flex flex-col overflow-y-auto max-h-sidebar-expanded md:max-h-none transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
-      <div className={`px-4 pt-5 pb-4 border-b transition-colors duration-300 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
+      <div className={`px-5 pt-7 pb-5 border-b transition-colors duration-300 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-xl bg-brand-700 flex items-center justify-center shadow-xs shrink-0">
             <Gear size={15} color="#fff" weight="duotone" />
@@ -4031,7 +4033,7 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
         </div>
       </div>
 
-      <nav className="flex-1 py-3 px-2 space-y-1">
+      <nav className="flex-1 py-4 px-3 space-y-2">
         {SECTIONS.map(section => {
           const isOpen = !collapsed[section.key];
           return (
@@ -4041,7 +4043,7 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
                 <span className={`font-heading text-[13px] font-bold uppercase tracking-widest transition-colors truncate ${isDark ? "text-[#A1A1AA] group-hover:text-[#D4D4D8]" : "text-slate-500 group-hover:text-slate-700"}`}>
                   {section.label}
                 </span>
-                {isOpen ? <CaretUp size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="bold" />}
+                {isOpen ? <CaretUp size={10} color={isDark ? "#8A8A94" : "#64748B"} weight="bold" /> : <CaretDown size={10} color={isDark ? "#8A8A94" : "#64748B"} weight="bold" />}
               </button>
 
               {isOpen && (
@@ -4104,6 +4106,7 @@ export default function SettingsPage() {
       case "permission":   return <PermissionPanel />;
       case "modules":      return <ModulesAndFieldsPanel />;
       case "homepage":     return <CustomizeHomepagePanel />;
+      case "themes":       return <ThemesPanel />;
       case "import":       return <ImportPanel />;
       default:             return <PlaceholderPanel label={activeLabel} />;
     }

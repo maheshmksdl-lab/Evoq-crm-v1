@@ -1,5 +1,8 @@
 ﻿"use client";
+import { useEffect } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { useThemeSettings } from "@/lib/themeSettings";
+import { applyTheme } from "@/lib/themes";
 import { ThemeProvider as CRMThemeProvider, useTheme } from "./ThemeContext";
 import { SidebarProvider } from "./SidebarContext";
 
@@ -29,7 +32,8 @@ function buildTheme(isDark: boolean) {
       secondary: { main: C.depth   },
       success:   { main: "#10B981" },
       warning:   { main: "#F59E0B" },
-      error:     { main: "#EF4444" },
+      // #EF4444 gives white-on-red (badges, filled buttons) only 3.8:1; #DC2626 gives 4.8:1. Dark keeps #EF4444 (5.4:1 on black).
+      error:     { main: isDark ? "#EF4444" : "#DC2626" },
       background: {
         default: isDark ? "#000000" : "#f9fbff",
         paper:   bg,
@@ -264,7 +268,7 @@ function buildTheme(isDark: boolean) {
       MuiCheckbox: {
         styleOverrides: {
           root: {
-            color: isDark ? "#71717A" : "#94A3B8",   // was #52525B / #E2E8F0 (≈1.2 : 1) — unchecked boxes were barely visible
+            color: isDark ? "#8A8A94" : "#64748B",   // was #52525B / #E2E8F0 (≈1.2 : 1) — unchecked boxes were barely visible
             "&.Mui-checked":               { color: C.primary },
             "&.MuiCheckbox-indeterminate": { color: C.primary },
             "&:hover": { backgroundColor: `${C.soft}20` },
@@ -321,6 +325,12 @@ function buildTheme(isDark: boolean) {
         },
       },
 
+      // ── Avatar: initials are white on the (dark-enough) avatar fills. MUI's default follows the page
+      // background (near-white in light mode, black in dark mode) which gave 2.1–3.7:1 on green/amber/purple.
+      MuiAvatar: {
+        styleOverrides: { root: { color: "#FFFFFF" } },
+      },
+
       // ── Divider ────────────────────────────────────────
       MuiDivider: {
         styleOverrides: { root: { borderColor: border } },
@@ -342,6 +352,18 @@ function buildTheme(isDark: boolean) {
   });
 }
 
+/** Applies the chosen colour theme to the whole page, and again whenever light/dark mode flips. */
+function ColorThemeApplier() {
+  const { theme, custom } = useThemeSettings();
+  useEffect(() => {
+    applyTheme(theme, custom);
+    const mo = new MutationObserver(() => applyTheme(theme, custom));
+    mo.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    return () => mo.disconnect();
+  }, [theme, custom]);
+  return null;
+}
+
 function MUIThemeWrapper({ children }: { children: React.ReactNode }) {
   const { theme } = useTheme();
   const muiTheme = buildTheme(theme === "dark");
@@ -352,6 +374,7 @@ export default function ThemeRegistry({ children, initialTheme }: { children: Re
   return (
     <CRMThemeProvider initialTheme={initialTheme}>
       <SidebarProvider>
+        <ColorThemeApplier />
         <MUIThemeWrapper>{children}</MUIThemeWrapper>
       </SidebarProvider>
     </CRMThemeProvider>

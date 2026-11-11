@@ -22,7 +22,7 @@ const STATUSES: { key: LeadStatus; label: string; color: string; bg: string; dot
   { key: "Unqualified", label: "Unqualified",  color: "#475569", bg: "#EFF6FF", dot: "#94A3B8", headerBg: "#334155" },
 ];
 
-const AVATAR_PAL = ["#7C3AED", "#10B981", "#F59E0B", "#DB2777"];
+const AVATAR_PAL = ["#7C3AED", "#047857", "#B45309", "#DB2777"];
 const avatarColor = (n: string) => AVATAR_PAL[n.split("").reduce((a, c) => a + c.charCodeAt(0), 0) % AVATAR_PAL.length];
 const initials    = (n: string) => { const p = n.trim().split(/\s+/); return p.length >= 2 ? (p[0][0] + p[1][0]).toUpperCase() : n.substring(0, 2).toUpperCase(); };
 
@@ -101,7 +101,7 @@ export default function LeadKanbanView({ leads }: Props) {
                         </p>
                         {lead.company && (
                           <p className={`text-[12px] truncate flex items-center gap-0.5 mt-0.5 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
-                            <Buildings size={10} color={isDark ? "#71717A" : "#94A3B8"} weight="duotone" />
+                            <Buildings size={10} color={isDark ? "#8A8A94" : "#64748B"} weight="duotone" />
                             {lead.company}
                           </p>
                         )}
@@ -110,7 +110,7 @@ export default function LeadKanbanView({ leads }: Props) {
                         onClick={e => { e.stopPropagation(); }}
                         className={`opacity-0 group-hover:opacity-100 transition-opacity p-0.5 rounded-sm ${isDark ? "hover:bg-[#27272A]" : "hover:bg-[#EFF6FF]"}`}
                       >
-                        <DotsThreeVertical size={13} color={isDark ? "#E4E4E7" : "#94A3B8"} weight="duotone" />
+                        <DotsThreeVertical size={13} color={isDark ? "#A1A1AA" : "#64748B"} weight="duotone" />
                       </button>
                     </div>
 
@@ -133,7 +133,7 @@ export default function LeadKanbanView({ leads }: Props) {
                     {/* Footer */}
                     <div className={`flex items-center gap-1.5 pt-2 border-t ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
                       <Tooltip title={lead.owner}>
-                        <Avatar src={OWNER_AVATARS[lead.owner]} sx={{ width: 16, height: 16, bgcolor: owCol, fontSize: "0.55rem", fontWeight: 800 }}>
+                        <Avatar src={OWNER_AVATARS[lead.owner]} sx={{ width: 16, height: 16, bgcolor: owCol, fontSize: "0.6875rem", fontWeight: 800 }}>
                           {lead.ownerInitials}
                         </Avatar>
                       </Tooltip>

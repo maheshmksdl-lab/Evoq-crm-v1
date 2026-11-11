@@ -154,12 +154,12 @@ export default function ColumnsDrawer({ open, onClose, selected, onChange }: Pro
       {/* Search + Select All / Clear */}
       <div className={`px-5 pt-4 pb-2 border-b shrink-0 space-y-3 ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-[#EFF6FF]"}`}>
         <div className={`flex items-center gap-2 border rounded-xl px-3 py-1.5 ${isDark ? "bg-[#1C1C1E] border-[#3F3F46]" : "bg-[#EFF6FF] border-border-light"}`}>
-          <MagnifyingGlass size={14} color={isDark ? "#71717A" : "#94A3B8"} weight="duotone" />
+          <MagnifyingGlass size={14} color={isDark ? "#8A8A94" : "#64748B"} weight="duotone" />
           <InputBase
             placeholder="Search columns…"
             value={search}
             onChange={e => setSearch(e.target.value)}
-            sx={{ flex: 1, fontSize: "0.77rem", "& input::placeholder": { color: isDark ? "#52525B" : "#94A3B8", opacity: 1 } }}
+            sx={{ flex: 1, fontSize: "0.77rem", "& input::placeholder": { color: isDark ? "#8A8A94" : "#64748B", opacity: 1 } }}
           />
           {search && (
             <button onClick={() => setSearch("")} className={`text-sm ${isDark ? "text-[#A1A1AA] hover:text-[#A1A1AA]" : "text-slate-500 hover:text-slate-500"}`}>✕</button>

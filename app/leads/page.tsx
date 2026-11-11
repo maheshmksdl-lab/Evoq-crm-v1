@@ -80,7 +80,7 @@ const TABS: Array<{ key: LeadStatus | "All"; label: string }> = [
   { key:"Unqualified", label:"Unqualified" },
 ];
 
-const AVATAR_PAL = ["#7C3AED", "#10B981", "#F59E0B", "#DB2777"];
+const AVATAR_PAL = ["#7C3AED", "#047857", "#B45309", "#DB2777"];
 const avatarColor = (n: string) => AVATAR_PAL[n.split("").reduce((a,c)=>a+c.charCodeAt(0),0)%AVATAR_PAL.length];
 const initials    = (n: string) => { const p=n.trim().split(/\s+/); return p.length>=2?(p[0][0]+p[1][0]).toUpperCase():n.substring(0,2).toUpperCase(); };
 
@@ -123,7 +123,7 @@ const tone = (isDark: boolean) => ({
   primary:   isDark ? "#FAFAFA" : "#0F172A",
   secondary: isDark ? "#D4D4D8" : "#475569",
   tertiary:  isDark ? "#A1A1AA" : "#64748B",
-  empty:     isDark ? "#71717A" : "#94A3B8",
+  empty:     isDark ? "#8A8A94" : "#64748B",
 });
 // Visible keyboard focus (focus-visible only, so mouse clicks stay clean).
 const FOCUS_RING = "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3B82F6]";
@@ -354,7 +354,7 @@ export default function LeadsPage() {
         return (
           <Tooltip title={lead.owner} placement="top">
             <div className="flex items-center gap-1.5 min-w-0">
-              <Avatar src={OWNER_AVATARS[lead.owner]} sx={{ width: 20, height: 20, bgcolor: avatarColor(lead.owner), fontSize: "0.58rem", fontWeight: 800, flexShrink: 0 }}>{lead.ownerInitials}</Avatar>
+              <Avatar src={OWNER_AVATARS[lead.owner]} sx={{ width: 20, height: 20, bgcolor: avatarColor(lead.owner), fontSize: "0.6875rem", fontWeight: 800, flexShrink: 0 }}>{lead.ownerInitials}</Avatar>
               <span className={`text-[13px]/[16px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{lead.owner}</span>
             </div>
           </Tooltip>
@@ -449,7 +449,7 @@ export default function LeadsPage() {
                   }`}>
                   {label}
                   <span className={`text-[13px]/[16px] font-medium px-1.5 py-0.5 rounded-full leading-none ${
-                    active ? "bg-white/20 text-white" : "bg-brand-700/10 text-[#0C2472]"
+                    active ? "bg-white/15 text-white" : "bg-brand-700/10 text-[#0C2472]"
                   }`}>{cnt}</span>
                 </button>
               );
@@ -460,10 +460,10 @@ export default function LeadsPage() {
           <div className="flex flex-wrap items-center gap-2.5">
             {/* Search */}
             <div className={`flex items-center gap-2 border rounded-xl px-3 py-2 flex-1 basis-full sm:basis-auto sm:min-w-[240px] focus-within:border-[#60A5FA] focus-within:shadow-[0_0_0_3px_rgba(96,165,250,0.30)] transition-shadow ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
-              <MagnifyingGlass size={15} color="#94A3B8" weight="duotone" />
+              <MagnifyingGlass size={15} color="#6B7A92" weight="duotone" />
               <InputBase placeholder="Search by name, company, email…" value={search} inputProps={{ "aria-label": "Search leads by name, company or email" }}
                 onChange={e => { setSearch(e.target.value); resetToFirstPage(); }}
-                sx={{ flex:1, fontSize:"0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder":{ color:"#94A3B8", opacity:1 } }}
+                sx={{ flex:1, fontSize:"0.86rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder":{ color:"#6B7A92", opacity:1 } }}
               />
               {search && <button onClick={() => { setSearch(""); resetToFirstPage(); }} aria-label="Clear search" className={`rounded-md px-1 ${isDark ? "text-[#71717A] hover:text-[#D4D4D8]" : "text-slate-400 hover:text-slate-600"} transition-colors text-[15px]/[20px] ${FOCUS_RING}`}>✕</button>}
             </div>
@@ -473,7 +473,7 @@ export default function LeadsPage() {
             <Button variant="outlined" size="small" disableFocusRipple
               startIcon={
                 activeFilters.length > 0
-                  ? <Badge badgeContent={activeFilters.length} color="primary" sx={{ "& .MuiBadge-badge": { fontSize: "0.65rem", height: 14, minWidth: 14 } }}>
+                  ? <Badge badgeContent={activeFilters.length} color="primary" sx={{ "& .MuiBadge-badge": { fontSize: "0.6875rem", height: 14, minWidth: 14 } }}>
                       <FunnelSimple size={14} weight="duotone" />
                     </Badge>
                   : <FunnelSimple size={14} weight="duotone" />
@@ -553,7 +553,7 @@ export default function LeadsPage() {
           <Menu anchorEl={ownerMenuAnchor} open={Boolean(ownerMenuAnchor)} onClose={() => setOwnerMenuAnchor(null)}>
             {OWNERS.map(o => (
               <MenuItem key={o.name} onClick={() => assignOwner(o)} sx={{ fontSize: "0.9rem", gap: 1 }}>
-                <Avatar sx={{ width: 20, height: 20, bgcolor: avatarColor(o.name), fontSize: "0.6rem", fontWeight: 800 }}>{o.initials}</Avatar>
+                <Avatar sx={{ width: 20, height: 20, bgcolor: avatarColor(o.name), fontSize: "0.6875rem", fontWeight: 800 }}>{o.initials}</Avatar>
                 {o.name}
               </MenuItem>
             ))}
@@ -594,7 +594,7 @@ export default function LeadsPage() {
                   noRowsOverlay: () => (
                     <div className="py-16 px-4 text-center break-words" role="status">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
-                        <MagnifyingGlass size={22} color={isDark ? "#E4E4E7" : "#94A3B8"} weight="duotone" />
+                        <MagnifyingGlass size={22} color={isDark ? "#A1A1AA" : "#64748B"} weight="duotone" />
                       </div>
                       <p className={`font-heading text-[15px]/[20px] font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{search.trim() ? `No leads match “${search.trim()}”` : "No leads found"}</p>
                       <p className={`text-[13px]/[16px] mt-1 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>Try adjusting your search, filters or tab</p>

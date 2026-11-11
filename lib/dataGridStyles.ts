@@ -81,7 +81,7 @@ export const getListGridRefinementsSx = (isDark: boolean): SxProps<Theme> => ({
   "& .MuiDataGrid-row:hover .row-actions, & .MuiDataGrid-row:focus-within .row-actions, & .row-actions:focus-within": { opacity: 1 },
   "@media (hover: none)": { "& .row-actions": { opacity: 1 } },
   // unchecked checkboxes were #E2E8F0 (1.2 : 1) — barely visible
-  "& .MuiCheckbox-root:not(.Mui-checked):not(.MuiCheckbox-indeterminate)": { color: isDark ? "#71717A" : "#94A3B8" },
+  "& .MuiCheckbox-root:not(.Mui-checked):not(.MuiCheckbox-indeterminate)": { color: isDark ? "#8A8A94" : "#64748B" },
   // keyboard focus ring for checkboxes (inside their bounds so the cell can't clip it)
   "& .MuiCheckbox-root.Mui-focusVisible": { outline: "2px solid #3B82F6", outlineOffset: "-3px" },
   // keyboard focus ring for cells / headers (the base styles remove the outline entirely)

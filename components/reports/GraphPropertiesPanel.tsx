@@ -123,7 +123,7 @@ const GraphPropertiesPanel = memo(
                     <span className={`text-[12px] font-medium flex-1 truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>
                       {field.label}
                     </span>
-                    <span className={`text-[10px] uppercase font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
+                    <span className={`text-[11px] uppercase font-semibold ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>
                       {field.type}
                     </span>
                   </button>

@@ -45,12 +45,12 @@ export default function TopBar({ title }: { title?: string }) {
   });
 
   return (
-    <header className={`sticky top-0 z-40 border-b px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3 lg:py-6 h-auto flex items-center gap-2 sm:gap-3 lg:gap-8 transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-border-light border-border-light"}`}>
+    <header className={`sticky top-0 z-40 border-b px-3 sm:px-4 lg:px-8 py-2.5 sm:py-3 lg:py-6 h-auto flex items-center gap-2 sm:gap-3 lg:gap-8 transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-(--bg-header) border-border-light"}`}>
 
       {/* Mobile hamburger - hidden on desktop */}
       <button
         onClick={openMobile}
-        className={`lg:hidden shrink-0 w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center rounded-lg transition-all ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:bg-[#EFF6FF]"}`}
+        className={`lg:hidden shrink-0 w-7 sm:w-8 h-7 sm:h-8 flex items-center justify-center rounded-lg transition-all ${isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:bg-surface-light"}`}
         aria-label="Open navigation"
       >
         <List size={18} weight="bold" />
@@ -60,8 +60,8 @@ export default function TopBar({ title }: { title?: string }) {
       <div className="flex-1 min-w-0">
         {title ? (
           <div className="flex items-baseline gap-2 whitespace-nowrap">
-            <h1 className={`text-base sm:text-h1 tracking-tight m-0 ${isDark ? "text-white" : "text-[#0C2472]"}`}>{title}</h1>
-            <span className="hidden sm:inline text-[10px] sm:text-caption text-slate-500">&middot; {today}</span>
+            <h1 className={`text-base sm:text-h1 tracking-tight m-0 ${isDark ? "text-white" : "text-(--bg-sidebar)"}`}>{title}</h1>
+            <span className="hidden sm:inline text-[11px] sm:text-caption text-slate-500">&middot; {today}</span>
           </div>
         ) : (
           <p className="m-0 hidden sm:block text-caption text-slate-500 whitespace-nowrap">{today}</p>
@@ -79,7 +79,7 @@ export default function TopBar({ title }: { title?: string }) {
             flex: 1,
             fontSize: "0.8rem",
             color: isDark ? "#D4D4D8" : "#334155",
-            "& input::placeholder": { color: "#94A3B8", opacity: 1 },
+            "& input::placeholder": { color: "#6B7A92", opacity: 1 },
           }}
         />
         <Tooltip title="Cmd+K">
@@ -94,9 +94,9 @@ export default function TopBar({ title }: { title?: string }) {
           size="small"
           sx={{
             borderRadius: "8px",
-            border: `1.5px solid ${isDark ? "#27272A" : "#E3ECFC"}`,
-            bgcolor: isDark ? "#0A0A0A" : "#f9fbff",
-            "&:hover": { bgcolor: isDark ? "#18181B" : "#EFF6FF" },
+            border: `1.5px solid ${isDark ? "#27272A" : "var(--color-border-light)"}`,
+            bgcolor: isDark ? "#0A0A0A" : "var(--color-surface)",
+            "&:hover": { bgcolor: isDark ? "#18181B" : "var(--color-surface-light)" },
             transition: "all 0.2s ease",
             width: { xs: 32, sm: 36 },
             height: { xs: 32, sm: 36 },
@@ -112,11 +112,11 @@ export default function TopBar({ title }: { title?: string }) {
 
       {/* Notifications - hidden on mobile */}
       <Tooltip title="3 unread notifications">
-        <IconButton size="small" sx={{ borderRadius: "8px", "&:hover": { bgcolor: isDark ? "#262626" : "#EFF6FF" }, display: { xs: "none", sm: "inline-flex" } }}>
+        <IconButton size="small" sx={{ borderRadius: "8px", "&:hover": { bgcolor: isDark ? "#262626" : "var(--color-surface-light)" }, display: { xs: "none", sm: "inline-flex" } }}>
           <Badge
             badgeContent={3}
             color="error"
-            sx={{ "& .MuiBadge-badge": { fontSize: "0.58rem", height: 15, minWidth: 15, padding: "0 3px" } }}
+            sx={{ "& .MuiBadge-badge": { fontSize: "0.6875rem", height: 15, minWidth: 15, padding: "0 3px" } }}
           >
             <Bell size={18} color={isDark ? "#9CA3AF" : "#64748B"} weight="duotone" />
           </Badge>
@@ -128,8 +128,8 @@ export default function TopBar({ title }: { title?: string }) {
         <Avatar
           src={OWNER_AVATARS["PM SDL"]}
           onClick={() => setProfileOpen(p => !p)}
-          sx={{ width: { xs: 28, sm: 32 }, height: { xs: 28, sm: 32 }, bgcolor: isDark ? "#27272A" : "#E3ECFC", fontSize: "0.55rem", fontWeight: 800, cursor: "pointer" }}
-          className={`ring-2 transition-all ${profileOpen ? (isDark ? "ring-[#D4D4D8]" : "ring-[#4A7AE8]") : "ring-transparent"} ${isDark ? "hover:ring-[#D4D4D8]" : "hover:ring-[#4A7AE8]"}`}
+          sx={{ width: { xs: 28, sm: 32 }, height: { xs: 28, sm: 32 }, bgcolor: isDark ? "#27272A" : "var(--color-border-light)", fontSize: "0.6875rem", fontWeight: 800, cursor: "pointer" }}
+          className={`ring-2 transition-all ${profileOpen ? (isDark ? "ring-[#D4D4D8]" : "ring-brand-500") : "ring-transparent"} ${isDark ? "hover:ring-[#D4D4D8]" : "hover:ring-brand-500"}`}
         >
           PM
         </Avatar>
@@ -139,7 +139,7 @@ export default function TopBar({ title }: { title?: string }) {
             className="absolute right-0 top-[calc(100%+8px)] w-52 rounded-2xl overflow-hidden z-50"
             style={{
               background: isDark ? "#18181B" : "white",
-              border: `1px solid ${isDark ? "#27272A" : "#E3ECFC"}`,
+              border: `1px solid ${isDark ? "#27272A" : "var(--color-border-light)"}`,
               boxShadow: isDark
                 ? "0 16px 40px rgba(0,0,0,0.6)"
                 : "0 16px 40px rgba(29,78,216,0.12), 0 4px 12px rgba(0,0,0,0.06)",
@@ -155,7 +155,7 @@ export default function TopBar({ title }: { title?: string }) {
             <button
               onClick={() => { setProfileOpen(false); router.push("/settings"); }}
               className={`w-full flex items-center gap-3 px-4 py-2.5 text-button transition-colors ${
-                isDark ? "text-[#D4D4D8] hover:bg-[#27272A]" : "text-slate-700 hover:bg-[#EFF6FF]"
+                isDark ? "text-[#D4D4D8] hover:bg-[#27272A]" : "text-slate-700 hover:bg-surface-light"
               }`}
             >
               <User size={15} weight="duotone" className={isDark ? "text-[#A1A1AA]" : "text-slate-500"} />

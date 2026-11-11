@@ -99,7 +99,7 @@ export default function Sidebar() {
             position: "fixed", top: 0, left: 0,
             width: "min(280px, 85vw)", height: "100vh",
             zIndex: 100,
-            backgroundColor: isDark ? "#000000" : "#EFF6FF",
+            backgroundColor: isDark ? "#000000" : "var(--color-surface-light)",
             // Shadow only while open: a closed drawer sits at translateX(-100%) and its
             // 24px blur would otherwise bleed into the left edge of the viewport.
             boxShadow: !drawerOpen ? "none" : isDark ? "4px 0 24px rgba(0,0,0,0.5)" : "4px 0 24px rgba(0,0,0,0.12)",
@@ -162,7 +162,7 @@ export default function Sidebar() {
                   />
                   <span className="flex-1 truncate">{label}</span>
                   {badge && !active && (
-                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none ${
+                    <span className={`text-[11px] font-bold px-1.5 py-0.5 rounded-full leading-none ${
                       isDark ? "bg-[#60A5FA]/15 text-[#60A5FA]" : "bg-brand-700/10 text-brand-700"
                     }`}>
                       {badge}
@@ -192,12 +192,12 @@ export default function Sidebar() {
               <div className="relative shrink-0">
                 <Avatar
                   src={OWNER_AVATARS["PM SDL"]}
-                  sx={{ width: 30, height: 30, bgcolor: "#1D4ED8", fontSize: "0.6rem", fontWeight: 800 }}
+                  sx={{ width: 30, height: 30, bgcolor: "var(--color-brand-700)", fontSize: "0.6875rem", fontWeight: 800 }}
                 >PM</Avatar>
                 <span className={`absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-400 border-2 ${isDark ? "border-[#18181B]" : "border-white"}`} />
               </div>
               <div className="min-w-0 flex-1">
-                <p className={`text-[12px] font-semibold truncate ${isDark ? "text-[#F4F4F5]" : "text-[#0C2472]"}`}>PM SDL</p>
+                <p className={`text-[12px] font-semibold truncate ${isDark ? "text-[#F4F4F5]" : "text-(--bg-sidebar)"}`}>PM SDL</p>
                 <p className={`text-[11px] truncate ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Admin · dmops@socialdnalabs.com</p>
               </div>
             </div>
@@ -216,7 +216,7 @@ export default function Sidebar() {
       style={{
         top: "72px",
         height: "calc(100vh - 72px)",
-        backgroundColor: isDark ? "#000000" : "#E3ECFC",
+        backgroundColor: isDark ? "#000000" : "var(--bg-aside)",
         width: collapsed ? "68px" : "260px",
         transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease, border-color 0.2s ease",
       }}
@@ -239,7 +239,7 @@ export default function Sidebar() {
                 }
                 ${isDark
                   ? (active ? "bg-[#18181B] text-[#60A5FA]" : "text-[#A1A1AA] hover:bg-[#18181B] hover:text-[#60A5FA]")
-                  : (active ? "bg-[#EFF6FF] text-brand-700" : "text-slate-600 hover:bg-[#EFF6FF] hover:text-brand-700")
+                  : (active ? "bg-surface-light text-brand-700" : "text-slate-600 hover:bg-surface-light hover:text-brand-700")
                 }
               `}
             >
@@ -256,7 +256,7 @@ export default function Sidebar() {
                 <>
                   <span className="flex-1 truncate">{label}</span>
                   {badge && !active && (
-                    <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none ${
+                    <span className={`text-[11px] font-bold px-1.5 py-0.5 rounded-full leading-none ${
                       isDark ? "bg-[#60A5FA]/15 text-[#60A5FA]" : "bg-brand-700/10 text-brand-700"
                     }`}>
                       {badge}
@@ -291,7 +291,7 @@ export default function Sidebar() {
               <Link
                 href="/settings"
                 className={`flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-150 ${
-                  isDark ? "text-[#A1A1AA] hover:text-[#60A5FA] hover:bg-[#27272A]" : "text-slate-500 hover:text-brand-700 hover:bg-[#EFF6FF]"
+                  isDark ? "text-[#A1A1AA] hover:text-[#60A5FA] hover:bg-[#27272A]" : "text-slate-500 hover:text-brand-700 hover:bg-surface-light"
                 }`}
               >
                 <GearSixIcon size={18} weight="duotone" />
@@ -302,7 +302,7 @@ export default function Sidebar() {
           <Link
             href="/settings"
             className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-[16px] font-medium transition-all duration-150 ${
-              isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#60A5FA]" : "text-slate-600 hover:bg-[#EFF6FF] hover:text-brand-700"
+              isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#60A5FA]" : "text-slate-600 hover:bg-surface-light hover:text-brand-700"
             }`}
           >
             <GearSixIcon size={18} weight="duotone" className={`shrink-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`} />
@@ -316,24 +316,24 @@ export default function Sidebar() {
               <div className="relative">
                 <Avatar
                   src={OWNER_AVATARS["PM SDL"]}
-                  sx={{ width: 34, height: 34, bgcolor: "#1D4ED8", fontSize: "0.6rem", fontWeight: 800, cursor: "pointer" }}
+                  sx={{ width: 34, height: 34, bgcolor: "var(--color-brand-700)", fontSize: "0.6875rem", fontWeight: 800, cursor: "pointer" }}
                 >PM</Avatar>
                 <span className={`absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 ${isDark ? "border-[#000000]" : "border-white"}`} />
               </div>
             </span>
           </Tooltip>
         ) : (
-          <div className={`flex items-center gap-2.5 mt-1 px-3 py-2 rounded-lg border ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-[#EFF6FF] border-border-light"}`}>
+          <div className={`flex items-center gap-2.5 mt-1 px-3 py-2 rounded-lg border ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-surface-light border-border-light"}`}>
             <div className="relative shrink-0">
               <Avatar
                 src={OWNER_AVATARS["PM SDL"]}
-                sx={{ width: 30, height: 30, bgcolor: "#1D4ED8", fontSize: "0.6rem", fontWeight: 800 }}
+                sx={{ width: 30, height: 30, bgcolor: "var(--color-brand-700)", fontSize: "0.6875rem", fontWeight: 800 }}
               >PM</Avatar>
               <span className={`absolute bottom-0 right-0 w-2 h-2 rounded-full bg-emerald-400 border-2 ${isDark ? "border-[#18181B]" : "border-white"}`} />
             </div>
             <div className="min-w-0 flex-1">
-              <p className={`text-[12px] font-semibold truncate ${isDark ? "text-[#F4F4F5]" : "text-[#0C2472]"}`}>PM SDL</p>
-              <p className={`text-[10px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>Admin · dmops@socialdnalabs.com</p>
+              <p className={`text-[12px] font-semibold truncate ${isDark ? "text-[#F4F4F5]" : "text-(--bg-sidebar)"}`}>PM SDL</p>
+              <p className={`text-[11px] truncate ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>Admin · dmops@socialdnalabs.com</p>
             </div>
           </div>
         )}

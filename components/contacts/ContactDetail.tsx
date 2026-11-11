@@ -313,7 +313,7 @@ const CONTACTS_DETAIL: Record<number, ContactRecord> = {
 // ─────────────────────────────────────────────
 //  Avatar color helper
 // ─────────────────────────────────────────────
-const AVATAR_PAL = ["#7C3AED", "#10B981", "#F59E0B", "#DB2777", "#0EA5E9", "#EF4444"];
+const AVATAR_PAL = ["#7C3AED", "#047857", "#B45309", "#DB2777", "#0369A1", "#DC2626"];
 const avatarColor = (n: string) => AVATAR_PAL[n.split("").reduce((a, c) => a + c.charCodeAt(0), 0) % AVATAR_PAL.length];
 
 // ─────────────────────────────────────────────
@@ -425,7 +425,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
               {count > 0 && (
                 <span className="text-[12px] font-bold bg-border-light text-brand-700 px-1.5 py-0.5 rounded-full">{count}</span>
               )}
-              <CaretRight size={14} color="#94A3B8" weight="duotone" />
+              <CaretRight size={14} color="#6B7A92" weight="duotone" />
             </button>
           ))}
         </div>
@@ -435,7 +435,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
       <div className={`rounded-2xl border shadow-xs p-4 space-y-3 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Ownership</p>
         <div className="flex items-center gap-2.5">
-          <Avatar sx={{ width: 28, height: 28, bgcolor: avatarColor(contact.contactOwner), fontSize: "0.6rem", fontWeight: 800 }}>
+          <Avatar sx={{ width: 28, height: 28, bgcolor: avatarColor(contact.contactOwner), fontSize: "0.6875rem", fontWeight: 800 }}>
             {contact.contactOwner.split(" ").map(w => w[0]).join("").toUpperCase().slice(0, 2)}
           </Avatar>
           <div>
@@ -493,17 +493,17 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                 <div className="flex items-center gap-3 mt-2 flex-wrap">
                   {contact.email && (
                     <span className={`flex items-center gap-1 text-[12px] ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>
-                      <Envelope size={12} color="#94A3B8" weight="duotone" />{contact.email}
+                      <Envelope size={12} color="#6B7A92" weight="duotone" />{contact.email}
                     </span>
                   )}
                   {contact.phone && (
                     <span className={`flex items-center gap-1 text-[12px] ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>
-                      <Phone size={12} color="#94A3B8" weight="duotone" />{contact.phone}
+                      <Phone size={12} color="#6B7A92" weight="duotone" />{contact.phone}
                     </span>
                   )}
                   {contact.accountName && (
                     <span className={`flex items-center gap-1 text-[12px] ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>
-                      <Buildings size={12} color="#94A3B8" weight="duotone" />{contact.accountName}
+                      <Buildings size={12} color="#6B7A92" weight="duotone" />{contact.accountName}
                     </span>
                   )}
                 </div>
@@ -688,7 +688,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
                         <div className={`flex items-center rounded-lg p-0.5 gap-0.5 ${isDark ? "bg-[#27272A]" : "bg-[#EFF6FF]"}`}>
                           {[{ k: "grid", Icon: GridFour }, { k: "list", Icon: List }].map(({ k, Icon }) => (
                             <button key={k} onClick={() => setAttachView(k as "grid" | "list")} aria-label={`${k === "grid" ? "Grid" : "List"} view`} aria-pressed={attachView === k}
-                              className={`p-1 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>
+                              className={`p-1.5 rounded-md transition-colors ${attachView === k ? (isDark ? "bg-[#3F3F46] text-[#D4D4D8]" : "bg-surface text-brand-700") : (isDark ? "text-[#9CA3AF]" : "text-slate-500")}`}>
                               <Icon size={13} weight="duotone" />
                             </button>
                           ))}
@@ -774,7 +774,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
 
                   {contact.timeline.length === 0 ? (
                     <div className="py-12 flex flex-col items-center justify-center gap-2">
-                      <ClockCounterClockwise size={28} color={isDark ? "#52525B" : "#CBD5E1"} weight="duotone" />
+                      <ClockCounterClockwise size={28} color={isDark ? "#71717A" : "#6B7A92"} weight="duotone" />
                       <p className={`text-[14px] ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>No history yet</p>
                     </div>
                   ) : (() => {

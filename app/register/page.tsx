@@ -215,8 +215,8 @@ export default function RegisterPage() {
                   onChange={e => setPassword(p => ({ ...p, value: e.target.value }))}
                   onFocus={() => setPassword(p => ({ ...p, focus: true }))}
                   onBlur={() => setPassword(p => ({ ...p, focus: false }))} />
-                <button type="button" onClick={() => setShowPass(p => !p)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-600 transition-colors">
+                <button type="button" onClick={() => setShowPass(p => !p)} aria-label={showPass ? "Hide password" : "Show password"} aria-pressed={showPass}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg text-slate-500 hover:text-slate-600 transition-colors">
                   {showPass ? <EyeSlash size={15} weight="duotone" /> : <Eye size={15} weight="duotone" />}
                 </button>
               </div>
@@ -227,8 +227,8 @@ export default function RegisterPage() {
                   onChange={e => setConfirm(p => ({ ...p, value: e.target.value }))}
                   onFocus={() => setConfirm(p => ({ ...p, focus: true }))}
                   onBlur={() => setConfirm(p => ({ ...p, focus: false }))} />
-                <button type="button" onClick={() => setShowConfirm(p => !p)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-500 hover:text-slate-600 transition-colors">
+                <button type="button" onClick={() => setShowConfirm(p => !p)} aria-label={showConfirm ? "Hide confirmed password" : "Show confirmed password"} aria-pressed={showConfirm}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 p-1.5 rounded-lg text-slate-500 hover:text-slate-600 transition-colors">
                   {showConfirm ? <EyeSlash size={15} weight="duotone" /> : <Eye size={15} weight="duotone" />}
                 </button>
               </div>

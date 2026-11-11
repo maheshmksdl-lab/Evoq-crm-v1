@@ -27,7 +27,7 @@ export default function MetricCard({ title, value, icon, fill, accent, isDark = 
     >
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <p className={`font-heading text-[10px] sm:text-[11.5px] font-semibold uppercase tracking-widest mb-2 truncate ${isDark ? "text-[#94A3B8]" : "text-[#4A5675]"}`}>
+          <p className={`font-heading text-[11px] sm:text-[11.5px] font-semibold uppercase tracking-widest mb-2 truncate ${isDark ? "text-[#94A3B8]" : "text-[#4A5675]"}`}>
             {title}
           </p>
           <p className={`text-lg sm:text-[22px] font-extrabold tracking-tight leading-none ${isDark ? "text-[#FFFFFF]" : "text-[#0C2472]"}`}>

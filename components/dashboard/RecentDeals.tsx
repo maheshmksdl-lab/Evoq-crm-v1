@@ -23,7 +23,7 @@ type Deal = {
 const deals: Deal[] = [
   { id:"CRM-2026-0013", name:"Sweany Inc",     amount:29999,  stage:"Qualification",  stageBg:"#EFF6FF", stageFg:"#0C2472", owner:"PM SDL",   initials:"PM", avatarBg:"#1D4ED8", closeDate:"15 May", change:"same" },
   { id:"CRM-2026-0012", name:"TechFlow Ltd",   amount:85000,  stage:"Proposal",       stageBg:"#E3ECFC", stageFg:"#0C2472", owner:"Sarah K",  initials:"SK", avatarBg:"#3B82F6", closeDate:"12 May", change:"up"   },
-  { id:"CRM-2026-0011", name:"Apex Solutions", amount:42500,  stage:"Needs Analysis", stageBg:"#EFF6FF", stageFg:"#0C2472", owner:"John D",   initials:"JD", avatarBg:"#2E9E7B", closeDate:"10 May", change:"up"   },
+  { id:"CRM-2026-0011", name:"Apex Solutions", amount:42500,  stage:"Needs Analysis", stageBg:"#EFF6FF", stageFg:"#0C2472", owner:"John D",   initials:"JD", avatarBg:"#238264", closeDate:"10 May", change:"up"   },
   { id:"CRM-2026-0010", name:"Matrix Corp",    amount:120000, stage:"Negotiation",    stageBg:"#E3ECFC", stageFg:"#0C2472", owner:"PM SDL",   initials:"PM", avatarBg:"#1D4ED8", closeDate:"08 May", change:"up"   },
   { id:"CRM-2026-0009", name:"Pixel Studios",  amount:18750,  stage:"Qualification",  stageBg:"#EFF6FF", stageFg:"#0C2472", owner:"Ria M",    initials:"RM", avatarBg:"#0C2472", closeDate:"05 May", change:"down" },
 ];
@@ -76,7 +76,7 @@ export default function RecentDeals({ isDark = false }: { isDark?: boolean }) {
                     <div className="w-[13px] h-[13px] flex items-center justify-center shrink-0">
                       {deal.change === "up" && <TrendUp size={13} color="#10B981" weight="duotone" />}
                       {deal.change === "down" && <TrendDown size={13} color="#EF4444" weight="duotone" />}
-                      {deal.change === "same" && <Minus size={11} color="#94A3B8" weight="bold" />}
+                      {deal.change === "same" && <Minus size={11} color="#6B7A92" weight="bold" />}
                     </div>
                     <div className="flex items-center gap-1.5 whitespace-nowrap">
                       <p className={`text-[14px] font-semibold leading-tight ${isDark ? "text-[#E2E8F0]" : "text-slate-800"}`}>{deal.name}</p>
@@ -88,14 +88,14 @@ export default function RecentDeals({ isDark = false }: { isDark?: boolean }) {
                   <span className={`text-[14px] font-bold ${isDark ? "text-[#FFFFFF]" : "text-slate-800"}`}>{fmt(deal.amount)}</span>
                 </TableCell>
                 <TableCell>
-                  <Chip label={deal.stage} size="small" sx={{ bgcolor: isDark ? "rgba(39,39,42,0.8)" : deal.stageBg, color: isDark ? "#A1A1AA" : deal.stageFg, fontWeight:700, fontSize:"0.65rem", height:20, borderRadius:"5px" }} />
+                  <Chip label={deal.stage} size="small" sx={{ bgcolor: isDark ? "rgba(39,39,42,0.8)" : deal.stageBg, color: isDark ? "#A1A1AA" : deal.stageFg, fontWeight:700, fontSize: "0.6875rem", height:20, borderRadius:"5px" }} />
                 </TableCell>
                 <TableCell>
                   <Tooltip title={deal.owner}>
                     <div className="flex items-center gap-1.5">
                       <Avatar
                         src={OWNER_AVATARS[deal.owner]}
-                        sx={{ width:22, height:22, bgcolor:deal.avatarBg, fontSize:"0.58rem", fontWeight:700 }}
+                        sx={{ width:22, height:22, bgcolor:deal.avatarBg, fontSize: "0.6875rem", fontWeight:700 }}
                       >
                         {deal.initials}
                       </Avatar>

@@ -61,13 +61,13 @@ export default function KPICard({
       <div className="flex flex-col sm:flex-row items-start justify-between gap-3">
         {/* ── Left: label + value + badge ── */}
         <div className="flex-1 min-w-0">
-          <p className={`font-heading text-[10px] sm:text-[11.5px] font-semibold uppercase tracking-widest mb-2 truncate ${isDark ? "text-[#94A3B8]" : "text-[#4A5675]"}`}>
+          <p className={`font-heading text-[11px] sm:text-[11.5px] font-semibold uppercase tracking-widest mb-2 truncate ${isDark ? "text-[#94A3B8]" : "text-[#4A5675]"}`}>
             {title}
           </p>
           <p className={`text-xl sm:text-[28px] font-extrabold tracking-tight leading-none mb-3 ${isDark ? "text-[#FFFFFF]" : "text-[#0C2472]"}`}>
             {value}
           </p>
-          <span className={`inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-1 rounded-full ${isDark ? "bg-black/40" : "bg-surface/70"} ${
+          <span className={`inline-flex items-center gap-1 text-[11px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-1 rounded-full ${isDark ? "bg-black/40" : "bg-surface/70"} ${
             isPositive ? (isDark ? "text-emerald-400" : "text-emerald-700") : (isDark ? "text-red-400" : "text-red-700")
           }`}>
             {isPositive ? "↑" : "↓"} {Math.abs(trend)}% vs last month
@@ -102,7 +102,7 @@ export default function KPICard({
 
       {sourceReportId && sourceReportName && (
         <button onClick={(e) => { e.stopPropagation(); router.push(`/reports/${sourceReportId}`); }}
-          className={`w-full flex items-center justify-center gap-1 mt-4 pt-3 border-t text-[10.5px] font-bold transition-colors ${isDark ? "border-white/10 text-[#A1A1AA] hover:text-[#93C5FD]" : "border-black/5 text-[#4A5675] hover:text-brand-700"}`}>
+          className={`w-full flex items-center justify-center gap-1 mt-4 pt-3 border-t text-[11px] font-bold transition-colors ${isDark ? "border-white/10 text-[#A1A1AA] hover:text-[#93C5FD]" : "border-black/5 text-[#4A5675] hover:text-brand-700"}`}>
           <FileText size={11} weight="duotone" />
           <span>Source Report: {sourceReportName}</span>
           <ArrowSquareOut size={10} weight="bold" />
