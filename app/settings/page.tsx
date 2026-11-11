@@ -305,7 +305,7 @@ function PersonalSettingsPanel() {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   return (
-    <div className={`flex-1 overflow-y-auto px-8 py-8 space-y-5 ${isDark ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+    <div className={`flex-1 overflow-y-auto px-8 pt-0 pb-8 space-y-5 ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <ProfileHero
         initials="PM" name="PM SDL" role="Super Admin"
         avatarBg="#FEF3C7" avatarText="#B45309"
@@ -646,7 +646,7 @@ function UserDetailPanel({ user, onUpdate }: { user: UserRecord; onUpdate: (upda
   const { theme: uTheme } = useTheme();
   const isDarkUD = uTheme === "dark";
   return (
-    <div className={`flex-1 overflow-y-auto px-8 py-8 space-y-5 ${isDarkUD ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+    <div className={`flex-1 overflow-y-auto px-8 pt-0 pb-8 space-y-5 ${isDarkUD ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <ProfileHero
         initials={user.initials} name={user.name} role={user.role}
         avatarBg={user.avatarColor} avatarText={user.textColor}
@@ -826,7 +826,7 @@ function OrganizationPanel() {
   const { theme: orgTheme } = useTheme();
   const isDarkOrg = orgTheme === "dark";
   return (
-    <div className={`flex-1 overflow-y-auto px-8 py-8 space-y-5 ${isDarkOrg ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+    <div className={`flex-1 overflow-y-auto px-8 pt-0 pb-8 space-y-5 ${isDarkOrg ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <ProfileHero
         initials="S" name="Social DNA Labs" role="Super Admin"
         subtitle="India · INR"
@@ -1136,7 +1136,7 @@ function RolesPanel() {
       </div>
 
       {/* Role detail */}
-      <div className={`flex-1 overflow-y-auto px-8 py-8 ${isDark ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+      <div className={`flex-1 overflow-y-auto px-8 pt-0 pb-8 ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
         {/* Tabs */}
         <div className="flex items-center gap-2 mb-5">
           {(["overview","timeline"] as const).map(tab => (
@@ -1469,7 +1469,7 @@ function PermissionPanel() {
       )}
 
       {tab === "summary" && (
-        <div className="flex-1 overflow-auto px-4 sm:px-8 py-7 space-y-5">
+        <div className="flex-1 overflow-auto px-4 sm:px-8 pt-0 pb-7 space-y-5">
           {/* Role cards grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {PERM_ROLES.map(role => {
@@ -3467,7 +3467,7 @@ function CreateHomePageDrawer({ open, onClose, onCreate, isDark }: {
         </div>
       </div>
 
-      <div className="flex-1 overflow-y-auto px-8 py-8 space-y-6">
+      <div className="flex-1 overflow-y-auto px-8 pt-0 pb-8 space-y-6">
         {/* Step 1 — Name Dashboard */}
         {step === 0 && (
           <div>
@@ -3914,7 +3914,7 @@ function ImportPanel() {
   };
 
   return (
-    <div className={`flex-1 flex flex-col overflow-auto ${isDark ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+    <div className={`flex-1 flex flex-col overflow-auto ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <div className="px-8 py-6 border-b shrink-0" style={{ borderColor: isDark ? "#27272A" : "#E3ECFC" }}>
         <h1 className={`m-0 text-[24px] font-bold tracking-tight ${isDark ? "text-[#F4F4F5]" : "text-slate-900"}`}>Import Data</h1>
         <p className={`text-[13px] mt-1 ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>Upload CSV or Excel files to import records</p>
@@ -3998,7 +3998,7 @@ function PlaceholderPanel({ label }: { label: string }) {
   const { theme } = useTheme();
   const isDark = theme === "dark";
   return (
-    <div className={`flex-1 flex items-center justify-center ${isDark ? "bg-[#0A0A0A]" : "bg-[#EFF6FF]"}`}>
+    <div className={`flex-1 flex items-center justify-center ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <div className="text-center">
         <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-3 ${isDark ? "bg-[#18181B]" : "bg-[#EFF6FF]"}`}>
           <Gear size={22} color={isDark ? "#9CA3AF" : "#94A3B8"} weight="duotone" />
@@ -4020,7 +4020,7 @@ function SettingsSidebar({ activeItem, setActiveItem, isDark = false }: {
   const toggle = (key: string) => setCollapsed(p => ({ ...p, [key]: !p[key] }));
 
   return (
-    <div className={`w-full md:w-[240px] shrink-0 border-b md:border-b-0 md:border-r flex flex-col overflow-y-auto max-h-sidebar-expanded md:max-h-none transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
+    <div className={`w-full md:w-[240px] shrink-0 border-b md:border md:rounded-2xl md:shadow-xs flex flex-col overflow-y-auto max-h-sidebar-expanded md:max-h-none transition-colors duration-300 ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-(--bg-aside) border-border-light"}`}>
       <div className={`px-5 pt-7 pb-5 border-b transition-colors duration-300 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-xl bg-brand-700 flex items-center justify-center shadow-xs shrink-0">
@@ -4114,7 +4114,7 @@ export default function SettingsPage() {
 
   return (
     <div className={`sidebar-content app-canvas flex-1 flex min-h-screen overflow-hidden font-sans ${isDark ? "bg-[#000000]" : "bg-[#EFF6FF]"}`}>
-      <div className="relative flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
+      <div className="relative flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden md:gap-6 md:p-6">
         <SettingsSidebar activeItem={activeItem} setActiveItem={setActiveItem} isDark={isDark} />
         {content()}
       </div>
