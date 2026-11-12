@@ -95,8 +95,9 @@ const STATIC_DATA_COLUMNS = [
   { name: "stage", label: "Stage", type: "text" },
 ];
 
-const COLORS_LIGHT = ["#0C2472", "#10B981", "#3B82F6", "#F59E0B", "#EC4899", "#8B5CF6", "#14B8A6"];
-const COLORS_DARK = ["#60A5FA", "#34D399", "#FBBF24", "#F472B6", "#A78BFA", "#38BDF8", "#FB923C"];
+// EVOQ CRM brand blues only (navy → brand blue → light tints), so charts match the rest of the app.
+const COLORS_LIGHT = ["#0C2472", "#1D4ED8", "#3B82F6", "#60A5FA", "#93C5FD", "#5B7DB1", "#BFD3F5"];
+const COLORS_DARK = ["#60A5FA", "#3B82F6", "#93C5FD", "#2563EB", "#BFDBFE", "#7BA1E0", "#1D4ED8"];
 
 const STAGE_CHIP: Record<string, { bg: string; fg: string }> = {
   "Proposal/Price Quote": { bg: "#E3ECFC", fg: "#0C2472" },
@@ -141,7 +142,7 @@ const PREVIEW_CHART_DATA = [
   { name: "Group B", value: 4 },
   { name: "Group C", value: 3 },
 ];
-const PREVIEW_CHART_COLORS = ["#F59E0B", "#F59E0B", "#3B82F6"];
+const PREVIEW_CHART_COLORS = ["#1D4ED8", "#3B82F6", "#93C5FD"];
 
 function ChartTypePreview({ chartType, isDark }: { chartType: string; isDark: boolean }) {
   if (chartType === "donut" || chartType === "pie") {
@@ -240,7 +241,7 @@ function CreatedChartCard({
   isDark: boolean;
   onDelete: () => void;
 }) {
-  const colors = ["#F59E0B", "#3B82F6", "#10B981", "#EC4899", "#8B5CF6", "#14B8A6", "#F97316"];
+  const colors = isDark ? COLORS_DARK : COLORS_LIGHT;
 
   return (
     <WidgetCard title={chart.name} subtitle={`${chart.measure} by ${chart.groupBy}`} isDark={isDark}>
@@ -1251,7 +1252,7 @@ export default function ReportDetailPage({ params }: { params: Promise<{ id: str
                   <RechartsTooltip content={<ChartTooltip />} cursor={{ fill: isDark ? "#18181B" : "#EFF6FF" }} />
                   <Legend wrapperStyle={{ fontSize: 11, color: isDark ? "#9CA3AF" : "#6B7280" }} iconSize={8} />
                   <Bar dataKey="John Smith" fill={isDark ? "#60A5FA" : "#0C2472"} radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="Speedy Mike" fill={isDark ? "#FBBF24" : "#F59E0B"} radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="Speedy Mike" fill={isDark ? "#93C5FD" : "#3B82F6"} radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </WidgetCard>

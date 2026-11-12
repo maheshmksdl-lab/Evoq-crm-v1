@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Avatar from "@mui/material/Avatar";
+import { avatarFor } from "@/lib/avatars";
 import Tooltip from "@mui/material/Tooltip";
 import { Buildings, User, TrendUp, DotsThreeVertical } from "@phosphor-icons/react";
 import { useTheme } from "@/components/ThemeContext";
@@ -122,7 +123,7 @@ export default function DealGridView({ deals }: Props) {
             <div className={`flex items-center justify-between px-4 py-2.5 border-t ${isDark ? "border-[#27272A] bg-black/20" : "border-white/50 bg-surface/30"}`}>
               <Tooltip title={deal.owner}>
                 <div className="flex items-center gap-1.5">
-                  <Avatar sx={{ width: 20, height: 20, bgcolor: owCol, fontSize: "0.48rem", fontWeight: 800 }}>{owInit}</Avatar>
+                  <Avatar src={avatarFor(deal.owner)} sx={{ width: 20, height: 20, bgcolor: owCol, fontSize: "0.48rem", fontWeight: 800 }}>{owInit}</Avatar>
                   <span className={`text-[12px] font-medium ${isDark ? "text-[#A1A1AA]" : "text-slate-600"}`}>{deal.owner}</span>
                 </div>
               </Tooltip>

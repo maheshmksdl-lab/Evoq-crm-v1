@@ -5,6 +5,7 @@ import Link from "next/link";
 import Sidebar from "@/components/layout/Sidebar";
 import TopBar from "@/components/layout/TopBar";
 import Avatar from "@mui/material/Avatar";
+import { avatarFor } from "@/lib/avatars";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
@@ -435,7 +436,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
       <div className={`rounded-2xl border shadow-xs p-4 space-y-3 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <p className={`font-heading text-[12px] font-bold uppercase tracking-wider ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Ownership</p>
         <div className="flex items-center gap-2.5">
-          <Avatar sx={{ width: 28, height: 28, bgcolor: avatarColor(contact.contactOwner), fontSize: "0.6875rem", fontWeight: 800 }}>
+          <Avatar src={avatarFor(contact.contactOwner)} sx={{ width: 28, height: 28, bgcolor: avatarColor(contact.contactOwner), fontSize: "0.6875rem", fontWeight: 800 }}>
             {contact.contactOwner.split(" ").map(w => w[0]).join("").toUpperCase().slice(0, 2)}
           </Avatar>
           <div>
@@ -475,9 +476,9 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
           </div>
 
           {/* ── Header card ── */}
-          <div className={`rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
+          <div className={`detail-hero rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
             <div className="flex items-start gap-4 flex-wrap">
-              <Avatar sx={{ width: 56, height: 56, bgcolor: avColor, fontSize: "1.2rem", fontWeight: 800, boxShadow: "0 4px 14px 0 rgba(12,36,114,0.2)", flexShrink: 0 }}>
+              <Avatar src={avatarFor(`${contact.firstName} ${contact.lastName}`.trim())} alt={`${contact.firstName} ${contact.lastName}`} sx={{ width: 56, height: 56, bgcolor: avColor, fontSize: "1.2rem", fontWeight: 800, boxShadow: "0 4px 14px 0 rgba(12,36,114,0.2)", flexShrink: 0 }}>
                 {initials}
               </Avatar>
               <div className="flex-1 min-w-0">

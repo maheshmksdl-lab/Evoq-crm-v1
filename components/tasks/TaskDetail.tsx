@@ -1,4 +1,6 @@
 "use client";
+import Avatar from "@mui/material/Avatar";
+import { avatarFor } from "@/lib/avatars";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -268,7 +270,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
         ].map(({ label, value }) => (
           <div key={label} className="flex justify-between text-[12px]">
             <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{label}</span>
-            <span className={`font-semibold text-right max-w-[140px] truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{value}</span>
+            <span className={`font-semibold text-right max-w-[160px] truncate ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{(label === "Task Owner" || label === "Created By") && value !== "—" ? <span className="inline-flex items-center gap-1.5 min-w-0"><Avatar src={avatarFor(value)} sx={{ width: 20, height: 20, fontSize: "0.5rem", fontWeight: 800 }}>{String(value).split(" ").map((w: string) => w[0]).join("").toUpperCase().slice(0, 2)}</Avatar><span className="truncate">{value}</span></span> : value}</span>
           </div>
         ))}
       </div>
@@ -294,7 +296,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
           </div>
 
           {/* ── Header card ── */}
-          <div className={`rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
+          <div className={`detail-hero rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
             <div className="flex items-center justify-between gap-3 flex-wrap">
               <div className="flex items-center gap-3">
                 <div className={`w-9 h-9 rounded-xl flex items-center justify-center shadow-xs shrink-0 ${isDark ? "bg-[#27272A]" : "bg-brand-700"}`}>

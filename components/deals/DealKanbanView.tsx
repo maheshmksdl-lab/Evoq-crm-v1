@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Avatar from "@mui/material/Avatar";
+import { avatarFor } from "@/lib/avatars";
 import Tooltip from "@mui/material/Tooltip";
 import { Plus, Buildings, User, DotsThreeVertical, CurrencyDollar } from "@phosphor-icons/react";
 import { useTheme } from "@/components/ThemeContext";
@@ -130,7 +131,7 @@ export default function DealKanbanView({ deals }: Props) {
                     {/* Footer */}
                     <div className={`flex items-center gap-1.5 pt-2 border-t ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
                       <Tooltip title={deal.owner}>
-                        <Avatar sx={{ width: 16, height: 16, bgcolor: owCol, fontSize: "0.45rem", fontWeight: 800 }}>{owInit}</Avatar>
+                        <Avatar src={avatarFor(deal.owner)} sx={{ width: 16, height: 16, bgcolor: owCol, fontSize: "0.45rem", fontWeight: 800 }}>{owInit}</Avatar>
                       </Tooltip>
                       <span className={`text-[12px] truncate ${isDark ? "text-[#9CA3AF]" : "text-slate-500"}`}>{deal.owner}</span>
                       <span className={`ml-auto text-[12px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{deal.probability}%</span>

@@ -55,7 +55,8 @@ export function colorsFrom(primary: string, accent: string, secondary: string): 
     // Brand colour tokens that Tailwind utilities (bg-brand-700, text-brand-700 ...) read.
     accent: {
       "--color-brand-50": mix(p, W, 0.95), "--color-brand-100": mix(secondary, W, 0.8), "--color-brand-500": accent,
-      "--color-brand-600": mix(p, W, 0.12), "--color-brand-700": p, "--accent-solid": p, "--color-brand-900": mix(p, K, 0.55),
+      "--color-brand-600": mix(p, W, 0.12), "--color-brand-700": p, "--accent-solid": p,
+      "--t1": mix(p, W, 0.88), "--t2": mix(accent, W, 0.86), "--t3": mix(secondary, W, 0.84), "--t4": mix(mix(accent, "#FFF3DC", 0.5), W, 0.6), "--color-brand-900": mix(p, K, 0.55),
     },
     // Page, card, border and sidebar surfaces. Light mode only; dark mode keeps its own surfaces.
     surface: {

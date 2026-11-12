@@ -9,6 +9,7 @@ import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import InputBase from "@mui/material/InputBase";
 import Avatar from "@mui/material/Avatar";
+import { avatarFor } from "@/lib/avatars";
 import {
   House, CaretRight, PencilSimple, DotsThreeVertical,
   Note, ClipboardText, Paperclip, ClockCounterClockwise,
@@ -208,7 +209,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
         </div>
         <div className="flex justify-between text-[12px]">
           <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Owner</span>
-          <span className={`font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{account.accountOwner}</span>
+          <span className={`font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}><span className="inline-flex items-center gap-1.5 min-w-0"><Avatar src={avatarFor(account.accountOwner)} sx={{ width: 20, height: 20, fontSize: "0.5rem", fontWeight: 800 }}>{String(account.accountOwner).split(" ").map((w: string) => w[0]).join("").toUpperCase().slice(0, 2)}</Avatar><span className="truncate">{account.accountOwner}</span></span></span>
         </div>
       </div>
     </div>
@@ -233,7 +234,7 @@ export default function AccountDetail({ accountId }: { accountId: number }) {
           </div>
 
           {/* ── Header card ── */}
-          <div className={`rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
+          <div className={`detail-hero rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
             <div className="flex items-start gap-4 flex-wrap">
               {/* Avatar */}
               <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white text-[1.2rem] font-extrabold shrink-0"

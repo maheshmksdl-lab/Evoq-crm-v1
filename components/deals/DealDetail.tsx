@@ -19,7 +19,8 @@ import {
   GridFour, List, Trophy, Handshake, Tag,
   CurrencyCircleDollar, ChartLineUp, CalendarBlank,
 } from "@phosphor-icons/react";
-import { OWNER_AVATARS } from "@/lib/avatars";
+import { OWNER_AVATARS, avatarFor } from "@/lib/avatars";
+import Avatar from "@mui/material/Avatar";
 import { useTheme } from "@/components/ThemeContext";
 import { DETAIL_GRID, KV_GRID } from "@/lib/ui";
 
@@ -240,7 +241,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
         <div className="space-y-2">
           <div className="flex justify-between text-[12px]">
             <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Owner</span>
-            <span className={`font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}>{deal.owner}</span>
+            <span className={`font-semibold ${isDark ? "text-[#D4D4D8]" : "text-slate-700"}`}><span className="inline-flex items-center gap-1.5 min-w-0"><Avatar src={avatarFor(deal.owner)} sx={{ width: 20, height: 20, fontSize: "0.5rem", fontWeight: 800 }}>{String(deal.owner).split(" ").map((w: string) => w[0]).join("").toUpperCase().slice(0, 2)}</Avatar><span className="truncate">{deal.owner}</span></span></span>
           </div>
           <div className="flex justify-between text-[12px]">
             <span className={`font-medium ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>Created</span>
@@ -274,7 +275,7 @@ export default function DealDetail({ dealId }: { dealId: number }) {
           </div>
 
           {/* ── Header card ── */}
-          <div className={`rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
+          <div className={`detail-hero rounded-2xl border shadow-xs px-5 py-4 ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
             <div className="flex items-start justify-between gap-4 flex-wrap">
               <div className="min-w-0">
                 <h1 className={`m-0 text-[20px] font-extrabold tracking-tight truncate ${isDark ? "text-[#FFFFFF]" : "text-slate-900"}`}>{deal.name}</h1>

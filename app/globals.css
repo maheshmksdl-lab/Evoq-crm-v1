@@ -904,3 +904,13 @@ html[data-buttons="pill"] .MuiButton-root { border-radius: 9999px !important; }
 
 html.dark .dashboard-canvas,
 html.dark .app-canvas { background-color: var(--bg-page); }
+
+/* Detail-page header card: a soft multi-tone wash (same idea as the Healthcare app's banners),
+   kept light so the content on top stays easy to read. Tones follow the active theme. */
+:root { --t1: #F1EEFB; --t2: #E6F1FB; --t3: #DFF4F0; --t4: #FFF3DC; }
+.detail-hero {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    linear-gradient(115deg, var(--t1) 0%, var(--t2) 38%, var(--t3) 72%, var(--t4) 100%);
+}
+html.dark .detail-hero { background-image: none; }

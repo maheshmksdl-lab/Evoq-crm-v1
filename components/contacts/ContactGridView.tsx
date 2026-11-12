@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import Avatar from "@mui/material/Avatar";
+import { avatarFor } from "@/lib/avatars";
 import Tooltip from "@mui/material/Tooltip";
 import { Envelope, Phone, DeviceMobile, Buildings, DotsThreeVertical } from "@phosphor-icons/react";
 import { OWNER_AVATARS } from "@/lib/avatars";
@@ -79,7 +80,7 @@ export default function ContactGridView({ contacts }: Props) {
             <div className="p-3 sm:p-4">
               {/* Avatar + Name + Menu */}
               <div className="flex items-start gap-3 mb-3">
-                <Avatar sx={{ width: 44, height: 44, bgcolor: avCol, fontSize: "0.85rem", fontWeight: 800, flexShrink: 0, boxShadow: "0 2px 8px rgba(12,36,114,0.15)" }}>
+                <Avatar src={avatarFor(fullName)} alt={fullName} sx={{ width: 44, height: 44, bgcolor: avCol, fontSize: "0.85rem", fontWeight: 800, flexShrink: 0, boxShadow: "0 2px 8px rgba(12,36,114,0.15)" }}>
                   {avInit}
                 </Avatar>
                 <div className="flex-1 min-w-0">

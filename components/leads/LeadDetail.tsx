@@ -302,7 +302,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
           </nav>
 
           {/* ══ Lead Header Card ══ */}
-          <header className={`${cardCls(isDark)} @container px-4 sm:px-5 py-4`}>
+          <header className={`${cardCls(isDark)} detail-hero @container px-4 sm:px-5 py-4`}>
             <div className="flex flex-col gap-4 @min-[44rem]:flex-row @min-[44rem]:items-center">
               <div className="flex items-center gap-4 flex-1 min-w-0">
                 <div className="relative shrink-0">

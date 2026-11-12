@@ -28,6 +28,8 @@ import {
   ClockCounterClockwise, ArrowsLeftRight, Rows, CopySimple, Palette,
 } from "@phosphor-icons/react";
 import ThemesPanel from "@/components/settings/ThemesPanel";
+import Avatar from "@mui/material/Avatar";
+import { avatarFor } from "@/lib/avatars";
 import { useTheme } from "@/components/ThemeContext";
 import { useRouter, useSearchParams } from "next/navigation";
 
@@ -240,8 +242,8 @@ function RoleBadge({ role }: { role: string }) {
   );
 }
 
-function ProfileHero({ initials, name, role, subtitle, contacts, avatarBg, avatarText }: {
-  initials: string; name: string; role: string; subtitle?: string;
+function ProfileHero({ initials, name, role, subtitle, contacts, avatarBg, avatarText, photo }: {
+  initials: string; name: string; role: string; subtitle?: string; photo?: string;
   contacts: { icon: React.ElementType; value: string; link?: boolean }[];
   avatarBg: string; avatarText: string;
 }) {
@@ -255,9 +257,7 @@ function ProfileHero({ initials, name, role, subtitle, contacts, avatarBg, avata
       <div className="relative px-6 pb-5">
         <div className="absolute -top-8 left-6">
           <div className="relative">
-            <div className={`w-[64px] h-[64px] rounded-full border-[3px] shadow-md flex items-center justify-center ${isDark ? "border-[#1C1C1E]" : "border-surface"}`} style={{ backgroundColor:avatarBg }}>
-              <span className="text-[20px] font-extrabold leading-none select-none" style={{ color:avatarText }}>{initials}</span>
-            </div>
+            <Avatar src={photo} alt={name} sx={{ width: 64, height: 64, border: "3px solid", borderColor: isDark ? "#1C1C1E" : "var(--color-surface)", boxShadow: "0 4px 12px rgba(0,0,0,0.12)", bgcolor: avatarBg, color: avatarText, fontSize: 20, fontWeight: 800 }}>{initials}</Avatar>
             <button aria-label="Change profile photo" className={`absolute bottom-0 right-0 w-6 h-6 rounded-full border shadow-xs flex items-center justify-center transition-colors ${isDark ? "bg-[#27272A] border-[#3F3F46] hover:bg-[#3F3F46]" : "bg-white border-border-light hover:bg-[#EFF6FF]"}`}>
               <Camera size={12} color={isDark ? "#71717A" : "#64748B"} weight="duotone" />
             </button>
@@ -307,7 +307,7 @@ function PersonalSettingsPanel() {
   return (
     <div className={`flex-1 overflow-y-auto px-0 pt-0 pb-0 space-y-5 ${isDark ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <ProfileHero
-        initials="PM" name="PM SDL" role="Super Admin"
+        initials="PM" name="PM SDL" role="Super Admin" photo={avatarFor("PM SDL")}
         avatarBg="#FEF3C7" avatarText="#B45309"
         contacts={[
           { icon:Envelope, value:data.email, link:true },
@@ -648,7 +648,7 @@ function UserDetailPanel({ user, onUpdate }: { user: UserRecord; onUpdate: (upda
   return (
     <div className={`flex-none md:flex-1 overflow-y-auto px-4 sm:px-8 pt-0 pb-8 space-y-5 ${isDarkUD ? "bg-[#0A0A0A]" : "bg-transparent"}`}>
       <ProfileHero
-        initials={user.initials} name={user.name} role={user.role}
+        initials={user.initials} name={user.name} role={user.role} photo={avatarFor(user.name)}
         avatarBg={user.avatarColor} avatarText={user.textColor}
         contacts={[
           { icon:Envelope, value:data.email, link:true },
@@ -727,10 +727,10 @@ function UsersPanel() {
   return (
     <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
       {/* User list */}
-      <div className={`w-full md:w-[340px] shrink-0 flex flex-col border-b md:border-b-0 md:border-r max-h-[300px] md:max-h-none ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-surface"}`}>
+      <div className={`w-full md:w-[340px] shrink-0 flex flex-col border-b md:border md:rounded-2xl md:shadow-xs md:mr-6 overflow-hidden max-h-[300px] md:max-h-none ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-(--bg-aside)"}`}>
         {/* Toolbar */}
         <div className={`px-4 py-3 border-b flex items-center gap-2 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
-          <div className={`flex-1 flex items-center gap-1.5 border rounded-xl px-3 py-1.5 focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8] transition-all ${isDark ? "bg-[#18181B] border-[#3F3F46]" : "bg-white border-border-light"}`}>
+          <div className={`flex-1 flex items-center gap-1.5 border rounded-xl px-3 py-1.5 focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8] transition-all ${isDark ? "bg-[#18181B] border-[#3F3F46]" : "bg-[#f9fbff] border-border-light"}`}>
             <MagnifyingGlass size={13} color="#6B7A92" weight="duotone" />
             <InputBase placeholder="Search" value={search} onChange={e => setSearch(e.target.value)}
               sx={{ flex:1, fontSize:"0.75rem", color: isDark ? "#D4D4D8" : "#334155", "& input::placeholder":{color:"#6B7A92",opacity:1} }} />
@@ -750,16 +750,13 @@ function UsersPanel() {
             return (
               <div key={user.id} onClick={() => setSelected(user)}
                 className={`flex items-center gap-3 px-4 py-3 cursor-pointer border-b border-[#EFF6FF] transition-colors group ${
-                  isActive ? "bg-[#EFF6FF]" : "hover:bg-surface"
+                  isActive ? (isDark ? "bg-[#27272A]" : "bg-white") : "hover:bg-white/60"
                 }`}>
                 <div onClick={e => toggleCheck(user.id, e)}>
                   <Checkbox size="small" checked={isChecked}
                     sx={{ p:0.3, color:"#E2E8F0", "&.Mui-checked":{color:"var(--color-brand-700)"} }} />
                 </div>
-                <div className="w-9 h-9 rounded-full flex items-center justify-center shrink-0 text-[13px] font-bold"
-                  style={{ backgroundColor: user.avatarColor, color: user.textColor }}>
-                  {user.initials}
-                </div>
+                <Avatar src={avatarFor(user.name)} alt={user.name} sx={{ width: 36, height: 36, flexShrink: 0, bgcolor: user.avatarColor, color: user.textColor, fontSize: 13, fontWeight: 700 }}>{user.initials}</Avatar>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-1.5 mb-0.5">
                     <span className={`text-[14px] font-semibold truncate ${isActive?"text-brand-700":"text-slate-800"}`}>{user.name}</span>
@@ -1091,7 +1088,7 @@ function RolesPanel() {
   return (
     <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden">
       {/* Role sidebar */}
-      <div className={`w-full md:w-[340px] shrink-0 flex flex-col border-b md:border-b-0 md:border-r max-h-[300px] md:max-h-none ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-surface"}`}>
+      <div className={`w-full md:w-[340px] shrink-0 flex flex-col border-b md:border md:rounded-2xl md:shadow-xs md:mr-6 overflow-hidden max-h-[300px] md:max-h-none ${isDark ? "border-[#27272A] bg-[#111113]" : "border-border-light bg-(--bg-aside)"}`}>
         {/* Toolbar */}
         <div className={`px-4 py-3 border-b ${isDark ? "border-[#27272A]" : "border-border-light"} flex items-center gap-2`}>
           <div className={`flex items-center rounded-xl p-1 gap-1 ${isDark ? "bg-[#1C1C1E] border border-[#27272A]" : "bg-[#EFF6FF] border border-border-light"}`}>
@@ -1264,16 +1261,16 @@ const PERM_PAIRS: [PermKey, PermKey][] = [
 ];
 
 const PERM_META: Record<PermKey, { label: string; icon: React.ElementType; color: string }> = {
-  fullAccess:        { label:"Full Access",           icon:Square,         color:"#10B981" },
-  create:            { label:"Create",                icon:Plus,           color:"#1D4ED8" },
-  read:              { label:"Read",                  icon:Eye,            color:"#06B6D4" },
-  update:            { label:"Update",                icon:PencilSimple,   color:"#F59E0B" },
-  delete:            { label:"Delete",                icon:Trash,          color:"#EF4444" },
-  print:             { label:"Print",                 icon:Printer,        color:"#64748B" },
-  import:            { label:"Import",                icon:UploadSimple,   color:"#8B5CF6" },
-  export:            { label:"Export",                icon:DownloadSimple, color:"#8B5CF6" },
-  email:             { label:"Email",                 icon:Envelope,       color:"#64748B" },
-  dataSharingPublic: { label:"Data Sharing (Public)", icon:Globe,          color:"#10B981" },
+  fullAccess:        { label:"Full Access",           icon:Square,         color:"var(--color-brand-700)" },
+  create:            { label:"Create",                icon:Plus,           color:"var(--color-brand-600)" },
+  read:              { label:"Read",                  icon:Eye,            color:"var(--color-brand-500)" },
+  update:            { label:"Update",                icon:PencilSimple,   color:"var(--color-brand-700)" },
+  delete:            { label:"Delete",                icon:Trash,          color:"#DC2626" },
+  print:             { label:"Print",                 icon:Printer,        color:"#475569" },
+  import:            { label:"Import",                icon:UploadSimple,   color:"var(--color-brand-600)" },
+  export:            { label:"Export",                icon:DownloadSimple, color:"var(--color-brand-600)" },
+  email:             { label:"Email",                 icon:Envelope,       color:"#475569" },
+  dataSharingPublic: { label:"Data Sharing (Public)", icon:Globe,          color:"var(--color-brand-700)" },
 };
 
 const PERM_MODULES = [
@@ -1284,11 +1281,11 @@ const PERM_MODULES = [
 ];
 
 const PERM_ROLES = [
-  { key:"administrator",  label:"Administrator",      color:"#2563EB" },
-  { key:"vpOperations",   label:"VP of Operations",   color:"#7C3AED" },
-  { key:"opsManager",     label:"Operations Manager", color:"#047857" },
-  { key:"supportExec",    label:"Support Executive",  color:"#0E7490" },
-  { key:"teamLeader",     label:"Team Leader",        color:"#B45309" },
+  { key:"administrator",  label:"Administrator",      color:"var(--color-brand-900)" },
+  { key:"vpOperations",   label:"VP of Operations",   color:"var(--color-brand-700)" },
+  { key:"opsManager",     label:"Operations Manager", color:"var(--color-brand-600)" },
+  { key:"supportExec",    label:"Support Executive",  color:"#334155" },
+  { key:"teamLeader",     label:"Team Leader",        color:"#64748B" },
 ];
 
 function buildDefaultPerms(): PermState {
@@ -1362,7 +1359,7 @@ function PermissionPanel() {
   };
 
   return (
-    <div className={`flex-1 flex flex-col overflow-hidden ${isDark ? "bg-[#0A0A0A]" : "bg-white"}`}>
+    <div className={`flex-1 flex flex-col overflow-hidden md:rounded-2xl md:border md:shadow-xs ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-(--bg-aside) border-border-light"}`}>
       {/* Header */}
       <div className={`flex items-center justify-between gap-3 px-4 sm:px-6 py-4 border-b ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-surface border-border-light"}`}>
         <div className={`text-[16px] sm:text-[18px] font-extrabold tracking-tight ${isDark ? "text-[#D4D4D8]" : "text-slate-900"}`}>Permissions</div>
@@ -1782,23 +1779,24 @@ function LayoutEditor({ module, layoutName, onClose }: {
         {/* Main area */}
         <div className={`flex-1 overflow-y-auto ${isDark ? "bg-[#000000]" : "bg-[#F8FAFC]"}`}>
           {/* Tab bar */}
-          <div className={`flex items-center justify-between px-4 sm:px-6 pt-4 border-b mb-0 overflow-x-auto ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-white"}`}>
-            <div className="flex items-center">
+          <div className={`flex items-center justify-between gap-3 px-4 sm:px-6 py-3 border-b mb-0 overflow-x-auto ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-white"}`}>
+            <div role="group" aria-label="Layout views" className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
               {(["create","quickCreate","detailView"] as const).map(t => {
                 const labels = { create:"Create", quickCreate:"Quick Create", detailView:"Detail View" };
                 return (
                   <button key={t} onClick={() => setTab(t)}
-                    className={`px-5 py-2.5 text-[15px] font-semibold transition-all border-b-2 -mb-px ${
+                    aria-pressed={tab===t}
+                    className={`px-4 py-1.5 rounded-lg text-[14px]/[20px] font-semibold transition-all ${
                       tab===t
-                        ? isDark ? "border-[#60A5FA] text-[#60A5FA]" : "border-brand-700 text-brand-700"
-                        : isDark ? "border-transparent text-[#A1A1AA] hover:text-[#D4D4D8]" : "border-transparent text-slate-500 hover:text-slate-600"
+                        ? isDark ? "bg-[#27272A] text-[#FAFAFA] shadow-xs" : "bg-brand-700 text-white shadow-xs"
+                        : isDark ? "text-[#A1A1AA] bg-[#0A0A0A] hover:bg-[#18181B] hover:text-[#FAFAFA]" : "text-[#0C2472] bg-border-light hover:bg-brand-700/10"
                     }`}>
                     {labels[t]}
                   </button>
                 );
               })}
             </div>
-            <button onClick={() => setPreviewOpen(true)} className={`text-[15px] font-semibold hover:underline pb-2.5 ${isDark ? "text-[#60A5FA]" : "text-brand-700"}`}>Preview</button>
+            <button onClick={() => setPreviewOpen(true)} className={`text-[14px] font-semibold hover:underline ${isDark ? "text-[#60A5FA]" : "text-brand-700"}`}>Preview</button>
           </div>
 
           {/* CREATE */}
@@ -2202,16 +2200,17 @@ function NewLayoutBuilder({ module, onClose }: { module:string; onClose:()=>void
 
         {/* Main area */}
         <div className={`flex-1 overflow-y-auto ${isDark ? "bg-[#000000]" : "bg-[#F8FAFC]"}`}>
-          <div className={`flex items-center justify-between px-4 sm:px-6 pt-4 border-b mb-0 overflow-x-auto ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-white"}`}>
-            <div className="flex items-center">
+          <div className={`flex items-center justify-between gap-3 px-4 sm:px-6 py-3 border-b mb-0 overflow-x-auto ${isDark ? "border-[#27272A] bg-[#0A0A0A]" : "border-border-light bg-white"}`}>
+            <div role="group" aria-label="Layout views" className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
               {(["create","quickCreate","detailView"] as const).map(t => {
                 const labels = { create:"Create", quickCreate:"Quick Create", detailView:"Detail View" };
                 return (
                   <button key={t} onClick={() => setTab(t)}
-                    className={`px-5 py-2.5 text-[14px] font-semibold transition-all border-b-2 -mb-px ${
+                    aria-pressed={tab===t}
+                    className={`px-4 py-1.5 rounded-lg text-[14px]/[20px] font-semibold transition-all ${
                       tab===t
-                        ? isDark ? "border-[#60A5FA] text-[#60A5FA]" : "border-brand-700 text-brand-700"
-                        : isDark ? "border-transparent text-[#A1A1AA] hover:text-[#D4D4D8]" : "border-transparent text-slate-500 hover:text-slate-600"
+                        ? isDark ? "bg-[#27272A] text-[#FAFAFA] shadow-xs" : "bg-brand-700 text-white shadow-xs"
+                        : isDark ? "text-[#A1A1AA] bg-[#0A0A0A] hover:bg-[#18181B] hover:text-[#FAFAFA]" : "text-[#0C2472] bg-border-light hover:bg-brand-700/10"
                     }`}>
                     {labels[t]}
                   </button>
@@ -2650,10 +2649,10 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
   );
 
   return (
-    <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden bg-white">
-      {/* Sub-sidebar — collapses into a dropdown on mobile */}
-      <div className="w-full md:w-[220px] shrink-0 border-b md:border-b-0 md:border-r border-border-light bg-surface flex flex-col">
-        <div className="w-full flex items-center justify-between px-3 py-3 border-b border-border-light">
+    <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden md:gap-6">
+      {/* Sub-sidebar — collapses into a dropdown on mobile. Card styled like the Settings menu. */}
+      <div className={`w-full md:w-[220px] shrink-0 border-b md:border md:rounded-2xl md:shadow-xs overflow-hidden flex flex-col ${isDark ? "bg-[#111113] border-[#27272A]" : "bg-(--bg-aside) border-border-light"}`}>
+        <div className={`w-full flex items-center justify-between px-3 py-3 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
           <button onClick={onBack} className="flex items-center gap-1 text-[13px] font-semibold text-slate-600 transition-colors hover:text-brand-700">
             <ArrowLeft size={13} weight="bold" />
             Modules
@@ -2674,8 +2673,8 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
             const isActive = modKey === m.key;
             return (
               <button key={m.key} onClick={() => { onSelect(m.key); setSubNavOpen(false); }}
-                className={`flex items-center gap-2.5 w-full px-3 py-2.5 text-[15px] font-medium transition-colors min-h-[40px] ${
-                  isActive ? "bg-brand-700 text-white" : "text-slate-600 hover:bg-[#EFF6FF]"
+                className={`flex items-center gap-2.5 w-[calc(100%-16px)] mx-2 my-0.5 px-3 py-2.5 rounded-lg text-[15px] font-medium transition-colors min-h-[40px] ${
+                  isActive ? "bg-(--accent-solid) text-white" : isDark ? "text-[#A1A1AA] hover:bg-[#27272A]" : "text-slate-600 hover:bg-white/70"
                 }`}>
                 <Icon size={13} color={isActive ? "#fff" : m.color} weight="duotone" />
                 <span className="truncate" title={m.label}>{m.label}</span>
@@ -2686,7 +2685,7 @@ function ModuleDetail({ modKey, onBack, onSelect, onOpenLayout, initialTab = "la
       </div>
 
       {/* Main content */}
-      <div className="flex-1 overflow-y-auto flex flex-col">
+      <div className={`flex-1 overflow-y-auto flex flex-col mt-4 md:mt-0 md:rounded-2xl md:border md:shadow-xs ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-surface border-border-light"}`}>
         {/* Breadcrumb */}
         <div className="px-4 sm:px-6 pt-5 pb-1 flex items-center gap-1.5 text-[12px] text-slate-500 flex-wrap">
           <House size={11} weight="duotone" />
@@ -3176,7 +3175,7 @@ function ModulesAndFieldsPanel() {
   }
 
   return (
-    <div className={`flex-1 overflow-y-auto ${isDark ? "bg-[#0A0A0A]" : "bg-white"}`}>
+    <div className={`flex-1 overflow-y-auto md:rounded-2xl md:border md:shadow-xs ${isDark ? "bg-[#0A0A0A] border-[#27272A]" : "bg-(--bg-aside) border-border-light"}`}>
       {/* Toolbar */}
       <div className={`flex items-center gap-3 px-4 sm:px-6 py-4 border-b flex-wrap ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
         <div className={`flex items-center gap-1.5 border rounded-xl px-3 py-1.5 w-full sm:w-56 focus-within:border-brand-700 focus-within:shadow-[0_0_0_2px_#4A7AE8] transition-all ${isDark ? "bg-[#18181B] border-[#3F3F46]" : "bg-surface border-border-light"}`}>

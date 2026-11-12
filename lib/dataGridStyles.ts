@@ -108,8 +108,30 @@ export const getDataGridSx = (isDark: boolean): SxProps<Theme> => ({
   // ──────────────────────────────────────────────────────────────────
   // CHECKBOXES
   // ──────────────────────────────────────────────────────────────────
+  // The checkbox column is narrow, so it must not inherit the 16px horizontal
+  // padding used by data columns (that squeezed the header checkbox until only a
+  // clipped "[" showed). Header and row cells share identical centring so the
+  // select-all box lines up exactly with the row boxes beneath it.
+  "& .MuiDataGrid-columnHeader.MuiDataGrid-columnHeaderCheckbox, & .MuiDataGrid-cell.MuiDataGrid-cellCheckbox": {
+    padding: "0 !important",
+    display: "flex !important",
+    alignItems: "center !important",
+    justifyContent: "center !important",
+    overflow: "visible !important",
+  },
+  "& .MuiDataGrid-columnHeaderCheckbox .MuiDataGrid-columnHeaderTitleContainer, & .MuiDataGrid-columnHeaderCheckbox .MuiDataGrid-columnHeaderDraggableContainer": {
+    padding: "0 !important",
+    width: "100% !important",
+    justifyContent: "center !important",
+    overflow: "visible !important",
+  },
+
   "& .MuiCheckbox-root": {
     color: `${isDark ? "#8A8A94" : "#64748B"} !important`,
+    padding: "8px !important",
+  },
+  "& .MuiDataGrid-columnHeaderCheckbox .MuiCheckbox-root, & .MuiDataGrid-cellCheckbox .MuiCheckbox-root": {
+    margin: "0 !important",
   },
 
   "& .MuiCheckbox-root.Mui-checked": {
