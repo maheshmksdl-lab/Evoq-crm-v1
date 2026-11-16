@@ -28,35 +28,16 @@ import {
 } from "@phosphor-icons/react";
 import { LEAD_AVATARS, OWNER_AVATARS } from "@/lib/avatars";
 import { useTheme } from "@/components/ThemeContext";
+import { ALL_LEADS, type Lead, type LeadStatus } from "@/lib/crmData";
 
 // ─────────────────────────────────────────────
 //  Types
 // ─────────────────────────────────────────────
-type LeadStatus = "New" | "Contacted" | "Qualified" | "In Progress" | "Lost" | "Unqualified";
-
-interface Lead {
-  id: number; name: string; company: string; email: string; mobile: string;
-  status: LeadStatus; owner: string; ownerInitials: string; created: string;
-  leadSource: string; rating: string;
-}
 
 // ─────────────────────────────────────────────
 //  Data
 // ─────────────────────────────────────────────
-const ALL_LEADS: Lead[] = [
-  { id:1,  name:"Mrs. Shobha R",      company:"Shobha Realty",    email:"",                     mobile:"",               status:"New",         owner:"PM SDL",    ownerInitials:"PM", created:"27 May 2026", leadSource:"Web",       rating:"Hot"  },
-  { id:2,  name:"Priya Nair",         company:"Nair & Co",        email:"priya.nair@demo.com",  mobile:"9988776655",     status:"Contacted",   owner:"SE User 1", ownerInitials:"SU", created:"02 Feb 2025", leadSource:"Referral",  rating:"Warm" },
-  { id:3,  name:"John Carter",        company:"Carter Traders",   email:"john.carter@demo.com", mobile:"9876543210",     status:"Qualified",   owner:"SE User 1", ownerInitials:"SU", created:"02 Feb 2025", leadSource:"Cold Call", rating:"Hot"  },
-  { id:4,  name:"Sudha R",            company:"ddd",              email:"Sudha@gmail.com",      mobile:"76656564456544", status:"In Progress", owner:"Admin",     ownerInitials:"AD", created:"22 Jul 2025", leadSource:"",          rating:"Cold" },
-  { id:5,  name:"Jaya 56678",         company:"",                 email:"",                     mobile:"76656564456544", status:"New",         owner:"Admin",     ownerInitials:"AD", created:"22 Jul 2025", leadSource:"Web",       rating:""     },
-  { id:6,  name:"Leo $#$#$#",         company:"",                 email:"",                     mobile:"7865443322",     status:"Unqualified", owner:"Admin",     ownerInitials:"AD", created:"22 Jul 2025", leadSource:"",          rating:"Cold" },
-  { id:7,  name:"gfdsfs%$%^$^%$",    company:"",                 email:"",                     mobile:"9876543212",     status:"Lost",        owner:"Admin",     ownerInitials:"AD", created:"22 Jul 2025", leadSource:"",          rating:""     },
-  { id:8,  name:"335634656",          company:"",                 email:"",                     mobile:"675432124578",   status:"New",         owner:"Admin",     ownerInitials:"AD", created:"22 Jul 2025", leadSource:"",          rating:""     },
-  { id:9,  name:"Leo",                company:"",                 email:"",                     mobile:"6757567456",     status:"Contacted",   owner:"Admin",     ownerInitials:"AD", created:"22 Jul 2025", leadSource:"Web",       rating:"Cold" },
-  { id:10, name:"James Wilson",       company:"Wilson & Partners",email:"james@wilson.com",     mobile:"9876541234",     status:"Qualified",   owner:"PM SDL",    ownerInitials:"PM", created:"15 May 2026", leadSource:"Referral",  rating:"Hot"  },
-  { id:11, name:"Sara Kim",           company:"TechFlow Ltd",     email:"sara.kim@techflow.io", mobile:"8765432109",     status:"In Progress", owner:"SE User 1", ownerInitials:"SU", created:"10 Apr 2026", leadSource:"Trade Show",rating:"Warm" },
-  { id:12, name:"Raj Mehta",          company:"Apex Group",       email:"raj@apex.in",          mobile:"9845123456",     status:"New",         owner:"Admin",     ownerInitials:"AD", created:"08 Mar 2026", leadSource:"Web",       rating:"Hot"  },
-];
+
 
 // ─────────────────────────────────────────────
 //  Status config

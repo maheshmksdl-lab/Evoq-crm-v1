@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
@@ -12,6 +12,7 @@ import Divider from "@mui/material/Divider";
 import { ListIcon, MagnifyingGlass, Bell, Command, UserCircleIcon, SignOutIcon, Sun, Moon } from "@phosphor-icons/react";
 import { OWNER_AVATARS } from "@/lib/avatars";
 import Logo from "@/components/layout/Logo";
+import { searchCrm, type SearchHit } from "@/lib/crmSearch";
 import { useTheme } from "@/components/ThemeContext";
 
 const EXPANDED_W = "260px";
@@ -128,11 +129,33 @@ export default function AppHeader() {
   const [collapsed, setCollapsed]         = useState(false);
   const [isMobile, setIsMobile]           = useState(false);
   const [search, setSearch]               = useState("");
+  const searchRef                         = useRef<HTMLInputElement>(null);
+  const [isMac, setIsMac]                 = useState(false);
+  const [searchOpen, setSearchOpen]       = useState(false);
+  const [activeIdx, setActiveIdx]         = useState(0);
+  const results = useMemo(() => searchCrm(search), [search]);
+  const hits: SearchHit[] = [...results.leads, ...results.deals];
+  const hasQuery = search.trim().length > 0;
+  const openHit = (h: SearchHit) => { setSearchOpen(false); setSearch(""); searchRef.current?.blur(); router.push(h.href); };
   const [avatarAnchor, setAvatarAnchor]   = useState<HTMLElement | null>(null);
 
   const today = new Date().toLocaleDateString("en-IN", {
     weekday: "long", year: "numeric", month: "long", day: "numeric",
   });
+
+  // Global shortcut: Ctrl+K (Windows/Linux) or Cmd+K (Mac) focuses the search box from anywhere.
+  useEffect(() => {
+    setIsMac(/Mac|iPhone|iPad/i.test(navigator.platform || navigator.userAgent));
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && !e.altKey && !e.shiftKey && e.key.toLowerCase() === "k") {
+        e.preventDefault(); // stop the browser's own Ctrl+K (address-bar search)
+        searchRef.current?.focus();
+        searchRef.current?.select();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   useEffect(() => {
     // Desktop: restore persisted collapsed state
@@ -283,7 +306,7 @@ export default function AppHeader() {
         </div>
 
         {/* Search */}
-        <div className={`flex items-center gap-2 border rounded-xl px-3 py-1.5 w-60 transition-all ${
+        <div className={`relative flex items-center gap-2 border rounded-xl px-3 py-1.5 w-60 transition-all ${
           isDark
             ? "bg-[#0A0A0A] border-[#27272A] focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_rgba(96,165,250,0.3)]"
             : "bg-surface border-border-light focus-within:border-brand-700 focus-within:border-2 focus-within:shadow-[0_0_0_2px_var(--color-brand-500)]"
@@ -292,15 +315,72 @@ export default function AppHeader() {
           <InputBase
             placeholder="Search leads, deals..."
             value={search}
-            onChange={e => setSearch(e.target.value)}
+            onChange={e => { setSearch(e.target.value); setActiveIdx(0); setSearchOpen(true); }}
+            onFocus={() => setSearchOpen(true)}
+            onBlur={() => setSearchOpen(false)}
+            inputRef={searchRef}
+            inputProps={{ "aria-label": "Search leads and deals", "aria-keyshortcuts": isMac ? "Meta+K" : "Control+K" }}
+            onKeyDown={e => {
+              // Esc: clear the box first; if already empty, leave it.
+              if (e.key === "Escape") { if (search) { setSearch(""); setSearchOpen(true); } else searchRef.current?.blur(); }
+              else if (e.key === "ArrowDown" && hits.length) { e.preventDefault(); setActiveIdx(i => (i + 1) % hits.length); }
+              else if (e.key === "ArrowUp" && hits.length) { e.preventDefault(); setActiveIdx(i => (i - 1 + hits.length) % hits.length); }
+              else if (e.key === "Enter" && hits[activeIdx]) { e.preventDefault(); openHit(hits[activeIdx]); }
+            }}
             sx={{
               flex: 1, fontSize: "0.78rem", color: isDark ? "#D4D4D8" : "#334155",
               "& input::placeholder": { color: isDark ? "#8A8A94" : "#64748B", opacity: 1 },
             }}
           />
-          <Tooltip title="⌘K">
-            <Command size={13} color={isDark ? "#71717A" : "#6B7A92"} weight="duotone" />
+          <Tooltip title={`Search (${isMac ? "⌘K" : "Ctrl+K"}) · Esc to clear`}>
+            <kbd className={`inline-flex items-center gap-0.5 rounded border px-1 py-px font-sans text-[10.5px] font-medium leading-4 ${isDark ? "border-[#3F3F46] text-[#A1A1AA]" : "border-border-light text-slate-500"}`}>
+              {isMac ? <Command size={10} weight="bold" aria-hidden /> : "Ctrl"}
+              <span>K</span>
+            </kbd>
           </Tooltip>
+
+          {searchOpen && hasQuery && (
+            <div
+              role="listbox"
+              aria-label="Search results"
+              onMouseDown={e => e.preventDefault()} /* keep focus in the input so clicks register before blur */
+              className={`absolute right-0 top-full z-50 mt-2 w-[380px] max-w-[90vw] overflow-hidden rounded-xl border shadow-lg ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-white border-border-light"}`}
+            >
+              {hits.length === 0 ? (
+                <p className={`m-0 px-4 py-6 text-center text-[13px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>No leads or deals match &ldquo;{search.trim()}&rdquo;</p>
+              ) : (
+                (["Lead", "Deal"] as const).map(kind => {
+                  const group = hits.filter(h => h.kind === kind);
+                  if (!group.length) return null;
+                  return (
+                    <div key={kind} className="py-1">
+                      <p className={`m-0 px-4 pb-1 pt-2 text-[10.5px] font-bold uppercase tracking-wider ${isDark ? "text-[#71717A]" : "text-slate-500"}`}>{kind === "Lead" ? "Leads" : "Deals"}</p>
+                      {group.map(h => {
+                        const idx = hits.indexOf(h);
+                        const on = idx === activeIdx;
+                        return (
+                          <button
+                            key={`${h.kind}-${h.id}`} type="button" role="option" aria-selected={on}
+                            onMouseEnter={() => setActiveIdx(idx)} onClick={() => openHit(h)}
+                            className={`flex w-full items-center justify-between gap-3 px-4 py-2 text-left transition-colors ${on ? (isDark ? "bg-[#27272A]" : "bg-brand-50") : ""}`}
+                          >
+                            <span className="min-w-0">
+                              <span className={`block truncate text-[13px] font-semibold ${isDark ? "text-[#FAFAFA]" : "text-(--bg-sidebar)"}`}>{h.title}</span>
+                              <span className={`block truncate text-[12px] ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`}>{h.subtitle}</span>
+                            </span>
+                            <span className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold ${isDark ? "bg-[#27272A] text-[#D4D4D8]" : "bg-brand-100 text-brand-900"}`}>{h.badge}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  );
+                })
+              )}
+              <div className={`flex items-center justify-between border-t px-4 py-2 text-[11px] ${isDark ? "border-[#27272A] text-[#71717A]" : "border-border-light text-slate-500"}`}>
+                <span>↑↓ to move · Enter to open</span><span>Esc to clear</span>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Dark / Light toggle */}
