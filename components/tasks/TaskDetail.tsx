@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Sidebar from "@/components/layout/Sidebar";
 import { useTheme } from "@/components/ThemeContext";
+import { useGraphite } from "@/lib/useGraphite";
 import { DETAIL_GRID, KV_GRID } from "@/lib/ui";
 import TopBar from "@/components/layout/TopBar";
 import Button from "@mui/material/Button";
@@ -172,7 +173,7 @@ function KV({ label, value, editable }: { label: string; value?: string | number
   const isDark = theme === "dark";
   const display = value !== undefined && value !== "" ? String(value) : "—";
   return (
-    <div className={`py-2 border-b last:border-0 flex items-start justify-between group ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
+    <div data-kv data-empty={display === "—" ? "" : undefined} className={`py-2 border-b last:border-0 flex items-start justify-between group ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"}`}>
       <div className="flex-1">
         <p className={`font-heading text-[11.5px] font-semibold uppercase tracking-wider mb-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{label}</p>
         <p className={`text-[14px] font-medium whitespace-pre-line [overflow-wrap:anywhere] ${display === "—" ? (isDark ? "text-[#71717A] italic" : "text-slate-400 italic") : (isDark ? "text-[#D4D4D8]" : "text-slate-800")}`}>{display}</p>
@@ -198,6 +199,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
   const router = useRouter();
   const { theme } = useTheme();
   const isDark = theme === "dark";
+  const graphite = useGraphite();
   const task = TASKS_DETAIL[taskId];
 
   const [activeTab, setActiveTab]     = useState<"overview" | "timeline">("overview");
@@ -336,7 +338,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
           </div>
 
           {/* ── Tab bar ── */}
-          <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
+          <div data-record-tabs className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
             {(["overview", "timeline"] as const).map(tab => (
               <button key={tab} onClick={() => setActiveTab(tab)} aria-pressed={activeTab === tab}
                 className={`px-4 py-1.5 rounded-lg text-[14px] font-semibold capitalize transition-all ${
@@ -350,12 +352,13 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
             ))}
           </div>
 
-          {activeTab === "overview" && (
+          <div data-record-split className={graphite ? undefined : "contents"}>
+{(graphite || activeTab === "overview") && (
             <div className={DETAIL_GRID}>
               <div className="min-w-0 space-y-5 min-w-0">
 
                 {/* ── Quick Info card ── */}
-                <div className={`rounded-2xl border shadow-xs divide-y ${isDark ? "bg-[#1C1C1E] border-[#27272A] divide-[#27272A]" : "bg-surface border-border-light divide-[#EFF6FF]"}`}>
+                <div data-quick-stats className={`rounded-2xl border shadow-xs divide-y ${isDark ? "bg-[#1C1C1E] border-[#27272A] divide-[#27272A]" : "bg-surface border-border-light divide-[#EFF6FF]"}`}>
                   {[
                     { label: "Type",     value: task.type },
                     { label: "Subject",  value: task.subject },
@@ -482,7 +485,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
             </div>
           )}
 
-          {activeTab === "timeline" && (
+          {(graphite || activeTab === "timeline") && (
             <div className={DETAIL_GRID}>
               <div className="min-w-0">
                 <SectionCard icon={ClipboardText} title="Activity Timeline">
@@ -522,6 +525,7 @@ export default function TaskDetail({ taskId }: { taskId: number }) {
             </div>
           )}
 
+        </div>
         </main>
       </div>
 

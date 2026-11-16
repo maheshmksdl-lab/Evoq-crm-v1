@@ -19,6 +19,7 @@ import {
   Phone, Envelope, Buildings,
 } from "@phosphor-icons/react";
 import { useTheme } from "@/components/ThemeContext";
+import { useGraphite } from "@/lib/useGraphite";
 import { DETAIL_GRID, KV_GRID } from "@/lib/ui";
 
 // ─────────────────────────────────────────────
@@ -348,7 +349,7 @@ function KV({ label, value, fullWidth }: { label: string; value?: string | boole
     : (typeof value === "boolean" ? "No" : "—");
   const isEmpty = display === "—" || display === "No";
   return (
-    <div className={`py-2 border-b last:border-0 ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"} ${fullWidth ? "col-span-2" : ""}`}>
+    <div data-kv data-empty={isEmpty ? "" : undefined} className={`py-2 border-b last:border-0 ${isDark ? "border-[#27272A]" : "border-[#EFF6FF]"} ${fullWidth ? "col-span-2" : ""}`}>
       <p className={`font-heading text-[11.5px] font-semibold uppercase tracking-wider mb-0.5 ${isDark ? "text-[#ABABAD]" : "text-slate-500"}`}>{label}</p>
       <p className={`text-[14px] font-medium [overflow-wrap:anywhere] ${isEmpty ? (isDark ? "text-[#A1A1AA] italic" : "text-slate-500 italic") : (isDark ? "text-[#D4D4D8]" : "text-slate-800")}`}>{display}</p>
     </div>
@@ -362,6 +363,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
   const router = useRouter();
   const { theme } = useTheme();
   const isDark = theme === "dark";
+  const graphite = useGraphite();
   const contact = CONTACTS_DETAIL[contactId];
 
   const [activeTab, setActiveTab] = useState<"overview" | "timeline">("overview");
@@ -536,7 +538,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
           </div>
 
           {/* ── Tab bar ── */}
-          <div className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
+          <div data-record-tabs className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
             {(["overview", "timeline"] as const).map(tab => (
               <button key={tab} onClick={() => setActiveTab(tab)} aria-pressed={activeTab === tab}
                 className={`px-4 py-1.5 rounded-lg text-[14px] font-semibold capitalize transition-all ${
@@ -551,12 +553,13 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
           </div>
 
           {/* ══════════════ OVERVIEW TAB ══════════════ */}
-          {activeTab === "overview" && (
+          <div data-record-split className={graphite ? undefined : "contents"}>
+{(graphite || activeTab === "overview") && (
             <div className={DETAIL_GRID}>
               <div className="min-w-0 space-y-5 min-w-0">
 
                 {/* ── Quick info card ── */}
-                <div className={`rounded-2xl border shadow-xs divide-y ${isDark ? "bg-[#1C1C1E] border-[#27272A] divide-[#27272A]" : "bg-surface border-border-light divide-[#EFF6FF]"}`}>
+                <div data-quick-stats className={`rounded-2xl border shadow-xs divide-y ${isDark ? "bg-[#1C1C1E] border-[#27272A] divide-[#27272A]" : "bg-surface border-border-light divide-[#EFF6FF]"}`}>
                   {[
                     { label: "Contact Owner", value: contact.contactOwner },
                     { label: "Email",         value: contact.email },
@@ -762,7 +765,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
           )}
 
           {/* ══════════════ TIMELINE TAB ══════════════ */}
-          {activeTab === "timeline" && (
+          {(graphite || activeTab === "timeline") && (
             <div className={DETAIL_GRID}>
               <div className="min-w-0">
                 <div className={`rounded-2xl border shadow-xs overflow-hidden ${isDark ? "bg-[#1C1C1E] border-[#27272A]" : "bg-surface border-border-light"}`}>
@@ -840,6 +843,7 @@ export default function ContactDetail({ contactId }: { contactId: number }) {
               </div>
             </div>
           )}
+        </div>
         </main>
       </div>
     </div>

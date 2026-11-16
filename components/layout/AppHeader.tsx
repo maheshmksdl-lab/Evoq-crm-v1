@@ -265,7 +265,7 @@ export default function AppHeader() {
     <header
       style={{
         position: "fixed", top: 0, left: 0, right: 0,
-        height: "72px", zIndex: 60,
+        height: "var(--header-h)", zIndex: 60,
         backgroundColor: isDark ? "#0A0A0A" : "var(--bg-header)",
         borderBottom: `1px solid ${isDark ? "#27272A" : "var(--border-chrome)"}`,
         display: "flex", alignItems: "center",
@@ -306,7 +306,7 @@ export default function AppHeader() {
         </div>
 
         {/* Search */}
-        <div className={`relative flex items-center gap-2 border rounded-xl px-3 py-1.5 w-60 transition-all ${
+        <div className={`app-search relative flex items-center gap-2 border rounded-xl px-3 py-1.5 w-60 transition-all ${
           isDark
             ? "bg-[#0A0A0A] border-[#27272A] focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_rgba(96,165,250,0.3)]"
             : "bg-surface border-border-light focus-within:border-brand-700 focus-within:border-2 focus-within:shadow-[0_0_0_2px_var(--color-brand-500)]"

@@ -26,6 +26,7 @@ import {
 } from "@phosphor-icons/react";
 import { LEAD_AVATARS, OWNER_AVATARS } from "@/lib/avatars";
 import { useTheme } from "@/components/ThemeContext";
+import { useGraphite } from "@/lib/useGraphite";
 
 // ─────────────────────────────────────────────
 //  Types & data
@@ -129,7 +130,7 @@ function KV({ label, value, blue, wide }: { label: string; value?: string; blue?
   const isDark = theme === "dark";
   const t = tone(isDark);
   return (
-    <div className={`py-2.5 border-b border-border-light min-w-0 ${wide ? "col-span-full" : ""}`}>
+    <div data-kv data-empty={value ? undefined : ""} className={`py-2.5 border-b border-border-light min-w-0 ${wide ? "col-span-full" : ""}`}>
       <dt className="font-heading text-[11.5px]/[16px] font-semibold uppercase tracking-wider mb-1" style={{ color: t.tertiary }}>{label}</dt>
       <dd className={`text-[14px]/[20px] [overflow-wrap:anywhere] ${value ? "font-medium" : ""} ${blue ? "text-inherit" : ""}`}
         style={{ color: value ? t.primary : t.empty }}>
@@ -181,6 +182,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
   const router = useRouter();
   const { theme } = useTheme();
   const isDark = theme === "dark";
+  const graphite = useGraphite();
   const t = tone(isDark);
   const lead = LEADS[leadId];
 
@@ -408,7 +410,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
           </header>
 
           {/* ══ Tab Bar ══ */}
-          <div role="group" aria-label="Lead sections" className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
+          <div data-record-tabs role="group" aria-label="Lead sections" className={`flex items-center gap-1 border rounded-xl p-1 w-fit shadow-xs ${isDark ? "bg-[#000000] border-[#27272A]" : "bg-surface border-border-light"}`}>
             {([{ key:"overview", label:"Overview" }, { key:"activity", label:"Timeline" }] as const).map(({ key, label }) => (
               <button key={key} onClick={() => setActiveTab(key)} aria-pressed={activeTab===key}
                 className={`px-4 py-1.5 rounded-lg text-[14px]/[20px] font-semibold transition-all ${FOCUS_RING} ${
@@ -422,7 +424,8 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
           </div>
 
           {/* ══════════════════════════ OVERVIEW ══════════════════════════ */}
-          {activeTab === "overview" && (
+          <div data-record-split className={graphite ? undefined : "contents"}>
+{(graphite || activeTab === "overview") && (
             <div className={PAGE_GRID}>
 
               {/* Main column */}
@@ -505,7 +508,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                 </section>
 
                 {/* Quick Stats */}
-                <dl className="grid grid-cols-2 @min-[36rem]:grid-cols-4 gap-3">
+                <dl data-quick-stats className="grid grid-cols-2 @min-[36rem]:grid-cols-4 gap-3">
                   {[
                     { label:"Lead Source", value:lead.leadSource||"—",    icon:TrendUp,   fill: isDark?"#1A2D4A":"#D6E4F9", deep: isDark?"#60A5FA":"#2F6FED" },
                     { label:"Rating",      value:lead.rating||"—",        icon:Star,      fill: isDark?"#1A2D3A":"#D0E5E0", deep: isDark?"#34D399":"#238264" },
@@ -555,6 +558,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
                     <KV label="Lead Status"       value={currentStatus} />
                     <KV label="Rating"            value={lead.rating} />
                     <KV label="No. of Employees"  value={lead.noOfEmployees} />
+                    <KV label="Lead Owner"        value={lead.owner} />
                     <KV label="Annual Revenue"    value={lead.annualRevenue ? `₹${Number(lead.annualRevenue).toLocaleString("en-IN")}` : ""} />
                   </dl>
                 </SectionCard>
@@ -674,7 +678,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
           )}
 
           {/* ══════════════════════════ ACTIVITY ══════════════════════════ */}
-          {activeTab === "activity" && (
+          {(graphite || activeTab === "activity") && (
             <div className={PAGE_GRID}>
               <section aria-label="Timeline" className={`${cardCls(isDark)} min-w-0`}>
                 <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-border-light">
@@ -713,6 +717,7 @@ export default function LeadDetail({ leadId }: { leadId: number }) {
             </div>
           )}
 
+        </div>
         </main>
       </div>
 

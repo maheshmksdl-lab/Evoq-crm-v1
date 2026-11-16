@@ -28,6 +28,8 @@ export const THEMES: Theme[] = [
   { id: "coral",    name: "Active Coral",  audience: "Energetic",  description: "Warm, energetic coral with a steady blue accent.",     primary: "#B24A1A", accent: "#2A93B0", secondary: "#8DD0BB" },
   { id: "lavender", name: "Calm Lavender", audience: "Restful",    description: "Restful lavender and mist for a calm, welcoming space.", primary: "#6A4DAE", accent: "#7E8FD6", secondary: "#A5DCCB" },
   { id: "indigo",   name: "Slate Indigo",  audience: "Composed",   description: "Composed indigo and slate that suits any team.",       primary: "#3B4CB0", accent: "#4F8DD0", secondary: "#8FCFC4" },
+  { id: "graphite", name: "Graphite",      audience: "Focused",    description: "Flat, neutral charcoal and white. No gradients, one blue accent, just the essentials.", primary: "#27272A", accent: "#3B82F6", secondary: "#D4D4D8",
+    layout: { aside: "#F4F4F5", header: "#FFFFFF", canvas: ["#FFFFFF", "#F7F7F8", "#F4F4F5"] } },
 ];
 
 export const DEFAULT_THEME = "evoq";

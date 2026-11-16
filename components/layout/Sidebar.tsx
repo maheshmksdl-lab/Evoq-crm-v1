@@ -12,6 +12,7 @@ import {
 import { OWNER_AVATARS } from "@/lib/avatars";
 import { useTheme } from "@/components/ThemeContext";
 import Logo from "@/components/layout/Logo";
+import { useGraphite } from "@/lib/useGraphite";
 
 const MOBILE_BP = 1024;
 
@@ -29,7 +30,9 @@ const navItems = [
 export default function Sidebar() {
   const pathname    = usePathname();
   const { theme } = useTheme();
-  const isDark = theme === "dark";
+  const graphite = useGraphite();
+  // Graphite uses the dark sidebar styling even in light mode (colours come from the --sb-* variables).
+  const isDark = theme === "dark" || graphite;
   const [isMobile,    setIsMobile]    = useState(false);
   const [collapsed,   setCollapsed]   = useState(false); // desktop
   const [drawerOpen,  setDrawerOpen]  = useState(false); // mobile
@@ -99,7 +102,7 @@ export default function Sidebar() {
             position: "fixed", top: 0, left: 0,
             width: "min(280px, 85vw)", height: "100vh",
             zIndex: 100,
-            backgroundColor: isDark ? "#000000" : "var(--bg-aside)",
+            backgroundColor: isDark ? "var(--sb-bg)" : "var(--bg-aside)",
             // Shadow only while open: a closed drawer sits at translateX(-100%) and its
             // 24px blur would otherwise bleed into the left edge of the viewport.
             boxShadow: !drawerOpen ? "none" : isDark ? "4px 0 24px rgba(0,0,0,0.5)" : "4px 0 24px rgba(0,0,0,0.12)",
@@ -114,11 +117,11 @@ export default function Sidebar() {
           }}
         >
           {/* Header: close + brand */}
-          <div className={`flex items-center gap-3 px-4 py-4 border-b ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
+          <div className={`flex items-center gap-3 px-4 py-4 border-b ${isDark ? "border-(--sb-line)" : "border-border-light"}`}>
             <button
               onClick={closeDrawer}
               className={`w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-150 shrink-0 ${
-                isDark ? "text-[#A1A1AA] hover:text-[#F4F4F5] hover:bg-[#27272A]" : "text-slate-500 hover:text-slate-700 hover:bg-border-light"
+                isDark ? "text-[#A1A1AA] hover:text-[#F4F4F5] hover:bg-(--sb-hover)" : "text-slate-500 hover:text-slate-700 hover:bg-border-light"
               }`}
               aria-label="Close menu"
             >
@@ -146,7 +149,7 @@ export default function Sidebar() {
                     flex items-center gap-3 px-3 py-2.5 rounded-lg text-[16px] font-medium
                     transition-all duration-150 group
                     ${isDark
-                      ? (active ? "bg-[#18181B] text-[#60A5FA]" : "text-[#A1A1AA] hover:bg-[#18181B] hover:text-[#60A5FA]")
+                      ? (active ? "bg-(--sb-active) text-(--sb-hi)" : "text-[#A1A1AA] hover:bg-(--sb-active) hover:text-(--sb-hi)")
                       : (active ? "bg-(--accent-solid) text-white shadow-sm" : "text-slate-600 hover:bg-white/70 hover:text-slate-900")
                     }
                   `}
@@ -156,20 +159,20 @@ export default function Sidebar() {
                     weight={isDark ? "duotone" : "regular"}
                     className={`shrink-0 transition-colors ${
                       isDark
-                        ? (active ? "text-[#60A5FA]" : "text-[#A1A1AA] group-hover:text-[#60A5FA]")
+                        ? (active ? "text-(--sb-hi)" : "text-[#A1A1AA] group-hover:text-(--sb-hi)")
                         : (active ? "text-white" : "text-slate-500 group-hover:text-slate-800")
                     }`}
                   />
                   <span className="flex-1 truncate">{label}</span>
                   {badge && !active && (
                     <span className={`text-[11px] font-bold px-1.5 py-0.5 rounded-full leading-none ${
-                      isDark ? "bg-[#60A5FA]/15 text-[#60A5FA]" : "bg-(--accent-solid) text-white"
+                      isDark ? "bg-(--sb-hi)/15 text-(--sb-hi)" : "bg-(--accent-solid) text-white"
                     }`}>
                       {badge}
                     </span>
                   )}
                   {active && isDark && (
-                    <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-[#60A5FA]" />
+                    <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-(--sb-hi)" />
                   )}
                 </Link>
               );
@@ -177,18 +180,18 @@ export default function Sidebar() {
           </nav>
 
           {/* Bottom: settings + profile */}
-          <div className={`px-3 pb-4 border-t pt-3 space-y-0.5 ${isDark ? "border-[#27272A]" : "border-border-light"}`}>
+          <div className={`px-3 pb-4 border-t pt-3 space-y-0.5 ${isDark ? "border-(--sb-line)" : "border-border-light"}`}>
             <Link
               href="/settings"
               onClick={closeDrawer}
               className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-[16px] font-medium transition-all duration-150 group ${
-                isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#60A5FA]" : "text-slate-600 hover:bg-white hover:text-brand-700"
+                isDark ? "text-[#A1A1AA] hover:bg-(--sb-hover) hover:text-(--sb-hi)" : "text-slate-600 hover:bg-white hover:text-brand-700"
               }`}
             >
-              <GearSixIcon size={19} weight="duotone" className={`shrink-0 ${isDark ? "text-[#A1A1AA] group-hover:text-[#60A5FA]" : "text-slate-500 group-hover:text-brand-700"}`} />
+              <GearSixIcon size={19} weight="duotone" className={`shrink-0 ${isDark ? "text-[#A1A1AA] group-hover:text-(--sb-hi)" : "text-slate-500 group-hover:text-brand-700"}`} />
               Settings
             </Link>
-            <div className={`flex items-center gap-2.5 mt-1 px-3 py-2 rounded-xl border ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-white border-border-light"}`}>
+            <div className={`flex items-center gap-2.5 mt-1 px-3 py-2 rounded-xl border ${isDark ? "bg-(--sb-active) border-(--sb-line)" : "bg-white border-border-light"}`}>
               <div className="relative shrink-0">
                 <Avatar
                   src={OWNER_AVATARS["PM SDL"]}
@@ -212,11 +215,11 @@ export default function Sidebar() {
   ═══════════════════════════════════════════ */
   return (
     <aside
-      className={`fixed left-0 flex flex-col z-50 select-none border-r overflow-hidden ${isDark ? "border-[#27272A]" : "border-(--border-chrome)"}`}
+      className={`fixed left-0 flex flex-col z-50 select-none border-r overflow-hidden ${isDark ? "border-(--sb-line)" : "border-(--border-chrome)"}`}
       style={{
-        top: "72px",
-        height: "calc(100vh - 72px)",
-        backgroundColor: isDark ? "#000000" : "var(--bg-aside)",
+        top: "var(--header-h)",
+        height: "calc(100vh - var(--header-h))",
+        backgroundColor: isDark ? "var(--sb-bg)" : "var(--bg-aside)",
         width: collapsed ? "68px" : "260px",
         transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease, border-color 0.2s ease",
       }}
@@ -238,7 +241,7 @@ export default function Sidebar() {
                   : "gap-3 px-3 py-2.5 w-full"
                 }
                 ${isDark
-                  ? (active ? "bg-[#18181B] text-[#60A5FA]" : "text-[#A1A1AA] hover:bg-[#18181B] hover:text-[#60A5FA]")
+                  ? (active ? "bg-(--sb-active) text-(--sb-hi)" : "text-[#A1A1AA] hover:bg-(--sb-active) hover:text-(--sb-hi)")
                   : (active ? "bg-(--accent-solid) text-white shadow-sm" : "text-slate-600 hover:bg-white/70 hover:text-slate-900")
                 }
               `}
@@ -248,7 +251,7 @@ export default function Sidebar() {
                 weight={isDark ? "duotone" : "regular"}
                 className={`shrink-0 transition-colors ${
                   isDark
-                    ? (active ? "text-[#60A5FA]" : "text-[#A1A1AA] group-hover:text-[#60A5FA]")
+                    ? (active ? "text-(--sb-hi)" : "text-[#A1A1AA] group-hover:text-(--sb-hi)")
                     : (active ? "text-white" : "text-slate-500 group-hover:text-slate-800")
                 }`}
               />
@@ -257,18 +260,18 @@ export default function Sidebar() {
                   <span className="flex-1 truncate">{label}</span>
                   {badge && !active && (
                     <span className={`text-[11px] font-bold px-1.5 py-0.5 rounded-full leading-none ${
-                      isDark ? "bg-[#60A5FA]/15 text-[#60A5FA]" : "bg-(--accent-solid) text-white"
+                      isDark ? "bg-(--sb-hi)/15 text-(--sb-hi)" : "bg-(--accent-solid) text-white"
                     }`}>
                       {badge}
                     </span>
                   )}
                   {active && isDark && (
-                    <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-[#60A5FA]" />
+                    <span className="w-1.5 h-1.5 rounded-full shrink-0 bg-(--sb-hi)" />
                   )}
                 </>
               )}
               {collapsed && badge && !active && (
-                <span className={`absolute top-0.5 right-0.5 w-2 h-2 rounded-full border-2 ${isDark ? "bg-[#60A5FA] border-[#000000]" : "bg-brand-700 border-white"}`} />
+                <span className={`absolute top-0.5 right-0.5 w-2 h-2 rounded-full border-2 ${isDark ? "bg-(--sb-hi) border-[#000000]" : "bg-brand-700 border-white"}`} />
               )}
             </Link>
           );
@@ -284,14 +287,14 @@ export default function Sidebar() {
       </nav>
 
       {/* Bottom: Settings + Profile */}
-      <div className={`px-2 pb-3 border-t pt-2 space-y-0.5 shrink-0 ${isDark ? "border-[#27272A]" : "border-(--border-chrome)"}`}>
+      <div className={`px-2 pb-3 border-t pt-2 space-y-0.5 shrink-0 ${isDark ? "border-(--sb-line)" : "border-(--border-chrome)"}`}>
         {collapsed ? (
           <Tooltip title="Settings" placement="right" arrow>
             <span className="flex justify-center">
               <Link
                 href="/settings"
                 className={`flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-150 ${
-                  isDark ? "text-[#A1A1AA] hover:text-[#60A5FA] hover:bg-[#27272A]" : "text-slate-500 hover:text-brand-700 hover:bg-surface-light"
+                  isDark ? "text-[#A1A1AA] hover:text-(--sb-hi) hover:bg-(--sb-hover)" : "text-slate-500 hover:text-brand-700 hover:bg-surface-light"
                 }`}
               >
                 <GearSixIcon size={18} weight="duotone" />
@@ -302,7 +305,7 @@ export default function Sidebar() {
           <Link
             href="/settings"
             className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-[16px] font-medium transition-all duration-150 ${
-              isDark ? "text-[#A1A1AA] hover:bg-[#27272A] hover:text-[#60A5FA]" : "text-slate-600 hover:bg-surface-light hover:text-brand-700"
+              isDark ? "text-[#A1A1AA] hover:bg-(--sb-hover) hover:text-(--sb-hi)" : "text-slate-600 hover:bg-surface-light hover:text-brand-700"
             }`}
           >
             <GearSixIcon size={18} weight="duotone" className={`shrink-0 ${isDark ? "text-[#A1A1AA]" : "text-slate-500"}`} />
@@ -323,7 +326,7 @@ export default function Sidebar() {
             </span>
           </Tooltip>
         ) : (
-          <div className={`flex items-center gap-2.5 mt-1 px-3 py-2 rounded-lg border ${isDark ? "bg-[#18181B] border-[#27272A]" : "bg-surface-light border-border-light"}`}>
+          <div className={`flex items-center gap-2.5 mt-1 px-3 py-2 rounded-lg border ${isDark ? "bg-(--sb-active) border-(--sb-line)" : "bg-surface-light border-border-light"}`}>
             <div className="relative shrink-0">
               <Avatar
                 src={OWNER_AVATARS["PM SDL"]}

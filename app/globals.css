@@ -378,7 +378,7 @@ h3 { font-size: 1.125rem;line-height: 1.4; margin-bottom: 1rem; font-weight: 600
 
 /* ── Sidebar layout ─────────────────────────── */
 .sidebar-content {
-  padding-top: 82px;
+  padding-top: calc(var(--header-h) + 10px);
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -933,3 +933,80 @@ html.dark .detail-hero {
     var(--accent-solid) 50%,
     color-mix(in srgb, var(--accent-solid) 75%, #60A5FA) 100%);
 }
+
+/* Shell variables. Defaults reproduce the existing look exactly; Graphite overrides them below. */
+:root { --header-h: 72px; --sb-bg: #000000; --sb-hi: #60A5FA; --sb-active: #18181B; --sb-hover: #27272A; --sb-line: #27272A; }
+
+/* ══ Graphite theme ═══════════════════════════════════════════════════════════
+   A flat, dense, neutral workspace (charcoal chrome, white work area, thin borders,
+   one accent). Unlike the colour-only themes it also changes density, shape and
+   finish. Layout and behaviour are untouched. Everything is scoped to this theme. */
+html[data-theme="graphite"] {
+  --header-h: 56px;
+  --sb-bg: #1B1B1D; --sb-hi: #FFFFFF; --sb-active: #2C2C2F; --sb-hover: #252527; --sb-line: #2E2E31;
+  font-size: 93.75%;                                   /* tighter spacing everywhere */
+  --radius-lg: .25rem; --radius-xl: .375rem; --radius-2xl: .5rem; --radius-3xl: .5rem;
+}
+/* Flat finish: no gradients, decorative shapes or shadows */
+html[data-theme="graphite"] .dashboard-canvas,
+html[data-theme="graphite"] .app-canvas { background-image: none; }
+html[data-theme="graphite"] .detail-hero,
+html[data-theme="graphite"].dark .detail-hero { background-image: none; }
+/* Welcome banners are decoration: Graphite drops them (their numbers live on Tasks/Leads). */
+html[data-theme="graphite"] .banner-gradient { display: none; }
+html[data-theme="graphite"] .shadow-xs,
+html[data-theme="graphite"] .shadow-sm,
+html[data-theme="graphite"] .shadow-md,
+html[data-theme="graphite"] .shadow-lg { box-shadow: none; }
+
+/* Header: slim, with a wide quiet search field */
+html[data-theme="graphite"] .app-search { width: min(460px, 42vw); border-radius: 6px; }
+html:not(.dark)[data-theme="graphite"] .app-search { background: #F4F4F5; border-color: transparent; }
+html:not(.dark)[data-theme="graphite"] .app-search:focus-within { border: 1px solid #A1A1AA; box-shadow: none; }
+html[data-theme="graphite"] header { box-shadow: none; }
+
+/* Sidebar: compact rows, quiet active state */
+html[data-theme="graphite"] aside nav a,
+html[data-theme="graphite"] aside > div a { font-size: 14px; border-radius: 6px; }
+html[data-theme="graphite"] aside nav a:not([class*="justify-center"]),
+html[data-theme="graphite"] aside > div a:not([class*="justify-center"]) { padding-top: 7px; padding-bottom: 7px; gap: 10px; }
+html[data-theme="graphite"] aside nav svg { width: 18px; height: 18px; }
+html[data-theme="graphite"] aside nav a[class*="text-(--sb-hi)"] { color: #FFFFFF; }
+
+/* Buttons and data tables: square-ish, borders instead of fills */
+html[data-theme="graphite"] .MuiButton-root { border-radius: 6px !important; box-shadow: none !important; text-transform: none; }
+html[data-theme="graphite"] .MuiDataGrid-root { border-radius: 6px !important; }
+html[data-theme="graphite"]:not(.dark) .MuiDataGrid-columnHeaders { background-color: #FAFAFA !important; border-bottom-color: #E4E4E7 !important; }
+html[data-theme="graphite"]:not(.dark) .MuiDataGrid-cell,
+html[data-theme="graphite"]:not(.dark) .MuiDataGrid-row { border-color: #EEEEF0 !important; }
+html[data-theme="graphite"]:not(.dark) .MuiDataGrid-row:hover { background-color: #F7F7F8 !important; }
+
+/* Stat tiles and grid cards: white, hairline border, no tint, no lift */
+html[data-theme="graphite"]:not(.dark) [style*="15,23,42,0.06"] {
+  background-color: #FFFFFF !important; border: 1px solid #E4E4E7 !important; box-shadow: none !important; transform: none !important;
+}
+html[data-theme="graphite"] [style*="15,23,42,0.06"]:hover { box-shadow: none !important; transform: none !important; }
+
+/* Primary actions follow the theme accent (charcoal) instead of a hardcoded blue */
+html[data-theme="graphite"]:not(.dark) .MuiButton-contained { background-color: var(--accent-solid) !important; color: #FFFFFF !important; }
+html[data-theme="graphite"]:not(.dark) .MuiButton-contained:hover { background-color: #3F3F46 !important; }
+
+/* Record pages: the quick-stat tiles repeat fields shown right below, so Graphite leaves them out */
+html[data-theme="graphite"] [data-quick-stats] { display: none; }
+
+/* ── Graphite record pages (Lead, Contact, Account, Deal, Task) ─────────────────
+   Two panes: details on the left, activity on the right. The Overview/Timeline
+   tabs and the Related List are not needed, and empty fields stay out of the way. */
+html[data-theme="graphite"] [data-record-tabs] { display: none; }
+html[data-theme="graphite"] [data-record-split] { display: grid; grid-template-columns: minmax(320px, 400px) minmax(0, 1fr); gap: 16px; align-items: start; }
+html[data-theme="graphite"] [data-record-split] > * { display: block !important; min-width: 0; }
+html[data-theme="graphite"] [data-record-split] > * > :nth-child(n+2) { display: none !important; }
+html[data-theme="graphite"] [data-record-split] [data-empty] { display: none; }
+@media (max-width: 1023px) {
+  html[data-theme="graphite"] [data-record-split] { grid-template-columns: minmax(0, 1fr); }
+}
+html[data-theme="graphite"] [data-record-split] > :nth-child(2) { position: sticky; top: calc(var(--header-h) + 16px); }
+@media (max-width: 1023px) { html[data-theme="graphite"] [data-record-split] > :nth-child(2) { position: static; } }
+html[data-theme="graphite"]:not(.dark) [data-record-split] [class*="bg-[#EFF6FF]"] { background-color: #F7F7F8; }
+/* A section whose fields are all empty is hidden entirely */
+html[data-theme="graphite"] [data-record-split] [class*="rounded-2xl"]:has([data-kv]):not(:has([data-kv]:not([data-empty]))) { display: none; }
