@@ -199,9 +199,9 @@ body {
   --bg-header:     #F0F5FB;
   /* Dashboard canvas gradient (built from existing tokens) */
   --canvas-from:   var(--bg-page);
-  --canvas-via:    color-mix(in srgb, var(--color-brand-100, #dbeafe) 28%, var(--bg-page));
-  --canvas-to:     color-mix(in srgb, var(--color-brand-100, #dbeafe) 12%, var(--bg-page));
-  --canvas-glow:   color-mix(in srgb, var(--color-brand-500, #3b82f6) 9%, transparent);
+  --canvas-via:    color-mix(in srgb, var(--color-brand-100, #dbeafe) 55%, var(--bg-page));
+  --canvas-to:     color-mix(in srgb, var(--color-brand-200, #bfdbfe) 45%, var(--bg-page));
+  --canvas-glow:   color-mix(in srgb, var(--color-brand-500, #3b82f6) 18%, transparent);
   --border:        #E3ECFC;
   --border-soft:   #EFF6FF;
   --text-primary:  #0C2472;
@@ -389,8 +389,13 @@ h3 { font-size: 1.125rem;line-height: 1.4; margin-bottom: 1rem; font-weight: 600
 .dashboard-canvas,
 .app-canvas {
   background-color: var(--bg-canvas);
-  /* Solid canvas colour (no gradient). Themes override --bg-canvas; dark mode uses its own page colour. */
-  background-image: none;
+  /* Brand gradient built from the theme tokens (light + dark each define --canvas-*).
+     Soft glow top-right, diagonal wash behind it; fixed so it stays put while content scrolls. */
+  background-image:
+    radial-gradient(900px 520px at 100% 0%, var(--canvas-glow), transparent 70%),
+    radial-gradient(700px 480px at 0% 100%, var(--canvas-glow), transparent 70%),
+    linear-gradient(135deg, var(--canvas-from) 0%, var(--canvas-via) 55%, var(--canvas-to) 100%);
+  background-attachment: fixed;
 }
 
 /* Mobile: adjust header and spacing */
@@ -907,10 +912,24 @@ html.dark .app-canvas { background-color: var(--bg-page); }
 
 /* Detail-page header card: a soft multi-tone wash (same idea as the Healthcare app's banners),
    kept light so the content on top stays easy to read. Tones follow the active theme. */
-:root { --t1: #F1EEFB; --t2: #E6F1FB; --t3: #DFF4F0; --t4: #FFF3DC; }
+:root { --t1: #F4F8FF; --t2: #E3ECFC; --t3: #D6E4FB; --t4: #C9DBFA; }
 .detail-hero {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
     linear-gradient(115deg, var(--t1) 0%, var(--t2) 38%, var(--t3) 72%, var(--t4) 100%);
 }
-html.dark .detail-hero { background-image: none; }
+/* Dark: card colour with a faint brand glow from the right */
+html.dark .detail-hero {
+  background-image:
+    radial-gradient(600px 220px at 100% 0%, color-mix(in srgb, var(--color-brand-500, #3b82f6) 16%, transparent), transparent 70%),
+    linear-gradient(115deg, #1C1C1E 0%, color-mix(in srgb, var(--color-brand-900, #1e3a5f) 30%, #1C1C1E) 100%);
+}
+
+/* Solid-blue welcome banners (Dashboard, Reports > Create): depth from the accent colour itself. */
+.banner-gradient {
+  background-color: var(--accent-solid);
+  background-image: linear-gradient(120deg,
+    color-mix(in srgb, var(--accent-solid) 80%, #0C2472) 0%,
+    var(--accent-solid) 50%,
+    color-mix(in srgb, var(--accent-solid) 75%, #60A5FA) 100%);
+}

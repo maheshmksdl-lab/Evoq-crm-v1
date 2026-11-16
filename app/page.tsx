@@ -164,7 +164,7 @@ export default function DashboardPage() {
           {/* ═══════════════════════════════════════
               WELCOME BANNER
           ═══════════════════════════════════════ */}
-          <div className="relative bg-(--accent-solid) rounded-xl sm:rounded-2xl overflow-hidden">
+          <div className="relative banner-gradient rounded-xl sm:rounded-2xl overflow-hidden">
             {/* Decorative blobs - hidden on mobile */}
             <div className="absolute -right-10 -top-10 w-52 h-52 rounded-full bg-white/5 pointer-events-none hidden sm:block" />
             <div className="absolute right-16 top-6 w-28 h-28 rounded-full bg-white/5 pointer-events-none hidden md:block" />

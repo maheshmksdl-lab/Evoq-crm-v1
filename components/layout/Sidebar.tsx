@@ -143,7 +143,7 @@ export default function Sidebar() {
                   href={href}
                   onClick={closeDrawer}
                   className={`
-                    flex items-center gap-3 px-3 py-2.5 rounded-lg text-[15px] font-medium
+                    flex items-center gap-3 px-3 py-2.5 rounded-lg text-[16px] font-medium
                     transition-all duration-150 group
                     ${isDark
                       ? (active ? "bg-[#18181B] text-[#60A5FA]" : "text-[#A1A1AA] hover:bg-[#18181B] hover:text-[#60A5FA]")
@@ -231,7 +231,7 @@ export default function Sidebar() {
               key={href}
               href={href}
               className={`
-                flex items-center rounded-lg text-[15px] font-medium
+                flex items-center rounded-lg text-[16px] font-medium
                 transition-all duration-150 group relative
                 ${collapsed
                   ? "justify-center w-10 h-10 mx-auto"
