@@ -272,24 +272,33 @@ export default function AppHeader() {
         transition: "background-color 0.2s ease, border-color 0.2s ease",
       }}
     >
-      {/* Left: hamburger + logo — fixed 260px matching expanded sidebar */}
-      <div
-        style={{
-          width: "260px", flexShrink: 0,
-          display: "flex", alignItems: "center",
-          padding: "0 12px", gap: "12px",
-        }}
-      >
+      {/* Left: logo on the left, collapse toggle at the right edge of the sidebar column.
+          Collapsed, the logo clips to its icon and centres over the 68px rail; the toggle follows it. */}
+      <div style={{ flexShrink: 0, display: "flex", alignItems: "center", paddingRight: "12px" }}>
+        <div
+          style={{
+            width: collapsed ? "68px" : "216px",
+            display: "flex", alignItems: "center",
+            justifyContent: collapsed ? "center" : "flex-start",
+            paddingLeft: collapsed ? 0 : "20px",
+            transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+          }}
+        >
+          <div style={{ width: collapsed ? "30px" : "72px", overflow: "hidden", transition: "width 0.3s cubic-bezier(0.4, 0, 0.2, 1)" }}>
+            <div style={{ width: "72px" }}><Logo height={28} /></div>
+          </div>
+        </div>
         <button
           onClick={toggle}
-          className={`shrink-0 w-8 h-8 flex items-center justify-center rounded-lg transition-all duration-150 ${
+          className={`shrink-0 w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-150 ${
             isDark ? "text-[#A1A1AA] hover:text-[#FAFAFA] hover:bg-[#262626]" : "text-slate-500 hover:text-brand-700 hover:bg-surface-light"
           }`}
           title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+          aria-expanded={!collapsed}
         >
-          <ListIcon size={18} weight="bold" />
+          <ListIcon size={20} weight="bold" />
         </button>
-        <Logo height={28} />
       </div>
 
       {/* Right: title + controls */}
@@ -306,7 +315,7 @@ export default function AppHeader() {
         </div>
 
         {/* Search */}
-        <div className={`app-search relative flex items-center gap-2 border rounded-xl px-3 py-1.5 w-60 transition-all ${
+        <div className={`app-search relative flex items-center gap-2 border rounded-xl px-3 py-1.5 w-[min(420px,34vw)] min-w-[240px] transition-all ${
           isDark
             ? "bg-[#0A0A0A] border-[#27272A] focus-within:border-[#60A5FA] focus-within:border-2 focus-within:shadow-[0_0_0_2px_rgba(96,165,250,0.3)]"
             : "bg-surface border-border-light focus-within:border-brand-700 focus-within:border-2 focus-within:shadow-[0_0_0_2px_var(--color-brand-500)]"
